@@ -13,8 +13,8 @@ body {
 
 /* Navigation */
 header {
-    background: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background: #000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     position: fixed;
     width: 100%;
     top: 0;
@@ -33,7 +33,7 @@ nav {
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #2c3e50;
+    color: #fff;
 }
 
 .nav-links {
@@ -42,19 +42,19 @@ nav {
 }
 
 .nav-links li a {
-    color: #2c3e50;
+    color: #fff;
     text-decoration: none;
     padding: 0.5rem 1rem;
     transition: color 0.3s ease;
 }
 
 .nav-links li a:hover {
-    color: #3498db;
+    color: #ff0000;
 }
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)),
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
                 url('../images/hero-bg.jpg') center/cover;
     height: 100vh;
     display: flex;
@@ -82,7 +82,7 @@ nav {
 .cta-button {
     display: inline-block;
     padding: 1rem 2rem;
-    background: #3498db;
+    background: #ff0000;
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -90,7 +90,7 @@ nav {
 }
 
 .cta-button:hover {
-    background: #2980b9;
+    background: #cc0000;
 }
 
 /* Services Section */
@@ -102,7 +102,7 @@ nav {
 .services h2 {
     text-align: center;
     margin-bottom: 3rem;
-    color: #2c3e50;
+    color: #000;
 }
 
 .service-grid {
@@ -128,7 +128,7 @@ nav {
 
 .service-card i {
     font-size: 2.5rem;
-    color: #3498db;
+    color: #ff0000;
     margin-bottom: 1rem;
 }
 
@@ -142,7 +142,7 @@ nav {
 .about h2 {
     text-align: center;
     margin-bottom: 3rem;
-    color: #2c3e50;
+    color: #000;
 }
 
 .about-content {
@@ -161,7 +161,7 @@ nav {
 }
 
 .benefits i {
-    color: #27ae60;
+    color: #ff0000;
     margin-right: 0.5rem;
 }
 
@@ -174,7 +174,7 @@ nav {
 .contact h2 {
     text-align: center;
     margin-bottom: 3rem;
-    color: #2c3e50;
+    color: #000;
 }
 
 .contact-container {
@@ -194,7 +194,7 @@ nav {
 }
 
 .contact-info i {
-    color: #3498db;
+    color: #ff0000;
     margin-right: 0.5rem;
 }
 
@@ -218,7 +218,7 @@ nav {
 }
 
 .submit-button {
-    background: #3498db;
+    background: #ff0000;
     color: white;
     padding: 1rem;
     border: none;
@@ -228,12 +228,12 @@ nav {
 }
 
 .submit-button:hover {
-    background: #2980b9;
+    background: #cc0000;
 }
 
 /* Footer */
 footer {
-    background: #2c3e50;
+    background: #000;
     color: white;
     padding: 3rem 1rem 1rem;
 }
@@ -272,6 +272,10 @@ footer {
 .social-links a {
     color: white;
     font-size: 1.5rem;
+}
+
+.social-links a:hover {
+    color: #ff0000;
 }
 
 .footer-bottom {

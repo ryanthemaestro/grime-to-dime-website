@@ -83,11 +83,13 @@
                 </div>
             </div>
             <form class="contact-form" action="https://formspree.io/f/xannylqz" method="POST">
+                <input type="hidden" name="_subject" value="New Contact from Grime To Dime Website">
+                <input type="hidden" name="_next" value="https://grimetodime.com/thank-you">
                 <label>
                     <input type="text" name="name" placeholder="Your Name" required>
                 </label>
                 <label>
-                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="email" name="_replyto" placeholder="Your Email" required>
                 </label>
                 <label>
                     <input type="tel" name="phone" placeholder="Phone Number">

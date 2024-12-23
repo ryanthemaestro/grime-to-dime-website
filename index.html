@@ -83,12 +83,18 @@
                 </div>
             </div>
             <form class="contact-form" action="https://formspree.io/f/xannylqz" method="POST">
-                <input type="text" name="_name" placeholder="Your Name" required>
-                <input type="email" name="_replyto" placeholder="Your Email" required>
-                <input type="tel" name="_phone" placeholder="Phone Number">
-                <textarea name="_message" placeholder="Tell us about your junk removal needs" required></textarea>
-                <input type="hidden" name="_subject" value="New Quote Request from Grime To Dime">
-                <input type="hidden" name="_next" value="https://grimetodime.com/thanks">
+                <label>
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </label>
+                <label>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                </label>
+                <label>
+                    <input type="tel" name="phone" placeholder="Phone Number">
+                </label>
+                <label>
+                    <textarea name="message" placeholder="Tell us about your junk removal needs" required></textarea>
+                </label>
                 <button type="submit" class="submit-button">Send Message</button>
             </form>
         </div>

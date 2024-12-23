@@ -204,15 +204,21 @@ nav {
     gap: 1rem;
 }
 
-.contact-form input,
-.contact-form textarea {
+.form-group {
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
     padding: 0.8rem;
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 1rem;
 }
 
-.contact-form textarea {
+.form-group textarea {
     height: 150px;
     resize: vertical;
 }
@@ -220,11 +226,13 @@ nav {
 .submit-button {
     background: #ff0000;
     color: white;
-    padding: 1rem;
+    padding: 1rem 2rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s ease;
+    width: 100%;
+    font-size: 1rem;
 }
 
 .submit-button:hover {

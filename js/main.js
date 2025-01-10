@@ -12,9 +12,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
-        // Let Formspree handle the submission
-        // Don't prevent default or show alert
-        // The form will be handled by Formspree
+        // Track form submission event
+        gtag('event', 'form_submission', {
+            'event_category': 'Contact',
+            'event_label': 'Quote Request'
+        });
     });
 }
 

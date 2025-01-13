@@ -8,14 +8,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Handle contact form submission
+// Handle contact form submission and tracking
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
-        // Track form submission event
-        gtag('event', 'form_submission', {
+        // Track form submission event in GA4
+        gtag('event', 'lead_form_submit', {
             'event_category': 'Contact',
-            'event_label': 'Quote Request'
+            'event_label': 'Quote Request Form',
+            'form_name': 'lead-form'
         });
     });
 }

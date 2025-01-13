@@ -17,19 +17,17 @@ if (contactForm) {
         
         // Track form submission event in GA4 using sendBeacon
         const analyticsData = {
-            'event_name': 'lead_form_submit',
-            'event_category': 'Contact',
-            'event_label': 'Quote Request Form',
-            'form_name': 'lead-form',
-            'form_destination': 'Formspree'
+            'event_name': 'form_submit',
+            'form_name': 'quote_request',
+            'form_id': 'lead-form',
+            'form_destination': 'formspree'
         };
 
         // Use sendBeacon to ensure the event is sent even during page unload
-        gtag('event', 'lead_form_submit', {
-            'event_category': 'Contact',
-            'event_label': 'Quote Request Form',
-            'form_name': 'lead-form',
-            'form_destination': 'Formspree',
+        gtag('event', 'form_submit', {
+            'form_name': 'quote_request',
+            'form_id': 'lead-form',
+            'form_destination': 'formspree',
             'transport_type': 'beacon'
         });
 

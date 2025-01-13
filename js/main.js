@@ -12,8 +12,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
+        console.log('Form submitted - Sending event to GA4...');
+        
         // Track form submission event in GA4
         gtag('event', 'lead_form_submit', {
+            'event_category': 'Contact',
+            'event_label': 'Quote Request Form',
+            'form_name': 'lead-form'
+        });
+
+        console.log('GA4 event sent:', {
+            'event_name': 'lead_form_submit',
             'event_category': 'Contact',
             'event_label': 'Quote Request Form',
             'form_name': 'lead-form'

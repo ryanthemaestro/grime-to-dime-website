@@ -12,39 +12,28 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
-        // Always prevent default form submission
-        e.preventDefault();
-        
         // Debug message
-        console.log('🚀 Form submission intercepted');
+        console.log('🚀 Form submission started');
         
-        try {
-            // Track form submission event in GA4
-            gtag('event', 'lead_form_submit', {
-                'event_category': 'Contact',
-                'event_label': 'Quote Request Form',
-                'form_name': 'lead-form',
-                'transport_type': 'beacon'
-            });
+        // Track form submission event in GA4 using sendBeacon
+        const analyticsData = {
+            'event_name': 'lead_form_submit',
+            'event_category': 'Contact',
+            'event_label': 'Quote Request Form',
+            'form_name': 'lead-form',
+            'form_destination': 'Formspree'
+        };
 
-            console.log('✅ GA4 event sent successfully:', {
-                'event_name': 'lead_form_submit',
-                'event_category': 'Contact',
-                'event_label': 'Quote Request Form',
-                'form_name': 'lead-form'
-            });
+        // Use sendBeacon to ensure the event is sent even during page unload
+        gtag('event', 'lead_form_submit', {
+            'event_category': 'Contact',
+            'event_label': 'Quote Request Form',
+            'form_name': 'lead-form',
+            'form_destination': 'Formspree',
+            'transport_type': 'beacon'
+        });
 
-            // Submit form after ensuring event is tracked
-            setTimeout(() => {
-                console.log('📨 Submitting form to Formspree...');
-                contactForm.submit();
-            }, 500); // Increased delay to 500ms
-
-        } catch (error) {
-            console.error('❌ Error tracking form submission:', error);
-            // Submit form anyway if tracking fails
-            contactForm.submit();
-        }
+        console.log('✅ GA4 event sent via sendBeacon:', analyticsData);
     });
 }
 

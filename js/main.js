@@ -12,30 +12,39 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
-        // Prevent the default form submission temporarily
+        // Always prevent default form submission
         e.preventDefault();
         
-        console.log('Form submitted - Sending event to GA4...');
+        // Debug message
+        console.log('🚀 Form submission intercepted');
         
-        // Track form submission event in GA4
-        gtag('event', 'lead_form_submit', {
-            'event_category': 'Contact',
-            'event_label': 'Quote Request Form',
-            'form_name': 'lead-form',
-            'transport_type': 'beacon'
-        });
+        try {
+            // Track form submission event in GA4
+            gtag('event', 'lead_form_submit', {
+                'event_category': 'Contact',
+                'event_label': 'Quote Request Form',
+                'form_name': 'lead-form',
+                'transport_type': 'beacon'
+            });
 
-        console.log('GA4 event sent:', {
-            'event_name': 'lead_form_submit',
-            'event_category': 'Contact',
-            'event_label': 'Quote Request Form',
-            'form_name': 'lead-form'
-        });
+            console.log('✅ GA4 event sent successfully:', {
+                'event_name': 'lead_form_submit',
+                'event_category': 'Contact',
+                'event_label': 'Quote Request Form',
+                'form_name': 'lead-form'
+            });
 
-        // Submit the form after a small delay to ensure the event is sent
-        setTimeout(() => {
+            // Submit form after ensuring event is tracked
+            setTimeout(() => {
+                console.log('📨 Submitting form to Formspree...');
+                contactForm.submit();
+            }, 500); // Increased delay to 500ms
+
+        } catch (error) {
+            console.error('❌ Error tracking form submission:', error);
+            // Submit form anyway if tracking fails
             contactForm.submit();
-        }, 100);
+        }
     });
 }
 

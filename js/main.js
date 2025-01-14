@@ -15,23 +15,22 @@ if (contactForm) {
         // Debug message
         console.log('🚀 Form submission started');
         
-        // Track form submission event in GA4 using sendBeacon
+        // Track form submission event in GA4 using recommended event name
         const analyticsData = {
-            'event_name': 'form_submit',
+            'currency': 'USD',
+            'value': 1,
             'form_name': 'quote_request',
             'form_id': 'lead-form',
             'form_destination': 'formspree'
         };
 
         // Use sendBeacon to ensure the event is sent even during page unload
-        gtag('event', 'form_submit', {
-            'form_name': 'quote_request',
-            'form_id': 'lead-form',
-            'form_destination': 'formspree',
-            'transport_type': 'beacon'
-        });
+        gtag('event', 'generate_lead', analyticsData);
 
-        console.log('✅ GA4 event sent via sendBeacon:', analyticsData);
+        console.log('✅ GA4 event sent via sendBeacon:', {
+            event_name: 'generate_lead',
+            ...analyticsData
+        });
     });
 }
 

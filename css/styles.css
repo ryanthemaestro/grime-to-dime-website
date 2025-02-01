@@ -319,4 +319,142 @@ footer {
     .contact-container {
         grid-template-columns: 1fr;
     }
+}
+
+/* Transformations Section */
+.transformations {
+    padding: 5rem 1rem;
+    background: #fff;
+}
+
+.transformations h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #000;
+}
+
+.before-after-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.transformation-card {
+    background: #f9f9f9;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.image-comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.before-image, .after-image {
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.before-image img, .after-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.label {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+    font-size: 0.9rem;
+}
+
+.transformation-content {
+    padding: 2rem;
+    text-align: center;
+}
+
+.transformation-content h3 {
+    margin-bottom: 1rem;
+    color: #000;
+}
+
+.transformation-content p {
+    margin-bottom: 1.5rem;
+}
+
+/* Equipment Section */
+.equipment {
+    padding: 5rem 1rem;
+    background: #f9f9f9;
+}
+
+.equipment h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #000;
+}
+
+.section-description {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+}
+
+.trailer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+}
+
+.trailer-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.image-placeholder {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #f0f0f0;
+    color: #666;
+}
+
+.image-placeholder i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.equipment-cta {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.equipment-cta p {
+    margin-bottom: 1.5rem;
+}
+
+/* Responsive Design for New Sections */
+@media (max-width: 768px) {
+    .image-comparison {
+        grid-template-columns: 1fr;
+    }
+
+    .before-image img, .after-image img {
+        height: 300px;
+    }
 } 

@@ -194,5 +194,22 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script>
+        // Debug script for image loading
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('.gallery-grid.equipment img');
+            images.forEach(img => {
+                console.log('Attempting to load image:', img.src);
+                img.addEventListener('load', function() {
+                    console.log('Successfully loaded:', img.src);
+                });
+                img.addEventListener('error', function() {
+                    console.error('Failed to load image:', img.src);
+                    console.log('Alt text:', img.alt);
+                    console.log('Complete path:', img.src);
+                });
+            });
+        });
+    </script>
 </body>
 </html>

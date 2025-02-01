@@ -359,8 +359,7 @@ footer {
 }
 
 .gallery-grid.equipment {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    border: 2px solid red; /* Debug border */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .gallery-item {
@@ -369,9 +368,6 @@ footer {
     overflow: hidden;
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
-    background: #fff;
-    border: 2px solid blue; /* Debug border */
-    min-height: 300px; /* Ensure minimum height */
 }
 
 .gallery-item:hover {
@@ -383,7 +379,6 @@ footer {
     height: 250px;
     object-fit: cover;
     display: block;
-    background: #eee; /* Debug background */
 }
 
 .gallery-caption {
@@ -399,10 +394,7 @@ footer {
 
 /* Responsive adjustments for gallery */
 @media (max-width: 768px) {
-    .gallery-grid.before-after {
-        grid-template-columns: 1fr;
-    }
-    
+    .gallery-grid.before-after,
     .gallery-grid.equipment {
         grid-template-columns: 1fr;
     }

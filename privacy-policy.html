@@ -126,6 +126,73 @@
                 font-size: 1.1rem;
             }
         }
+        
+        .mobile-nav-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .mobile-nav-toggle span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: white;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-nav-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                background-color: rgba(0, 0, 0, 0.95);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                transition: right 0.3s ease;
+                z-index: 1000;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links a {
+                font-size: 1.2rem;
+                padding: 1rem;
+                width: 100%;
+                text-align: center;
+            }
+
+            .mobile-nav-toggle.active span:nth-child(1) {
+                transform: translateY(9px) rotate(45deg);
+            }
+
+            .mobile-nav-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .mobile-nav-toggle.active span:nth-child(3) {
+                transform: translateY(-9px) rotate(-45deg);
+            }
+
+            body.nav-active {
+                overflow: hidden;
+            }
+        }
     </style>
 </head>
 <body>
@@ -150,7 +217,7 @@
 
     <div class="legal-content">
         <h1>Privacy Policy</h1>
-        <p class="last-updated">Last Updated: February 3, 2024</p>
+        <p class="last-updated">Last Updated: February 9, 2025</p>
 
         <p>Welcome to Grime To Dime ("we," "our," or "us"). We are committed to protecting your privacy and handling your personal information with transparency and care. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website grimetodime.com or use our junk removal and hauling services.</p>
 
@@ -250,5 +317,27 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            const body = document.body;
+
+            mobileNavToggle.addEventListener('click', function() {
+                this.classList.toggle('active');
+                navLinks.classList.toggle('active');
+                body.classList.toggle('nav-active');
+            });
+
+            // Close mobile menu when clicking a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileNavToggle.classList.remove('active');
+                    navLinks.classList.remove('active');
+                    body.classList.remove('nav-active');
+                });
+            });
+        });
+    </script>
 </body>
 </html> 

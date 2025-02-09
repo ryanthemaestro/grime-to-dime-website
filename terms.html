@@ -19,20 +19,28 @@
     <style>
         .legal-content {
             max-width: 1200px;
-            margin: 120px auto 50px;
+            margin: 80px auto 50px;
             padding: 0 20px;
         }
         .legal-content h1 {
             color: #333;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
+            font-size: 2.2rem;
         }
         .legal-content h2 {
             color: #444;
             margin: 25px 0 15px;
+            font-size: 1.5rem;
+        }
+        .legal-content h3 {
+            color: #555;
+            margin: 20px 0 12px;
+            font-size: 1.2rem;
         }
         .legal-content p {
             margin-bottom: 15px;
             line-height: 1.6;
+            font-size: 1rem;
         }
         .legal-content ul {
             margin-bottom: 20px;
@@ -41,11 +49,27 @@
         .legal-content li {
             margin-bottom: 10px;
             line-height: 1.6;
+            font-size: 1rem;
         }
         .last-updated {
             color: #666;
             font-style: italic;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .legal-content {
+                margin: 60px auto 40px;
+            }
+            .legal-content h1 {
+                font-size: 1.8rem;
+            }
+            .legal-content h2 {
+                font-size: 1.3rem;
+            }
+            .legal-content h3 {
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>

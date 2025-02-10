@@ -181,57 +181,59 @@
 
         .quote-form {
             background: white;
-            padding: 1.5rem;
+            padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            color: #333;
         }
 
         .quote-form h2 {
-            color: #333;
-            margin-bottom: 1rem;
-            text-align: center;
+            margin-bottom: 1.5rem;
             font-size: 1.5rem;
         }
 
-        .form-row {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1rem;
+        .quote-form p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
         }
 
-        .form-group {
-            margin-bottom: 1rem;
-            flex: 1;
+        .cta-button {
+            background: #ff3333;
+            color: white;
+            padding: 1.2rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            width: 100%;
+            box-shadow: 0 4px 15px rgba(255, 51, 51, 0.2);
+        }
+
+        .cta-button:hover {
+            background: #e62e2e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 51, 51, 0.3);
         }
 
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 0.6rem;
+            padding: 0.8rem;
             border: 1px solid #ddd;
             border-radius: 5px;
-            font-size: 0.9rem;
+            font-size: 1rem;
+            margin-bottom: 1rem;
         }
 
         .form-group textarea {
-            height: 80px;
-            resize: none;
-        }
-
-        .submit-button {
-            background: #ff3333;
-            color: white;
-            padding: 0.8rem;
-            border: none;
-            border-radius: 5px;
-            width: 100%;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .submit-button:hover {
-            background: #e62e2e;
+            height: 100px;
+            resize: vertical;
         }
 
         .trust-indicators {
@@ -277,6 +279,15 @@
                 flex-direction: column;
                 gap: 1rem;
             }
+
+            .quote-form {
+                margin: 0 1rem;
+            }
+
+            .cta-button {
+                padding: 1rem 1.5rem;
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
@@ -321,34 +332,28 @@
 
             <div class="quote-form">
                 <h2>Get Your Free Quote</h2>
+                <p>Fill out this form for an instant quote! Our team is ready to help you transform your space.</p>
                 <form action="https://formspree.io/f/meoovajl" method="POST" id="quote-form" onsubmit="return gtagSendEvent('https://grimetodime.com/thank-you.html')">
                     <input type="hidden" name="_subject" value="New Quote Request from Landing Page">
                     <input type="hidden" name="_next" value="https://grimetodime.com/thank-you.html">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="location" name="location" placeholder="Location (City)" required>
-                        </div>
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Name" required>
                     </div>
                     <div class="form-group">
-                        <textarea id="message" name="message" rows="3" placeholder="What needs to be removed?" required></textarea>
+                        <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
                     </div>
-                    <div class="cta-buttons">
-                        <button type="submit" class="cta-button" onclick="return gtagSendEvent(null)">Get Your Free Quote</button>
-                        <a href="tel:4103006743" class="phone-button" onclick="return gtagSendEvent('tel:4103006743')">
-                            <i class="fas fa-phone"></i> Call (410) 300-6743
-                        </a>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Email" required>
                     </div>
+                    <div class="form-group">
+                        <input type="text" id="location" name="location" placeholder="Location (City)" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="What needs to be removed?" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button" onclick="return gtagSendEvent(null)">
+                        <i class="fas fa-paper-plane"></i> Get Your Free Quote
+                    </button>
                 </form>
             </div>
         </div>

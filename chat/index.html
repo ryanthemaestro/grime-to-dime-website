@@ -64,7 +64,7 @@
             right: 0;
             z-index: 1000;
             background-color: rgba(0, 0, 0, 0.8);
-            padding: 0.1rem 0;
+            padding: 0.75rem 0;
         }
 
         nav {
@@ -82,9 +82,9 @@
         }
 
         .logo img {
-            height: 9px;
+            height: 40px;
             width: auto;
-            margin-right: 3px;
+            margin-right: 10px;
             object-fit: contain;
             display: block;
             max-width: none;
@@ -100,20 +100,20 @@
             align-items: center;
             text-decoration: none;
             color: white;
-            font-size: 0.7rem;
+            font-size: 1.2rem;
             font-weight: bold;
-            padding: 0;
+            padding: 5px 0;
             white-space: nowrap;
             transition: color 0.3s ease;
         }
 
         @media (max-width: 768px) {
             .logo img {
-                height: 8px;
+                height: 35px;
             }
             
             .logo a {
-                font-size: 0.6rem;
+                font-size: 1.1rem;
             }
         }
 
@@ -202,10 +202,31 @@
             transition: background 0.3s ease;
             display: inline-block;
             text-decoration: none;
+            width: 100%;
+            margin-bottom: 1rem;
         }
 
         .chat-button:hover {
             background: #e62e2e;
+        }
+
+        .phone-button {
+            background: transparent;
+            color: #333;
+            padding: 1rem 2rem;
+            border: 2px solid #ff3333;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            width: 100%;
+            text-align: center;
+        }
+
+        .phone-button:hover {
+            background: rgba(255, 51, 51, 0.1);
         }
 
         .trust-indicators {
@@ -232,11 +253,13 @@
         @media (max-width: 768px) {
             .landing-container {
                 grid-template-columns: 1fr;
+                padding: 1rem;
             }
 
             .landing-content {
                 padding: 1rem;
                 text-align: center;
+                margin-top: 3rem;
             }
 
             .landing-content h1 {
@@ -245,11 +268,21 @@
 
             .benefits-list {
                 text-align: left;
+                padding-left: 1rem;
             }
 
             .trust-indicators {
                 flex-direction: column;
                 gap: 1rem;
+            }
+
+            .chat-prompt {
+                margin: 0 1rem;
+            }
+
+            .chat-button, .phone-button {
+                padding: 0.8rem 1rem;
+                font-size: 1rem;
             }
         }
     </style>
@@ -258,7 +291,7 @@
     <header>
         <nav>
             <div class="logo">
-                <a href="/"><img src="images/MASTERPARENT.png" alt="Grime To Dime Logo" style="height: 50px; width: auto; display: block;"> Grime To Dime</a>
+                <a href="/"><img src="../images/MASTERPARENT.png" alt="Grime To Dime Logo"> Grime To Dime</a>
             </div>
         </nav>
     </header>

@@ -35,11 +35,18 @@
             padding: 0 1.5rem;
         }
 
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
         .logo img {
             height: 40px;
             width: auto;
             margin-right: 10px;
             object-fit: contain;
+            display: block;
+            max-width: none;
         }
 
         .logo a {
@@ -50,6 +57,7 @@
             font-size: 1.2rem;
             font-weight: bold;
             padding: 5px 0;
+            white-space: nowrap;
         }
 
         .nav-links {
@@ -202,7 +210,7 @@
     <header>
         <nav>
             <div class="logo">
-                <a href="/"><img src="images/TRANSPARENTBACKGROUNDLOGO.png" alt="Grime To Dime Logo" style="max-height: 40px; width: auto;"> Grime To Dime</a>
+                <a href="/"><img src="images/TRANSPARENTBACKGROUNDLOGO.png" alt="Grime To Dime Logo" style="height: 40px; width: auto; display: block;"> Grime To Dime</a>
             </div>
             <div class="mobile-nav-toggle">
                 <span></span>

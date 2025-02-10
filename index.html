@@ -89,11 +89,18 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
         .logo img {
             height: 40px;
             width: auto;
             margin-right: 10px;
             object-fit: contain;
+            display: block;
+            max-width: none;
         }
 
         .logo a {
@@ -104,6 +111,7 @@
             font-size: 1.2rem;
             font-weight: bold;
             padding: 5px 0;
+            white-space: nowrap;
         }
 
         @media (max-width: 768px) {
@@ -117,7 +125,7 @@
     <header>
         <nav>
             <div class="logo">
-                <a href="#"><img src="images/TRANSPARENTBACKGROUNDLOGO.png" alt="Grime To Dime Logo" style="max-height: 40px; width: auto;"> Grime To Dime</a>
+                <a href="#"><img src="images/TRANSPARENTBACKGROUNDLOGO.png" alt="Grime To Dime Logo" style="height: 40px; width: auto; display: block;"> Grime To Dime</a>
             </div>
             <div class="mobile-nav-toggle">
                 <span></span>

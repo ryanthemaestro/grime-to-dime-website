@@ -202,20 +202,23 @@
         .chat-button {
             background: #ff3333;
             color: white;
-            padding: 1rem 2rem;
+            padding: 1.2rem 2rem;
             border: none;
-            border-radius: 5px;
-            font-size: 1.1rem;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: 600;
             cursor: pointer;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
             display: inline-block;
             text-decoration: none;
             width: 100%;
-            margin-bottom: 1rem;
+            box-shadow: 0 4px 15px rgba(255, 51, 51, 0.2);
         }
 
         .chat-button:hover {
             background: #e62e2e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 51, 51, 0.3);
         }
 
         .phone-button {
@@ -288,9 +291,9 @@
                 margin: 0 1rem;
             }
 
-            .chat-button, .phone-button {
-                padding: 0.8rem 1rem;
-                font-size: 1rem;
+            .chat-button {
+                padding: 1rem 1.5rem;
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -341,9 +344,6 @@
                     <button class="chat-button" onclick="Tawk_API.maximize();return gtagSendEvent(null)">
                         <i class="fas fa-comments"></i> Start Live Chat Now
                     </button>
-                    <a href="tel:4103006743" class="phone-button" onclick="return gtagSendEvent('tel:4103006743')">
-                        <i class="fas fa-phone"></i> Call (410) 300-6743
-                    </a>
                 </div>
             </div>
         </div>

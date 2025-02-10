@@ -118,9 +118,9 @@
         }
 
         .landing-hero {
-            min-height: 80vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-                        url('images/before-after/warehouse-after-junk-removal.png');
+            min-height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+                        url('../images/before-after/warehouse-after-junk-removal.png');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -140,18 +140,21 @@
         .landing-content {
             color: white;
             padding: 2rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
 
         .landing-content h1 {
             font-size: 2.8rem;
             margin-bottom: 1.5rem;
             line-height: 1.2;
+            font-weight: 700;
         }
 
         .landing-content p {
             font-size: 1.2rem;
             margin-bottom: 1.5rem;
             line-height: 1.6;
+            opacity: 0.95;
         }
 
         .benefits-list {
@@ -330,7 +333,9 @@
                 <h2>Get Your Free Quote</h2>
                 <p>Chat with us now for an instant quote! Our team is ready to help you transform your space.</p>
                 <div class="cta-buttons">
-                    <button class="chat-button" onclick="return gtagSendEvent(null)">Start Live Chat Now - Get Instant Quote</button>
+                    <button class="chat-button" onclick="Tawk_API.maximize();return gtagSendEvent(null)">
+                        <i class="fas fa-comments"></i> Start Live Chat Now
+                    </button>
                     <a href="tel:4103006743" class="phone-button" onclick="return gtagSendEvent('tel:4103006743')">
                         <i class="fas fa-phone"></i> Call (410) 300-6743
                     </a>

@@ -7,12 +7,17 @@
         }
 
         .logo img {
-            height: 40px;
+            height: 50px;
             width: auto;
-            margin-right: 10px;
+            margin-right: 12px;
             object-fit: contain;
             display: block;
             max-width: none;
+            transition: transform 0.3s ease;
+        }
+
+        .logo img:hover {
+            transform: scale(1.05);
         }
 
         .logo a {
@@ -20,18 +25,27 @@
             align-items: center;
             text-decoration: none;
             color: white;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             font-weight: bold;
             padding: 5px 0;
             white-space: nowrap;
+            transition: color 0.3s ease;
+        }
+
+        .logo a:hover {
+            color: #ff3333;
         }
 
         @media (max-width: 768px) {
             .logo img {
-                height: 30px;
+                height: 40px;
+            }
+            
+            .logo a {
+                font-size: 1.2rem;
             }
         }
     </style>
             <div class="logo">
-                <a href="/"><img src="images/TRANSPARENTBACKGROUNDLOGO.png" alt="Grime To Dime Logo" style="height: 40px; width: auto; display: block;"> Grime To Dime</a>
+                <a href="/"><img src="images/TRANSPARENTBACKGROUNDLOGO.png" alt="Grime To Dime Logo" style="height: 50px; width: auto; display: block;"> Grime To Dime</a>
             </div> 

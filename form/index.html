@@ -66,7 +66,7 @@
             right: 0;
             z-index: 1000;
             background-color: rgba(0, 0, 0, 0.8);
-            padding: 0.1rem 0;
+            padding: 0.75rem 0;
         }
 
         nav {
@@ -84,9 +84,9 @@
         }
 
         .logo img {
-            height: 9px;
+            height: 40px;
             width: auto;
-            margin-right: 3px;
+            margin-right: 10px;
             object-fit: contain;
             display: block;
             max-width: none;
@@ -102,27 +102,32 @@
             align-items: center;
             text-decoration: none;
             color: white;
-            font-size: 0.7rem;
+            font-size: 1.2rem;
             font-weight: bold;
-            padding: 0;
+            padding: 5px 0;
             white-space: nowrap;
             transition: color 0.3s ease;
         }
 
         @media (max-width: 768px) {
+            header {
+                padding: 0.5rem 0;
+            }
+
             .logo img {
-                height: 8px;
+                height: 30px;
+                margin-right: 8px;
             }
             
             .logo a {
-                font-size: 0.6rem;
+                font-size: 1rem;
             }
         }
 
         .landing-hero {
             min-height: 80vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-                        url('images/before-after/warehouse-after-junk-removal.png');
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+                        url('../images/trailer-loads/IMG_9212.png');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -279,7 +284,7 @@
     <header>
         <nav>
             <div class="logo">
-                <a href="/"><img src="images/MASTERPARENT.png" alt="Grime To Dime Logo" style="height: 50px; width: auto; display: block;"> Grime To Dime</a>
+                <a href="/"><img src="../images/MASTERPARENT.png" alt="Grime To Dime Logo"> Grime To Dime</a>
             </div>
         </nav>
     </header>

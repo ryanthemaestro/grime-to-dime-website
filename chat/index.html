@@ -19,11 +19,12 @@
                     window.location = url;
                 }
             };
-            gtag('event', 'conversion', {
+            gtag('event', 'conversion_event_request_quote_1', {
                 'event_callback': callback,
                 'event_timeout': 2000,
-                'event_category': 'CTA',
-                'event_label': 'Click'
+                'event_category': 'Chat',
+                'event_label': 'Start Live Chat',
+                'value': 1
             });
             return false;
         }
@@ -338,7 +339,7 @@
                 <h2>Get Your Free Quote</h2>
                 <p>Chat with us now for an instant quote! Our team is ready to help you transform your space.</p>
                 <div class="cta-buttons">
-                    <button class="chat-button" onclick="Tawk_API.maximize();return gtagSendEvent(null)">
+                    <button class="chat-button" onclick="gtagSendEvent(null); Tawk_API.maximize(); return false;">
                         <i class="fas fa-comments"></i> Start Live Chat Now
                     </button>
                 </div>

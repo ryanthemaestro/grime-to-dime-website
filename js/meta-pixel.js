@@ -45,13 +45,23 @@ function trackLeadConversion(formData) {
         user_data: userData,
         custom_data: {
             currency: 'USD',
-            value: '1.00',
+            value: '142.52',
             content_name: 'Quote Request',
             content_category: 'Junk Removal',
-            status: 'submitted'
+            status: 'submitted',
+            location: formData.location || '',
+            name: formData.name || '',
+            message_type: formData.message || ''
         }
     };
 
     // Send to Meta Pixel
     fbq('track', 'Lead', eventData);
+    
+    // Also track as a Purchase event
+    const purchaseData = {
+        ...eventData,
+        event_name: 'Purchase'
+    };
+    fbq('track', 'Purchase', purchaseData);
 } 

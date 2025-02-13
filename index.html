@@ -400,7 +400,41 @@
             transform: translateY(0);
         }
 
-        /* Enhanced About Section */
+        /* About Section */
+        .about {
+            position: relative;
+            padding: 5rem 1rem;
+            background: #f8f9fa;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .about-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            z-index: 1;
+        }
+
+        .about h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #222;
+            position: relative;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        .about-text {
+            display: grid;
+            gap: 2rem;
+        }
+
         .about-card {
             background: white;
             padding: 2.5rem;
@@ -411,6 +445,12 @@
             display: flex;
             align-items: flex-start;
             gap: 2rem;
+        }
+
+        .about-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 51, 51, 0.2);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
         }
 
         .about-icon {
@@ -427,16 +467,24 @@
             transition: all 0.3s ease;
         }
 
-        .about-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(255, 51, 51, 0.2);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
-        }
-
         .about-card:hover .about-icon {
             transform: scale(1.1) rotate(10deg);
             background: #ff3333;
             color: white;
+        }
+
+        .about-card p {
+            margin: 0;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
         }
 
         .benefit-card {
@@ -473,6 +521,48 @@
             transform: scale(1.1) rotate(10deg);
             background: #ff3333;
             color: white;
+        }
+
+        .benefit-card h4 {
+            font-size: 1.3rem;
+            color: #222;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-card p {
+            font-size: 1.1rem;
+            color: #666;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .about {
+                padding: 3rem 1rem;
+            }
+
+            .about h2 {
+                font-size: 2rem;
+            }
+
+            .about-card {
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1rem;
+            }
+
+            .about-icon {
+                margin-top: 0;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .benefit-card {
+                padding: 2rem;
+            }
         }
     </style>
 </head>
@@ -1106,8 +1196,9 @@
         .about {
             position: relative;
             padding: 5rem 1rem;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            background: #f8f9fa;
             overflow: hidden;
+            width: 100%;
         }
 
         .about-overlay {

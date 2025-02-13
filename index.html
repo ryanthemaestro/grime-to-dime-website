@@ -172,6 +172,308 @@
                 font-size: 1.2rem;
             }
         }
+
+        /* Gallery Enhancements */
+        .gallery-item {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-caption {
+            transition: background-color 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            background: rgba(0, 0, 0, 0.85);
+        }
+
+        /* Form Enhancements */
+        .form-group input,
+        .form-group textarea {
+            border: 2px solid #eee;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #ff3333;
+            box-shadow: 0 0 0 3px rgba(255, 51, 51, 0.1);
+            outline: none;
+        }
+
+        .form-group input:hover,
+        .form-group textarea:hover {
+            border-color: #ddd;
+        }
+
+        .submit-button {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 51, 51, 0.2);
+        }
+
+        .submit-button:active {
+            transform: translateY(0);
+        }
+
+        /* About Section Icon Consistency */
+        .about-icon {
+            font-size: 2rem;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 51, 51, 0.1);
+            border-radius: 50%;
+            margin-right: 1.5rem;
+        }
+
+        .benefit-card i {
+            background: rgba(255, 51, 51, 0.1);
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+        }
+
+        /* Testimonial Enhancements */
+        .testimonial-card {
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            border-color: rgba(255, 51, 51, 0.2);
+        }
+
+        .testimonial-stars {
+            display: flex;
+            gap: 2px;
+        }
+
+        .testimonial-author {
+            position: relative;
+            padding-top: 1rem;
+        }
+
+        .testimonial-author:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: #ff3333;
+        }
+
+        /* Enhanced Testimonials */
+        .testimonial-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 51, 51, 0.2);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 4rem;
+            color: rgba(255, 51, 51, 0.1);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .testimonial-stars {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-stars i {
+            color: #ffd700;
+            font-size: 1.2rem;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+            padding-top: 1.5rem;
+            margin-top: 1.5rem;
+            border-top: 2px solid rgba(255, 51, 51, 0.1);
+        }
+
+        /* Enhanced Contact Form */
+        .contact-form {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            border: 2px solid #eee;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #ff3333;
+            background: white;
+            box-shadow: 0 0 0 4px rgba(255, 51, 51, 0.1);
+            outline: none;
+        }
+
+        .form-group input:hover,
+        .form-group textarea:hover {
+            background: white;
+            border-color: #ddd;
+        }
+
+        .submit-button {
+            background: #ff3333;
+            color: white;
+            padding: 1.2rem 2rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-button:hover {
+            background: #e62e2e;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 51, 51, 0.2);
+        }
+
+        .submit-button:active {
+            transform: translateY(0);
+        }
+
+        /* Enhanced About Section */
+        .about-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+        }
+
+        .about-icon {
+            background: rgba(255, 51, 51, 0.1);
+            color: #ff3333;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 1.8rem;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .about-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 51, 51, 0.2);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .about-card:hover .about-icon {
+            transform: scale(1.1) rotate(10deg);
+            background: #ff3333;
+            color: white;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .benefit-card i {
+            background: rgba(255, 51, 51, 0.1);
+            color: #ff3333;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 2rem;
+            margin: 0 auto 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 51, 51, 0.2);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .benefit-card:hover i {
+            transform: scale(1.1) rotate(10deg);
+            background: #ff3333;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -746,39 +1048,59 @@
 
         .testimonial-card {
             background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
         }
 
         .testimonial-card:hover {
             transform: translateY(-5px);
+            border-color: rgba(255, 51, 51, 0.2);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 4rem;
+            color: rgba(255, 51, 51, 0.1);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .testimonial-stars {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-stars i {
+            color: #ffd700;
+            font-size: 1.2rem;
         }
 
         .testimonial-text {
             font-size: 1.1rem;
-            line-height: 1.7;
+            line-height: 1.8;
             color: #444;
-            margin-bottom: 1.5rem;
-        }
-
-        .testimonial-stars {
-            color: #ffd700;
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
         }
 
         .testimonial-author {
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: 600;
-            color: #555;
-        }
-
-        @media (max-width: 768px) {
-            .testimonial-grid {
-                grid-template-columns: 1fr;
-            }
+            color: #333;
+            padding-top: 1.5rem;
+            margin-top: 1.5rem;
+            border-top: 2px solid rgba(255, 51, 51, 0.1);
         }
 
         .about {
@@ -843,29 +1165,38 @@
             background: white;
             padding: 2.5rem;
             border-radius: 15px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
             display: flex;
             align-items: flex-start;
-            gap: 1.5rem;
-            border: 1px solid rgba(0, 0, 0, 0.05);
+            gap: 2rem;
         }
 
         .about-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
             border-color: rgba(255, 51, 51, 0.2);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
         }
 
         .about-icon {
-            font-size: 2.5rem;
+            background: rgba(255, 51, 51, 0.1);
             color: #ff3333;
-            margin-top: 0.5rem;
-            transition: transform 0.3s ease;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 1.8rem;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
         }
 
         .about-card:hover .about-icon {
-            transform: scale(1.1);
+            transform: scale(1.1) rotate(10deg);
+            background: #ff3333;
+            color: white;
         }
 
         .about-card p {
@@ -886,27 +1217,36 @@
             background: white;
             padding: 2.5rem;
             border-radius: 15px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
             text-align: center;
             transition: all 0.3s ease;
             border: 1px solid rgba(0, 0, 0, 0.05);
         }
 
-        .benefit-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-            border-color: rgba(255, 51, 51, 0.2);
+        .benefit-card i {
+            background: rgba(255, 51, 51, 0.1);
+            color: #ff3333;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 2rem;
+            margin: 0 auto 2rem;
+            transition: all 0.3s ease;
         }
 
-        .benefit-card i {
-            font-size: 2.5rem;
-            color: #ff3333;
-            margin-bottom: 1.5rem;
-            transition: transform 0.3s ease;
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 51, 51, 0.2);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
         }
 
         .benefit-card:hover i {
-            transform: scale(1.1);
+            transform: scale(1.1) rotate(10deg);
+            background: #ff3333;
+            color: white;
         }
 
         .benefit-card h4 {

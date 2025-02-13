@@ -413,6 +413,8 @@
             }
         }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="../js/meta-pixel.js"></script>
 </head>
 <body>
     <header>
@@ -520,5 +522,22 @@
             <p>&copy; 2025 Grime To Dime. All rights reserved.</p>
         </div>
     </footer>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                message: document.getElementById('message').value
+            };
+
+            // Track the lead conversion
+            trackLeadConversion(formData);
+
+            // Continue with your existing form submission logic
+            // ... existing form submission code ...
+        });
+    </script>
 </body>
 </html> 

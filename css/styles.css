@@ -144,8 +144,8 @@ nav {
 /* About Section */
 .about {
     padding: 5rem 1rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    width: 100%;
+    background: #f9f9fa;
 }
 
 .about h2 {

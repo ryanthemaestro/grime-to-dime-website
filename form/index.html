@@ -443,23 +443,24 @@
             <div class="quote-form">
                 <h2>Get Your Free Quote</h2>
                 <p>Fill out this form for an instant quote! Our team is ready to help you transform your space.</p>
-                <form action="https://formspree.io/f/meoovajl" method="POST" id="quote-form" onsubmit="return handleFormSubmit(event)">
-                    <input type="hidden" name="_subject" value="New Quote Request from Landing Page">
-                    <input type="hidden" name="_next" value="https://grimetodime.com/thank-you.html">
+                <form action="https://formspree.io/f/meoovajl" method="POST" id="quote-form">
+                    <input type="hidden" name="_subject" value="New Contact from Grime To Dime Website">
+                    <input type="hidden" name="_next" value="https://ryanthemaestro.github.io/grime-to-dime-website/thank-you.html">
+                    <input type="text" name="_gotcha" style="display:none">
                     <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="Name" required>
+                        <input type="text" name="_name" id="_name" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+                        <input type="email" name="_replyto" id="_replyto" placeholder="Your Email" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="Email" required>
+                        <input type="tel" name="_phone" id="_phone" placeholder="Phone Number">
                     </div>
                     <div class="form-group">
-                        <input type="text" id="location" name="location" placeholder="Location (City)" required>
+                        <input type="text" name="location" placeholder="Your City" required>
                     </div>
                     <div class="form-group">
-                        <textarea id="message" name="message" placeholder="What needs to be removed?" required></textarea>
+                        <textarea name="_message" id="_message" placeholder="Tell us about your junk removal needs" required></textarea>
                     </div>
                     <button type="submit" class="cta-button">
                         <i class="fas fa-paper-plane"></i> Get Your Free Quote
@@ -523,30 +524,17 @@
         </div>
     </footer>
     <script>
-        function handleFormSubmit(event) {
-            event.preventDefault();
-            
+        document.getElementById('quote-form').addEventListener('submit', function(e) {
             const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                location: document.getElementById('location').value,
-                message: document.getElementById('message').value
+                name: document.getElementById('_name').value,
+                email: document.getElementById('_replyto').value,
+                phone: document.getElementById('_phone').value,
+                location: document.querySelector('input[name="location"]').value,
+                message: document.getElementById('_message').value
             };
-
-            // Track the lead conversion
+            
             trackLeadConversion(formData);
-
-            // Send Google Analytics event
-            gtagSendEvent('https://grimetodime.com/thank-you.html');
-
-            // Submit the form after a short delay to ensure tracking fires
-            setTimeout(() => {
-                document.getElementById('quote-form').submit();
-            }, 500);
-
-            return false;
-        }
+        });
     </script>
 </body>
 </html> 

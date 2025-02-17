@@ -675,6 +675,69 @@
             background: #ff3333;
             transform: scale(1.2);
         }
+
+        .contact h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #222;
+        }
+
+        .contact-info h3 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #222;
+        }
+
+        .contact-detail {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: #444;
+        }
+
+        .contact-detail i {
+            color: #ff3333;
+            font-size: 1.4rem;
+            width: 24px;
+        }
+
+        .hours {
+            margin-top: 3rem;
+        }
+
+        .hours h4 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #222;
+        }
+
+        .hours-detail {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #444;
+        }
+
+        @media (max-width: 768px) {
+            .contact h2,
+            .contact-info h3 {
+                font-size: 2rem;
+            }
+
+            .contact-detail {
+                font-size: 1.2rem;
+            }
+
+            .hours h4 {
+                font-size: 1.6rem;
+            }
+
+            .hours-detail {
+                font-size: 1.2rem;
+            }
+        }
     </style>
     <!-- Meta Pixel Code -->
     <script>
@@ -1246,7 +1309,7 @@
         const track = document.querySelector('.testimonial-track');
         const cards = document.querySelectorAll('.testimonial-card');
         const dots = document.querySelectorAll('.dot');
-        const totalSlides = cards.length - 1; // Subtract 1 since we're showing 2 at a time
+        const totalSlides = cards.length; // Remove the -1 since we want to show all slides
 
         function updateSlidePosition() {
             const slideWidth = cards[0].offsetWidth + 32; // Width + gap
@@ -1272,7 +1335,7 @@
         window.addEventListener('load', updateSlidePosition);
         window.addEventListener('resize', updateSlidePosition);
 
-        // Auto-slide every 7 seconds (slightly longer for better readability)
+        // Auto-slide every 7 seconds
         setInterval(() => {
             slideTestimonials(1);
         }, 7000);

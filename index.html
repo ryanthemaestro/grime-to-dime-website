@@ -584,6 +584,46 @@
                 font-size: 2rem;
             }
         }
+
+        .testimonials {
+            padding: 5rem 1rem;
+            background: #f8f9fa;
+        }
+
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-slider {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 0 1rem;
+            background: #f8f9fa; /* Match section background */
+        }
+
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            gap: 2rem;
+            width: 300%;
+        }
+
+        .testimonial-card {
+            flex: 0 0 calc(33.333% - 1.33rem);
+            min-width: calc(33.333% - 1.33rem);
+            background: #ffffff; /* Keep cards white for contrast */
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            height: 100%;
+        }
     </style>
     <!-- Meta Pixel Code -->
     <script>
@@ -1149,135 +1189,6 @@
             });
         });
     </script>
-
-    <style>
-        .testimonial-slider {
-            position: relative;
-            width: 100%;
-            max-width: 1000px;
-            margin: 0 auto;
-            overflow: hidden;
-            padding: 0 1rem;
-        }
-
-        .testimonial-track {
-            display: flex;
-            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-            gap: 2rem;
-            width: 300%; /* Ensure enough width for all cards */
-        }
-
-        .testimonial-card {
-            flex: 0 0 calc(33.333% - 1.33rem); /* Exactly one-third width minus gap */
-            min-width: calc(33.333% - 1.33rem);
-            background: white;
-            padding: 1.5rem;
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            position: relative;
-            height: 100%;
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(255, 51, 51, 0.2);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-        }
-
-        .testimonial-card:before {
-            content: '"';
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 4rem;
-            color: rgba(255, 51, 51, 0.1);
-            font-family: Georgia, serif;
-            line-height: 1;
-        }
-
-        .testimonial-stars {
-            color: #ffd700;
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .testimonial-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #444;
-            margin-bottom: 2rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .testimonial-author {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #333;
-            padding-top: 1.5rem;
-            margin-top: 1.5rem;
-            border-top: 2px solid rgba(255, 51, 51, 0.1);
-        }
-
-        .slider-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255, 51, 51, 0.9);
-            color: white;
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            z-index: 10;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-        }
-
-        .slider-btn:hover {
-            background: rgba(255, 51, 51, 1);
-            transform: translateY(-50%) scale(1.1);
-        }
-
-        .prev-btn {
-            left: 0;
-        }
-
-        .next-btn {
-            right: 0;
-        }
-
-        .slider-dots {
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-
-        .dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: #ccc;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .dot.active {
-            background: #ff3333;
-            transform: scale(1.2);
-        }
-
-        @media (max-width: 768px) {
-            .testimonial-card {
-                flex: 0 0 calc(33.333% - 1.33rem);
-                min-width: calc(33.333% - 1.33rem);
-            }
-        }
-    </style>
 
     <script>
         let currentSlide = 0;

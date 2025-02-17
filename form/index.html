@@ -258,20 +258,13 @@
         }
 
         .testimonials {
-            padding: 4rem 1rem;
+            padding: 5rem 1rem;
             background: #f8f9fa;
         }
 
         .testimonials-container {
             max-width: 1200px;
             margin: 0 auto;
-        }
-
-        .testimonials h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #222;
         }
 
         .testimonial-slider {
@@ -281,24 +274,27 @@
             margin: 0 auto;
             overflow: hidden;
             padding: 0 1rem;
+            background: #f8f9fa;
         }
 
         .testimonial-track {
             display: flex;
-            transition: transform 0.5s ease-in-out;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
             gap: 2rem;
+            width: 300%;
         }
 
         .testimonial-card {
-            flex: 0 0 calc(50% - 1rem);
-            min-width: calc(50% - 1rem);
-            background: white;
-            padding: 1.5rem;
+            flex: 0 0 calc(33.333% - 1.33rem);
+            min-width: calc(33.333% - 1.33rem);
+            background: #ffffff;
+            padding: 2.5rem;
             border-radius: 15px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
             border: 1px solid rgba(0, 0, 0, 0.05);
             position: relative;
+            height: 100%;
         }
 
         .testimonial-card:hover {
@@ -359,23 +355,24 @@
         }
 
         .slider-btn:hover {
-            background: rgba(255, 51, 51, 1);
+            background: #ff3333;
             transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 4px 8px rgba(255, 51, 51, 0.3);
         }
 
         .prev-btn {
-            left: 0;
+            left: 10px;
         }
 
         .next-btn {
-            right: 0;
+            right: 10px;
         }
 
         .slider-dots {
             display: flex;
             justify-content: center;
             gap: 0.5rem;
-            margin-top: 1rem;
+            margin-top: 2rem;
         }
 
         .dot {
@@ -492,6 +489,7 @@
             .testimonial-card {
                 flex: 0 0 calc(100% - 1rem);
                 min-width: calc(100% - 1rem);
+                padding: 1.5rem;
             }
 
             .testimonial-text {
@@ -713,10 +711,10 @@
         window.addEventListener('load', updateSlidePosition);
         window.addEventListener('resize', updateSlidePosition);
 
-        // Auto-slide every 5 seconds
+        // Auto-slide every 7 seconds
         setInterval(() => {
             slideTestimonials(1);
-        }, 5000);
+        }, 7000);
     </script>
 </body>
 </html> 

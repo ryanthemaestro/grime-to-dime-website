@@ -274,21 +274,31 @@
             color: #222;
         }
 
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+        .testimonial-slider {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 0 1rem;
+        }
+
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
             gap: 2rem;
         }
 
         .testimonial-card {
+            flex: 0 0 calc(50% - 1rem);
+            min-width: calc(50% - 1rem);
             background: white;
-            padding: 2.5rem;
+            padding: 1.5rem;
             border-radius: 15px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
             border: 1px solid rgba(0, 0, 0, 0.05);
             position: relative;
-            overflow: hidden;
         }
 
         .testimonial-card:hover {
@@ -330,6 +340,56 @@
             padding-top: 1.5rem;
             margin-top: 1.5rem;
             border-top: 2px solid rgba(255, 51, 51, 0.1);
+        }
+
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 51, 51, 0.9);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .slider-btn:hover {
+            background: rgba(255, 51, 51, 1);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .prev-btn {
+            left: 0;
+        }
+
+        .next-btn {
+            right: 0;
+        }
+
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #ccc;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: #ff3333;
+            transform: scale(1.2);
         }
 
         footer {
@@ -430,8 +490,8 @@
             }
 
             .testimonial-card {
-                padding: 1.5rem;
-                margin-bottom: 1rem;
+                flex: 0 0 calc(100% - 1rem);
+                min-width: calc(100% - 1rem);
             }
 
             .testimonial-text {
@@ -449,11 +509,6 @@
                 font-size: 3rem;
                 top: 15px;
                 right: 15px;
-            }
-
-            .testimonial-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
             }
 
             .footer-content {
@@ -521,28 +576,31 @@
     <section class="testimonials">
         <div class="testimonials-container">
             <h2>What Our Customers Say</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">
-                        ★★★★★
+            <div class="testimonial-slider">
+                <button class="slider-btn prev-btn" onclick="slideTestimonials(-1)">❮</button>
+                <div class="testimonial-track">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p class="testimonial-text">"My experience with Grime to Dime was fantastic. Sawyer was responsive to my request for junk removal and quoting. I had a broken 350lb treadmill in my basement that I needed removed. This is the kind of treadmill that would have trouble fitting through a doorway. In no time, Sawyer and his team had it disassembled and in his truck. He even offered to sweep and vacuum the bits of debris that were made in the process of breaking down the treadmill. Value wise, I would absolutely choose to work with Grime to Dime and Sawyer again."</p>
+                        <p class="testimonial-author">- Jonathan A.<br>Elkridge, MD</p>
                     </div>
-                    <p class="testimonial-text">"My experience with Grime to Dime was fantastic. Sawyer was responsive to my request for junk removal and quoting. I had a broken 350lb treadmill in my basement that I needed removed. This is the kind of treadmill that would have trouble fitting through a doorway. In no time, Sawyer and his team had it disassembled and in his truck. He even offered to sweep and vacuum the bits of debris that were made in the process of breaking down the treadmill. Value wise, I would absolutely choose to work with Grime to Dime and Sawyer again."</p>
-                    <p class="testimonial-author">- Jonathan A.<br>Elkridge, MD</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">
-                        ★★★★★
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p class="testimonial-text">"Timely, good communication, and very polite. Accepted Venmo. Performed the job well quickly. Definitely recommend."</p>
+                        <p class="testimonial-author">- David P.<br>Baltimore, MD</p>
                     </div>
-                    <p class="testimonial-text">"Timely, good communication, and very polite. Accepted Venmo. Performed the job well quickly. Definitely recommend."</p>
-                    <p class="testimonial-author">- David P.<br>Baltimore, MD</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">
-                        ★★★★★
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p class="testimonial-text">"Excellent service, very responsive, and the best price available. The company was very careful when removing a reclining sectional sofa from my family room; they took great care to avoid scraping walls and maneuvered the bulky sofa without making contact with the door."</p>
+                        <p class="testimonial-author">- Russell De Souza<br>Elkridge, MD</p>
                     </div>
-                    <p class="testimonial-text">"Excellent service, very responsive, and the best price available. The company was very careful when removing a reclining sectional sofa from my family room; they took great care to avoid scraping walls and maneuvered the bulky sofa without making contact with the door."</p>
-                    <p class="testimonial-author">- Russell De Souza<br>Elkridge, MD</p>
                 </div>
+                <button class="slider-btn next-btn" onclick="slideTestimonials(1)">❯</button>
+            </div>
+            <div class="slider-dots">
+                <span class="dot active" onclick="goToSlide(0)"></span>
+                <span class="dot" onclick="goToSlide(1)"></span>
+                <span class="dot" onclick="goToSlide(2)"></span>
             </div>
         </div>
     </section>
@@ -623,6 +681,42 @@
             // Allow form submission to continue to Formspree
             return true;
         }
+    </script>
+    <script>
+        let currentSlide = 0;
+        const track = document.querySelector('.testimonial-track');
+        const cards = document.querySelectorAll('.testimonial-card');
+        const dots = document.querySelectorAll('.dot');
+        const totalSlides = cards.length;
+
+        function updateSlidePosition() {
+            const slideWidth = cards[0].offsetWidth + 32; // Width + gap
+            track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+            
+            // Update dots
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        function slideTestimonials(direction) {
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            updateSlidePosition();
+        }
+
+        function goToSlide(slideIndex) {
+            currentSlide = slideIndex;
+            updateSlidePosition();
+        }
+
+        // Initialize slider
+        window.addEventListener('load', updateSlidePosition);
+        window.addEventListener('resize', updateSlidePosition);
+
+        // Auto-slide every 5 seconds
+        setInterval(() => {
+            slideTestimonials(1);
+        }, 5000);
     </script>
 </body>
 </html> 

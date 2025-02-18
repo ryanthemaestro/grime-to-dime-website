@@ -1738,7 +1738,7 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <p class="testimonial-text">"My experience with Grime to Dime was fantastic. Sawyer was responsive to my request for junk removal and quoting. I had a broken 350lb treadmill in my basement that I needed removed. This is the kind of treadmill that would have trouble fitting through a doorway. In no time, Sawyer and his team had it disassembled and in his truck. He even offered to sweep and vacuum the bits of debris that were made in the process of breaking down the treadmill. Value wise, I would absolutely choose to work with Grime to Dime and Sawyer again."<a href="#" class="read-more">Read More</a></p>
+                        <p class="testimonial-text">"My experience with Grime to Dime was fantastic. Sawyer was responsive to my request for junk removal and quoting. I had a broken 350lb treadmill in my basement that I needed removed. This is the kind of treadmill that would have trouble fitting through a doorway. In no time, Sawyer and his team had it disassembled and in his truck. He even offered to sweep and vacuum the bits of debris that were made in the process of breaking down the treadmill. Value wise, I would absolutely choose to work with Grime to Dime and Sawyer again."</p>
                         <p class="testimonial-author">- Jonathan A.<br>Elkridge, MD</p>
                     </div>
                     <div class="testimonial-card">
@@ -1824,7 +1824,7 @@
             font-weight: 800;
             margin-bottom: 3rem;
             color: #222;
-            padding: 10px;
+            padding: 10px 20px;
             background: #f5f5f5;
             border-radius: 8px;
             display: inline-block;
@@ -1847,7 +1847,7 @@
 
         .testimonial-track {
             display: flex;
-            transition: transform 0.3s ease;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             gap: 2rem;
         }
 
@@ -1859,11 +1859,11 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
             border: 2px solid #ff0000;
             position: relative;
-            overflow: hidden;
             transition: all 0.3s ease;
             text-align: left;
             opacity: 1;
             transform: translateY(0);
+            min-height: 300px;
         }
 
         .testimonial-card.visible {
@@ -1876,98 +1876,15 @@
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideIn {
-            from {
-                transform: translateX(30px);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-
-        .testimonial-stars i {
-            animation: slideIn 0.3s ease forwards;
-            opacity: 0;
-        }
-
-        .testimonial-stars i:nth-child(1) { animation-delay: 0.1s; }
-        .testimonial-stars i:nth-child(2) { animation-delay: 0.2s; }
-        .testimonial-stars i:nth-child(3) { animation-delay: 0.3s; }
-        .testimonial-stars i:nth-child(4) { animation-delay: 0.4s; }
-        .testimonial-stars i:nth-child(5) { animation-delay: 0.5s; }
-
-        .testimonial-icon {
-            animation: fadeIn 0.5s ease forwards;
-            animation-delay: 0.6s;
-            opacity: 0;
-        }
-
-        /* Touch device optimizations */
-        @media (hover: none) {
-            .testimonial-card:active {
-                transform: translateY(-2px);
-            }
-
-            .slider-btn:active {
-                background: #cc0000;
-                transform: translateY(-50%) scale(1.1);
-            }
-
-            .dot:active {
-                transform: scale(1.2);
-            }
-
-            .testimonials-cta .cta-button:active {
-                background: #cc0000;
-                transform: translateY(-2px);
-            }
-        }
-
-        /* Improved mobile responsiveness */
-        @media (max-width: 480px) {
-            .testimonial-text {
-                font-size: 14px;
-                line-height: 1.5;
-                max-height: 150px;
-            }
-
-            .testimonial-author {
-                font-size: 12px;
-                padding-top: 0.8rem;
-                margin-top: 0.8rem;
-            }
-
-            .slider-btn {
-                width: 36px;
-                height: 36px;
-                font-size: 1rem;
-            }
-
-            .testimonials-cta .cta-button {
-                font-size: 14px;
-                padding: 12px 24px;
-            }
-        }
-
         .testimonial-icon {
             position: absolute;
             top: 20px;
             right: 20px;
             font-size: 24px;
             color: rgba(255, 51, 51, 0.2);
+            animation: fadeIn 0.5s ease forwards;
+            animation-delay: 0.6s;
+            opacity: 0;
         }
 
         .testimonial-stars {
@@ -1979,8 +1896,16 @@
         .testimonial-stars i {
             color: #ffd700;
             font-size: 20px;
-            filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.3));
+            filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2));
+            animation: slideIn 0.3s ease forwards;
+            opacity: 0;
         }
+
+        .testimonial-stars i:nth-child(1) { animation-delay: 0.1s; }
+        .testimonial-stars i:nth-child(2) { animation-delay: 0.2s; }
+        .testimonial-stars i:nth-child(3) { animation-delay: 0.3s; }
+        .testimonial-stars i:nth-child(4) { animation-delay: 0.4s; }
+        .testimonial-stars i:nth-child(5) { animation-delay: 0.5s; }
 
         .testimonial-text {
             font-size: 16px;
@@ -1989,24 +1914,6 @@
             margin-bottom: 1.5rem;
             position: relative;
             z-index: 1;
-            max-height: none;
-            overflow: visible;
-        }
-
-        .testimonial-text.expanded {
-            max-height: none;
-        }
-
-        .read-more {
-            color: #ff0000;
-            text-decoration: none;
-            font-weight: 600;
-            margin-left: 5px;
-            transition: color 0.3s ease;
-        }
-
-        .read-more:hover {
-            color: #cc0000;
         }
 
         .testimonial-author {
@@ -2056,7 +1963,7 @@
             display: flex;
             justify-content: center;
             gap: 10px;
-            margin: 2rem 0;
+            margin: 1.5rem 0;
         }
 
         .dot {
@@ -2075,7 +1982,7 @@
 
         .testimonials-cta {
             text-align: center;
-            margin-top: 2rem;
+            margin-top: 1.5rem;
         }
 
         .testimonials-cta .cta-button {
@@ -2093,6 +2000,7 @@
             overflow: hidden;
             transition: all 0.3s ease;
             min-width: 200px;
+            box-shadow: 0 4px 15px rgba(255, 51, 51, 0.2);
         }
 
         .testimonials-cta .cta-button:hover {
@@ -2129,6 +2037,28 @@
             opacity: 1;
         }
 
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
         @media (max-width: 768px) {
             .testimonials {
                 padding: 3rem 1rem;
@@ -2143,6 +2073,7 @@
 
             .testimonial-card {
                 padding: 1.5rem;
+                min-height: auto;
             }
 
             .testimonial-icon {
@@ -2359,6 +2290,8 @@
         const dots = document.querySelectorAll('.dot');
         const totalSlides = cards.length;
         let autoSlideInterval;
+        let touchStartX = 0;
+        let touchEndX = 0;
 
         function updateSlidePosition() {
             const slideWidth = cards[0].offsetWidth + 32; // Width + gap
@@ -2373,10 +2306,10 @@
             cards.forEach((card, index) => {
                 if (index === currentSlide) {
                     card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
+                    card.style.transform = 'scale(1)';
                 } else {
                     card.style.opacity = '0.5';
-                    card.style.transform = 'translateY(20px)';
+                    card.style.transform = 'scale(0.95)';
                 }
             });
         }
@@ -2400,20 +2333,69 @@
             }, 5000);
         }
 
+        // Touch events for mobile swipe
+        track.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+        });
+
+        track.addEventListener('touchmove', (e) => {
+            if (!touchStartX) return;
+            
+            touchEndX = e.touches[0].clientX;
+            const diff = touchStartX - touchEndX;
+            
+            // Add resistance to prevent overscroll
+            track.style.transform = `translateX(${-currentSlide * (cards[0].offsetWidth + 32) - diff * 0.5}px)`;
+        });
+
+        track.addEventListener('touchend', () => {
+            if (!touchStartX || !touchEndX) return;
+            
+            const diff = touchStartX - touchEndX;
+            const threshold = window.innerWidth * 0.15; // 15% of screen width
+            
+            if (Math.abs(diff) > threshold) {
+                if (diff > 0) {
+                    slideTestimonials(1); // Slide left
+                } else {
+                    slideTestimonials(-1); // Slide right
+                }
+            } else {
+                updateSlidePosition(); // Reset to current slide
+            }
+            
+            touchStartX = 0;
+            touchEndX = 0;
+        });
+
         // Initialize slider
         window.addEventListener('load', () => {
             updateSlidePosition();
             resetAutoSlideTimer();
             
-            // Make all cards visible initially
+            // Add intersection observer for fade-in animation
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '50px'
+            });
+
             cards.forEach(card => {
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
+                observer.observe(card);
             });
         });
 
         // Handle window resize
-        window.addEventListener('resize', updateSlidePosition);
+        window.addEventListener('resize', () => {
+            updateSlidePosition();
+        });
     </script>
 </body>
 </html> 

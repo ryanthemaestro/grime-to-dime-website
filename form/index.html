@@ -48,6 +48,21 @@
     <link rel="shortcut icon" href="../images/Faviconmaster.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{};
+    var Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/67aa01063a842732607c7a8e/1ijo180k1';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+    
     <style>
         * {
             margin: 0;
@@ -123,7 +138,7 @@
             align-items: flex-start;
             padding: 2rem 1rem;
             position: relative;
-            padding-top: 80px;
+            padding-top: 80px; /* Adjusted to account for header */
         }
 
         .landing-container {
@@ -501,12 +516,11 @@
             .landing-container {
                 grid-template-columns: 1fr;
                 gap: 1rem;
-                padding: 0;
             }
 
             .landing-content {
-                margin-top: 1rem;
                 padding: 1rem;
+                text-align: left;
             }
 
             .landing-content h1 {
@@ -534,7 +548,7 @@
                 margin: 0;
                 padding: 1.5rem;
                 border-radius: 10px;
-                order: -1;
+                order: -1; /* Move form to top on mobile */
             }
 
             .quote-form h2 {
@@ -604,68 +618,141 @@
             }
         }
 
-        @media (max-width: 480px) {
-            .landing-hero {
-                padding: 1rem;
-                padding-top: 60px;
-                min-height: auto;
-                height: auto;
-            }
+        /* New and Updated Styles */
+        .urgency-banner {
+            background: #fff3f3;
+            color: #ff3333;
+            padding: 0.8rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
 
+        .form-headline {
+            font-size: 24px;
+            color: #222;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .trust-signals {
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+
+        .rating {
+            margin-bottom: 0.5rem;
+        }
+
+        .rating i {
+            color: #ffd700;
+            font-size: 16px;
+            margin: 0 1px;
+        }
+
+        .rating span {
+            color: #666;
+            font-size: 12px;
+            margin-left: 0.5rem;
+        }
+
+        .privacy-note {
+            color: #888;
+            font-size: 10px;
+        }
+
+        .benefits-list li {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .benefits-list i {
+            font-size: 20px;
+            width: 30px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
             .quote-form {
-                padding: 1.2rem;
                 margin: 0;
-                border-radius: 8px;
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+                padding: 1.5rem;
+                border-radius: 10px;
+                order: -1;
             }
 
             .form-headline {
-                font-size: 1.5rem;
+                font-size: 20px;
                 margin-bottom: 1rem;
-                line-height: 1.3;
             }
 
             .quote-form h2 {
-                font-size: 1.3rem;
+                font-size: 1.5rem;
                 margin-bottom: 0.8rem;
             }
 
             .quote-form p {
-                font-size: 0.9rem;
+                font-size: 1rem;
                 margin-bottom: 1rem;
             }
 
-            .form-group {
-                margin-bottom: 0.8rem;
-            }
-
             .form-group input {
-                padding: 0.8rem;
-                font-size: 1rem;
-                height: 45px;
+                padding: 1rem;
+                font-size: 16px;
+                height: 50px;
             }
 
-            .cta-button {
-                padding: 0.8rem;
-                font-size: 1rem;
+            .cta-button, .sticky-cta-button {
+                padding: 1rem;
+                font-size: 15px;
                 height: auto;
+                white-space: normal;
+                line-height: 1.3;
             }
 
-            .trust-signals {
-                margin-top: 1rem;
+            .benefits-list {
+                margin-top: 1.5rem;
             }
 
-            .rating {
-                font-size: 0.8rem;
+            .benefits-list li {
+                font-size: 16px;
+                padding: 0.8rem;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 8px;
+                margin-bottom: 0.5rem;
             }
 
-            .rating i {
-                font-size: 0.9rem;
+            .testimonials h2 {
+                font-size: 24px;
+                font-weight: bold;
+                margin-bottom: 2rem;
             }
 
-            .privacy-note {
-                font-size: 0.7rem;
-                margin-top: 0.5rem;
+            .testimonial-text {
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .form-headline {
+                font-size: 18px;
+            }
+
+            .quote-form {
+                padding: 1.2rem;
+            }
+
+            .benefits-list li {
+                font-size: 14px;
+            }
+
+            .cta-button, .sticky-cta-button {
+                font-size: 14px;
             }
 
             .testimonials {
@@ -843,8 +930,9 @@
 
     <section class="testimonials">
         <div class="testimonials-container">
-            <h2 style="text-align: center;">What Our Customers Say</h2>
+            <h2>What Our Customers Say</h2>
             <div class="testimonial-slider">
+                <button class="slider-btn prev-btn" onclick="slideTestimonials(-1)">❮</button>
                 <div class="testimonial-track">
                     <div class="testimonial-card">
                         <div class="testimonial-stars">★★★★★</div>
@@ -867,8 +955,15 @@
                         <p class="testimonial-author">- James B.<br>Odenton, MD</p>
                     </div>
                 </div>
+                <button class="slider-btn next-btn" onclick="slideTestimonials(1)">❯</button>
             </div>
-        </div>
+            <div class="slider-dots">
+                <span class="dot active" onclick="goToSlide(0)"></span>
+                <span class="dot" onclick="goToSlide(1)"></span>
+                <span class="dot" onclick="goToSlide(2)"></span>
+                <span class="dot" onclick="goToSlide(3)"></span>
+                        </div>
+                    </div>
     </section>
 
     <footer>
@@ -878,24 +973,24 @@
                 <p><i class="fas fa-phone"></i> (410) 300-6743</p>
                 <p><i class="fas fa-envelope"></i> sawyer@grimetodime.com</p>
                 <p><i class="fas fa-map-marker-alt"></i> Elkridge, MD 21075</p>
-            </div>
+                        </div>
             <div class="footer-section">
                 <h3>Hours</h3>
                 <p>Monday - Saturday: 7:00 AM - 7:00 PM</p>
                 <p>Sunday: Closed</p>
-            </div>
+                        </div>
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <a href="/">Home</a>
                 <a href="/privacy-policy.html">Privacy Policy</a>
                 <a href="/terms.html">Terms of Service</a>
-            </div>
+                    </div>
             <div class="footer-section">
                 <h3>Connect With Us</h3>
                 <div class="social-links">
                     <a href="https://www.facebook.com/profile.php?id=61571988560834" target="_blank"><i class="fab fa-facebook"></i></a>
                     <a href="https://www.instagram.com/grime_to_dime_/" target="_blank"><i class="fab fa-instagram"></i></a>
-                </div>
+                    </div>
             </div>
         </div>
         <div class="footer-bottom">

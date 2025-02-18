@@ -1712,28 +1712,74 @@
     </style>
 
     <section id="testimonials" class="testimonials">
+        <div class="testimonials-trust-banner">
+            <div class="trust-content">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>See Why We're Rated 5 Stars</span>
+            </div>
+        </div>
+        <h2 class="section-title">What Our Customers Say</h2>
         <div class="testimonials-container">
-            <h2>What Our Customers Say</h2>
             <div class="testimonial-slider">
                 <button class="slider-btn prev-btn" onclick="slideTestimonials(-1)">❮</button>
                 <div class="testimonial-track">
                     <div class="testimonial-card">
-                        <div class="testimonial-stars">★★★★★</div>
+                        <div class="testimonial-icon">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
                         <p class="testimonial-text">"My experience with Grime to Dime was fantastic. Sawyer was responsive to my request for junk removal and quoting. I had a broken 350lb treadmill in my basement that I needed removed. This is the kind of treadmill that would have trouble fitting through a doorway. In no time, Sawyer and his team had it disassembled and in his truck. He even offered to sweep and vacuum the bits of debris that were made in the process of breaking down the treadmill. Value wise, I would absolutely choose to work with Grime to Dime and Sawyer again."</p>
                         <p class="testimonial-author">- Jonathan A.<br>Elkridge, MD</p>
                     </div>
                     <div class="testimonial-card">
-                        <div class="testimonial-stars">★★★★★</div>
+                        <div class="testimonial-icon">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
                         <p class="testimonial-text">"Timely, good communication, and very polite. Accepted Venmo. Performed the job well quickly. Definitely recommend."</p>
                         <p class="testimonial-author">- David P.<br>Baltimore, MD</p>
                     </div>
                     <div class="testimonial-card">
-                        <div class="testimonial-stars">★★★★★</div>
+                        <div class="testimonial-icon">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
                         <p class="testimonial-text">"Excellent service, very responsive, and the best price available. The company was very careful when removing a reclining sectional sofa from my family room; they took great care to avoid scraping walls and maneuvered the bulky sofa without making contact with the door."</p>
                         <p class="testimonial-author">- Russell De Souza<br>Elkridge, MD</p>
                     </div>
                     <div class="testimonial-card">
-                        <div class="testimonial-stars">★★★★★</div>
+                        <div class="testimonial-icon">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
                         <p class="testimonial-text">"Quick and efficient while respecting the space they hauled from. Incredible work for the price"</p>
                         <p class="testimonial-author">- James B.<br>Odenton, MD</p>
                     </div>
@@ -1746,8 +1792,292 @@
                 <span class="dot" onclick="goToSlide(2)"></span>
                 <span class="dot" onclick="goToSlide(3)"></span>
             </div>
+            <div class="testimonials-cta">
+                <a href="#contact" class="cta-button">
+                    <span class="cta-text">Get Your Free Quote Now</span>
+                    <span class="cta-hover">Act Fast—Get a Quote!</span>
+                </a>
+            </div>
         </div>
     </section>
+
+    <style>
+        /* Testimonials Section Styles */
+        .testimonials {
+            padding: 5rem 1rem;
+            background: #f8f9fa;
+            position: relative;
+        }
+
+        .testimonials-trust-banner {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px;
+            margin-bottom: 2rem;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 3rem;
+            color: #222;
+            padding: 10px;
+            background: #f5f5f5;
+            border-radius: 8px;
+            display: inline-block;
+            min-width: 300px;
+        }
+
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .testimonial-slider {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto 2rem;
+            overflow: hidden;
+        }
+
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.3s ease;
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            flex: 0 0 calc(100% - 2rem);
+            background: #333333;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            color: white;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: rgba(255, 51, 51, 0.2);
+        }
+
+        .testimonial-stars {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-stars i {
+            color: #ffd700;
+            font-size: 20px;
+        }
+
+        .testimonial-text {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            font-size: 14px;
+            font-weight: 600;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #ff0000;
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            font-size: 20px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .slider-btn:hover {
+            background: #cc0000;
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .prev-btn {
+            left: 10px;
+        }
+
+        .next-btn {
+            right: 10px;
+        }
+
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 2rem 0;
+        }
+
+        .dot {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #666666;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: #ff0000;
+            transform: scale(1.2);
+        }
+
+        .testimonials-cta {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .testimonials-cta .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #ff0000;
+            color: white;
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            min-width: 200px;
+        }
+
+        .testimonials-cta .cta-button:hover {
+            background: #cc0000;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 51, 51, 0.3);
+        }
+
+        .testimonials-cta .cta-text,
+        .testimonials-cta .cta-hover {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .testimonials-cta .cta-text {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .testimonials-cta .cta-hover {
+            transform: translateY(100%);
+            opacity: 0;
+        }
+
+        .testimonials-cta .cta-button:hover .cta-text {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+
+        .testimonials-cta .cta-button:hover .cta-hover {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .testimonials {
+                padding: 3rem 1rem;
+            }
+
+            .section-title {
+                font-size: 24px;
+                margin-bottom: 2rem;
+                min-width: auto;
+                width: 100%;
+            }
+
+            .testimonial-card {
+                padding: 1.5rem;
+            }
+
+            .testimonial-icon {
+                font-size: 20px;
+                top: 15px;
+                right: 15px;
+            }
+
+            .testimonial-stars i {
+                font-size: 18px;
+            }
+
+            .testimonial-text {
+                font-size: 14px;
+                margin-bottom: 1rem;
+            }
+
+            .slider-btn {
+                width: 36px;
+                height: 36px;
+                font-size: 18px;
+            }
+
+            .dot {
+                width: 12px;
+                height: 12px;
+            }
+
+            .testimonials-cta .cta-button {
+                padding: 14px 28px;
+                font-size: 14px;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .testimonials {
+                padding: 2rem 0.5rem;
+            }
+
+            .testimonial-card {
+                padding: 1.25rem;
+            }
+
+            .slider-btn {
+                width: 32px;
+                height: 32px;
+                font-size: 16px;
+            }
+
+            .dot {
+                width: 10px;
+                height: 10px;
+            }
+        }
+    </style>
 
     <section id="about" class="about">
         <div class="about-overlay"></div>

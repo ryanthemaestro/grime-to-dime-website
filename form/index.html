@@ -88,7 +88,7 @@
 
         nav {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
             max-width: 1200px;
             margin: 0 auto;
@@ -98,6 +98,8 @@
         .logo {
             display: flex;
             align-items: center;
+            margin-left: 0;
+            padding-left: 0;
         }
 
         .logo img {
@@ -272,7 +274,7 @@
             margin: 0 auto;
             overflow: visible;
             height: auto;
-            width: 90%;
+            width: 85%;
             position: relative;
         }
 
@@ -281,6 +283,7 @@
             transition: transform 0.3s ease;
             width: 400%;
             height: auto;
+            min-height: 0;
         }
 
         .testimonial-card {
@@ -292,9 +295,11 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             margin: 0;
             height: auto;
+            min-height: 0;
             display: flex;
             flex-direction: column;
             overflow: visible;
+            word-break: break-word;
         }
 
         .testimonial-card:hover {
@@ -312,6 +317,7 @@
             overflow: visible;
             word-wrap: break-word;
             white-space: normal;
+            width: 100%;
         }
 
         .testimonial-stars {
@@ -509,21 +515,22 @@
             }
 
             .testimonial-slider {
-                width: 85%;
+                width: 80%;
                 margin: 0 auto;
-                overflow: visible;
             }
 
             .testimonial-card {
                 padding: 1.5rem;
                 height: auto !important;
                 min-height: 0;
+                word-break: break-word;
             }
 
             .testimonial-text {
                 font-size: 0.95rem;
                 line-height: 1.6;
                 margin-bottom: 1rem;
+                width: 100%;
             }
 
             .testimonial-stars {
@@ -596,6 +603,14 @@
             .testimonials-heading {
                 font-size: 2.2rem;
                 margin-bottom: 2rem;
+            }
+
+            nav {
+                padding: 0 0.5rem;
+            }
+            
+            .logo {
+                margin-left: 0;
             }
         }
     </style>

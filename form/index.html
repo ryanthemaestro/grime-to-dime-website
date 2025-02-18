@@ -115,15 +115,12 @@
 
         .landing-hero {
             min-height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
-                        url('../images/trailer-loads/IMG_9150.png');
-            background-size: cover;
-            background-position: center;
+            background: #F5F5F5;
             display: flex;
             align-items: flex-start;
             padding: 2rem 1rem;
             position: relative;
-            padding-top: 120px; /* Increased from 80px */
+            padding-top: 120px;
         }
 
         .landing-container {
@@ -815,8 +812,7 @@
                         <input type="tel" name="_phone" id="_phone" placeholder="Your Phone" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" name="_email" id="_email" placeholder="Your Email">
-                        <span class="optional-label">Optional</span>
+                        <input type="text" name="_zip" id="_zip" placeholder="Your ZIP Code" pattern="[0-9]{5}" title="Please enter a valid 5-digit ZIP code" required>
                     </div>
                     <button type="submit" class="cta-button">
                         <i class="fas fa-bolt"></i> Claim Your Instant Quote Now—Transform Your Space Today!
@@ -923,7 +919,7 @@
             const formData = {
                 name: document.getElementById('_name').value,
                 phone: document.getElementById('_phone').value,
-                email: document.getElementById('_email').value
+                zip: document.getElementById('_zip').value
             };
 
             // Track the conversion in Meta Pixel with enhanced data

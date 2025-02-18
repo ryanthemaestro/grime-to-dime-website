@@ -409,12 +409,13 @@ footer {
     padding: 5rem 1rem;
     background: #f8f9fa;
     width: 100%;
+    text-align: center;
 }
 
 .testimonials-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -427,4 +428,13 @@ footer {
     width: 100%;
     font-size: 2.5rem;
     color: #222;
+    display: block;
+}
+
+.testimonial-slider {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
 } 

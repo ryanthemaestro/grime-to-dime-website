@@ -619,6 +619,11 @@
                         <p class="testimonial-text">"Excellent service, very responsive, and the best price available. The company was very careful when removing a reclining sectional sofa from my family room; they took great care to avoid scraping walls and maneuvered the bulky sofa without making contact with the door."</p>
                         <p class="testimonial-author">- Russell De Souza<br>Elkridge, MD</p>
                     </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p class="testimonial-text">"Quick and efficient while respecting the space they hauled from. Incredible work for the price"</p>
+                        <p class="testimonial-author">- James B.<br>Odenton, MD</p>
+                    </div>
                 </div>
                 <button class="slider-btn next-btn" onclick="slideTestimonials(1)">❯</button>
             </div>
@@ -626,6 +631,7 @@
                 <span class="dot active" onclick="goToSlide(0)"></span>
                 <span class="dot" onclick="goToSlide(1)"></span>
                 <span class="dot" onclick="goToSlide(2)"></span>
+                <span class="dot" onclick="goToSlide(3)"></span>
             </div>
         </div>
     </section>
@@ -738,10 +744,10 @@
         window.addEventListener('load', updateSlidePosition);
         window.addEventListener('resize', updateSlidePosition);
 
-        // Auto-slide every 20 seconds
+        // Auto-slide every 23 seconds
         setInterval(() => {
             slideTestimonials(1);
-        }, 20000);
+        }, 23000);
     </script>
 </body>
 </html> 

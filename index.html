@@ -770,10 +770,26 @@
 
     <section id="hero" class="hero">
         <div class="hero-overlay"></div>
+        <div class="urgency-banner">
+            <i class="fas fa-clock"></i> Limited Same-Day Slots Available—Act Now!
+        </div>
         <div class="hero-content">
-            <h1>Fast, Reliable Junk Disposal and Home Cleanout Services</h1>
-            <p>Transform your property with our expert junk disposal and home cleanout services. As your trusted local experts, we proudly serve Howard County and its surrounding areas, ensuring efficient hauling and responsible recycling of your unwanted items. Whether you're clearing out a single room or an entire estate, our professional team is ready to assist you with prompt, reliable service tailored to your needs.</p>
-            <a href="#services" class="cta-button">Learn More</a>
+            <h1>Clear Your Clutter Fast—Reliable Junk Removal That Transforms Your Space Today!</h1>
+            <h2>Trusted by Howard County Homes & Businesses for Fast, Eco-Friendly Cleanouts—Get Started Now!</h2>
+            <div class="trust-signals">
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span>Rated 5 Stars by Maryland Residents</span>
+                </div>
+                <p class="customers-served">Serving 1,000+ Happy Customers in Howard County</p>
+            </div>
+            <a href="#contact" class="cta-button">
+                <i class="fas fa-bolt"></i> Get Your Free Quote Now—Transform Your Space Today!
+            </a>
         </div>
     </section>
 
@@ -785,6 +801,7 @@
             background-size: cover;
             background-position: center;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
@@ -798,246 +815,159 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.5);
             z-index: 1;
+        }
+
+        .urgency-banner {
+            background: rgba(255, 255, 255, 0.95);
+            color: #ff3333;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 2;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             color: #ffffff;
-            padding: 1rem;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 24px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
-        .hero p {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
+        .hero h2 {
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 1.4;
+            margin-bottom: 32px;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
         }
 
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
+        .trust-signals {
+            margin-bottom: 32px;
         }
 
-        .cta-primary, .cta-secondary {
-            padding: 0.8rem 1.5rem;
-            border-radius: 5px;
-            font-size: 1.1rem;
-            font-weight: 600;
+        .rating {
+            margin-bottom: 16px;
+        }
+
+        .rating i {
+            color: #ffd700;
+            font-size: 24px;
+            margin: 0 2px;
+        }
+
+        .rating span {
+            display: block;
+            margin-top: 8px;
+            font-size: 16px;
+            color: white;
+        }
+
+        .customers-served {
+            font-size: 16px;
+            color: white;
+            margin-bottom: 24px;
+        }
+
+        .cta-button {
+            background: #ff3333;
+            color: white;
+            padding: 20px 40px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 700;
             text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
             transition: all 0.3s ease;
-            min-width: 200px;
+            box-shadow: 0 4px 15px rgba(255, 51, 51, 0.3);
         }
 
-        .cta-primary {
-            background-color: #ff3333;
-            color: white;
-            border: 2px solid #ff3333;
-        }
-
-        .cta-secondary {
-            background-color: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-
-        .cta-primary:hover {
-            background-color: #e62e2e;
+        .cta-button:hover {
+            background: #e62e2e;
             transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 6px 20px rgba(255, 51, 51, 0.4);
         }
 
-        .cta-secondary:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            transform: translateY(-2px);
-        }
-
+        /* Mobile Styles */
         @media (max-width: 768px) {
             .hero {
                 min-height: 100vh;
                 padding-top: 60px;
             }
 
-            .hero h1 {
-                font-size: 2rem;
-                margin-bottom: 1rem;
-                line-height: 1.2;
-            }
-
-            .hero p {
-                font-size: 1rem;
-                margin-bottom: 1.5rem;
-                padding: 0 0.5rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                gap: 0.75rem;
-                padding: 0 1rem;
-            }
-
-            .cta-primary, .cta-secondary {
-                width: 100%;
-                padding: 0.7rem 1rem;
-                font-size: 1rem;
-                min-width: unset;
-            }
-
-            nav {
-                padding: 0.5rem 1rem;
-            }
-
-            .logo img {
-                height: 25px;
-            }
-
-            .logo a {
-                font-size: 1.2rem;
-            }
-
-            .nav-links {
-                gap: 0.5rem;
-            }
-
-            .nav-links a {
-                padding: 0.3rem 0.5rem;
-                font-size: 0.9rem;
-            }
-
-            header {
-                padding: 0.5rem 0;
-            }
-        }
-
-        /* Update header styles to ensure it stays on top */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 0.75rem 0;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        .logo a {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: white;
-            font-size: 1.3rem;
-            font-weight: bold;
-        }
-
-        .logo img {
-            height: 35px;
-            margin-right: 8px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-            font-size: 0.95rem;
-        }
-
-        .nav-links a:hover {
-            color: #ff3333;
-        }
-
-        .mobile-nav-toggle {
-            display: none;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 30px;
-            height: 21px;
-            cursor: pointer;
-            z-index: 1001;
-        }
-
-        .mobile-nav-toggle span {
-            display: block;
-            width: 100%;
-            height: 3px;
-            background-color: white;
-            border-radius: 3px;
-            transition: all 0.3s ease;
-        }
-
-        @media (max-width: 768px) {
-            .mobile-nav-toggle {
-                display: flex;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 100%;
-                height: 100vh;
-                background-color: rgba(0, 0, 0, 0.95);
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                gap: 2rem;
-                transition: right 0.3s ease;
-                z-index: 1000;
-            }
-
-            .nav-links.active {
-                right: 0;
-            }
-
-            .nav-links a {
-                font-size: 1.2rem;
-                padding: 1rem;
-                width: 100%;
+            .urgency-banner {
+                font-size: 16px;
+                padding: 10px 16px;
+                margin: 20px;
                 text-align: center;
             }
 
-            .mobile-nav-toggle.active span:nth-child(1) {
-                transform: translateY(9px) rotate(45deg);
+            .hero-content {
+                padding: 20px;
             }
 
-            .mobile-nav-toggle.active span:nth-child(2) {
-                opacity: 0;
+            .hero h1 {
+                font-size: 32px;
+                margin-bottom: 16px;
             }
 
-            .mobile-nav-toggle.active span:nth-child(3) {
-                transform: translateY(-9px) rotate(-45deg);
+            .hero h2 {
+                font-size: 18px;
+                margin-bottom: 24px;
             }
 
-            body.nav-active {
-                overflow: hidden;
+            .rating i {
+                font-size: 20px;
+            }
+
+            .rating span,
+            .customers-served {
+                font-size: 14px;
+            }
+
+            .cta-button {
+                padding: 16px 24px;
+                font-size: 16px;
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* Small Mobile Styles */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero h2 {
+                font-size: 16px;
+            }
+
+            .urgency-banner {
+                font-size: 14px;
+                padding: 8px 12px;
             }
         }
     </style>
@@ -1159,7 +1089,7 @@
         <div class="about-overlay"></div>
         <div class="about-container">
             <h2>About Our Junk Removal Company</h2>
-            <div class="about-content">
+        <div class="about-content">
                 <div class="about-text">
                     <div class="about-card">
                         <i class="fas fa-bolt about-icon"></i>
@@ -1354,4 +1284,4 @@
         window.addEventListener('resize', updateSlidePosition);
     </script>
 </body>
-</html>
+</html> 

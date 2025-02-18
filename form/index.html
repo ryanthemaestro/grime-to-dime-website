@@ -268,33 +268,31 @@
         }
 
         .testimonial-slider {
-            position: relative;
-            width: 100%;
-            max-width: 1000px;
+            padding: 0;
             margin: 0 auto;
-            overflow: hidden;
-            padding: 0 1rem;
-            background: #f8f9fa;
+            overflow: visible;
+            height: auto;
+            width: 85%;
+            position: relative;
         }
 
         .testimonial-track {
+            gap: 0;
+            width: 400%;
+            height: auto;
             display: flex;
-            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-            gap: 2rem;
-            width: 300%;
+            align-items: stretch;
         }
 
         .testimonial-card {
-            flex: 0 0 calc(33.333% - 1.33rem);
-            min-width: calc(33.333% - 1.33rem);
-            background: #ffffff;
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            position: relative;
-            height: 100%;
+            flex: 0 0 25%;
+            min-width: 25%;
+            padding: 2rem;
+            height: auto;
+            margin: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
         }
 
         .testimonial-card:hover {
@@ -339,33 +337,40 @@
         }
 
         .slider-btn {
-            position: absolute;
+            width: 32px;
+            height: 32px;
+            font-size: 1.2rem;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(255, 51, 51, 0.9);
-            color: white;
-            border: none;
-            width: 40px;
-            height: 40px;
+            z-index: 20;
+            background: rgba(255, 51, 51, 0.95);
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             border-radius: 50%;
-            cursor: pointer;
-            z-index: 10;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-        }
-
-        .slider-btn:hover {
-            background: #ff3333;
-            transform: translateY(-50%) scale(1.1);
-            box-shadow: 0 4px 8px rgba(255, 51, 51, 0.3);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
         .prev-btn {
-            left: 10px;
+            left: -45px;
         }
 
         .next-btn {
-            right: 10px;
+            right: -45px;
+        }
+
+        .testimonials {
+            padding: 2rem 4rem;
+            overflow: visible;
+            position: relative;
+        }
+
+        .testimonials-container {
+            padding: 0;
+            overflow: visible;
+            position: relative;
+            margin: 0 auto;
         }
 
         .slider-dots {
@@ -510,10 +515,10 @@
 
             .testimonial-slider {
                 padding: 0;
-                margin: 0 1rem;
-                overflow: hidden;
+                margin: 0 auto;
+                overflow: visible;
                 height: auto;
-                width: calc(100% - 2rem);
+                width: 85%;
                 position: relative;
             }
 
@@ -528,7 +533,7 @@
             .testimonial-card {
                 flex: 0 0 25%;
                 min-width: 25%;
-                padding: 1.5rem;
+                padding: 2rem;
                 height: auto;
                 margin: 0;
                 box-sizing: border-box;
@@ -565,7 +570,7 @@
             .slider-btn {
                 width: 32px;
                 height: 32px;
-                font-size: 0.9rem;
+                font-size: 1.2rem;
                 top: 50%;
                 transform: translateY(-50%);
                 z-index: 20;
@@ -574,18 +579,20 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                border-radius: 50%;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             }
 
             .prev-btn {
-                left: -40px;
+                left: -45px;
             }
 
             .next-btn {
-                right: -40px;
+                right: -45px;
             }
 
             .testimonials {
-                padding: 2rem 3rem;
+                padding: 2rem 4rem;
                 overflow: visible;
                 position: relative;
             }
@@ -594,7 +601,7 @@
                 padding: 0;
                 overflow: visible;
                 position: relative;
-                margin: 0 2rem;
+                margin: 0 auto;
             }
 
             .slider-dots {

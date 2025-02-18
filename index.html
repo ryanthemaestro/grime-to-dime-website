@@ -1738,7 +1738,7 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <p class="testimonial-text">"My experience with Grime to Dime was fantastic. Sawyer was responsive to my request for junk removal and quoting. I had a broken 350lb treadmill in my basement that I needed removed. This is the kind of treadmill that would have trouble fitting through a doorway. In no time, Sawyer and his team had it disassembled and in his truck. He even offered to sweep and vacuum the bits of debris that were made in the process of breaking down the treadmill. Value wise, I would absolutely choose to work with Grime to Dime and Sawyer again."</p>
+                        <p class="testimonial-text">"My experience with Grime to Dime was fantastic. Sawyer was responsive to my request for junk removal and quoting. I had a broken 350lb treadmill in my basement that I needed removed. This is the kind of treadmill that would have trouble fitting through a doorway. In no time, Sawyer and his team had it disassembled and in his truck. He even offered to sweep and vacuum the bits of debris that were made in the process of breaking down the treadmill. Value wise, I would absolutely choose to work with Grime to Dime and Sawyer again."<a href="#" class="read-more">Read More</a></p>
                         <p class="testimonial-author">- Jonathan A.<br>Elkridge, MD</p>
                     </div>
                     <div class="testimonial-card">
@@ -1857,10 +1857,110 @@
             padding: 2rem;
             border-radius: 15px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            border: 2px solid #ff0000;
             color: white;
             position: relative;
             overflow: hidden;
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
+            text-align: left;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .testimonial-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .testimonial-stars i {
+            animation: slideIn 0.3s ease forwards;
+            opacity: 0;
+        }
+
+        .testimonial-stars i:nth-child(1) { animation-delay: 0.1s; }
+        .testimonial-stars i:nth-child(2) { animation-delay: 0.2s; }
+        .testimonial-stars i:nth-child(3) { animation-delay: 0.3s; }
+        .testimonial-stars i:nth-child(4) { animation-delay: 0.4s; }
+        .testimonial-stars i:nth-child(5) { animation-delay: 0.5s; }
+
+        .testimonial-icon {
+            animation: fadeIn 0.5s ease forwards;
+            animation-delay: 0.6s;
+            opacity: 0;
+        }
+
+        /* Touch device optimizations */
+        @media (hover: none) {
+            .testimonial-card:active {
+                transform: translateY(-2px);
+            }
+
+            .slider-btn:active {
+                background: #cc0000;
+                transform: translateY(-50%) scale(1.1);
+            }
+
+            .dot:active {
+                transform: scale(1.2);
+            }
+
+            .testimonials-cta .cta-button:active {
+                background: #cc0000;
+                transform: translateY(-2px);
+            }
+        }
+
+        /* Improved mobile responsiveness */
+        @media (max-width: 480px) {
+            .testimonial-text {
+                font-size: 14px;
+                line-height: 1.5;
+                max-height: 150px;
+            }
+
+            .testimonial-author {
+                font-size: 12px;
+                padding-top: 0.8rem;
+                margin-top: 0.8rem;
+            }
+
+            .slider-btn {
+                width: 36px;
+                height: 36px;
+                font-size: 1rem;
+            }
+
+            .testimonials-cta .cta-button {
+                font-size: 14px;
+                padding: 12px 24px;
+            }
         }
 
         .testimonial-icon {
@@ -1880,6 +1980,7 @@
         .testimonial-stars i {
             color: #ffd700;
             font-size: 20px;
+            filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.3));
         }
 
         .testimonial-text {
@@ -1888,6 +1989,25 @@
             margin-bottom: 1.5rem;
             position: relative;
             z-index: 1;
+            max-height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .testimonial-text.expanded {
+            max-height: none;
+        }
+
+        .read-more {
+            color: #ff0000;
+            text-decoration: none;
+            font-weight: 600;
+            margin-left: 5px;
+            transition: color 0.3s ease;
+        }
+
+        .read-more:hover {
+            color: #cc0000;
         }
 
         .testimonial-author {
@@ -2238,6 +2358,8 @@
         const dots = document.querySelectorAll('.dot');
         const totalSlides = cards.length;
         let autoSlideInterval;
+        let touchStartX = 0;
+        let touchEndX = 0;
 
         function updateSlidePosition() {
             const slideWidth = cards[0].offsetWidth + 32; // Width + gap
@@ -2247,12 +2369,16 @@
             dots.forEach((dot, index) => {
                 dot.classList.toggle('active', index === currentSlide);
             });
+
+            // Update card visibility
+            cards.forEach((card, index) => {
+                card.style.opacity = index === currentSlide ? '1' : '0.3';
+                card.style.transform = index === currentSlide ? 'scale(1)' : 'scale(0.95)';
+            });
         }
 
         function resetAutoSlideTimer() {
-            // Clear the existing interval
             clearInterval(autoSlideInterval);
-            // Start a new interval
             autoSlideInterval = setInterval(() => {
                 slideTestimonials(1);
             }, 23000);
@@ -2261,19 +2387,62 @@
         function slideTestimonials(direction) {
             currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
             updateSlidePosition();
-            resetAutoSlideTimer(); // Reset timer when slide changes
+            resetAutoSlideTimer();
         }
 
         function goToSlide(slideIndex) {
             currentSlide = slideIndex;
             updateSlidePosition();
-            resetAutoSlideTimer(); // Reset timer when slide changes
+            resetAutoSlideTimer();
         }
+
+        // Touch events for mobile swipe
+        track.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+        });
+
+        track.addEventListener('touchmove', (e) => {
+            touchEndX = e.touches[0].clientX;
+        });
+
+        track.addEventListener('touchend', () => {
+            const swipeDistance = touchEndX - touchStartX;
+            if (Math.abs(swipeDistance) > 50) { // Minimum swipe distance
+                if (swipeDistance > 0) {
+                    slideTestimonials(-1); // Swipe right
+                } else {
+                    slideTestimonials(1); // Swipe left
+                }
+            }
+        });
+
+        // Read More functionality
+        document.querySelectorAll('.read-more').forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const testimonialText = e.target.parentElement;
+                testimonialText.classList.toggle('expanded');
+                e.target.textContent = testimonialText.classList.contains('expanded') ? 'Read Less' : 'Read More';
+            });
+        });
+
+        // Intersection Observer for fade-in animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.testimonial-card').forEach(card => {
+            observer.observe(card);
+        });
 
         // Initialize slider
         window.addEventListener('load', () => {
             updateSlidePosition();
-            resetAutoSlideTimer(); // Start the initial timer
+            resetAutoSlideTimer();
         });
         window.addEventListener('resize', updateSlidePosition);
     </script>

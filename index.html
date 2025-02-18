@@ -785,7 +785,7 @@
                     <i class="fas fa-star"></i>
                     <span>Rated 5 Stars by Maryland Residents</span>
                 </div>
-                <p class="customers-served">Serving 1,000+ Happy Customers in Howard County</p>
+                <p class="customers-served">Growing Fast—Trusted by Happy Customers in Howard County!</p>
             </div>
             <a href="#contact" class="cta-button">
                 <i class="fas fa-truck"></i> Get Your Free Quote Now—Transform Your Space Today!
@@ -807,7 +807,7 @@
             justify-content: center;
             text-align: center;
             padding: 2rem 1rem;
-            padding-top: 100px; /* Increased top padding */
+            padding-top: 100px;
         }
 
         /* Enhanced Overlay */
@@ -824,76 +824,9 @@
             z-index: 1;
         }
 
-        /* Improved Urgency Banner */
-        .urgency-banner {
-            background: rgba(255, 255, 255, 0.97);
-            color: #ff3333;
-            padding: 14px 28px;
-            border-radius: 10px;
-            font-size: 22px;
-            font-weight: 800;
-            margin-bottom: 45px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            z-index: 2;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-            transform: translateY(0);
-            transition: all 0.3s ease;
-        }
-
-        .urgency-banner:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        .fa-shake {
-            animation: shake 2.5s ease infinite;
-        }
-
-        @keyframes shake {
-            0%, 100% { transform: rotate(0deg); }
-            2%, 6% { transform: rotate(-15deg); }
-            4%, 8% { transform: rotate(15deg); }
-            10% { transform: rotate(0deg); }
-        }
-
-        /* Enhanced Content Container */
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 900px;
-            margin: 0 auto;
-            color: #ffffff;
-            padding: 45px;
-            background: rgba(0, 0, 0, 0.25);
-            border-radius: 20px;
-            backdrop-filter: blur(8px);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Improved Typography */
-        .hero h1 {
-            font-size: 48px;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 30px; /* Increased spacing */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            letter-spacing: -0.5px;
-        }
-
-        .hero h2 {
-            font-size: 24px;
-            font-weight: 600;
-            line-height: 1.4;
-            margin-bottom: 35px; /* Increased spacing */
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-            opacity: 0.95;
-        }
-
-        /* Enhanced Trust Signals */
+        /* Trust Signals Container */
         .trust-signals {
-            margin-bottom: 35px; /* Increased spacing */
+            margin-bottom: 35px;
             padding: 20px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 15px;
@@ -906,7 +839,7 @@
 
         .rating i {
             color: #ffd700;
-            font-size: 28px; /* Increased size */
+            font-size: 28px;
             margin: 0 3px;
             filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.2));
         }
@@ -914,159 +847,47 @@
         .rating span {
             display: block;
             margin-top: 12px;
-            font-size: 18px; /* Increased size */
+            font-size: 18px;
             font-weight: 600;
             color: white;
+            line-height: 1.4;
         }
 
         .customers-served {
-            font-size: 18px; /* Increased size */
+            font-size: 18px;
             font-weight: 600;
             color: white;
             margin-bottom: 0;
-        }
-
-        /* Enhanced CTA Button */
-        .cta-button {
-            background: #ff3333;
-            color: white;
-            padding: 22px 44px;
-            border-radius: 12px;
-            font-size: 18px;
-            font-weight: 700;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 15px rgba(255, 51, 51, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-button:hover {
-            background: #cc0000;
-            transform: translateY(-2px) scale(1.05);
-            box-shadow: 0 8px 25px rgba(255, 51, 51, 0.4);
-        }
-
-        .cta-button:active {
-            transform: translateY(0) scale(0.98);
-        }
-
-        .cta-button i {
-            font-size: 20px;
-            transition: transform 0.3s ease;
-        }
-
-        .cta-button:hover i {
-            transform: translateX(5px);
+            line-height: 1.4;
+            opacity: 0.95;
+            padding: 0 10px;
         }
 
         /* Mobile Optimization */
         @media (max-width: 768px) {
-            .hero {
-                min-height: 100vh;
-                padding-top: 80px;
-            }
-
-            .urgency-banner {
-                font-size: 18px;
-                padding: 12px 20px;
-                margin: 20px;
-                text-align: center;
-            }
-
-            .hero-content {
-                padding: 30px 20px;
-            }
-
-            .hero h1 {
-                font-size: 32px;
-                margin-bottom: 20px;
-            }
-
-            .hero h2 {
-                font-size: 18px;
-                margin-bottom: 25px;
-            }
-
             .trust-signals {
                 margin-bottom: 25px;
                 padding: 15px;
             }
 
-            .rating i {
-                font-size: 24px;
-            }
-
             .rating span,
             .customers-served {
                 font-size: 16px;
-            }
-
-            .cta-button {
-                padding: 18px 30px;
-                font-size: 16px;
-                width: 100%;
-                justify-content: center;
+                padding: 0 5px;
             }
         }
 
         /* Small Mobile Optimization */
         @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 28px;
-                margin-bottom: 16px;
-            }
-
-            .hero h2 {
-                font-size: 16px;
-                margin-bottom: 20px;
-            }
-
-            .urgency-banner {
-                font-size: 16px;
-                padding: 10px 16px;
-                margin: 15px;
-            }
-
             .trust-signals {
                 padding: 12px;
                 margin-bottom: 20px;
             }
 
-            .rating i {
-                font-size: 20px;
-            }
-
             .rating span,
             .customers-served {
                 font-size: 14px;
-            }
-
-            .cta-button {
-                padding: 16px 24px;
-                font-size: 15px;
-            }
-        }
-
-        /* Image Optimization */
-        @media (min-width: 2000px) {
-            .hero {
-                background-image: url('images/before-after/warehouse-after-junk-removal.png');
-            }
-        }
-
-        @media (max-width: 1999px) {
-            .hero {
-                background-image: url('images/before-after/warehouse-after-junk-removal.png');
-            }
-        }
-
-        @media (max-width: 1024px) {
-            .hero {
-                background-image: url('images/before-after/warehouse-after-junk-removal.png');
+                padding: 0;
             }
         }
     </style>

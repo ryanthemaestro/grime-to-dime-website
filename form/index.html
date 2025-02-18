@@ -512,11 +512,16 @@
                 flex: 0 0 calc(100% - 1rem);
                 min-width: calc(100% - 1rem);
                 padding: 1.5rem;
+                height: auto;
+                min-height: 200px;
+                overflow: visible;
             }
 
             .testimonial-text {
                 font-size: 1rem;
                 margin-bottom: 1.5rem;
+                overflow: visible;
+                word-wrap: break-word;
             }
 
             .testimonial-author {
@@ -529,6 +534,29 @@
                 font-size: 3rem;
                 top: 15px;
                 right: 15px;
+            }
+
+            .testimonial-track {
+                gap: 1rem;
+            }
+
+            .testimonial-slider {
+                padding: 0 0.5rem;
+                margin: 0 -0.5rem;
+            }
+
+            .slider-btn {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+
+            .prev-btn {
+                left: 5px;
+            }
+
+            .next-btn {
+                right: 5px;
             }
 
             .footer-content {

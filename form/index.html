@@ -270,29 +270,26 @@
         .testimonial-slider {
             padding: 0;
             margin: 0 auto;
-            overflow: visible;
+            overflow: hidden;
             height: auto;
-            width: 85%;
+            width: 90%;
             position: relative;
         }
 
         .testimonial-track {
-            gap: 0;
-            width: 400%;
-            height: auto;
             display: flex;
-            align-items: stretch;
+            transition: transform 0.3s ease;
+            width: 400%;
         }
 
         .testimonial-card {
-            flex: 0 0 25%;
-            min-width: 25%;
-            padding: 2rem;
-            height: auto;
+            flex: 0 0 100%;
+            width: 100%;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             margin: 0;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
         }
 
         .testimonial-card:hover {
@@ -337,8 +334,8 @@
         }
 
         .slider-btn {
-            width: 32px;
-            height: 32px;
+            width: 40px;
+            height: 40px;
             font-size: 1.2rem;
             top: 50%;
             transform: translateY(-50%);
@@ -350,14 +347,17 @@
             justify-content: center;
             border-radius: 50%;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            color: white;
+            border: none;
+            cursor: pointer;
         }
 
         .prev-btn {
-            left: -45px;
+            left: -50px;
         }
 
         .next-btn {
-            right: -45px;
+            right: -50px;
         }
 
         .testimonials {
@@ -516,29 +516,26 @@
             .testimonial-slider {
                 padding: 0;
                 margin: 0 auto;
-                overflow: visible;
+                overflow: hidden;
                 height: auto;
-                width: 85%;
+                width: 90%;
                 position: relative;
             }
 
             .testimonial-track {
-                gap: 0;
-                width: 400%;
-                height: auto;
                 display: flex;
-                align-items: stretch;
+                transition: transform 0.3s ease;
+                width: 400%;
             }
 
             .testimonial-card {
-                flex: 0 0 25%;
-                min-width: 25%;
-                padding: 2rem;
-                height: auto;
+                flex: 0 0 100%;
+                width: 100%;
+                padding: 1.5rem;
+                background: white;
+                border-radius: 15px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
                 margin: 0;
-                box-sizing: border-box;
-                display: flex;
-                flex-direction: column;
             }
 
             .testimonial-card:before {
@@ -568,8 +565,8 @@
             }
 
             .slider-btn {
-                width: 32px;
-                height: 32px;
+                width: 40px;
+                height: 40px;
                 font-size: 1.2rem;
                 top: 50%;
                 transform: translateY(-50%);
@@ -581,14 +578,17 @@
                 justify-content: center;
                 border-radius: 50%;
                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+                color: white;
+                border: none;
+                cursor: pointer;
             }
 
             .prev-btn {
-                left: -45px;
+                left: -50px;
             }
 
             .next-btn {
-                right: -45px;
+                right: -50px;
             }
 
             .testimonials {

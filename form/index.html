@@ -557,8 +557,8 @@
     <section class="landing-hero">
         <div class="landing-container">
             <div class="landing-content">
-                <h1>Revitalize Your Space with Our Prompt Junk Removal Services</h1>
-                <p>Experience the convenience of our swift, same-day junk removal solutions, expertly crafted for residents and businesses in the heart of Maryland. Our professional team is on standby, ready to assist you in transforming your environment today!</p>
+                <h1>Revitalize Your Space with Our Eco-Friendly Junk Removal Services</h1>
+                <p>Experience the convenience of our swift, same-day junk removal solutions, trusted by thousands in the heart of Maryland. Our professional team is on standby, ready to assist you in transforming your environment today!</p>
                 
                 <ul class="benefits-list">
                     <li><i class="fas fa-check-circle"></i> Free, No-Obligation Quotes</li>
@@ -579,13 +579,7 @@
                         <input type="text" name="_name" id="_name" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" name="_replyto" id="_replyto" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" name="_phone" id="_phone" placeholder="Phone Number">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="location" placeholder="Your City" required>
+                        <input type="tel" name="_phone" id="_phone" placeholder="Your Phone" required>
                     </div>
                     <div class="form-group">
                         <textarea name="_message" id="_message" placeholder="Tell us about your junk removal needs" required></textarea>
@@ -672,9 +666,7 @@
             // Get form data
             const formData = {
                 name: document.getElementById('_name').value,
-                email: document.getElementById('_replyto').value,
                 phone: document.getElementById('_phone').value,
-                location: document.querySelector('input[name="location"]').value,
                 message: document.getElementById('_message').value
             };
 
@@ -685,7 +677,6 @@
                 value: 142.52,
                 currency: 'USD',
                 status: 'submitted',
-                location: formData.location,
                 service_type: 'Junk Removal Quote'
             });
 
@@ -702,7 +693,6 @@
                 'event_category': 'Form',
                 'event_label': 'Submit Quote Request',
                 'value': 1,
-                'location': formData.location,
                 'service_type': 'Junk Removal Quote'
             });
 

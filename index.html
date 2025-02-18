@@ -599,30 +599,81 @@
             position: relative;
             width: 100%;
             max-width: 1000px;
-            margin: 0 auto;
+            margin: 0 auto 2rem;
             overflow: hidden;
-            padding: 0 1rem;
-            background: #f8f9fa; /* Match section background */
+            padding: 0 20px;
         }
 
         .testimonial-track {
             display: flex;
-            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             gap: 2rem;
-            width: 300%;
+            width: fit-content; /* Allow track to fit all cards */
         }
 
         .testimonial-card {
-            flex: 0 0 calc(33.333% - 1.33rem);
-            min-width: calc(33.333% - 1.33rem);
-            background: #ffffff; /* Keep cards white for contrast */
-            padding: 1.5rem;
+            flex: 0 0 calc(100vw - 80px); /* Account for slider padding and gap */
+            max-width: 960px; /* Maximum card width */
+            background: white;
+            padding: 2rem;
             border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            border: 2px solid #ff0000;
             position: relative;
-            height: 100%;
+            transition: all 0.3s ease;
+            text-align: left;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            margin-right: 2rem; /* Add spacing between cards */
+        }
+
+        .testimonial-content {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+            position: relative;
+            z-index: 1;
+            max-height: 150px;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        @media (min-width: 1024px) {
+            .testimonial-card {
+                flex: 0 0 960px; /* Fixed width for desktop */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .testimonial-slider {
+                padding: 0 15px;
+            }
+
+            .testimonial-card {
+                flex: 0 0 calc(100vw - 60px);
+                padding: 1.5rem;
+                margin-right: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .testimonial-slider {
+                padding: 0 10px;
+            }
+
+            .testimonial-card {
+                flex: 0 0 calc(100vw - 40px);
+                padding: 1.25rem;
+                margin-right: 1rem;
+            }
         }
 
         .slider-btn {
@@ -1843,16 +1894,19 @@
             max-width: 1000px;
             margin: 0 auto 2rem;
             overflow: hidden;
+            padding: 0 20px;
         }
 
         .testimonial-track {
             display: flex;
             transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             gap: 2rem;
+            width: fit-content; /* Allow track to fit all cards */
         }
 
         .testimonial-card {
-            flex: 0 0 calc(100% - 2rem);
+            flex: 0 0 calc(100vw - 80px); /* Account for slider padding and gap */
+            max-width: 960px; /* Maximum card width */
             background: white;
             padding: 2rem;
             border-radius: 15px;
@@ -1861,75 +1915,65 @@
             position: relative;
             transition: all 0.3s ease;
             text-align: left;
-            opacity: 1;
-            transform: translateY(0);
             min-height: 300px;
-        }
-
-        .testimonial-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .testimonial-icon {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 24px;
-            color: rgba(255, 51, 51, 0.2);
-            animation: fadeIn 0.5s ease forwards;
-            animation-delay: 0.6s;
-            opacity: 0;
-        }
-
-        .testimonial-stars {
             display: flex;
-            gap: 4px;
-            margin-bottom: 1.5rem;
+            flex-direction: column;
+            margin-right: 2rem; /* Add spacing between cards */
         }
 
-        .testimonial-stars i {
-            color: #ffd700;
-            font-size: 20px;
-            filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2));
-            animation: slideIn 0.3s ease forwards;
-            opacity: 0;
+        .testimonial-content {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 1rem;
         }
-
-        .testimonial-stars i:nth-child(1) { animation-delay: 0.1s; }
-        .testimonial-stars i:nth-child(2) { animation-delay: 0.2s; }
-        .testimonial-stars i:nth-child(3) { animation-delay: 0.3s; }
-        .testimonial-stars i:nth-child(4) { animation-delay: 0.4s; }
-        .testimonial-stars i:nth-child(5) { animation-delay: 0.5s; }
 
         .testimonial-text {
             font-size: 16px;
             line-height: 1.6;
             color: #333;
-            margin-bottom: 1.5rem;
             position: relative;
             z-index: 1;
+            max-height: 150px;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
         }
 
-        .testimonial-author {
-            font-size: 14px;
-            font-weight: 600;
-            color: #333;
-            padding-top: 1rem;
-            margin-top: 1rem;
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        @media (min-width: 1024px) {
+            .testimonial-card {
+                flex: 0 0 960px; /* Fixed width for desktop */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .testimonial-slider {
+                padding: 0 15px;
+            }
+
+            .testimonial-card {
+                flex: 0 0 calc(100vw - 60px);
+                padding: 1.5rem;
+                margin-right: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .testimonial-slider {
+                padding: 0 10px;
+            }
+
+            .testimonial-card {
+                flex: 0 0 calc(100vw - 40px);
+                padding: 1.25rem;
+                margin-right: 1rem;
+            }
         }
 
         .slider-btn {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: #ff0000;
+            background: rgba(255, 51, 51, 0.9);
             color: white;
             border: none;
             width: 40px;
@@ -1937,18 +1981,14 @@
             border-radius: 50%;
             cursor: pointer;
             z-index: 10;
-            font-size: 20px;
+            font-size: 1.2rem;
             transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .slider-btn:hover {
-            background: #cc0000;
+            background: #ff3333;
             transform: translateY(-50%) scale(1.1);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 8px rgba(255, 51, 51, 0.3);
         }
 
         .prev-btn {
@@ -1962,21 +2002,21 @@
         .slider-dots {
             display: flex;
             justify-content: center;
-            gap: 10px;
-            margin: 1.5rem 0;
+            gap: 0.5rem;
+            margin-top: 2rem;
         }
 
         .dot {
-            width: 15px;
-            height: 15px;
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
-            background: #666666;
+            background: #ccc;
             cursor: pointer;
             transition: all 0.3s ease;
         }
 
         .dot.active {
-            background: #ff0000;
+            background: #ff3333;
             transform: scale(1.2);
         }
 

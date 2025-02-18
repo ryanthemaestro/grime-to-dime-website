@@ -598,8 +598,8 @@
         .testimonial-slider {
             position: relative;
             width: 100%;
-            max-width: 1000px;
-            margin: 0 auto 2rem;
+            max-width: 800px;
+            margin: 0 auto;
             overflow: hidden;
             padding: 0 20px;
         }
@@ -607,13 +607,13 @@
         .testimonial-track {
             display: flex;
             transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            gap: 2rem;
-            width: fit-content; /* Allow track to fit all cards */
+            width: fit-content;
         }
 
         .testimonial-card {
-            flex: 0 0 calc(100vw - 80px); /* Account for slider padding and gap */
-            max-width: 960px; /* Maximum card width */
+            flex: 0 0 100%;
+            width: 100%;
+            max-width: 800px;
             background: white;
             padding: 2rem;
             border-radius: 15px;
@@ -625,7 +625,15 @@
             min-height: 300px;
             display: flex;
             flex-direction: column;
-            margin-right: 2rem; /* Add spacing between cards */
+            opacity: 0;
+            transform: scale(0.95);
+            pointer-events: none;
+        }
+
+        .testimonial-card.active {
+            opacity: 1;
+            transform: scale(1);
+            pointer-events: auto;
         }
 
         .testimonial-content {
@@ -641,9 +649,8 @@
             color: #333;
             position: relative;
             z-index: 1;
-            max-height: 150px;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
+            max-height: none;
+            overflow: visible;
         }
 
         @media (min-width: 1024px) {
@@ -654,25 +661,60 @@
 
         @media (max-width: 768px) {
             .testimonial-slider {
-                padding: 0 15px;
+                padding: 0 10px;
+                margin-bottom: 2rem;
             }
 
             .testimonial-card {
-                flex: 0 0 calc(100vw - 60px);
                 padding: 1.5rem;
-                margin-right: 1.5rem;
+                min-height: auto;
+            }
+
+            .testimonial-text {
+                font-size: 14px;
+                line-height: 1.6;
+                margin-bottom: 1rem;
+            }
+
+            .testimonial-author {
+                font-size: 14px;
+                padding-top: 1rem;
+                margin-top: 1rem;
+            }
+
+            .slider-btn {
+                width: 36px;
+                height: 36px;
+                font-size: 18px;
             }
         }
 
         @media (max-width: 480px) {
             .testimonial-slider {
-                padding: 0 10px;
+                padding: 0 5px;
             }
 
             .testimonial-card {
-                flex: 0 0 calc(100vw - 40px);
                 padding: 1.25rem;
-                margin-right: 1rem;
+            }
+
+            .testimonial-text {
+                font-size: 13px;
+            }
+
+            .testimonial-author {
+                font-size: 12px;
+            }
+
+            .slider-btn {
+                width: 32px;
+                height: 32px;
+                font-size: 16px;
+            }
+
+            .dot {
+                width: 8px;
+                height: 8px;
             }
         }
 
@@ -1891,8 +1933,8 @@
         .testimonial-slider {
             position: relative;
             width: 100%;
-            max-width: 1000px;
-            margin: 0 auto 2rem;
+            max-width: 800px;
+            margin: 0 auto;
             overflow: hidden;
             padding: 0 20px;
         }
@@ -1900,13 +1942,13 @@
         .testimonial-track {
             display: flex;
             transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            gap: 2rem;
-            width: fit-content; /* Allow track to fit all cards */
+            width: fit-content;
         }
 
         .testimonial-card {
-            flex: 0 0 calc(100vw - 80px); /* Account for slider padding and gap */
-            max-width: 960px; /* Maximum card width */
+            flex: 0 0 100%;
+            width: 100%;
+            max-width: 800px;
             background: white;
             padding: 2rem;
             border-radius: 15px;
@@ -1918,7 +1960,15 @@
             min-height: 300px;
             display: flex;
             flex-direction: column;
-            margin-right: 2rem; /* Add spacing between cards */
+            opacity: 0;
+            transform: scale(0.95);
+            pointer-events: none;
+        }
+
+        .testimonial-card.active {
+            opacity: 1;
+            transform: scale(1);
+            pointer-events: auto;
         }
 
         .testimonial-content {
@@ -1934,9 +1984,8 @@
             color: #333;
             position: relative;
             z-index: 1;
-            max-height: 150px;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
+            max-height: none;
+            overflow: visible;
         }
 
         @media (min-width: 1024px) {
@@ -1947,25 +1996,60 @@
 
         @media (max-width: 768px) {
             .testimonial-slider {
-                padding: 0 15px;
+                padding: 0 10px;
+                margin-bottom: 2rem;
             }
 
             .testimonial-card {
-                flex: 0 0 calc(100vw - 60px);
                 padding: 1.5rem;
-                margin-right: 1.5rem;
+                min-height: auto;
+            }
+
+            .testimonial-text {
+                font-size: 14px;
+                line-height: 1.6;
+                margin-bottom: 1rem;
+            }
+
+            .testimonial-author {
+                font-size: 14px;
+                padding-top: 1rem;
+                margin-top: 1rem;
+            }
+
+            .slider-btn {
+                width: 36px;
+                height: 36px;
+                font-size: 18px;
             }
         }
 
         @media (max-width: 480px) {
             .testimonial-slider {
-                padding: 0 10px;
+                padding: 0 5px;
             }
 
             .testimonial-card {
-                flex: 0 0 calc(100vw - 40px);
                 padding: 1.25rem;
-                margin-right: 1rem;
+            }
+
+            .testimonial-text {
+                font-size: 13px;
+            }
+
+            .testimonial-author {
+                font-size: 12px;
+            }
+
+            .slider-btn {
+                width: 32px;
+                height: 32px;
+                font-size: 16px;
+            }
+
+            .dot {
+                width: 8px;
+                height: 8px;
             }
         }
 
@@ -2334,7 +2418,7 @@
         let touchEndX = 0;
 
         function updateSlidePosition() {
-            const slideWidth = cards[0].offsetWidth + 32; // Width + gap
+            const slideWidth = cards[0].offsetWidth;
             track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
             
             // Update dots
@@ -2345,11 +2429,9 @@
             // Update card visibility
             cards.forEach((card, index) => {
                 if (index === currentSlide) {
-                    card.style.opacity = '1';
-                    card.style.transform = 'scale(1)';
+                    card.classList.add('active');
                 } else {
-                    card.style.opacity = '0.5';
-                    card.style.transform = 'scale(0.95)';
+                    card.classList.remove('active');
                 }
             });
         }
@@ -2385,7 +2467,7 @@
             const diff = touchStartX - touchEndX;
             
             // Add resistance to prevent overscroll
-            track.style.transform = `translateX(${-currentSlide * (cards[0].offsetWidth + 32) - diff * 0.5}px)`;
+            track.style.transform = `translateX(${-currentSlide * cards[0].offsetWidth - diff * 0.5}px)`;
         });
 
         track.addEventListener('touchend', () => {
@@ -2410,26 +2492,9 @@
 
         // Initialize slider
         window.addEventListener('load', () => {
+            cards[0].classList.add('active');
             updateSlidePosition();
             resetAutoSlideTimer();
-            
-            // Add intersection observer for fade-in animation
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.1,
-                rootMargin: '50px'
-            });
-
-            cards.forEach(card => {
-                observer.observe(card);
-            });
         });
 
         // Handle window resize

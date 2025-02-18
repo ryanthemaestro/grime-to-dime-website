@@ -992,9 +992,9 @@
                 <div class="service-content">
                     <h3>Home Cleanouts</h3>
                     <p>Complete house clean out services, garage junk removal, and residential property cleanouts</p>
-                    <a href="#contact" class="service-cta" data-hover="Act Fast—Get a Quote!">
-                        <span>Get a Quote Now</span>
-                        <i class="fas fa-arrow-right"></i>
+                    <a href="#contact" class="service-cta">
+                        <span class="cta-text">Get a Quote Now</span>
+                        <span class="cta-hover">Act Fast—Get a Quote!</span>
                     </a>
                 </div>
             </div>
@@ -1005,9 +1005,9 @@
                 <div class="service-content">
                     <h3>Commercial Haul Away</h3>
                     <p>Professional junk disposal and hauling services for offices, retail, and construction sites</p>
-                    <a href="#contact" class="service-cta" data-hover="Act Fast—Get a Quote!">
-                        <span>Get a Quote Now</span>
-                        <i class="fas fa-arrow-right"></i>
+                    <a href="#contact" class="service-cta">
+                        <span class="cta-text">Get a Quote Now</span>
+                        <span class="cta-hover">Act Fast—Get a Quote!</span>
                     </a>
                 </div>
             </div>
@@ -1018,9 +1018,9 @@
                 <div class="service-content">
                     <h3>Junk Recycling</h3>
                     <p>Eco-friendly junk disposal with focus on recycling and responsible waste management</p>
-                    <a href="#contact" class="service-cta" data-hover="Act Fast—Get a Quote!">
-                        <span>Get a Quote Now</span>
-                        <i class="fas fa-arrow-right"></i>
+                    <a href="#contact" class="service-cta">
+                        <span class="cta-text">Get a Quote Now</span>
+                        <span class="cta-hover">Act Fast—Get a Quote!</span>
                     </a>
                 </div>
             </div>
@@ -1031,9 +1031,9 @@
                 <div class="service-content">
                     <h3>Same-Day Junk Service</h3>
                     <p>Quick response hauling services with flexible scheduling for urgent cleanouts</p>
-                    <a href="#contact" class="service-cta" data-hover="Act Fast—Get a Quote!">
-                        <span>Get a Quote Now</span>
-                        <i class="fas fa-arrow-right"></i>
+                    <a href="#contact" class="service-cta">
+                        <span class="cta-text">Get a Quote Now</span>
+                        <span class="cta-hover">Act Fast—Get a Quote!</span>
                     </a>
                 </div>
             </div>
@@ -1121,8 +1121,9 @@
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
         }
 
+        /* Icon Styles with Improved Alignment */
         .service-icon {
-            width: 60px; /* Standardized icon size */
+            width: 60px;
             height: 60px;
             background: rgba(255, 51, 51, 0.1);
             border: 2px solid #ff3333;
@@ -1133,17 +1134,24 @@
             margin-bottom: 1.5rem;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(255, 51, 51, 0.2);
+            transform: none; /* Reset any unintended transformations */
         }
 
         .service-icon i {
             font-size: 28px;
             color: #ff3333;
             transition: all 0.3s ease;
+            transform: none; /* Reset any unintended transformations */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
         }
 
         .service-card:hover .service-icon {
             background: #ff3333;
-            transform: scale(1.1) rotate(10deg);
+            transform: scale(1.1);
             box-shadow: 0 6px 20px rgba(255, 51, 51, 0.3);
         }
 
@@ -1160,7 +1168,7 @@
         }
 
         .service-card h3 {
-            font-size: 22px; /* Standard desktop title size */
+            font-size: 22px;
             font-weight: 700;
             margin-bottom: 1rem;
             color: white;
@@ -1168,42 +1176,70 @@
         }
 
         .service-card p {
-            font-size: 16px; /* Standard desktop description size */
+            font-size: 16px;
             color: rgba(255, 255, 255, 0.9);
             margin-bottom: 1.5rem;
             line-height: 1.6;
             flex: 1;
         }
 
+        /* Enhanced CTA Button Styles */
         .service-cta {
             background: #ff0000;
             color: white;
-            padding: 12px 20px;
-            border-radius: 8px;
             text-decoration: none;
-            font-size: 16px;
             font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            transition: all 0.3s ease;
-            margin-top: auto;
+            border-radius: 8px;
             position: relative;
             overflow: hidden;
-            width: auto;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             min-width: 180px;
+            height: 44px;
+            padding: 0 20px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            margin-top: auto;
+        }
+
+        .service-cta .cta-text,
+        .service-cta .cta-hover {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
             justify-content: center;
         }
 
-        .service-cta span {
-            display: inline-block;
-            transition: all 0.3s ease;
+        .service-cta .cta-text {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .service-cta .cta-hover {
+            transform: translateY(100%);
+            opacity: 0;
+            font-size: 14px; /* Slightly smaller font for longer hover text */
         }
 
         .service-cta:hover {
             background: #cc0000;
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(255, 51, 51, 0.3);
+        }
+
+        .service-cta:hover .cta-text {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+
+        .service-cta:hover .cta-hover {
+            transform: translateY(0);
+            opacity: 1;
         }
 
         /* Tablet Styles */
@@ -1261,9 +1297,14 @@
             }
 
             .service-cta {
-                padding: 10px 16px;
-                font-size: 14px;
+                height: 40px;
                 min-width: 160px;
+                padding: 0 16px;
+            }
+
+            .service-cta .cta-text,
+            .service-cta .cta-hover {
+                font-size: 14px;
             }
 
             .trust-content {
@@ -1273,6 +1314,17 @@
 
             .trust-content i {
                 font-size: 18px;
+            }
+
+            /* Touch device hover states */
+            .service-cta:active .cta-text {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+
+            .service-cta:active .cta-hover {
+                transform: translateY(0);
+                opacity: 1;
             }
         }
 

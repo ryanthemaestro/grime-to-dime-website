@@ -691,14 +691,50 @@
             top: 50%;
             transform: translateY(-50%);
             z-index: 10;
+            width: 40px;
+            height: 40px;
+            background: #ff0000;
+            color: white;
+            border: 1px solid #ffffff;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            padding: 0;
+        }
+
+        .slider-btn:hover {
+            background: #cc0000;
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .prev-btn {
-            left: 0;
+            left: 15px;
         }
 
         .next-btn {
-            right: 0;
+            right: 15px;
+        }
+
+        @media (max-width: 480px) {
+            .slider-btn {
+                width: 36px;
+                height: 36px;
+                font-size: 18px;
+            }
+
+            .prev-btn {
+                left: 10px;
+            }
+
+            .next-btn {
+                right: 10px;
+            }
         }
 
         .slider-dots {
@@ -1771,7 +1807,7 @@
         <h2 class="section-title">What Our Customers Say</h2>
         <div class="testimonials-container">
             <div class="testimonial-slider">
-                <button class="slider-btn prev-btn" onclick="slideTestimonials(-1)">❮</button>
+                <button class="slider-btn prev-btn" onclick="slideTestimonials(-1)">‹</button>
                 <div class="testimonial-track">
                     <div class="testimonial-card">
                         <div class="testimonial-icon">
@@ -1830,7 +1866,7 @@
                         <p class="testimonial-author">- James B.<br>Odenton, MD</p>
                     </div>
                 </div>
-                <button class="slider-btn next-btn" onclick="slideTestimonials(1)">❯</button>
+                <button class="slider-btn next-btn" onclick="slideTestimonials(1)">›</button>
             </div>
             <div class="slider-dots">
                 <span class="dot active" onclick="goToSlide(0)"></span>
@@ -1979,14 +2015,50 @@
             top: 50%;
             transform: translateY(-50%);
             z-index: 10;
+            width: 40px;
+            height: 40px;
+            background: #ff0000;
+            color: white;
+            border: 1px solid #ffffff;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            padding: 0;
+        }
+
+        .slider-btn:hover {
+            background: #cc0000;
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .prev-btn {
-            left: 0;
+            left: 15px;
         }
 
         .next-btn {
-            right: 0;
+            right: 15px;
+        }
+
+        @media (max-width: 480px) {
+            .slider-btn {
+                width: 36px;
+                height: 36px;
+                font-size: 18px;
+            }
+
+            .prev-btn {
+                left: 10px;
+            }
+
+            .next-btn {
+                right: 10px;
+            }
         }
 
         .slider-dots {

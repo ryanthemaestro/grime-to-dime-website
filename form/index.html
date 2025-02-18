@@ -439,6 +439,28 @@
             color: #ff3333;
         }
 
+        .testimonials-heading {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 3rem;
+            color: #222;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .testimonials-heading:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #ff3333;
+            border-radius: 2px;
+        }
+
         @media (max-width: 768px) {
             header {
                 padding: 0.5rem 0;
@@ -513,6 +535,11 @@
                 grid-template-columns: 1fr;
                 text-align: center;
             }
+
+            .testimonials-heading {
+                font-size: 2.2rem;
+                margin-bottom: 2rem;
+            }
         }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
@@ -573,7 +600,7 @@
 
     <section class="testimonials">
         <div class="testimonials-container">
-            <h2>What Our Customers Say</h2>
+            <h2 class="testimonials-heading">What Our Customers Say</h2>
             <div class="testimonial-slider">
                 <button class="slider-btn prev-btn" onclick="slideTestimonials(-1)">❮</button>
                 <div class="testimonial-track">

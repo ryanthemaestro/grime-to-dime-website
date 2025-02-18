@@ -123,8 +123,7 @@
             align-items: flex-start;
             padding: 2rem 1rem;
             position: relative;
-            padding-top: 80px; /* Adjusted to account for header */
-            overflow: hidden; /* Prevent content overflow */
+            padding-top: 80px;
         }
 
         .landing-container {
@@ -134,8 +133,6 @@
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
             align-items: start;
-            width: 100%;
-            position: relative; /* Added for better positioning control */
         }
 
         .landing-content {
@@ -186,8 +183,6 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
             text-align: center;
             color: #333;
-            position: relative; /* Added for z-index control */
-            z-index: 2; /* Ensure form is above other content */
         }
 
         .quote-form h2 {
@@ -539,10 +534,7 @@
                 margin: 0;
                 padding: 1.5rem;
                 border-radius: 10px;
-                order: -1; /* Move form to top on mobile */
-                min-height: calc(100vh - 60px); /* Account for header height */
-                overflow-y: auto; /* Allow scrolling within form if needed */
-                -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+                order: -1;
             }
 
             .quote-form h2 {
@@ -625,7 +617,6 @@
                 margin: 0;
                 border-radius: 8px;
                 box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-                min-height: calc(100vh - 80px);
             }
 
             .form-headline {
@@ -852,9 +843,8 @@
 
     <section class="testimonials">
         <div class="testimonials-container">
-            <h2>What Our Customers Say</h2>
+            <h2 style="text-align: center;">What Our Customers Say</h2>
             <div class="testimonial-slider">
-                <button class="slider-btn prev-btn" onclick="slideTestimonials(-1)">❮</button>
                 <div class="testimonial-track">
                     <div class="testimonial-card">
                         <div class="testimonial-stars">★★★★★</div>
@@ -877,13 +867,6 @@
                         <p class="testimonial-author">- James B.<br>Odenton, MD</p>
                     </div>
                 </div>
-                <button class="slider-btn next-btn" onclick="slideTestimonials(1)">❯</button>
-            </div>
-            <div class="slider-dots">
-                <span class="dot active" onclick="goToSlide(0)"></span>
-                <span class="dot" onclick="goToSlide(1)"></span>
-                <span class="dot" onclick="goToSlide(2)"></span>
-                <span class="dot" onclick="goToSlide(3)"></span>
             </div>
         </div>
     </section>

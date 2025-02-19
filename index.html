@@ -688,22 +688,41 @@
 
         .testimonial-track {
             display: flex;
-            width: 400%;  /* 100% * number of slides */
             transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            gap: 0;
+            width: 100%;
+            margin: 0 auto;
         }
 
         .testimonial-card {
-            flex: 0 0 25%;  /* 100% / number of slides */
-            width: 25%;     /* 100% / number of slides */
+            flex: 0 0 100%;
+            width: 100%;
+            max-width: 600px;
+            background: white;
             padding: 2rem;
-            opacity: 0;
-            transition: opacity 0.5s ease;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            border: 2px solid #ff0000;
             position: relative;
-            display: block;
+            transition: all 0.3s ease;
+            text-align: left;
+            min-height: auto;
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            transform: scale(0.95);
+            pointer-events: none;
+            margin: 0 auto;
+            box-sizing: border-box;
+            visibility: hidden;
         }
 
         .testimonial-card.active {
             opacity: 1;
+            transform: scale(1);
+            pointer-events: auto;
+            visibility: visible;
+            margin: 0 auto;
         }
 
         .testimonial-stars {
@@ -925,12 +944,9 @@
 
     <section id="hero" class="hero">
         <div class="hero-overlay"></div>
-        <div class="urgency-banner">
-            <i class="fas fa-clock"></i> Limited Same-Day Slots Available—Act Now!
-        </div>
         <div class="hero-content">
             <h1>Clear Your Clutter Fast—Reliable Junk Removal That Transforms Your Space Today!</h1>
-            <h2>Trusted by Howard County Homes & Businesses for Fast, Eco-Friendly Cleanouts—Get Started Now!</h2>
+            <h2>Trusted by Howard County for Fast, Eco-Friendly Cleanouts</h2>
             <div class="trust-signals">
                 <div class="rating">
                     <i class="fas fa-star"></i>
@@ -940,10 +956,9 @@
                     <i class="fas fa-star"></i>
                     <span>Rated 5 Stars by Maryland Residents</span>
                 </div>
-                <p class="customers-served">Growing Fast—Trusted by Happy Customers in Howard County</p>
             </div>
             <a href="#contact" class="cta-button">
-                <i class="fas fa-bolt"></i> Get Your Free Quote Now—Transform Your Space Today!
+                Get Your Free Quote Now—Transform Your Space Today!
             </a>
         </div>
     </section>
@@ -952,11 +967,10 @@
         .hero {
             position: relative;
             min-height: 90vh;
-            background-image: url('images/before-after/warehouse-after-junk-removal.png');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/before-after/warehouse-after-junk-removal.png');
             background-size: cover;
             background-position: center;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
@@ -964,99 +978,70 @@
             padding-top: 80px;
         }
 
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1;
-        }
-
-        .urgency-banner {
-            background: rgba(255, 255, 255, 0.95);
-            color: #ff3333;
-            padding: 12px 24px;
-            border-radius: 8px;
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 40px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            z-index: 2;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
         .hero-content {
-            position: relative;
-            z-index: 2;
             max-width: 900px;
             margin: 0 auto;
             color: #ffffff;
             padding: 40px;
-            background: rgba(0, 0, 0, 0.2);
+            background: rgba(0, 0, 0, 0.3);
             border-radius: 15px;
             backdrop-filter: blur(5px);
         }
 
         .hero h1 {
-            font-size: 48px;
+            font-size: 3.5rem;
             font-weight: 800;
             line-height: 1.2;
-            margin-bottom: 24px;
+            margin-bottom: 1.5rem;
+            font-family: 'Roboto', sans-serif;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .hero h2 {
-            font-size: 24px;
+            font-size: 1.8rem;
             font-weight: 500;
             line-height: 1.4;
-            margin-bottom: 32px;
+            margin-bottom: 2rem;
+            font-family: 'Open Sans', sans-serif;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
         }
 
         .trust-signals {
-            margin-bottom: 32px;
+            margin-bottom: 2.5rem;
         }
 
         .rating {
-            margin-bottom: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .rating i {
             color: #ffd700;
-            font-size: 24px;
-            margin: 0 2px;
+            font-size: 1.5rem;
+            filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.3));
         }
 
         .rating span {
-            display: block;
-            margin-top: 8px;
-            font-size: 16px;
+            font-size: 1.1rem;
             color: white;
-        }
-
-        .customers-served {
-            font-size: 16px;
-            color: white;
-            margin-bottom: 24px;
+            font-weight: 500;
         }
 
         .cta-button {
+            display: inline-block;
             background: #ff3333;
             color: white;
-            padding: 20px 40px;
+            padding: 1.25rem 2.5rem;
             border-radius: 8px;
-            font-size: 18px;
+            font-size: 1.25rem;
             font-weight: 700;
             text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(255, 51, 51, 0.3);
+            border: none;
+            cursor: pointer;
         }
 
         .cta-button:hover {
@@ -1065,64 +1050,52 @@
             box-shadow: 0 6px 20px rgba(255, 51, 51, 0.4);
         }
 
-        /* Mobile Styles */
         @media (max-width: 768px) {
             .hero {
                 min-height: 100vh;
                 padding-top: 60px;
             }
 
-            .urgency-banner {
-                font-size: 16px;
-                padding: 10px 16px;
-                margin: 20px;
-                text-align: center;
-            }
-
             .hero-content {
-                padding: 20px;
+                padding: 30px 20px;
             }
 
             .hero h1 {
-                font-size: 32px;
-                margin-bottom: 16px;
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
             }
 
             .hero h2 {
-                font-size: 18px;
-                margin-bottom: 24px;
+                font-size: 1.4rem;
+                margin-bottom: 1.5rem;
             }
 
             .rating i {
-                font-size: 20px;
+                font-size: 1.25rem;
             }
 
-            .rating span,
-            .customers-served {
-                font-size: 14px;
+            .rating span {
+                font-size: 1rem;
             }
 
             .cta-button {
-                padding: 16px 24px;
-                font-size: 16px;
+                padding: 1rem 2rem;
+                font-size: 1.1rem;
                 width: 100%;
-                justify-content: center;
             }
         }
 
-        /* Small Mobile Styles */
         @media (max-width: 480px) {
             .hero h1 {
-                font-size: 28px;
+                font-size: 2rem;
             }
 
             .hero h2 {
-                font-size: 16px;
+                font-size: 1.2rem;
             }
 
-            .urgency-banner {
-                font-size: 14px;
-                padding: 8px 12px;
+            .hero-content {
+                padding: 20px 15px;
             }
         }
     </style>
@@ -2049,22 +2022,41 @@
 
         .testimonial-track {
             display: flex;
-            width: 400%;  /* 100% * number of slides */
             transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            gap: 0;
+            width: 100%;
+            margin: 0 auto;
         }
 
         .testimonial-card {
-            flex: 0 0 25%;  /* 100% / number of slides */
-            width: 25%;     /* 100% / number of slides */
+            flex: 0 0 100%;
+            width: 100%;
+            max-width: 600px;
+            background: white;
             padding: 2rem;
-            opacity: 0;
-            transition: opacity 0.5s ease;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            border: 2px solid #ff0000;
             position: relative;
-            display: block;
+            transition: all 0.3s ease;
+            text-align: left;
+            min-height: auto;
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            transform: scale(0.95);
+            pointer-events: none;
+            margin: 0 auto;
+            box-sizing: border-box;
+            visibility: hidden;
         }
 
         .testimonial-card.active {
             opacity: 1;
+            transform: scale(1);
+            pointer-events: auto;
+            visibility: visible;
+            margin: 0 auto;
         }
 
         .testimonial-stars {
@@ -2701,13 +2693,17 @@
             let autoSlideInterval;
 
             function updateSlidePosition() {
-                // Move the track to show the current slide
-                track.style.transform = `translateX(-${currentSlide * 25}%)`; // 100% / number of slides = 25%
-                
-                // Update active states
-                cards.forEach((card, index) => {
-                    card.classList.toggle('active', index === currentSlide);
+                // Hide all cards first
+                cards.forEach(card => {
+                    card.classList.remove('active');
+                    card.style.display = 'none';
                 });
+                
+                // Show and activate current card
+                setTimeout(() => {
+                    cards[currentSlide].style.display = 'flex';
+                    cards[currentSlide].classList.add('active');
+                }, 50);
                 
                 // Update dots
                 dots.forEach((dot, index) => {
@@ -2730,7 +2726,14 @@
             }
 
             // Initialize first slide
-            cards[0].classList.add('active');
+            cards.forEach((card, index) => {
+                if (index === 0) {
+                    card.style.display = 'flex';
+                    card.classList.add('active');
+                } else {
+                    card.style.display = 'none';
+                }
+            });
             
             // Start auto-sliding
             resetAutoSlideTimer();

@@ -1659,22 +1659,22 @@
         @media (hover: none) {
             .gallery-overlay {
                 transform: translateY(0);
-                padding: 15px;
+                padding: 8px;
                 background: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent);
                 height: auto;
-                max-height: 40%;
+                max-height: 30%;
             }
 
             .gallery-caption {
-                font-size: 14px;
-                margin-bottom: 8px;
+                font-size: 12px;
+                margin-bottom: 4px;
             }
 
             .gallery-cta {
-                padding: 8px 16px;
-                font-size: 14px;
+                padding: 6px 12px;
+                font-size: 12px;
                 background: #ff0000;
-                border-radius: 6px;
+                border-radius: 4px;
                 width: auto;
                 display: inline-block;
                 margin: 0 auto;
@@ -1688,6 +1688,23 @@
 
             .gallery-cta .cta-hover {
                 display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-overlay {
+                padding: 6px;
+                max-height: 25%;
+            }
+
+            .gallery-caption {
+                font-size: 11px;
+                margin-bottom: 3px;
+            }
+
+            .gallery-cta {
+                padding: 4px 10px;
+                font-size: 11px;
             }
         }
 

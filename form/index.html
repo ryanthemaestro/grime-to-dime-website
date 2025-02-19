@@ -400,23 +400,19 @@
             max-width: 800px;
             margin: 0 auto;
             overflow: hidden;
-            padding: 0 60px;
-            height: auto;
+            padding: 0;
         }
 
         .testimonial-track {
             display: flex;
             transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             gap: 0;
-            position: relative;
-            height: auto;
             width: 100%;
         }
 
         .testimonial-card {
             flex: 0 0 100%;
             width: 100%;
-            max-width: none;
             background: white;
             padding: 2rem;
             border-radius: 15px;
@@ -432,8 +428,8 @@
             transform: scale(0.95);
             pointer-events: none;
             margin: 0;
-            visibility: hidden;
             box-sizing: border-box;
+            visibility: hidden;
         }
 
         .testimonial-card.active {
@@ -720,30 +716,23 @@
             }
 
             .testimonial-slider {
-                padding: 0;
-                margin: 0 auto;
-                width: calc(100% - 1rem); /* Account for container padding */
-            }
-
-            .testimonial-track {
-                gap: 0.5rem; /* Further reduced gap for mobile */
-            }
-
-            .testimonial-card {
-                padding: 1.2rem 1.5rem; /* Increased horizontal padding */
-                margin: 0;
+                padding: 0 40px;
                 width: 100%;
                 box-sizing: border-box;
             }
-
+            
+            .testimonial-card {
+                padding: 1.2rem;
+                width: 100%;
+            }
+            
             .testimonial-text {
                 font-size: 14px;
                 line-height: 1.6;
-                padding: 0 0.25rem; /* Adjusted text padding */
+                padding: 0;
                 margin-bottom: 1.5rem;
-                max-height: 150px;
-                overflow-y: auto;
-                -webkit-overflow-scrolling: touch;
+                overflow: visible;
+                max-height: none;
             }
 
             .testimonial-stars {
@@ -1039,7 +1028,13 @@
 
                 // Calculate the transform value
                 const slideWidth = cards[0].offsetWidth;
-                track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+                track.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+                // Update dots and card visibility
+                const dots = document.querySelectorAll('.dot');
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentSlide);
+                });
 
                 setTimeout(() => {
                     isTransitioning = false;

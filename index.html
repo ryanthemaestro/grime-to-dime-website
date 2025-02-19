@@ -588,11 +588,17 @@
         .testimonials {
             padding: 5rem 1rem;
             background: #f8f9fa;
+            position: relative;
+            text-align: center;
         }
 
         .testimonials-container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .testimonial-slider {
@@ -600,8 +606,8 @@
             width: 100%;
             max-width: 800px;
             margin: 0 auto;
-            overflow: visible; /* Changed from hidden to visible */
-            padding: 0 60px; /* Increased padding to accommodate arrows */
+            overflow: visible;
+            padding: 0 60px;
         }
 
         .testimonial-track {
@@ -637,11 +643,16 @@
             pointer-events: auto;
         }
 
-        .testimonial-content {
-            flex: 1;
-            overflow: hidden;
-            position: relative;
-            margin-bottom: 1rem;
+        .testimonial-stars {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 1.5rem;
+            justify-content: center;
+        }
+
+        .testimonial-stars i {
+            color: #ffd700;
+            font-size: 1.2rem;
         }
 
         .testimonial-text {
@@ -652,6 +663,18 @@
             z-index: 1;
             max-height: none;
             overflow: visible;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .testimonial-author {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+            padding-top: 1.5rem;
+            margin-top: auto;
+            border-top: 2px solid rgba(255, 51, 51, 0.1);
+            text-align: center;
         }
 
         @media (min-width: 1024px) {
@@ -1663,11 +1686,14 @@
                 background: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent);
                 height: auto;
                 max-height: 30%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
             }
 
             .gallery-caption {
-                font-size: 12px;
-                margin-bottom: 4px;
+                display: none;
             }
 
             .gallery-cta {
@@ -1677,7 +1703,7 @@
                 border-radius: 4px;
                 width: auto;
                 display: inline-block;
-                margin: 0 auto;
+                margin: 0;
             }
 
             .gallery-cta .cta-text {
@@ -1695,11 +1721,6 @@
             .gallery-overlay {
                 padding: 6px;
                 max-height: 25%;
-            }
-
-            .gallery-caption {
-                font-size: 11px;
-                margin-bottom: 3px;
             }
 
             .gallery-cta {
@@ -1880,9 +1901,6 @@
             <div class="testimonial-slider">
                 <div class="testimonial-track">
                     <div class="testimonial-card">
-                        <div class="testimonial-icon">
-                            <i class="fas fa-truck"></i>
-                        </div>
                         <div class="testimonial-stars">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -1894,9 +1912,6 @@
                         <p class="testimonial-author">- Jonathan A.<br>Elkridge, MD</p>
                     </div>
                     <div class="testimonial-card">
-                        <div class="testimonial-icon">
-                            <i class="fas fa-truck"></i>
-                        </div>
                         <div class="testimonial-stars">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -1908,9 +1923,6 @@
                         <p class="testimonial-author">- David P.<br>Baltimore, MD</p>
                     </div>
                     <div class="testimonial-card">
-                        <div class="testimonial-icon">
-                            <i class="fas fa-truck"></i>
-                        </div>
                         <div class="testimonial-stars">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -1922,9 +1934,6 @@
                         <p class="testimonial-author">- Russell De Souza<br>Elkridge, MD</p>
                     </div>
                     <div class="testimonial-card">
-                        <div class="testimonial-icon">
-                            <i class="fas fa-truck"></i>
-                        </div>
                         <div class="testimonial-stars">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -1958,6 +1967,7 @@
             padding: 5rem 1rem;
             background: #f8f9fa;
             position: relative;
+            text-align: center;
         }
 
         .testimonials-trust-banner {
@@ -1986,6 +1996,9 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .testimonial-slider {
@@ -1993,8 +2006,8 @@
             width: 100%;
             max-width: 800px;
             margin: 0 auto;
-            overflow: visible; /* Changed from hidden to visible */
-            padding: 0 60px; /* Increased padding to accommodate arrows */
+            overflow: visible;
+            padding: 0 60px;
         }
 
         .testimonial-track {
@@ -2030,11 +2043,16 @@
             pointer-events: auto;
         }
 
-        .testimonial-content {
-            flex: 1;
-            overflow: hidden;
-            position: relative;
-            margin-bottom: 1rem;
+        .testimonial-stars {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 1.5rem;
+            justify-content: center;
+        }
+
+        .testimonial-stars i {
+            color: #ffd700;
+            font-size: 1.2rem;
         }
 
         .testimonial-text {
@@ -2045,6 +2063,18 @@
             z-index: 1;
             max-height: none;
             overflow: visible;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .testimonial-author {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+            padding-top: 1.5rem;
+            margin-top: auto;
+            border-top: 2px solid rgba(255, 51, 51, 0.1);
+            text-align: center;
         }
 
         @media (min-width: 1024px) {

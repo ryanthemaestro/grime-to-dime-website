@@ -124,11 +124,11 @@
         }
 
         .landing-container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 1.5rem;
             align-items: start;
         }
 
@@ -155,35 +155,63 @@
         .benefits-list {
             list-style: none;
             margin: 2rem 0;
-            background: rgba(0, 0, 0, 0.4);
-            padding: 1.5rem;
-            border-radius: 10px;
+            background: #F0F8F0;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
         }
 
         .benefits-list li {
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             display: flex;
             align-items: center;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
+            color: #333;
+            padding: 0.5rem 0;
         }
 
         .benefits-list i {
-            color: #ff3333;
-            margin-right: 0.8rem;
-            font-size: 1.4rem;
+            color: #28a745;
+            margin-right: 1rem;
+            font-size: 1.3rem;
+            width: 24px;
+            text-align: center;
         }
 
         .quote-form {
             background: #FFFFFF;
-            padding: 30px;
+            padding: 35px;
             border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
             text-align: center;
             color: #333;
             border: 1px solid #E6E6E6;
-            max-width: 500px;
+            max-width: 550px;
             margin: 0 auto;
             font-family: 'Roboto', Arial, sans-serif;
+            position: relative;
+        }
+
+        .form-headline {
+            font-size: 28px;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .urgency-banner {
+            background: #fff3f3;
+            color: #ff3333;
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin-bottom: 1.8rem;
+            font-weight: 600;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
 
         .form-group {
@@ -193,9 +221,9 @@
 
         .form-group input {
             width: 100%;
-            height: 50px;
+            height: 55px;
             padding: 0 15px;
-            border: 1px solid #E6E6E6;
+            border: 2px solid #E6E6E6;
             border-radius: 8px;
             font-size: 16px;
             line-height: 1.5;
@@ -203,49 +231,80 @@
             color: #333;
         }
 
-        .form-group input::placeholder {
-            color: #999999;
-        }
-
         .form-group input:hover {
             border-color: #CCCCCC;
         }
 
         .form-group input:focus {
+            border-color: #ff3333;
+            box-shadow: 0 0 0 3px rgba(255, 51, 51, 0.1);
             outline: none;
-            border-color: #007BFF;
-            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
-        }
-
-        .optional-label {
-            display: block;
-            font-size: 12px;
-            color: #666666;
-            margin-top: 4px;
-            margin-left: 4px;
         }
 
         .cta-button {
             background: #FF0000;
             color: white;
-            padding: 15px 30px;
+            padding: 18px 30px;
             border: none;
             border-radius: 8px;
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 700;
+            width: 100%;
             cursor: pointer;
             transition: all 0.3s ease;
-            display: inline-block;
-            text-decoration: none;
-            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
             box-shadow: 0 4px 15px rgba(255, 51, 51, 0.2);
-            line-height: 1.5;
+            margin-bottom: 1.5rem;
         }
 
         .cta-button:hover {
             background: #CC0000;
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(255, 51, 51, 0.3);
+        }
+
+        .trust-signals {
+            margin-top: 1.5rem;
+            text-align: center;
+            padding: 1rem;
+            border-top: 1px solid #eee;
+        }
+
+        .rating {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .rating i {
+            color: #ffd700;
+            font-size: 18px;
+        }
+
+        .contact-info {
+            margin-top: 1.5rem;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        .contact-info a {
+            color: #ff3333;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 0.5rem;
+        }
+
+        .contact-info a:hover {
+            color: #cc0000;
         }
 
         footer {
@@ -515,34 +574,16 @@
             }
 
             .benefits-list {
-                margin: 1rem 0;
-                padding: 1rem;
-                font-size: 0.9rem;
-            }
-
-            .benefits-list li {
-                font-size: 0.9rem;
-                margin-bottom: 0.5rem;
+                padding: 1.5rem;
             }
 
             .quote-form {
-                padding: 20px;
+                padding: 25px;
                 margin: 0 15px;
             }
 
-            .quote-form h2 {
-                font-size: 1.5rem;
-                margin-bottom: 1rem;
-            }
-
-            .quote-form p {
-                font-size: 1rem;
-                margin-bottom: 1rem;
-            }
-
-            .form-group input {
-                font-size: 14px;
-                height: 45px;
+            .form-headline {
+                font-size: 24px;
             }
 
             .cta-button {
@@ -594,62 +635,9 @@
         }
 
         /* New and Updated Styles */
-        .urgency-banner {
-            background: #fff3f3;
-            color: #ff3333;
-            padding: 0.8rem;
-            border-radius: 8px;
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .form-headline {
-            font-size: 24px;
-            color: #222;
-            margin-bottom: 1.5rem;
-            line-height: 1.3;
-        }
-
-        .trust-signals {
-            margin-top: 1.5rem;
-            text-align: center;
-        }
-
-        .rating {
-            margin-bottom: 0.5rem;
-        }
-
-        .rating i {
-            color: #ffd700;
-            font-size: 16px;
-            margin: 0 1px;
-        }
-
-        .rating span {
-            color: #666;
-            font-size: 12px;
-            margin-left: 0.5rem;
-        }
-
         .privacy-note {
             color: #888;
             font-size: 10px;
-        }
-
-        .benefits-list li {
-            font-size: 16px;
-            font-weight: 500;
-            margin-bottom: 1rem;
-        }
-
-        .benefits-list i {
-            font-size: 20px;
-            width: 30px;
-            text-align: center;
         }
 
         @media (max-width: 480px) {
@@ -791,17 +779,10 @@
     <section class="landing-hero">
         <div class="landing-container">
             <div class="quote-form">
-                <!-- Urgency Banner -->
                 <div class="urgency-banner">
                     <i class="fas fa-clock"></i> Limited Same-Day Slots Available—Act Now!
                 </div>
-                
-                <!-- Main Headline -->
                 <h1 class="form-headline">Revitalize Your Space with Our Eco-Friendly Junk Removal Services</h1>
-                
-                <h2>Get Your Free Quote</h2>
-                <p>Fill out this quick form for an instant quote! Our team is ready to help.</p>
-                
                 <form action="https://formspree.io/f/meoovajl" method="POST" id="quote-form" onsubmit="return handleFormSubmit(event)">
                     <input type="hidden" name="_subject" value="New Contact from Grime To Dime Website">
                     <input type="text" name="_gotcha" style="display:none">
@@ -818,7 +799,6 @@
                         <i class="fas fa-bolt"></i> Claim Your Instant Quote Now—Transform Your Space Today!
                     </button>
                     
-                    <!-- Trust Signals -->
                     <div class="trust-signals">
                         <div class="rating">
                             <i class="fas fa-star"></i>
@@ -826,21 +806,24 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
-                            <span>Trusted by Maryland Residents</span>
+                            <span>Trusted by Elkridge & Howard County Residents</span>
                         </div>
-                        <p class="privacy-note">We'll never share your information</p>
+                        <div class="contact-info">
+                            <p>Need immediate assistance?</p>
+                            <a href="tel:410-300-6743">
+                                <i class="fas fa-phone"></i> (410) 300-6743
+                            </a>
+                        </div>
                     </div>
                 </form>
             </div>
 
-            <div class="landing-content">
-                <ul class="benefits-list">
-                    <li><i class="fas fa-check-circle"></i> Free, No-Obligation Quotes</li>
-                    <li><i class="fas fa-clock"></i> Same-Day Service Available</li>
-                    <li><i class="fas fa-shield-alt"></i> Licensed & Insured Team</li>
-                    <li><i class="fas fa-leaf"></i> Eco-Friendly Disposal</li>
-                    <li><i class="fas fa-star"></i> 5-Star Customer Service</li>
-                </ul>
+            <div class="benefits-list">
+                <li><i class="fas fa-check-circle"></i> Free, No-Obligation Quotes</li>
+                <li><i class="fas fa-clock"></i> Same-Day Service Available</li>
+                <li><i class="fas fa-shield-alt"></i> Licensed & Insured Team</li>
+                <li><i class="fas fa-leaf"></i> Eco-Friendly Disposal</li>
+                <li><i class="fas fa-star"></i> 5-Star Customer Service</li>
             </div>
         </div>
     </section>
@@ -881,24 +864,24 @@
                 <p><i class="fas fa-phone"></i> (410) 300-6743</p>
                 <p><i class="fas fa-envelope"></i> sawyer@grimetodime.com</p>
                 <p><i class="fas fa-map-marker-alt"></i> Elkridge, MD 21075</p>
-                        </div>
+            </div>
             <div class="footer-section">
                 <h3>Hours</h3>
                 <p>Monday - Saturday: 7:00 AM - 7:00 PM</p>
                 <p>Sunday: Closed</p>
-                        </div>
+            </div>
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <a href="/">Home</a>
                 <a href="/privacy-policy.html">Privacy Policy</a>
                 <a href="/terms.html">Terms of Service</a>
-                    </div>
+            </div>
             <div class="footer-section">
                 <h3>Connect With Us</h3>
                 <div class="social-links">
                     <a href="https://www.facebook.com/profile.php?id=61571988560834" target="_blank"><i class="fab fa-facebook"></i></a>
                     <a href="https://www.instagram.com/grime_to_dime_/" target="_blank"><i class="fab fa-instagram"></i></a>
-                    </div>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">

@@ -670,23 +670,16 @@
 
         .testimonial-slider {
             width: 100%;
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto;
             position: relative;
             overflow: hidden;
-            padding: 0;
-        }
-
-        .testimonial-track {
-            display: flex;
-            transition: transform 0.5s ease;
-            width: 100%;
+            min-height: 300px; /* Add minimum height */
         }
 
         .testimonial-card {
-            flex: 0 0 100%;
             width: 100%;
-            max-width: 600px;
+            max-width: 800px;
             background: white;
             padding: 2rem;
             border-radius: 15px;
@@ -704,6 +697,7 @@
         .testimonial-card.active {
             opacity: 1;
             display: block;
+            position: relative;
         }
 
         /* Remove the slider button styles as we're not using them anymore */
@@ -2045,11 +2039,11 @@
 
         .testimonial-slider {
             width: 100%;
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto;
             position: relative;
             overflow: hidden;
-            padding: 0;
+            min-height: 300px; /* Add minimum height */
         }
 
         .testimonial-track {
@@ -2059,9 +2053,8 @@
         }
 
         .testimonial-card {
-            flex: 0 0 100%;
             width: 100%;
-            max-width: 600px;
+            max-width: 800px;
             background: white;
             padding: 2rem;
             border-radius: 15px;
@@ -2079,6 +2072,7 @@
         .testimonial-card.active {
             opacity: 1;
             display: block;
+            position: relative;
         }
 
         /* Remove the slider button styles as we're not using them anymore */
@@ -2711,66 +2705,53 @@
     </script>
 
     <script>
-        let currentSlide = 0;
-        const cards = document.querySelectorAll('.testimonial-card');
-        const dots = document.querySelectorAll('.dot');
-        const totalSlides = cards.length;
-        let autoSlideInterval;
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.testimonial-card');
+            const dots = document.querySelectorAll('.dot');
+            const totalSlides = cards.length;
+            let currentSlide = 0;
+            let autoSlideInterval;
 
-        function updateSlidePosition() {
-            // Hide all cards first
-            cards.forEach(card => {
-                card.style.display = 'none';
-                card.classList.remove('active');
-            });
-            
-            // Show only the current card
-            cards[currentSlide].style.display = 'block';
-            setTimeout(() => {
-                cards[currentSlide].classList.add('active');
-            }, 50);
-            
-            // Update dots
-            dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentSlide);
-            });
-        }
+            function updateSlidePosition() {
+                // Hide all cards first
+                cards.forEach(card => {
+                    card.style.display = 'none';
+                    card.classList.remove('active');
+                });
+                
+                // Show current card
+                cards[currentSlide].style.display = 'block';
+                setTimeout(() => {
+                    cards[currentSlide].classList.add('active');
+                }, 50);
+                
+                // Update dots
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentSlide);
+                });
+            }
 
-        function goToSlide(slideIndex) {
-            currentSlide = slideIndex;
-            updateSlidePosition();
-            resetAutoSlideTimer();
-        }
-
-        function resetAutoSlideTimer() {
-            clearInterval(autoSlideInterval);
-            autoSlideInterval = setInterval(() => {
-                currentSlide = (currentSlide + 1) % totalSlides;
+            function goToSlide(slideIndex) {
+                currentSlide = slideIndex;
                 updateSlidePosition();
-            }, 5000);
-        }
+                resetAutoSlideTimer();
+            }
 
-        // Initialize slider
-        window.addEventListener('load', () => {
-            updateSlidePosition();
+            function resetAutoSlideTimer() {
+                clearInterval(autoSlideInterval);
+                autoSlideInterval = setInterval(() => {
+                    currentSlide = (currentSlide + 1) % totalSlides;
+                    updateSlidePosition();
+                }, 5000);
+            }
+
+            // Initialize first slide
+            cards[0].classList.add('active');
+            cards[0].style.display = 'block';
+            
+            // Start auto-sliding
             resetAutoSlideTimer();
         });
-
-        // Add navigation buttons
-        const sliderContainer = document.querySelector('.testimonial-slider');
-        
-        const prevButton = document.createElement('button');
-        prevButton.className = 'slider-btn prev-btn';
-        prevButton.innerHTML = '❮';
-        prevButton.onclick = () => slideTestimonials(-1);
-
-        const nextButton = document.createElement('button');
-        nextButton.className = 'slider-btn next-btn';
-        nextButton.innerHTML = '❯';
-        nextButton.onclick = () => slideTestimonials(1);
-
-        sliderContainer.appendChild(prevButton);
-        sliderContainer.appendChild(nextButton);
     </script>
 </body>
 </html> 

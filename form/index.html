@@ -423,14 +423,12 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
             border: 2px solid #ff0000;
             position: absolute;
-            transition: all 0.5s ease;
-            text-align: left;
-            min-height: auto;
-            display: flex;
-            flex-direction: column;
             opacity: 0;
             transform: scale(0.95);
+            transition: opacity 0.5s ease, transform 0.5s ease;
             pointer-events: none;
+            display: flex;
+            flex-direction: column;
             visibility: hidden;
         }
 
@@ -1104,29 +1102,31 @@
         document.addEventListener('DOMContentLoaded', function() {
             const track = document.querySelector('.testimonial-track');
             const cards = document.querySelectorAll('.testimonial-card');
-            const dots = document.querySelectorAll('.dot');
             const totalSlides = cards.length;
             let currentSlide = 0;
             let autoSlideInterval;
+            let isTransitioning = false;
 
             function updateSlidePosition() {
-                // Hide all cards first
+                if (isTransitioning) return;
+                isTransitioning = true;
+
+                // Hide all cards
                 cards.forEach(card => {
                     card.classList.remove('active');
                 });
-                
-                // Show and activate current card
+
+                // Show current card
+                cards[currentSlide].classList.add('active');
+
+                // Reset transition lock after animation completes
                 setTimeout(() => {
-                    cards[currentSlide].classList.add('active');
-                }, 50);
-                
-                // Update dots
-                dots.forEach((dot, index) => {
-                    dot.classList.toggle('active', index === currentSlide);
-                });
+                    isTransitioning = false;
+                }, 500); // Match this with the CSS transition duration
             }
 
             function goToSlide(slideIndex) {
+                if (isTransitioning) return;
                 currentSlide = slideIndex;
                 updateSlidePosition();
                 resetAutoSlideTimer();
@@ -1135,8 +1135,10 @@
             function resetAutoSlideTimer() {
                 clearInterval(autoSlideInterval);
                 autoSlideInterval = setInterval(() => {
-                    currentSlide = (currentSlide + 1) % totalSlides;
-                    updateSlidePosition();
+                    if (!isTransitioning) {
+                        currentSlide = (currentSlide + 1) % totalSlides;
+                        updateSlidePosition();
+                    }
                 }, 5000);
             }
 
@@ -1145,11 +1147,6 @@
             
             // Start auto-sliding
             resetAutoSlideTimer();
-
-            // Add click handlers to dots
-            dots.forEach((dot, index) => {
-                dot.addEventListener('click', () => goToSlide(index));
-            });
 
             // Add touch support
             let touchStartX = 0;
@@ -1165,15 +1162,14 @@
             }, false);
 
             function handleSwipe() {
-                const swipeThreshold = 50; // minimum distance for swipe
+                if (isTransitioning) return;
+                const swipeThreshold = 50;
                 const diff = touchStartX - touchEndX;
 
                 if (Math.abs(diff) > swipeThreshold) {
                     if (diff > 0) {
-                        // Swipe left - next slide
                         currentSlide = (currentSlide + 1) % totalSlides;
                     } else {
-                        // Swipe right - previous slide
                         currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
                     }
                     updateSlidePosition();

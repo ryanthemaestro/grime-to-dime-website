@@ -246,31 +246,40 @@
 
         /* Testimonial Enhancements */
         .testimonial-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0, 0, 0, 0.05);
+            flex: 0 0 25%;
+            width: 25%;
+            padding: 2rem;
+            opacity: 0;
+            transition: all 0.5s ease;
             position: relative;
-            overflow: hidden;
+            display: block;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            border: 2px solid #ff0000;
+            margin: 0;
+            transform: scale(0.95);
         }
 
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(255, 51, 51, 0.2);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+        .testimonial-card.active {
+            opacity: 1;
+            transform: scale(1);
         }
 
-        .testimonial-card:before {
-            content: '"';
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 4rem;
-            color: rgba(255, 51, 51, 0.1);
-            font-family: Georgia, serif;
-            line-height: 1;
+        @media (max-width: 768px) {
+            .testimonial-track {
+                width: 400%;
+            }
+            
+            .testimonial-card {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .testimonial-card {
+                padding: 1.25rem;
+            }
         }
 
         .testimonial-stars {
@@ -674,35 +683,27 @@
             margin: 0 auto;
             position: relative;
             overflow: hidden;
-            min-height: 300px; /* Add minimum height */
+            min-height: 300px;
+        }
+
+        .testimonial-track {
+            display: flex;
+            width: 400%;  /* 100% * number of slides */
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .testimonial-card {
-            width: 100%;
-            max-width: 800px;
-            background: white;
+            flex: 0 0 25%;  /* 100% / number of slides */
+            width: 25%;     /* 100% / number of slides */
             padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            border: 2px solid #ff0000;
-            margin: 0 auto;
             opacity: 0;
             transition: opacity 0.5s ease;
-            position: absolute;
-            left: 0;
-            top: 0;
-            display: none;
+            position: relative;
+            display: block;
         }
 
         .testimonial-card.active {
             opacity: 1;
-            display: block;
-            position: relative;
-        }
-
-        /* Remove the slider button styles as we're not using them anymore */
-        .slider-btn {
-            display: none;
         }
 
         .testimonial-stars {
@@ -2043,41 +2044,27 @@
             margin: 0 auto;
             position: relative;
             overflow: hidden;
-            min-height: 300px; /* Add minimum height */
+            min-height: 300px;
         }
 
         .testimonial-track {
             display: flex;
-            transition: transform 0.5s ease;
-            width: 100%;
+            width: 400%;  /* 100% * number of slides */
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .testimonial-card {
-            width: 100%;
-            max-width: 800px;
-            background: white;
+            flex: 0 0 25%;  /* 100% / number of slides */
+            width: 25%;     /* 100% / number of slides */
             padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            border: 2px solid #ff0000;
-            margin: 0 auto;
             opacity: 0;
             transition: opacity 0.5s ease;
-            position: absolute;
-            left: 0;
-            top: 0;
-            display: none;
+            position: relative;
+            display: block;
         }
 
         .testimonial-card.active {
             opacity: 1;
-            display: block;
-            position: relative;
-        }
-
-        /* Remove the slider button styles as we're not using them anymore */
-        .slider-btn {
-            display: none;
         }
 
         .testimonial-stars {
@@ -2706,6 +2693,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            const track = document.querySelector('.testimonial-track');
             const cards = document.querySelectorAll('.testimonial-card');
             const dots = document.querySelectorAll('.dot');
             const totalSlides = cards.length;
@@ -2713,17 +2701,13 @@
             let autoSlideInterval;
 
             function updateSlidePosition() {
-                // Hide all cards first
-                cards.forEach(card => {
-                    card.style.display = 'none';
-                    card.classList.remove('active');
-                });
+                // Move the track to show the current slide
+                track.style.transform = `translateX(-${currentSlide * 25}%)`; // 100% / number of slides = 25%
                 
-                // Show current card
-                cards[currentSlide].style.display = 'block';
-                setTimeout(() => {
-                    cards[currentSlide].classList.add('active');
-                }, 50);
+                // Update active states
+                cards.forEach((card, index) => {
+                    card.classList.toggle('active', index === currentSlide);
+                });
                 
                 // Update dots
                 dots.forEach((dot, index) => {
@@ -2747,10 +2731,44 @@
 
             // Initialize first slide
             cards[0].classList.add('active');
-            cards[0].style.display = 'block';
             
             // Start auto-sliding
             resetAutoSlideTimer();
+
+            // Add click handlers to dots
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => goToSlide(index));
+            });
+
+            // Add touch support
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            track.addEventListener('touchstart', e => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, false);
+
+            track.addEventListener('touchend', e => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, false);
+
+            function handleSwipe() {
+                const swipeThreshold = 50; // minimum distance for swipe
+                const diff = touchStartX - touchEndX;
+
+                if (Math.abs(diff) > swipeThreshold) {
+                    if (diff > 0) {
+                        // Swipe left - next slide
+                        currentSlide = (currentSlide + 1) % totalSlides;
+                    } else {
+                        // Swipe right - previous slide
+                        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                    }
+                    updateSlidePosition();
+                    resetAutoSlideTimer();
+                }
+            }
         });
     </script>
 </body>

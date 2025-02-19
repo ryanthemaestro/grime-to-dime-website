@@ -674,32 +674,26 @@
             max-width: 800px;
             margin: 0 auto;
             overflow: hidden;
-            padding: 0 60px;
-            display: flex;
-            justify-content: center;
         }
 
         .testimonial-track {
             display: flex;
             transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            gap: 0;
             width: 100%;
-            margin: 0 auto;
-            position: relative;
         }
 
         .testimonial-card {
             flex: 0 0 100%;
             width: 100%;
-            max-width: 600px;
-            position: relative;
-            margin: 0 auto;
+            padding: 2rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: none;
         }
 
         .testimonial-card.active {
             opacity: 1;
-            transform: scale(1);
-            pointer-events: auto;
+            display: block;
         }
 
         .testimonial-stars {
@@ -782,40 +776,14 @@
             z-index: 10;
             width: 40px;
             height: 40px;
-            background: #ff0000;
-            color: white;
-            border: 1px solid #ffffff;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            padding: 0;
-            opacity: 0.9;
-        }
-
-        .slider-btn:hover {
-            background: #cc0000;
-            transform: translateY(-50%) scale(1.1);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            opacity: 1;
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        .slider-btn:active {
-            transform: translateY(-50%) scale(0.95);
         }
 
         .prev-btn {
-            left: 0;
+            left: 10px;
         }
 
         .next-btn {
-            right: 0;
+            right: 10px;
         }
 
         /* Touch Device Optimizations */
@@ -2066,32 +2034,26 @@
             max-width: 800px;
             margin: 0 auto;
             overflow: hidden;
-            padding: 0 60px;
-            display: flex;
-            justify-content: center;
         }
 
         .testimonial-track {
             display: flex;
             transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            gap: 0;
             width: 100%;
-            margin: 0 auto;
-            position: relative;
         }
 
         .testimonial-card {
             flex: 0 0 100%;
             width: 100%;
-            max-width: 600px;
-            position: relative;
-            margin: 0 auto;
+            padding: 2rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: none;
         }
 
         .testimonial-card.active {
             opacity: 1;
-            transform: scale(1);
-            pointer-events: auto;
+            display: block;
         }
 
         .testimonial-stars {
@@ -2174,40 +2136,14 @@
             z-index: 10;
             width: 40px;
             height: 40px;
-            background: #ff0000;
-            color: white;
-            border: 1px solid #ffffff;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            padding: 0;
-            opacity: 0.9;
-        }
-
-        .slider-btn:hover {
-            background: #cc0000;
-            transform: translateY(-50%) scale(1.1);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            opacity: 1;
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        .slider-btn:active {
-            transform: translateY(-50%) scale(0.95);
         }
 
         .prev-btn {
-            left: 0;
+            left: 10px;
         }
 
         .next-btn {
-            right: 0;
+            right: 10px;
         }
 
         /* Touch Device Optimizations */
@@ -2746,30 +2682,23 @@
 
     <script>
         let currentSlide = 0;
-        const track = document.querySelector('.testimonial-track');
         const cards = document.querySelectorAll('.testimonial-card');
         const dots = document.querySelectorAll('.dot');
         const totalSlides = cards.length;
         let autoSlideInterval;
-        let touchStartX = 0;
-        let touchEndX = 0;
 
         function updateSlidePosition() {
-            const slideWidth = cards[0].offsetWidth + 40; // Include margins
-            track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+            // Hide all cards first
+            cards.forEach(card => {
+                card.classList.remove('active');
+            });
+            
+            // Show only the current card
+            cards[currentSlide].classList.add('active');
             
             // Update dots
             dots.forEach((dot, index) => {
                 dot.classList.toggle('active', index === currentSlide);
-            });
-
-            // Update card visibility
-            cards.forEach((card, index) => {
-                if (index === currentSlide) {
-                    card.classList.add('active');
-                } else {
-                    card.classList.remove('active');
-                }
             });
         }
 
@@ -2792,49 +2721,27 @@
             }, 5000);
         }
 
-        // Touch events for mobile swipe
-        track.addEventListener('touchmove', (e) => {
-            if (!touchStartX) return;
-            
-            touchEndX = e.touches[0].clientX;
-            const diff = touchStartX - touchEndX;
-            const slideWidth = cards[0].offsetWidth + 40; // Include margins
-            
-            // Add resistance to prevent overscroll
-            track.style.transform = `translateX(${-currentSlide * slideWidth - diff * 0.5}px)`;
-        });
-
-        track.addEventListener('touchend', () => {
-            if (!touchStartX || !touchEndX) return;
-            
-            const diff = touchStartX - touchEndX;
-            const threshold = window.innerWidth * 0.15; // 15% of screen width
-            
-            if (Math.abs(diff) > threshold) {
-                if (diff > 0) {
-                    slideTestimonials(1); // Slide left
-                } else {
-                    slideTestimonials(-1); // Slide right
-                }
-            } else {
-                updateSlidePosition(); // Reset to current slide
-            }
-            
-            touchStartX = 0;
-            touchEndX = 0;
-        });
-
         // Initialize slider
         window.addEventListener('load', () => {
-            cards[0].classList.add('active');
             updateSlidePosition();
             resetAutoSlideTimer();
         });
 
-        // Handle window resize
-        window.addEventListener('resize', () => {
-            updateSlidePosition();
-        });
+        // Add navigation buttons
+        const sliderContainer = document.querySelector('.testimonial-slider');
+        
+        const prevButton = document.createElement('button');
+        prevButton.className = 'slider-btn prev-btn';
+        prevButton.innerHTML = '❮';
+        prevButton.onclick = () => slideTestimonials(-1);
+
+        const nextButton = document.createElement('button');
+        nextButton.className = 'slider-btn next-btn';
+        nextButton.innerHTML = '❯';
+        nextButton.onclick = () => slideTestimonials(1);
+
+        sliderContainer.appendChild(prevButton);
+        sliderContainer.appendChild(nextButton);
     </script>
 </body>
 </html> 

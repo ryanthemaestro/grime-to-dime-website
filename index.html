@@ -669,31 +669,46 @@
         }
 
         .testimonial-slider {
-            position: relative;
             width: 100%;
-            max-width: 800px;
+            max-width: 600px;
             margin: 0 auto;
+            position: relative;
             overflow: hidden;
+            padding: 0;
         }
 
         .testimonial-track {
             display: flex;
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.5s ease;
             width: 100%;
         }
 
         .testimonial-card {
             flex: 0 0 100%;
             width: 100%;
+            max-width: 600px;
+            background: white;
             padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            border: 2px solid #ff0000;
+            margin: 0 auto;
             opacity: 0;
-            transition: opacity 0.3s ease;
+            transition: opacity 0.5s ease;
+            position: absolute;
+            left: 0;
+            top: 0;
             display: none;
         }
 
         .testimonial-card.active {
             opacity: 1;
             display: block;
+        }
+
+        /* Remove the slider button styles as we're not using them anymore */
+        .slider-btn {
+            display: none;
         }
 
         .testimonial-stars {
@@ -2029,31 +2044,46 @@
         }
 
         .testimonial-slider {
-            position: relative;
             width: 100%;
-            max-width: 800px;
+            max-width: 600px;
             margin: 0 auto;
+            position: relative;
             overflow: hidden;
+            padding: 0;
         }
 
         .testimonial-track {
             display: flex;
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.5s ease;
             width: 100%;
         }
 
         .testimonial-card {
             flex: 0 0 100%;
             width: 100%;
+            max-width: 600px;
+            background: white;
             padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            border: 2px solid #ff0000;
+            margin: 0 auto;
             opacity: 0;
-            transition: opacity 0.3s ease;
+            transition: opacity 0.5s ease;
+            position: absolute;
+            left: 0;
+            top: 0;
             display: none;
         }
 
         .testimonial-card.active {
             opacity: 1;
             display: block;
+        }
+
+        /* Remove the slider button styles as we're not using them anymore */
+        .slider-btn {
+            display: none;
         }
 
         .testimonial-stars {
@@ -2690,22 +2720,20 @@
         function updateSlidePosition() {
             // Hide all cards first
             cards.forEach(card => {
+                card.style.display = 'none';
                 card.classList.remove('active');
             });
             
             // Show only the current card
-            cards[currentSlide].classList.add('active');
+            cards[currentSlide].style.display = 'block';
+            setTimeout(() => {
+                cards[currentSlide].classList.add('active');
+            }, 50);
             
             // Update dots
             dots.forEach((dot, index) => {
                 dot.classList.toggle('active', index === currentSlide);
             });
-        }
-
-        function slideTestimonials(direction) {
-            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
-            updateSlidePosition();
-            resetAutoSlideTimer();
         }
 
         function goToSlide(slideIndex) {
@@ -2717,7 +2745,8 @@
         function resetAutoSlideTimer() {
             clearInterval(autoSlideInterval);
             autoSlideInterval = setInterval(() => {
-                slideTestimonials(1);
+                currentSlide = (currentSlide + 1) % totalSlides;
+                updateSlidePosition();
             }, 5000);
         }
 

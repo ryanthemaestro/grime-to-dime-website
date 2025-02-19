@@ -1648,8 +1648,47 @@
             transition: transform 0.3s ease;
         }
 
-        .gallery-item:hover .gallery-overlay {
-            transform: translateY(0);
+        /* Desktop hover behavior */
+        @media (hover: hover) {
+            .gallery-item:hover .gallery-overlay {
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile specific styles */
+        @media (hover: none) {
+            .gallery-overlay {
+                transform: translateY(0);
+                padding: 15px;
+                background: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent);
+                height: auto;
+                max-height: 40%;
+            }
+
+            .gallery-caption {
+                font-size: 14px;
+                margin-bottom: 8px;
+            }
+
+            .gallery-cta {
+                padding: 8px 16px;
+                font-size: 14px;
+                background: #ff0000;
+                border-radius: 6px;
+                width: auto;
+                display: inline-block;
+                margin: 0 auto;
+            }
+
+            .gallery-cta .cta-text {
+                position: static;
+                transform: none;
+                opacity: 1;
+            }
+
+            .gallery-cta .cta-hover {
+                display: none;
+            }
         }
 
         .gallery-caption {

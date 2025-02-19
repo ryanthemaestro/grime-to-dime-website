@@ -2369,52 +2369,195 @@
     </style>
 
     <section id="about" class="about">
-        <div class="about-overlay"></div>
         <div class="about-container">
-            <h2>About Our Junk Removal Company</h2>
-        <div class="about-content">
-                <div class="about-text">
-                    <div class="about-card">
-                        <i class="fas fa-bolt about-icon"></i>
-                        <p>Serving Howard County and the surrounding areas, Grime To Dime is your trusted choice for fast, dependable junk removal. We pride ourselves on our prompt response and efficiency, ensuring your space is cleared quickly and professionally, with minimal disruption.</p>
+            <h2>Why Choose Grime To Dime for Your Junk Removal Needs?</h2>
+            <div class="about-main-text">
+                <p>At Grime To Dime, we're more than just a junk removal service—we're your trusted partner in Howard County and beyond. With lightning-fast service, transparent pricing, and a commitment to eco-friendly practices, we transform cluttered spaces into clean, functional areas you'll love. Whether it's a residential cleanup or a commercial project, we deliver results you can count on—every time, with a smile.</p>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-check-circle"></i>
                     </div>
-                    
-                    <div class="about-card">
-                        <i class="fas fa-check-circle about-icon"></i>
-                        <p>Our success is built on transparency, consistency, and exceptional service. Whether you're clearing a residential space or updating a commercial property in Howard County, we offer same-day service, punctual appointments, and clear, upfront pricing. You can count on us to deliver results that speak for themselves.</p>
-                    </div>
-                    
-                    <div class="about-card">
-                        <i class="fas fa-star about-icon"></i>
-                        <p>We go beyond speed — we deliver thorough, quality service that brings lasting value to our community. Every cleanup is executed with careful attention to detail and a commitment to eco-friendly practices, ensuring that your property and our environment are both in safe hands.</p>
-                    </div>
+                    <h3>Licensed and Insured</h3>
+                    <p>Peace of mind is our priority. We're fully licensed and insured, ensuring your property and our team are protected during every cleanup.</p>
                 </div>
-                
-                <div class="benefits-grid">
-                    <div class="benefit-card">
-                        <i class="fas fa-certificate"></i>
-                        <h4>Licensed and Insured</h4>
-                        <p>Full coverage for your peace of mind</p>
-                    </div>
-                    <div class="benefit-card">
+                <div class="feature-card">
+                    <div class="feature-icon">
                         <i class="fas fa-users"></i>
-                        <h4>Professional Team</h4>
-                        <p>Experienced and courteous staff</p>
                     </div>
-                    <div class="benefit-card">
-                        <i class="fas fa-tags"></i>
-                        <h4>Competitive Pricing</h4>
-                        <p>Fair rates for quality service</p>
+                    <h3>Professional Team</h3>
+                    <p>Our experienced, courteous staff treats your space with care. From start to finish, you'll feel confident in our expertise and dedication.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tag"></i>
                     </div>
-                    <div class="benefit-card">
+                    <h3>Competitive Pricing</h3>
+                    <p>Enjoy fair, upfront rates for top-quality service. No hidden fees—just transparent pricing that delivers real value.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
                         <i class="fas fa-leaf"></i>
-                        <h4>Eco-Friendly</h4>
-                        <p>Responsible disposal practices</p>
                     </div>
+                    <h3>Eco-Friendly Practices</h3>
+                    <p>We're committed to responsible disposal and sustainability. Every cleanup helps keep Howard County cleaner and greener.</p>
                 </div>
             </div>
         </div>
     </section>
+
+    <style>
+        .about {
+            padding: 5rem 0;
+            background: #ffffff;
+            position: relative;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .about h2 {
+            text-align: center;
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 2rem;
+            line-height: 1.3;
+        }
+
+        .about-main-text {
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+
+        .about-main-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 51, 51, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .feature-icon i {
+            font-size: 1.8rem;
+            color: #ff3333;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover .feature-icon {
+            background: #ff3333;
+        }
+
+        .feature-card:hover .feature-icon i {
+            color: #fff;
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .about {
+                padding: 4rem 0;
+            }
+
+            .about h2 {
+                font-size: 2rem;
+                padding: 0 1rem;
+            }
+
+            .about-main-text {
+                padding: 0 1rem;
+                margin-bottom: 3rem;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                padding: 0 1rem;
+            }
+
+            .feature-card {
+                padding: 1.5rem;
+            }
+
+            .feature-icon {
+                width: 50px;
+                height: 50px;
+            }
+
+            .feature-icon i {
+                font-size: 1.5rem;
+            }
+
+            .feature-card h3 {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .about {
+                padding: 3rem 0;
+            }
+
+            .about h2 {
+                font-size: 1.8rem;
+            }
+
+            .about-main-text p {
+                font-size: 1rem;
+            }
+
+            .feature-card {
+                padding: 1.25rem;
+            }
+        }
+    </style>
 
     <section id="contact" class="contact">
         <h2>Contact Us</h2>

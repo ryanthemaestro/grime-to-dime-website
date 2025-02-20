@@ -406,7 +406,7 @@ footer {
 }
 
 section.testimonials {
-    padding: 3rem 1rem;
+    padding: 0.5rem 1rem;
     background: #f8f9fa;
     width: 100%;
     text-align: center;
@@ -428,7 +428,7 @@ section.testimonials .testimonials-container {
 
 section.testimonials .testimonials-container h2 {
     text-align: center !important;
-    margin: 0 auto 0.5rem auto;
+    margin: 0 auto 0.25rem auto;
     width: 100%;
     font-size: 2.5rem;
     color: #222;
@@ -442,7 +442,7 @@ section.testimonials .testimonials-container h2 {
     margin: 0 auto;
     position: relative;
     overflow: hidden;
-    padding-top: 0.5rem;
+    padding-top: 0.25rem;
     height: 800px;
     display: flex;
     flex-direction: column;

@@ -103,9 +103,11 @@
 
         .landing-hero {
             min-height: 100vh;
-            background: linear-gradient(rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.65)),
+            background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
                         url('../images/trailer-loads/vecteezy_green-recycling-symbol-on-fresh-grass-background-for-eco_53633681.jpg') center/cover;
             background-attachment: fixed;
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(2px);
             display: flex;
             align-items: flex-start;
             padding: 2rem 1rem;
@@ -592,8 +594,9 @@
             }
 
             .landing-hero {
+                background-attachment: scroll;
                 min-height: auto;
-                padding-top: 100px; /* Adjusted for mobile */
+                padding-top: 100px;
             }
 
             .landing-container {

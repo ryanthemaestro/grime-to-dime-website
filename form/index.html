@@ -73,32 +73,23 @@
 
         nav {
             display: flex;
-            justify-content: flex-start;
+            justify-content: space-between;
             align-items: center;
-            width: 100%;
-            margin: 0;
             padding: 0 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            margin-left: 0;
-            padding-left: 0;
         }
 
         .logo img {
             height: 40px;
             width: auto;
             margin-right: 10px;
-            object-fit: contain;
-            display: block;
-            max-width: none;
-            transition: transform 0.3s ease;
-        }
-
-        .logo img:hover {
-            transform: scale(1.05);
         }
 
         .logo a {
@@ -108,9 +99,6 @@
             color: white;
             font-size: 1.2rem;
             font-weight: bold;
-            padding: 5px 0;
-            white-space: nowrap;
-            transition: color 0.3s ease;
         }
 
         .landing-hero {
@@ -594,12 +582,11 @@
             }
 
             .logo img {
-                height: 30px;
-                margin-right: 8px;
+                height: 35px;
             }
             
             .logo a {
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
 
             .landing-hero {
@@ -811,9 +798,9 @@
             }
         }
 
-        /* First, add the hamburger menu styles in the style section */
+        /* Hamburger menu styles */
         .hamburger-menu {
-            display: none;
+            display: flex;
             flex-direction: column;
             justify-content: space-around;
             width: 30px;
@@ -822,7 +809,7 @@
             border: none;
             cursor: pointer;
             padding: 0;
-            margin-left: auto;
+            z-index: 10;
         }
 
         .hamburger-menu span {
@@ -833,6 +820,7 @@
             transition: all 0.3s ease;
         }
 
+        /* Mobile menu styles */
         .mobile-menu {
             display: none;
             position: fixed;
@@ -847,6 +835,7 @@
 
         .mobile-menu.active {
             transform: translateY(0);
+            display: block;
         }
 
         .mobile-menu-links {

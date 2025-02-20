@@ -598,18 +598,27 @@
                 padding: 1rem;
                 transform: translateY(-100%);
                 transition: transform 0.3s ease;
-                display: none;
+                opacity: 0;
+                visibility: hidden;
+                z-index: 1000;
             }
 
             .mobile-menu.active {
                 transform: translateY(0);
                 display: block;
+                opacity: 1;
+                visibility: visible;
             }
 
             .mobile-menu-links {
                 list-style: none;
                 padding: 0;
                 margin: 0;
+                display: none;
+            }
+
+            .mobile-menu.active .mobile-menu-links {
+                display: block;
             }
 
             .mobile-menu-links li {
@@ -665,6 +674,24 @@
             .testimonial-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
+            }
+
+            .nav-phone {
+                display: none !important;
+            }
+
+            /* Hide all phone numbers in header except in mobile menu */
+            header .phone-number:not(.mobile-menu .phone-number) {
+                display: none !important;
+            }
+            
+            /* Ensure mobile menu phone is only visible when menu is active */
+            .mobile-menu .phone-number {
+                display: none;
+            }
+            
+            .mobile-menu.active .phone-number {
+                display: block;
             }
         }
 
@@ -822,17 +849,23 @@
             padding: 1rem;
             transform: translateY(-100%);
             transition: transform 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1000;
         }
 
         .mobile-menu.active {
             transform: translateY(0);
             display: block;
+            opacity: 1;
+            visibility: visible;
         }
 
         .mobile-menu-links {
             list-style: none;
             padding: 0;
             margin: 0;
+            display: none;
         }
 
         .mobile-menu-links li {
@@ -853,12 +886,43 @@
             color: #ff3333;
         }
 
+        .mobile-menu.active .mobile-menu-links {
+            display: block;
+        }
+
         @media (max-width: 768px) {
             .hamburger-menu {
                 display: flex;
             }
             
             .mobile-menu {
+                display: block;
+                visibility: hidden;
+            }
+            
+            .mobile-menu.active {
+                visibility: visible;
+            }
+            
+            .mobile-menu-links {
+                display: none;
+            }
+            
+            .mobile-menu.active .mobile-menu-links {
+                display: block;
+            }
+            
+            /* Hide all phone numbers in header except in mobile menu */
+            header .phone-number:not(.mobile-menu .phone-number) {
+                display: none !important;
+            }
+            
+            /* Ensure mobile menu phone is only visible when menu is active */
+            .mobile-menu .phone-number {
+                display: none;
+            }
+            
+            .mobile-menu.active .phone-number {
                 display: block;
             }
         }
@@ -883,7 +947,7 @@
                     <li><a href="#services">Services</a></li>
                     <li><a href="#about">About Us</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="tel:410-300-6743"><i class="fas fa-phone"></i> (410) 300-6743</a></li>
+                    <li><a href="tel:410-300-6743" class="phone-number"><i class="fas fa-phone"></i> (410) 300-6743</a></li>
                 </ul>
             </div>
         </nav>

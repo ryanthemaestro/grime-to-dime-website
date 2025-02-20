@@ -101,6 +101,13 @@
             font-weight: bold;
         }
 
+        .logo a span {
+            display: inline-block;
+            margin-left: 10px;
+            color: white;
+            font-weight: bold;
+        }
+
         .landing-hero {
             min-height: 100vh;
             background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
@@ -494,174 +501,100 @@
         }
 
         @media (max-width: 768px) {
-            .prev-btn {
-                left: -30px;
-            }
-
-            .next-btn {
-                right: -30px;
-            }
-
-            .testimonials {
-                min-height: 350px;
-            }
-            
-            .testimonial-card {
-                min-height: 250px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .prev-btn {
-                left: -25px;
-            }
-
-            .next-btn {
-                right: -25px;
-            }
-        }
-
-        /* Desktop Specific Styles */
-        @media (min-width: 1024px) {
-            .testimonial-slider {
-                max-width: 800px;
-            }
-
-            .testimonial-card {
-                padding: 2.5rem;
-            }
-
-            .testimonial-text {
-                font-size: 16px;
-                line-height: 1.8;
-            }
-
-            .slider-btn {
-                width: 50px;
-                height: 50px;
-            }
-
-            .testimonial-card {
-                max-width: 600px;
-            }
-        }
-
-        /* Mobile Styles */
-        @media (max-width: 1023px) {
-            .testimonial-slider {
-                max-width: 100%;
-            }
-
-            .testimonial-card {
-                padding: 1.5rem;
-            }
-        }
-
-        /* Updated Sticky CTA Styles */
-        .sticky-cta {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: white;
-            padding: 1rem;
-            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
-        }
-
-        .sticky-cta.visible {
-            transform: translateY(0);
-        }
-
-        .sticky-cta-button {
-            background: #ff3333;
-            color: white;
-            padding: 1rem;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-        }
-
-        @media (max-width: 768px) {
             header {
                 padding: 0.5rem 0;
             }
 
+            nav {
+                padding: 0.5rem 1rem;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .logo {
+                flex: 1;
+                justify-content: flex-start;
+            }
+
             .logo img {
                 height: 35px;
+                width: auto;
+                display: block;
             }
             
             .logo a {
                 font-size: 1.1rem;
+                white-space: nowrap;
+                display: flex;
+                align-items: center;
             }
 
-            .landing-hero {
-                background-attachment: scroll;
-                min-height: auto;
-                padding-top: 100px;
+            .logo a span {
+                display: inline-block;
+                font-size: 1.1rem;
+                margin-left: 8px;
             }
 
-            .landing-container {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .landing-content {
+            .mobile-menu {
+                position: fixed;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background: rgba(0, 0, 0, 0.95);
                 padding: 1rem;
-                text-align: left;
+                transform: translateY(-100%);
+                transition: transform 0.3s ease;
+                display: none;
             }
 
-            .landing-content h1 {
-                font-size: 1.8rem;
-                margin-bottom: 1rem;
-            }
-
-            .landing-content p {
-                font-size: 1rem;
-                margin-bottom: 1rem;
-            }
-
-            .benefits-list {
-                padding: 1.5rem;
-            }
-
-            .quote-form {
-                padding: 25px;
-                margin: 0 15px;
-            }
-
-            .form-headline {
-                font-size: 24px;
-            }
-
-            .cta-button {
-                font-size: 16px;
-                padding: 12px 25px;
-            }
-
-            .sticky-cta {
+            .mobile-menu.active {
+                transform: translateY(0);
                 display: block;
             }
 
-            .footer-content {
-                grid-template-columns: 1fr;
+            .mobile-menu-links {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .mobile-menu-links li {
+                margin: 1rem 0;
                 text-align: center;
             }
 
-            nav {
-                padding: 0 0.5rem;
+            .mobile-menu-links a {
+                color: white;
+                text-decoration: none;
+                font-size: 1.1rem;
+                display: block;
+                padding: 0.5rem;
+                transition: color 0.3s ease;
             }
-            
-            .logo {
-                margin-left: 0;
+
+            .mobile-menu-links a:hover {
+                color: #ff3333;
+            }
+
+            .hamburger-menu {
+                width: 30px;
+                height: 25px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                background: transparent;
+                border: none;
+                cursor: pointer;
+                padding: 0;
+                margin-left: 15px;
+            }
+
+            .hamburger-menu span {
+                width: 100%;
+                height: 3px;
+                background: white;
+                border-radius: 3px;
+                transition: all 0.3s ease;
             }
 
             .testimonial-card {
@@ -893,7 +826,7 @@
     <header>
         <nav>
             <div class="logo">
-                <a href="/"><img src="../images/MASTERPARENT.png" alt="Grime To Dime Logo"> Grime To Dime</a>
+                <a href="/"><img src="../images/MASTERPARENT.png" alt="Grime To Dime Logo"><span>Grime To Dime</span></a>
             </div>
             <button class="hamburger-menu" onclick="toggleMobileMenu()">
                 <span></span>

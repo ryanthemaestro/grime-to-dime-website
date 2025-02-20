@@ -407,7 +407,7 @@ footer {
 
 section.testimonials {
     padding: 5rem 1rem;
-    background: white;
+    background: #f8f9fa;
     width: 100%;
     text-align: center;
 }
@@ -430,6 +430,9 @@ section.testimonials .testimonials-container h2 {
     color: #222;
     display: block;
     position: relative;
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
 }
 
 .testimonial-slider {

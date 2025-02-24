@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KGQDKQFZNF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-KGQDKQFZNF');
+    </script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '610609778353163');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=610609778353163&ev=PageView&noscript=1"/></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Stay updated with the latest junk removal tips, eco-friendly disposal methods, and home organization ideas from Grime To Dime's blog.">
+    <title>Junk Removal Blog | Tips & Insights | Grime To Dime</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/Faviconmaster.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/Faviconmaster.png">
+    <link rel="shortcut icon" href="../images/Faviconmaster.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 0.75rem 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+            margin-right: 10px;
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .logo a span {
+            display: inline-block;
+            margin-left: 10px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .blog-container {
+            max-width: 1200px;
+            margin: 100px auto 50px;
+            padding: 0 20px;
+        }
+
+        .blog-hero {
+            text-align: center;
+            padding: 60px 20px;
+            margin-bottom: 50px;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/MASTERPARENT.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+            color: white;
+        }
+
+        .blog-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .blog-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .featured-post {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 50px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: stretch;
+        }
+
+        .featured-post-image {
+            flex: 0 0 50%;
+            background-size: cover;
+            background-position: center;
+            min-height: 400px;
+        }
+
+        .featured-post-content {
+            flex: 0 0 50%;
+            padding: 40px;
+        }
+
+        .featured-label {
+            color: #ff3333;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .post-title {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #222;
+        }
+
+        .post-excerpt {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .read-more {
+            display: inline-block;
+            background: #ff3333;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .read-more:hover {
+            background: #cc0000;
+            transform: translateY(-2px);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-card-image {
+            width: 100%;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .blog-card-content {
+            padding: 25px;
+        }
+
+        .blog-card-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #222;
+        }
+
+        .blog-card-excerpt {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .post-meta {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .featured-post {
+                flex-direction: column;
+            }
+
+            .featured-post-image {
+                min-height: 250px;
+            }
+
+            .featured-post-content {
+                padding: 25px;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .blog-hero {
+                padding: 40px 20px;
+            }
+
+            .blog-hero h1 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Mobile menu styles */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 60px;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.95);
+            padding: 1rem;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1000;
+        }
+
+        .mobile-menu.active {
+            transform: translateY(0);
+            display: block;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: none;
+        }
+
+        .mobile-menu-links li {
+            margin: 1rem 0;
+            text-align: center;
+        }
+
+        .mobile-menu-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            display: block;
+            padding: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu-links a:hover {
+            color: #ff3333;
+        }
+
+        .hamburger-menu {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 25px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 10;
+        }
+
+        .hamburger-menu span {
+            width: 30px;
+            height: 3px;
+            background: white;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger-menu {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="/"><img src="../images/MASTERPARENT.png" alt="Grime To Dime Logo"><span>Grime To Dime</span></a>
+            </div>
+            <button class="hamburger-menu" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="mobile-menu">
+                <ul class="mobile-menu-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="tel:410-300-6743" class="phone-number"><i class="fas fa-phone"></i> (410) 300-6743</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="blog-container">
+        <section class="blog-hero">
+            <h1>Junk Removal Tips & Insights</h1>
+            <p>Discover expert advice on decluttering, eco-friendly disposal, and home organization</p>
+        </section>
+
+        <article class="featured-post">
+            <div class="featured-post-image" style="background-image: url('../images/MASTERPARENT.png');"></div>
+            <div class="featured-post-content">
+                <span class="featured-label">FEATURED POST</span>
+                <h2 class="post-title">The Ultimate Guide to Eco-Friendly Junk Removal</h2>
+                <div class="post-meta">
+                    <i class="far fa-calendar"></i> March 15, 2024
+                    <span class="separator">•</span>
+                    <i class="far fa-clock"></i> 5 min read
+                </div>
+                <p class="post-excerpt">Learn how to dispose of your unwanted items responsibly while minimizing environmental impact. Discover the best practices for sustainable junk removal and recycling in Howard County.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </article>
+
+        <div class="blog-grid">
+            <article class="blog-card">
+                <div class="blog-card-image" style="background-image: url('../images/MASTERPARENT.png');"></div>
+                <div class="blog-card-content">
+                    <h3 class="blog-card-title">10 Items You Didn't Know Could Be Recycled</h3>
+                    <div class="post-meta">
+                        <i class="far fa-calendar"></i> March 12, 2024
+                        <span class="separator">•</span>
+                        <i class="far fa-clock"></i> 3 min read
+                    </div>
+                    <p class="blog-card-excerpt">Surprising items that can be recycled and how to properly dispose of them.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <div class="blog-card-image" style="background-image: url('../images/MASTERPARENT.png');"></div>
+                <div class="blog-card-content">
+                    <h3 class="blog-card-title">Spring Cleaning: Where to Start?</h3>
+                    <div class="post-meta">
+                        <i class="far fa-calendar"></i> March 10, 2024
+                        <span class="separator">•</span>
+                        <i class="far fa-clock"></i> 4 min read
+                    </div>
+                    <p class="blog-card-excerpt">A step-by-step guide to decluttering your home this spring season.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <div class="blog-card-image" style="background-image: url('../images/MASTERPARENT.png');"></div>
+                <div class="blog-card-content">
+                    <h3 class="blog-card-title">Commercial Junk Removal: Best Practices</h3>
+                    <div class="post-meta">
+                        <i class="far fa-calendar"></i> March 8, 2024
+                        <span class="separator">•</span>
+                        <i class="far fa-clock"></i> 6 min read
+                    </div>
+                    <p class="blog-card-excerpt">Essential tips for businesses looking to efficiently manage their waste.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const hamburgerBtn = document.querySelector('.hamburger-menu');
+            const spans = hamburgerBtn.querySelectorAll('span');
+            
+            mobileMenu.classList.toggle('active');
+            
+            if (mobileMenu.classList.contains('active')) {
+                spans[0].style.transform = 'rotate(45deg) translate(8px, 8px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(7px, -7px)';
+            } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        }
+
+        document.addEventListener('click', function(event) {
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const hamburgerBtn = document.querySelector('.hamburger-menu');
+            
+            if (!hamburgerBtn.contains(event.target) && !mobileMenu.contains(event.target) && mobileMenu.classList.contains('active')) {
+                toggleMobileMenu();
+            }
+        });
+    </script>
+</body>
+</html> 

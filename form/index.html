@@ -134,11 +134,10 @@
             grid-area: video;
             position: relative;
             width: 100%;
-            height: auto;
+            height: 100%;
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-            aspect-ratio: 16/9;
         }
 
         .video-container video {
@@ -173,12 +172,11 @@
 
         .benefits-list {
             grid-area: benefits;
-            list-style: none;
-            margin: 2rem 0;
             background: #F0F8F0;
             padding: 2rem;
             border-radius: 15px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            height: 100%;
         }
 
         .benefits-list li {
@@ -211,6 +209,9 @@
             margin: 0 auto;
             font-family: 'Roboto', Arial, sans-serif;
             position: relative;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
         .form-headline {
@@ -288,12 +289,11 @@
         }
 
         .trust-signals {
+            margin-top: auto;
             background: #F0F8F0;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-            margin-top: 0;
-            border-top: none;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
 
         .rating {
@@ -408,6 +408,7 @@
             padding: 2rem;
             border-radius: 15px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            height: 100%;
         }
 
         .testimonial-slider {
@@ -527,6 +528,7 @@
             }
 
             .video-container {
+                min-height: 300px;
                 margin-top: 2rem;
             }
 
@@ -1035,24 +1037,6 @@
                         <i class="fas fa-bolt"></i> Claim Your Instant Quote Now—Transform Your Space Today!
                     </button>
                 </form>
-            </div>
-
-            <div class="video-container">
-                <video autoplay loop muted playsinline>
-                    <source src="../images/trailer-loads/IMG_9317 (1).mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-
-            <div class="benefits-list">
-                <li><i class="fas fa-check-circle"></i> Free, No-Obligation Quotes</li>
-                <li><i class="fas fa-clock"></i> Same-Day Service Available</li>
-                <li><i class="fas fa-shield-alt"></i> Licensed & Insured Team</li>
-                <li><i class="fas fa-leaf"></i> Eco-Friendly Disposal</li>
-                <li><i class="fas fa-star"></i> 5-Star Customer Service</li>
-            </div>
-
-            <div class="testimonial-section">
                 <div class="trust-signals">
                     <div class="rating">
                         <div style="display: flex; gap: 4px;">
@@ -1071,7 +1055,24 @@
                         </a>
                     </div>
                 </div>
+            </div>
 
+            <div class="video-container">
+                <video autoplay loop muted playsinline>
+                    <source src="../images/trailer-loads/IMG_9317 (1).mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="benefits-list">
+                <li><i class="fas fa-check-circle"></i> Free, No-Obligation Quotes</li>
+                <li><i class="fas fa-clock"></i> Same-Day Service Available</li>
+                <li><i class="fas fa-shield-alt"></i> Licensed & Insured Team</li>
+                <li><i class="fas fa-leaf"></i> Eco-Friendly Disposal</li>
+                <li><i class="fas fa-star"></i> 5-Star Customer Service</li>
+            </div>
+
+            <div class="testimonial-section">
                 <div class="testimonial-slider">
                     <div class="testimonial-track">
                         <div class="testimonial-card">

@@ -123,12 +123,15 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
+            grid-template-areas: 
+                "form video"
+                "benefits testimonials";
             gap: 2rem;
-            align-items: stretch;
             width: 100%;
         }
 
         .video-container {
+            grid-area: video;
             position: relative;
             width: 100%;
             height: auto;
@@ -169,6 +172,7 @@
         }
 
         .benefits-list {
+            grid-area: benefits;
             list-style: none;
             margin: 2rem 0;
             background: #F0F8F0;
@@ -195,6 +199,7 @@
         }
 
         .quote-form {
+            grid-area: form;
             background: #FFFFFF;
             padding: 35px;
             border-radius: 15px;
@@ -283,10 +288,12 @@
         }
 
         .trust-signals {
-            margin-top: 1.5rem;
-            text-align: center;
-            padding: 1rem;
-            border-top: 1px solid #eee;
+            background: #F0F8F0;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            margin-top: 0;
+            border-top: none;
         }
 
         .rating {
@@ -395,20 +402,12 @@
             border-radius: 2px;
         }
 
-        .testimonials {
-            padding: 2rem 1rem;
-            background: white;
-            position: relative;
-            overflow: hidden;
-            margin-bottom: 80px;
-            min-height: 400px;
-        }
-
-        .testimonials-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0;
-            position: relative;
+        .testimonial-section {
+            grid-area: testimonials;
+            background: #F0F8F0;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
         }
 
         .testimonial-slider {
@@ -520,13 +519,19 @@
         @media (max-width: 768px) {
             .landing-container {
                 grid-template-columns: 1fr;
-                gap: 2rem;
+                grid-template-areas: 
+                    "form"
+                    "video"
+                    "benefits"
+                    "testimonials";
             }
 
             .video-container {
-                min-height: 300px;
                 margin-top: 2rem;
-                order: 2;
+            }
+
+            .testimonial-section {
+                margin-top: 2rem;
             }
 
             .quote-form {
@@ -535,11 +540,6 @@
 
             .benefits-list {
                 order: 3;
-            }
-
-            .testimonials {
-                margin-top: 2rem;
-                padding: 2rem 1rem;
             }
 
             .testimonial-slider {
@@ -1034,25 +1034,6 @@
                     <button type="submit" class="cta-button">
                         <i class="fas fa-bolt"></i> Claim Your Instant Quote Now—Transform Your Space Today!
                     </button>
-                    
-                    <div class="trust-signals">
-                        <div class="rating" style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 5px;">
-                            <div style="display: flex; gap: 4px;">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <span>Trusted by Elkridge & Howard County Residents</span>
-                        </div>
-                        <div class="contact-info">
-                            <p>Need immediate assistance?</p>
-                            <a href="tel:410-300-6743">
-                                <i class="fas fa-phone"></i> (410) 300-6743
-                            </a>
-                        </div>
-                    </div>
                 </form>
             </div>
 
@@ -1070,27 +1051,44 @@
                 <li><i class="fas fa-leaf"></i> Eco-Friendly Disposal</li>
                 <li><i class="fas fa-star"></i> 5-Star Customer Service</li>
             </div>
-        </div>
-    </section>
 
-    <section class="testimonials">
-        <div class="testimonials-container">
-            <div class="testimonial-slider">
-                <div class="testimonial-track">
-                    <div class="testimonial-card">
-                        <div class="testimonial-stars">★★★★★</div>
-                        <p class="testimonial-text">"Timely, good communication, and very polite. Accepted Venmo. Performed the job well quickly. Definitely recommend."</p>
-                        <p class="testimonial-author">- David P.<br>Baltimore, MD</p>
+            <div class="testimonial-section">
+                <div class="trust-signals">
+                    <div class="rating">
+                        <div style="display: flex; gap: 4px;">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span>Trusted by Elkridge & Howard County Residents</span>
                     </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-stars">★★★★★</div>
-                        <p class="testimonial-text">"Excellent service, very responsive, and the best price available. The company was very careful when removing a reclining sectional sofa from my family room; they took great care to avoid scraping walls and maneuvered the bulky sofa without making contact with the door."</p>
-                        <p class="testimonial-author">- Russell De Souza<br>Elkridge, MD</p>
+                    <div class="contact-info">
+                        <p>Need immediate assistance?</p>
+                        <a href="tel:410-300-6743">
+                            <i class="fas fa-phone"></i> (410) 300-6743
+                        </a>
                     </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-stars">★★★★★</div>
-                        <p class="testimonial-text">"Quick and efficient while respecting the space they hauled from. Incredible work for the price"</p>
-                        <p class="testimonial-author">- James B.<br>Odenton, MD</p>
+                </div>
+
+                <div class="testimonial-slider">
+                    <div class="testimonial-track">
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">★★★★★</div>
+                            <p class="testimonial-text">"Timely, good communication, and very polite. Accepted Venmo. Performed the job well quickly. Definitely recommend."</p>
+                            <p class="testimonial-author">- David P.<br>Baltimore, MD</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">★★★★★</div>
+                            <p class="testimonial-text">"Excellent service, very responsive, and the best price available. The company was very careful when removing a reclining sectional sofa from my family room; they took great care to avoid scraping walls and maneuvered the bulky sofa without making contact with the door."</p>
+                            <p class="testimonial-author">- Russell De Souza<br>Elkridge, MD</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">★★★★★</div>
+                            <p class="testimonial-text">"Quick and efficient while respecting the space they hauled from. Incredible work for the price"</p>
+                            <p class="testimonial-author">- James B.<br>Odenton, MD</p>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -888,6 +888,50 @@
             .mobile-menu.active .phone-number {
                 display: block;
             }
+            
+            /* Fix process section on mobile */
+            .process-steps {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .process-step {
+                padding: 1.5rem;
+                margin-top: 1.5rem;
+            }
+            
+            .process-heading {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+            
+            /* Fix guarantee section on mobile */
+            .guarantee-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .guarantee-icon {
+                margin-bottom: 1rem;
+            }
+            
+            .guarantee-content h3 {
+                font-size: 1.5rem;
+            }
+            
+            .guarantee-content p {
+                font-size: 1rem;
+            }
+            
+            .price-comparison {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .price-option.highlighted {
+                transform: none;
+                margin: 1rem 0;
+            }
         }
 
         /* New and Updated Styles */
@@ -941,7 +985,7 @@
 
             .testimonial-slider {
                 padding: 0;
-                height: 450px; /* Taller to fit content */
+                height: 550px; /* Increased from 500px to 550px */
                 overflow: hidden;
             }
             
@@ -1015,6 +1059,64 @@
                 align-items: center;
                 justify-content: center;
                 gap: 0.5rem;
+            }
+            
+            /* Process section mobile fixes */
+            .process-section {
+                padding: 3rem 0.75rem;
+            }
+            
+            .process-heading {
+                font-size: 1.8rem;
+                margin-bottom: 2rem;
+            }
+            
+            .process-step {
+                padding: 1.25rem;
+                margin-top: 1.5rem;
+            }
+            
+            .step-title {
+                font-size: 1.1rem;
+                margin: 1rem 0 0.5rem;
+            }
+            
+            .step-description {
+                font-size: 0.9rem;
+            }
+            
+            /* Guarantee section mobile fixes */
+            .guarantee-section {
+                padding: 2.5rem 0.75rem;
+            }
+            
+            .guarantee-icon {
+                font-size: 3rem;
+            }
+            
+            .guarantee-content h3 {
+                font-size: 1.3rem;
+            }
+            
+            .guarantee-content p {
+                font-size: 0.9rem;
+            }
+            
+            .price-anchor {
+                padding: 0.75rem;
+                margin: 1rem 0;
+            }
+            
+            .price-option {
+                padding: 0.75rem;
+            }
+            
+            .price-value {
+                font-size: 1.2rem;
+            }
+            
+            .price-value.original {
+                font-size: 1rem;
             }
         }
 

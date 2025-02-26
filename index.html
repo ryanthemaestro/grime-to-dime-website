@@ -912,6 +912,243 @@
                 font-size: 1.2rem;
             }
         }
+
+        /* New Contact Section Styles */
+        .contact-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            height: 100%;
+        }
+
+        .contact-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            color: #ff3333;
+        }
+
+        .contact-tagline {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .contact-details-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-detail-icon {
+            background: rgba(255, 51, 51, 0.1);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-detail-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-label {
+            font-size: 0.9rem;
+            color: #777;
+            margin-bottom: 0.2rem;
+        }
+
+        .contact-value {
+            font-size: 1.1rem;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .contact-link {
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-link:hover {
+            transform: translateY(-3px);
+        }
+
+        .hours-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem 1rem;
+            margin-top: 1rem;
+        }
+
+        .hours-day {
+            font-weight: 600;
+            color: #555;
+        }
+
+        .hours-time {
+            color: #666;
+        }
+
+        .contact-social {
+            margin-top: 2rem;
+            border-top: 1px solid #eee;
+            padding-top: 1.5rem;
+        }
+
+        .social-links-contact {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.8rem;
+        }
+
+        .social-links-contact a {
+            background: #f5f5f5;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links-contact a:hover {
+            background: #ff3333;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Form Styles */
+        .form-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .form-icon {
+            font-size: 2rem;
+            color: #ff3333;
+            margin-bottom: 1rem;
+        }
+
+        .form-tagline {
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #555;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: #ff3333;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 51, 51, 0.1);
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .form-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .form-checkbox input {
+            width: auto;
+        }
+
+        .form-checkbox label {
+            margin-bottom: 0;
+            font-size: 0.95rem;
+        }
+
+        .submit-button {
+            background: #ff3333;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            box-shadow: 0 4px 15px rgba(255, 51, 51, 0.2);
+        }
+
+        .submit-button:hover {
+            background: #e62e2e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 51, 51, 0.3);
+        }
+
+        .form-note {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #777;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-card {
+                margin-bottom: 2rem;
+            }
+        }
     </style>
     <!-- Meta Pixel Code -->
     <script>
@@ -2575,33 +2812,118 @@
         <h2>Contact Us</h2>
         <div class="contact-container">
             <div class="contact-info">
-                <h3>Get in Touch</h3>
-                <p class="contact-detail"><i class="fas fa-phone"></i> (410) 300-6743</p>
-                <p class="contact-detail"><i class="fas fa-envelope"></i> sawyer@grimetodime.com</p>
-                <p class="contact-detail"><i class="fas fa-location-dot"></i> Elkridge, Maryland 21075</p>
-                <div class="hours">
-                    <h4>Business Hours:</h4>
-                    <p class="hours-detail">Monday - Saturday: 7:00 AM - 7:00 PM</p>
-                    <p class="hours-detail">Sunday: Closed</p>
+                <div class="contact-card">
+                    <div class="contact-header">
+                        <i class="fas fa-headset contact-icon"></i>
+                        <h3>Get in Touch</h3>
+                    </div>
+                    <p class="contact-tagline">We're ready to help with your junk removal needs!</p>
+                    <div class="contact-details-container">
+                        <a href="tel:4103006743" class="contact-detail contact-link">
+                            <div class="contact-detail-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-detail-text">
+                                <span class="contact-label">Call us directly</span>
+                                <span class="contact-value">(410) 300-6743</span>
+                            </div>
+                        </a>
+                        <a href="mailto:sawyer@grimetodime.com" class="contact-detail contact-link">
+                            <div class="contact-detail-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-detail-text">
+                                <span class="contact-label">Email us</span>
+                                <span class="contact-value">sawyer@grimetodime.com</span>
+                            </div>
+                        </a>
+                        <div class="contact-detail">
+                            <div class="contact-detail-icon">
+                                <i class="fas fa-location-dot"></i>
+                            </div>
+                            <div class="contact-detail-text">
+                                <span class="contact-label">Service area</span>
+                                <span class="contact-value">Elkridge, Maryland 21075</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hours">
+                        <h4>Business Hours:</h4>
+                        <div class="hours-grid">
+                            <div class="hours-day">Monday - Friday:</div>
+                            <div class="hours-time">7:00 AM - 7:00 PM</div>
+                            <div class="hours-day">Saturday:</div>
+                            <div class="hours-time">7:00 AM - 7:00 PM</div>
+                            <div class="hours-day">Sunday:</div>
+                            <div class="hours-time">Closed</div>
+                        </div>
+                    </div>
+                    <div class="contact-social">
+                        <h4>Connect With Us:</h4>
+                        <div class="social-links-contact">
+                            <a href="https://www.facebook.com/profile.php?id=61571988560834" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/grime_to_dime_/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <form class="contact-form" action="https://formspree.io/f/meoovajl" method="POST" id="lead-form">
+                <div class="form-header">
+                    <i class="fas fa-paper-plane form-icon"></i>
+                    <h3>Send Us a Message</h3>
+                    <p class="form-tagline">Get a quick response to your inquiry</p>
+                </div>
                 <input type="hidden" name="_subject" value="New Contact from Grime To Dime Website">
                 <input type="hidden" name="_next" value="https://ryanthemaestro.github.io/grime-to-dime-website/thank-you.html">
                 <input type="text" name="_gotcha" style="display:none">
-                <div class="form-group">
-                    <input type="text" name="_name" placeholder="Your Name" required>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="_name" placeholder="John Smith" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="_phone" placeholder="(410) 555-1234">
+                    </div>
                 </div>
                 <div class="form-group">
-                    <input type="email" name="_replyto" placeholder="Your Email" required>
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="_replyto" placeholder="johnsmith@example.com" required>
                 </div>
                 <div class="form-group">
-                    <input type="tel" name="_phone" placeholder="Phone Number">
+                    <label for="service">Service Needed</label>
+                    <select id="service" name="_service" required>
+                        <option value="" disabled selected>Select a service</option>
+                        <option value="Residential Junk Removal">Residential Junk Removal</option>
+                        <option value="Commercial Junk Removal">Commercial Junk Removal</option>
+                        <option value="Furniture Removal">Furniture Removal</option>
+                        <option value="Appliance Removal">Appliance Removal</option>
+                        <option value="Construction Debris">Construction Debris</option>
+                        <option value="Other">Other (Please specify)</option>
+                    </select>
                 </div>
                 <div class="form-group">
-                    <textarea name="_message" placeholder="Tell us about your junk removal needs" required></textarea>
+                    <label for="message">Tell us about your junk removal needs</label>
+                    <textarea id="message" name="_message" placeholder="Please provide details about what you need removed, location, and any special requirements..." required></textarea>
                 </div>
-                <button type="submit" class="submit-button">Send Message</button>
+                <div class="form-group">
+                    <label for="timeframe">When do you need service?</label>
+                    <select id="timeframe" name="_timeframe">
+                        <option value="" disabled selected>Select timeframe</option>
+                        <option value="As soon as possible">As soon as possible</option>
+                        <option value="Within a week">Within a week</option>
+                        <option value="Within a month">Within a month</option>
+                        <option value="Just getting quotes">Just getting quotes</option>
+                    </select>
+                </div>
+                <div class="form-group form-checkbox">
+                    <input type="checkbox" id="consent" name="_consent" required>
+                    <label for="consent">I consent to being contacted about my inquiry</label>
+                </div>
+                <button type="submit" class="submit-button">
+                    <i class="fas fa-paper-plane"></i> Send Message
+                </button>
+                <p class="form-note">We typically respond within 1 business day</p>
             </form>
         </div>
     </section>

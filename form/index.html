@@ -677,23 +677,17 @@
                     "video"
                     "benefits"
                     "testimonials";
-                width: 100%;
-                max-width: 100%;
-                overflow: hidden;
             }
 
             .video-container {
                 min-height: 300px;
                 margin-top: 2rem;
                 height: 300px;
-                width: 100%;
-                max-width: 100%;
             }
             
             .video-container video {
                 object-fit: contain;
                 position: relative;
-                max-width: 100%;
             }
 
             .testimonial-section {
@@ -2094,6 +2088,9 @@
             
             // Initialize testimonial slider
             initTestimonialSlider();
+            
+            // Initialize FAQ accordion
+            initFaqAccordion();
         });
         
         // Testimonial slider functionality
@@ -2128,6 +2125,27 @@
             
             // Auto-advance slides every 5 seconds
             setInterval(nextSlide, 5000);
+        }
+
+        // Initialize FAQ accordion functionality
+        function initFaqAccordion() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    // Toggle active class on the clicked item
+                    item.classList.toggle('active');
+                    
+                    // Close other items when one is opened (optional)
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                });
+            });
         }
 
         function handleFormSubmit(event) {

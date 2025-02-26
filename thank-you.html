@@ -1,15 +1,195 @@
-    <title>Thank You | Grime To Dime</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KGQDKQFZNF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-KGQDKQFZNF');
+    </script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '610609778353163');
+    fbq('track', 'PageView');
+    fbq('track', 'Lead'); // Track lead conversion
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=610609778353163&ev=PageView&noscript=1"/></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thank you for requesting a quote from Grime To Dime. We'll be in touch shortly to provide your free junk removal estimate.">
+    <title>Thank You For Your Quote Request | Grime To Dime</title>
     <link rel="icon" type="image/png" sizes="32x32" href="images/Faviconmaster.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/Faviconmaster.png">
     <link rel="shortcut icon" href="images/Faviconmaster.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            overflow-x: hidden;
+        }
+
+        /* Thank You Section */
+        .thank-you-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                        url('images/trailer-loads/IMG_9150.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .thank-you-container {
+            max-width: 800px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .thank-you-header {
+            background: #ff3333;
+            padding: 2rem;
+            color: white;
+        }
+
+        .thank-you-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .thank-you-icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .thank-you-content {
+            padding: 3rem 2rem;
+        }
+
+        .thank-you-content p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+
+        .next-steps {
+            background: #f5f5f5;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .next-steps h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+            text-align: center;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .step-number {
+            background: #ff3333;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .step-content p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 0;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            background: #ff3333;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cta-button:hover {
+            background: #e62e2e;
+            transform: translateY(-2px);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid #ff3333;
+            color: #ff3333;
+        }
+
+        .cta-button.secondary:hover {
+            background: rgba(255, 51, 51, 0.1);
+        }
+
         .logo {
             display: flex;
             align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
         }
 
         .logo img {
-            height: 50px;
+            height: 60px;
             width: auto;
             margin-right: 12px;
             object-fit: contain;
@@ -18,16 +198,12 @@
             transition: transform 0.3s ease;
         }
 
-        .logo img:hover {
-            transform: scale(1.05);
-        }
-
         .logo a {
             display: flex;
             align-items: center;
             text-decoration: none;
-            color: white;
-            font-size: 1.4rem;
+            color: #333;
+            font-size: 1.6rem;
             font-weight: bold;
             padding: 5px 0;
             white-space: nowrap;
@@ -38,16 +214,220 @@
             color: #ff3333;
         }
 
+        .social-proof {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .review-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .stars {
+            color: #ffd700;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .review-text {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .trust-badge i {
+            color: #ff3333;
+            font-size: 1.2rem;
+        }
+
+        .trust-badge span {
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: 600;
+        }
+
         @media (max-width: 768px) {
+            .thank-you-header h1 {
+                font-size: 2rem;
+            }
+
+            .thank-you-icon {
+                font-size: 4rem;
+            }
+
+            .thank-you-content {
+                padding: 2rem 1.5rem;
+            }
+
+            .thank-you-content p {
+                font-size: 1.1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .cta-button {
+                width: 100%;
+                text-align: center;
+                justify-content: center;
+            }
+
+            .social-proof {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
             .logo img {
-                height: 40px;
+                height: 50px;
             }
             
             .logo a {
-                font-size: 1.2rem;
+                font-size: 1.4rem;
             }
         }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .thank-you-container {
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .countdown {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            color: #666;
+        }
+
+        .countdown span {
+            font-weight: bold;
+            color: #ff3333;
+        }
     </style>
-            <div class="logo">
-                <a href="/"><img src="images/MASTERPARENT.png" alt="Grime To Dime Logo" style="height: 50px; width: auto; display: block;"> Grime To Dime</a>
-            </div> 
+</head>
+<body>
+    <section class="thank-you-section">
+        <div class="thank-you-container">
+            <div class="thank-you-header">
+                <i class="fas fa-check-circle thank-you-icon"></i>
+                <h1>Thank You!</h1>
+                <p>Your quote request has been successfully submitted.</p>
+            </div>
+            
+            <div class="thank-you-content">
+                <div class="logo">
+                    <a href="/"><img src="images/MASTERPARENT.png" alt="Grime To Dime Logo"> Grime To Dime</a>
+                </div>
+                
+                <p>We've received your request and our team is already working on your personalized quote. We'll contact you shortly with pricing details and available time slots.</p>
+                
+                <div class="next-steps">
+                    <h2>What Happens Next?</h2>
+                    
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Quick Response</h3>
+                            <p>We'll contact you within 1-2 hours during business hours (or the next morning if after hours).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Personalized Quote</h3>
+                            <p>We'll provide a clear, no-obligation quote based on your specific junk removal needs.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Schedule Your Service</h3>
+                            <p>Once you approve the quote, we'll schedule your junk removal at a time that works for you.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <p>Need immediate assistance? Feel free to call us directly!</p>
+                
+                <div class="cta-buttons">
+                    <a href="tel:4103006743" class="cta-button">
+                        <i class="fas fa-phone"></i> Call (410) 300-6743
+                    </a>
+                    <a href="/" class="cta-button secondary">
+                        <i class="fas fa-home"></i> Return to Homepage
+                    </a>
+                </div>
+                
+                <div class="social-proof">
+                    <div class="review-badge">
+                        <div class="stars">★★★★★</div>
+                        <div class="review-text">4.9 out of 5 based on 50+ reviews</div>
+                    </div>
+                    
+                    <div class="trust-badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Licensed & Insured</span>
+                    </div>
+                    
+                    <div class="trust-badge">
+                        <i class="fas fa-leaf"></i>
+                        <span>Eco-Friendly Disposal</span>
+                    </div>
+                </div>
+                
+                <div class="countdown">
+                    You'll be redirected to our homepage in <span id="countdown">10</span> seconds
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Countdown timer
+        let seconds = 10;
+        const countdownElement = document.getElementById('countdown');
+        
+        const countdownTimer = setInterval(function() {
+            seconds--;
+            countdownElement.textContent = seconds;
+            
+            if (seconds <= 0) {
+                clearInterval(countdownTimer);
+                window.location.href = '/';
+            }
+        }, 1000);
+
+        // Track conversion in Google Analytics
+        if (typeof gtag === 'function') {
+            gtag('event', 'conversion', {'send_to': 'G-KGQDKQFZNF/lead'});
+            gtag('event', 'form_submission_complete', {
+                'event_category': 'Form',
+                'event_label': 'Quote Request Complete'
+            });
+        }
+    </script>
+</body>
+</html> 

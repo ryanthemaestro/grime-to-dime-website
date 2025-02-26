@@ -1156,7 +1156,8 @@
             }
             
             .testimonial-slider {
-                height: 700px; /* Increased height for very small screens */
+                height: 720px; /* Increased from 700px to 720px */
+                overflow: hidden;
             }
         }
 
@@ -1669,7 +1670,7 @@
 
         @media (max-width: 480px) {
             .testimonial-slider {
-                height: 550px; /* Increased from 500px to 550px */
+                height: 650px; /* Increased from 600px to 650px */
                 overflow: hidden;
             }
             
@@ -1765,7 +1766,8 @@
             }
             
             .testimonial-slider {
-                height: 700px; /* Increased height for very small screens */
+                height: 720px; /* Increased from 700px to 720px */
+                overflow: hidden;
             }
         }
 
@@ -1979,6 +1981,58 @@
 
         .fa-spinner {
             animation: spin 1s linear infinite;
+        }
+
+        @media (max-width: 768px) {
+            /* ... existing code ... */
+            
+            /* Fix process section on mobile */
+            .process-steps {
+                display: flex;
+                flex-direction: column;
+                gap: 3rem;
+                width: 100%;
+                overflow: visible;
+                margin: 0 auto;
+            }
+            
+            .process-step {
+                width: 100%;
+                margin-bottom: 2rem;
+                padding: 1.5rem;
+                box-sizing: border-box;
+                border: 1px solid #eee;
+                border-radius: 10px;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+                background: white;
+            }
+            
+            .process-icon {
+                margin-bottom: 1rem;
+                font-size: 2.5rem;
+            }
+            
+            .process-heading {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+            
+            .process-description {
+                font-size: 1rem;
+                line-height: 1.5;
+            }
+            
+            .process-section {
+                padding-bottom: 6rem;
+                overflow: visible;
+            }
+            
+            .process-container {
+                overflow: visible;
+                padding: 0 1rem;
+            }
+            
+            /* ... existing code ... */
         }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>

@@ -540,6 +540,14 @@
             .video-container {
                 min-height: 300px;
                 margin-top: 2rem;
+                height: 300px;
+            }
+            
+            .video-container video {
+                object-fit: contain;
+                height: 100%;
+                width: 100%;
+                position: relative;
             }
 
             .testimonial-section {
@@ -728,6 +736,19 @@
 
             .quote-form {
                 padding: 1.2rem;
+            }
+            
+            .video-container {
+                height: auto;
+                min-height: 250px;
+            }
+            
+            .video-container video {
+                position: static;
+                display: block;
+                height: auto;
+                max-height: 250px;
+                object-fit: contain;
             }
 
             .benefits-list li {

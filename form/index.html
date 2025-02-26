@@ -246,8 +246,8 @@
         }
 
         .urgency-banner {
-            background: #fff3f3;
-            color: #ff3333;
+            background: linear-gradient(135deg, #ff3333, #ff6666);
+            color: white;
             padding: 12px 20px;
             border-radius: 8px;
             margin-bottom: 1.8rem;
@@ -256,12 +256,47 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 15px rgba(255, 51, 51, 0.2);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.02);
+            }
+            100% {
+                transform: scale(1);
+            }
         }
 
         .form-group {
             margin-bottom: 1.2rem;
             text-align: left;
+            position: relative;
+        }
+
+        .form-group label {
+            position: absolute;
+            left: 15px;
+            top: 18px;
+            color: #888;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            pointer-events: none;
+            background: white;
+            padding: 0 5px;
+        }
+
+        .form-group input:focus ~ label,
+        .form-group input:not(:placeholder-shown) ~ label {
+            top: -10px;
+            left: 10px;
+            font-size: 14px;
+            color: #ff3333;
+            font-weight: 500;
         }
 
         .form-group input {
@@ -274,6 +309,11 @@
             line-height: 1.5;
             transition: all 0.3s ease;
             color: #333;
+            background: white;
+        }
+
+        .form-group input::placeholder {
+            color: transparent;
         }
 
         .form-group input:hover {
@@ -286,8 +326,54 @@
             outline: none;
         }
 
+        .form-progress {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .form-progress::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #E6E6E6;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+
+        .progress-step {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: white;
+            border: 2px solid #E6E6E6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: #888;
+            position: relative;
+            z-index: 2;
+        }
+
+        .progress-step.active {
+            background: #ff3333;
+            border-color: #ff3333;
+            color: white;
+        }
+
+        .progress-step.completed {
+            background: #28a745;
+            border-color: #28a745;
+            color: white;
+        }
+
         .cta-button {
-            background: #FF0000;
+            background: linear-gradient(135deg, #FF0000, #CC0000);
             color: white;
             padding: 18px 30px;
             border: none;
@@ -301,57 +387,110 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            box-shadow: 0 4px 15px rgba(255, 51, 51, 0.2);
-            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 20px rgba(255, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: all 0.6s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
         }
 
         .cta-button:hover {
-            background: #CC0000;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 51, 51, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(255, 0, 0, 0.3);
+            background: linear-gradient(135deg, #E60000, #B30000);
         }
 
         .trust-signals {
-            margin-top: auto;
-            padding: 1.5rem;
-            border-radius: 10px;
-            text-align: center;
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
         }
 
         .rating {
-            margin-bottom: 1rem;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            gap: 5px;
-            color: #333;
+            gap: 0.5rem;
         }
 
         .rating i {
-            color: #ffd700;
+            color: #FFD700;
             font-size: 18px;
         }
 
+        .rating span {
+            font-size: 14px;
+            color: #666;
+        }
+
         .contact-info {
-            margin-top: 1rem;
-            text-align: center;
-            font-size: 1.1rem;
-            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-info p {
+            font-size: 14px;
+            color: #666;
+            margin: 0;
         }
 
         .contact-info a {
             color: #ff3333;
             text-decoration: none;
             font-weight: 600;
+            font-size: 18px;
             display: flex;
             align-items: center;
-            justify-content: center;
             gap: 8px;
-            margin-top: 0.5rem;
+            transition: all 0.3s ease;
         }
 
         .contact-info a:hover {
             color: #cc0000;
+            transform: scale(1.05);
+        }
+
+        .form-features {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #eee;
+        }
+
+        .form-feature {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            flex: 1;
+        }
+
+        .form-feature i {
+            font-size: 24px;
+            color: #28a745;
+        }
+
+        .form-feature span {
+            font-size: 12px;
+            color: #666;
+            text-align: center;
         }
 
         footer {
@@ -1442,6 +1581,77 @@
             width: auto;
             box-sizing: border-box;
         }
+
+        .form-group input:focus {
+            border-color: #ff3333;
+            box-shadow: 0 0 0 3px rgba(255, 51, 51, 0.1);
+            outline: none;
+        }
+
+        .form-group input.valid {
+            border-color: #28a745;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2328a745' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E") no-repeat right 10px center/20px auto;
+            padding-right: 40px;
+        }
+
+        .form-group input.invalid {
+            border-color: #dc3545;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23dc3545' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E") no-repeat right 10px center/20px auto;
+            padding-right: 40px;
+        }
+
+        .form-group input.invalid:focus {
+            border-color: #dc3545;
+            box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+        }
+
+        .form-group input.valid:focus {
+            border-color: #28a745;
+            box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.1);
+        }
+
+        .success-message {
+            text-align: center;
+            padding: 2rem;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .success-message h2 {
+            color: #28a745;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .success-message p {
+            color: #666;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Loading spinner animation */
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .fa-spinner {
+            animation: spin 1s linear infinite;
+        }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
     <script src="../js/meta-pixel.js"></script>
@@ -1489,22 +1699,48 @@
                     <i class="fas fa-clock"></i> Limited Same-Day Slots Available—Act Now!
                 </div>
                 <h1 class="form-headline">Revitalize Your Space with Our Eco-Friendly Junk Removal Services</h1>
+                
+                <div class="form-progress">
+                    <div class="progress-step active">1</div>
+                    <div class="progress-step">2</div>
+                    <div class="progress-step">3</div>
+                </div>
+                
                 <form action="https://formspree.io/f/meoovajl" method="POST" id="quote-form" onsubmit="return handleFormSubmit(event)">
                     <input type="hidden" name="_subject" value="New Contact from Grime To Dime Website">
                     <input type="text" name="_gotcha" style="display:none">
                     <div class="form-group">
-                        <input type="text" name="_name" id="_name" placeholder="Your Name" required>
+                        <input type="text" name="_name" id="_name" placeholder=" " required>
+                        <label for="_name">Your Name</label>
                     </div>
                     <div class="form-group">
-                        <input type="tel" name="_phone" id="_phone" placeholder="Your Phone" required>
+                        <input type="tel" name="_phone" id="_phone" placeholder=" " required>
+                        <label for="_phone">Your Phone</label>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="_zip" id="_zip" placeholder="Your ZIP Code" pattern="[0-9]{5}" title="Please enter a valid 5-digit ZIP code" required>
+                        <input type="text" name="_zip" id="_zip" placeholder=" " pattern="[0-9]{5}" title="Please enter a valid 5-digit ZIP code" required>
+                        <label for="_zip">Your ZIP Code</label>
                     </div>
                     <button type="submit" class="cta-button">
-                        <i class="fas fa-bolt"></i> Claim Your Instant Quote Now—Transform Your Space Today!
+                        <i class="fas fa-bolt"></i> Get Your Free Quote Now
                     </button>
                 </form>
+                
+                <div class="form-features">
+                    <div class="form-feature">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Secure & Private</span>
+                    </div>
+                    <div class="form-feature">
+                        <i class="fas fa-bolt"></i>
+                        <span>Instant Quote</span>
+                    </div>
+                    <div class="form-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>No Obligation</span>
+                    </div>
+                </div>
+                
                 <div class="trust-signals">
                     <div class="rating">
                         <div style="display: flex; gap: 4px;">
@@ -1712,61 +1948,89 @@
             mobileMenu.classList.toggle('active');
             
             if (mobileMenu.classList.contains('active')) {
+                document.querySelector('.mobile-menu-links').style.display = 'block';
                 spans[0].style.transform = 'rotate(45deg) translate(8px, 8px)';
                 spans[1].style.opacity = '0';
                 spans[2].style.transform = 'rotate(-45deg) translate(7px, -7px)';
-                document.querySelector('.mobile-menu-links').style.display = 'block';
             } else {
+                document.querySelector('.mobile-menu-links').style.display = 'none';
                 spans[0].style.transform = 'none';
                 spans[1].style.opacity = '1';
                 spans[2].style.transform = 'none';
-                document.querySelector('.mobile-menu-links').style.display = 'none';
             }
         }
 
-        // Testimonial slider functionality
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.testimonial-card');
-        
-        function showSlide(index) {
-            slides.forEach(slide => {
-                slide.classList.remove('active');
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add input validation feedback
+            const formInputs = document.querySelectorAll('.form-group input');
+            
+            formInputs.forEach(input => {
+                // Show validation feedback on blur
+                input.addEventListener('blur', function() {
+                    if (this.checkValidity()) {
+                        this.classList.add('valid');
+                        this.classList.remove('invalid');
+                    } else if (this.value) {
+                        this.classList.add('invalid');
+                        this.classList.remove('valid');
+                    }
+                });
+                
+                // Remove validation classes on focus
+                input.addEventListener('focus', function() {
+                    this.classList.remove('invalid');
+                });
             });
             
-            if (index >= slides.length) {
-                currentSlide = 0;
-            } else if (index < 0) {
-                currentSlide = slides.length - 1;
-            } else {
-                currentSlide = index;
-            }
+            // Phone number formatting
+            const phoneInput = document.getElementById('_phone');
+            phoneInput.addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\D/g, '');
+                if (value.length > 0) {
+                    if (value.length <= 3) {
+                        value = '(' + value;
+                    } else if (value.length <= 6) {
+                        value = '(' + value.substring(0, 3) + ') ' + value.substring(3);
+                    } else {
+                        value = '(' + value.substring(0, 3) + ') ' + value.substring(3, 6) + '-' + value.substring(6, 10);
+                    }
+                }
+                e.target.value = value;
+            });
             
-            slides[currentSlide].classList.add('active');
-        }
-        
-        function nextSlide() {
-            showSlide(currentSlide + 1);
-        }
-        
-        function prevSlide() {
-            showSlide(currentSlide - 1);
-        }
-        
-        // Initialize the slider
-        showSlide(0);
-        
-        // Auto-advance slides every 5 seconds
-        setInterval(nextSlide, 5000);
-        
-        // Form submission handling
+            // ZIP code validation
+            const zipInput = document.getElementById('_zip');
+            zipInput.addEventListener('input', function(e) {
+                e.target.value = e.target.value.replace(/\D/g, '').substring(0, 5);
+            });
+        });
+
         function handleFormSubmit(event) {
             event.preventDefault();
             
-            const form = event.target;
-            const formData = new FormData(form);
+            // Validate form
+            const form = document.getElementById('quote-form');
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return false;
+            }
             
+            // Show loading state
+            const submitButton = form.querySelector('button[type="submit"]');
+            const originalText = submitButton.innerHTML;
+            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+            submitButton.disabled = true;
+            
+            // Complete progress steps
+            document.querySelectorAll('.progress-step').forEach(step => {
+                step.classList.add('completed');
+                step.classList.remove('active');
+            });
+            
+            // Submit the form
+            const formData = new FormData(form);
             fetch(form.action, {
-                method: form.method,
+                method: 'POST',
                 body: formData,
                 headers: {
                     'Accept': 'application/json'
@@ -1775,94 +2039,41 @@
             .then(response => {
                 if (response.ok) {
                     // Show success message
-                    form.reset();
-                    alert('Thank you for your submission! We will contact you shortly.');
+                    form.innerHTML = `
+                        <div class="success-message">
+                            <i class="fas fa-check-circle" style="font-size: 48px; color: #28a745; margin-bottom: 20px;"></i>
+                            <h2>Thank You!</h2>
+                            <p>Your quote request has been submitted successfully.</p>
+                            <p>We'll contact you shortly to provide your free estimate.</p>
+                        </div>
+                    `;
                     
                     // Track conversion
                     if (typeof fbq !== 'undefined') {
                         fbq('track', 'Lead');
                     }
                     if (typeof gtag !== 'undefined') {
-                        gtag('event', 'conversion', {
-                            'send_to': 'G-KGQDKQFZNF',
-                            'event_category': 'Form',
-                            'event_label': 'Quote Request',
-                            'value': 1
-                        });
-                    }
-                    if (typeof twq !== 'undefined') {
-                        twq('event', 'tw-p6e43-oiw9o', {});
+                        gtag('event', 'conversion', {'send_to': 'G-KGQDKQFZNF/lead'});
                     }
                     
-                    return response.json();
+                    // Redirect after delay
+                    setTimeout(() => {
+                        window.location.href = '/thank-you.html';
+                    }, 3000);
+                    
+                } else {
+                    throw new Error('Network response was not ok');
                 }
-                throw new Error('Network response was not ok.');
             })
             .catch(error => {
                 console.error('Error:', error);
-                alert('There was a problem with your submission. Please try again.');
+                submitButton.innerHTML = originalText;
+                submitButton.disabled = false;
+                alert('There was a problem submitting your form. Please try again.');
             });
             
             return false;
         }
-        
-        // Sticky CTA functionality
-        window.addEventListener('scroll', function() {
-            const stickyCta = document.querySelector('.sticky-cta');
-            const formSection = document.querySelector('.quote-form');
-            const formPosition = formSection.getBoundingClientRect();
-            
-            if (formPosition.bottom < 0) {
-                stickyCta.classList.add('visible');
-            } else {
-                stickyCta.classList.remove('visible');
-            }
-        });
-        
-        function scrollToForm() {
-            const formSection = document.querySelector('.quote-form');
-            formSection.scrollIntoView({ behavior: 'smooth' });
-        }
-
-        // FAQ Accordion functionality
-        const faqItems = document.querySelectorAll('.faq-item');
-        
-        faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question');
-            
-            question.addEventListener('click', () => {
-                // Close all other items
-                faqItems.forEach(otherItem => {
-                    if (otherItem !== item) {
-                        otherItem.classList.remove('active');
-                    }
-                });
-                
-                // Toggle current item
-                item.classList.toggle('active');
-            });
-        });
-
-        // Exit intent popup
-        let showExitPopup = true;
-        
-        document.addEventListener('mouseleave', function(e) {
-            if (e.clientY < 0 && showExitPopup) {
-                document.querySelector('.exit-popup').classList.add('active');
-                showExitPopup = false;
-            }
-        });
-        
-        document.querySelector('.exit-popup-close').addEventListener('click', function() {
-            document.querySelector('.exit-popup').classList.remove('active');
-        });
-        
-        // Close popup when clicking outside content
-        document.querySelector('.exit-popup').addEventListener('click', function(e) {
-            if (e.target === this) {
-                this.classList.remove('active');
-            }
-        });
     </script>
 </body>
 </html> 

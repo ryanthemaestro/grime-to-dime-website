@@ -259,11 +259,6 @@
             .phone-number span {
                 display: none;
             }
-            
-            .services-grid,
-            .areas-grid {
-                grid-template-columns: 1fr;
-            }
         }
 
         /* Process Section Styles */
@@ -669,122 +664,7 @@
             }
         }
 
-        /* Services Section Styles - NEW */
-        .services-section {
-            padding: 5rem 1rem;
-            background-color: #f9f9f9;
-        }
-
-        .services-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .services-container h2 {
-            font-size: 2.2rem;
-            margin-bottom: 3rem;
-            color: #222;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .service-item {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-            text-align: center;
-        }
-
-        .service-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .service-icon {
-            font-size: 2.5rem;
-            color: #ff3333;
-            margin-bottom: 1.5rem;
-        }
-
-        .service-item h3 {
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-            color: #333;
-        }
-
-        .service-item p {
-            color: #666;
-            line-height: 1.6;
-        }
-
-        /* Areas Section Styles - NEW */
-        .areas-section {
-            padding: 5rem 1rem;
-            background-color: white;
-        }
-
-        .areas-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .areas-container h2 {
-            font-size: 2.2rem;
-            margin-bottom: 1.5rem;
-            color: #222;
-        }
-
-        .areas-description {
-            font-size: 1.1rem;
-            color: #666;
-            max-width: 800px;
-            margin: 0 auto 3rem;
-        }
-
-        .areas-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .area-item {
-            background: #f9f9f9;
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .area-item:hover {
-            transform: translateY(-5px);
-            background: #ff3333;
-            color: white;
-        }
-
-        .area-item:hover i,
-        .area-item:hover h3 {
-            color: white;
-        }
-
-        .area-item i {
-            font-size: 1.8rem;
-            color: #ff3333;
-            margin-bottom: 1rem;
-        }
-
-        .area-item h3 {
-            font-size: 1.3rem;
-            color: #333;
-        }
-
-        /* Note: Mobile styles for services and areas are included in the main mobile styles section above */
+        /* Note: Services and Areas sections have been removed as requested */
     </style>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
@@ -910,62 +790,6 @@
         </div>
     </section>
 
-    <!-- Services Section - NEW -->
-    <section class="services-section">
-        <div class="services-container">
-            <h2>Our Junk Removal Services in Howard County</h2>
-            <div class="services-grid">
-                <div class="service-item">
-                    <div class="service-icon">
-                        <i class="fas fa-couch"></i>
-                    </div>
-                    <h3>Furniture Removal</h3>
-                    <p>We'll haul away sofas, mattresses, tables, chairs, and all unwanted furniture items quickly and efficiently.</p>
-                </div>
-                
-                <div class="service-item">
-                    <div class="service-icon">
-                        <i class="fas fa-tools"></i>
-                    </div>
-                    <h3>Appliance Disposal</h3>
-                    <p>From refrigerators and TVs to washers and dryers, we properly dispose of all appliances, large and small.</p>
-                </div>
-                
-                <div class="service-item">
-                    <div class="service-icon">
-                        <i class="fas fa-hard-hat"></i>
-                    </div>
-                    <h3>Construction Debris Removal</h3>
-                    <p>Clean up your renovation or construction site with our fast and reliable debris removal service.</p>
-                </div>
-                
-                <div class="service-item">
-                    <div class="service-icon">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <h3>Basement & Garage Cleanouts</h3>
-                    <p>Reclaim your space with our complete basement and garage cleanout services.</p>
-                </div>
-                
-                <div class="service-item">
-                    <div class="service-icon">
-                        <i class="fas fa-truck-moving"></i>
-                    </div>
-                    <h3>Moving Cleanouts</h3>
-                    <p>Make your move easier with our comprehensive moving cleanout services for homes and apartments.</p>
-                </div>
-                
-                <div class="service-item">
-                    <div class="service-icon">
-                        <i class="fas fa-recycle"></i>
-                    </div>
-                    <h3>Electronics Recycling</h3>
-                    <p>Responsibly recycle computers, TVs, and other electronics with our eco-friendly disposal services.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Testimonials Section -->
     <section class="testimonials-section">
         <div class="testimonials-container">
@@ -998,41 +822,6 @@
                         <i class="fas fa-hand-holding-usd"></i>
                         <span>Satisfaction Guaranteed</span>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Areas We Serve - NEW -->
-    <section class="areas-section">
-        <div class="areas-container">
-            <h2>Junk Removal Service Areas</h2>
-            <p class="areas-description">We provide fast, reliable junk removal services throughout Howard County and surrounding areas:</p>
-            
-            <div class="areas-grid">
-                <div class="area-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <h3>Ellicott City</h3>
-                </div>
-                <div class="area-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <h3>Columbia</h3>
-                </div>
-                <div class="area-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <h3>Elkridge</h3>
-                </div>
-                <div class="area-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <h3>Baltimore</h3>
-                </div>
-                <div class="area-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <h3>Howard County</h3>
-                </div>
-                <div class="area-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <h3>Maryland</h3>
                 </div>
             </div>
         </div>

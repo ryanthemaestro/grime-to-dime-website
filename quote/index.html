@@ -21,8 +21,8 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Get your free junk removal quote in Howard County, MD. Same-day service available with upfront pricing and eco-friendly disposal. No hidden fees!">
-    <title>Free Junk Removal Quote | Same-Day Service | Grime To Dime</title>
+    <meta name="description" content="Junk Removal Near Me in Howard County, MD. Same-day furniture removal, appliance disposal & moving cleanouts. Free quotes, eco-friendly disposal, no hidden fees!">
+    <title>Junk Removal Near Me | Howard County | Same-Day Service | Grime To Dime</title>
     <link rel="icon" type="image/png" sizes="32x32" href="../images/Faviconmaster.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../images/Faviconmaster.png">
     <link rel="shortcut icon" href="../images/Faviconmaster.png">
@@ -258,6 +258,11 @@
 
             .phone-number span {
                 display: none;
+            }
+            
+            .services-grid,
+            .areas-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -663,6 +668,123 @@
                 display: block;
             }
         }
+
+        /* Services Section Styles - NEW */
+        .services-section {
+            padding: 5rem 1rem;
+            background-color: #f9f9f9;
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .services-container h2 {
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            color: #222;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .service-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: #ff3333;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-item h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .service-item p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Areas Section Styles - NEW */
+        .areas-section {
+            padding: 5rem 1rem;
+            background-color: white;
+        }
+
+        .areas-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .areas-container h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: #222;
+        }
+
+        .areas-description {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .area-item {
+            background: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .area-item:hover {
+            transform: translateY(-5px);
+            background: #ff3333;
+            color: white;
+        }
+
+        .area-item:hover i,
+        .area-item:hover h3 {
+            color: white;
+        }
+
+        .area-item i {
+            font-size: 1.8rem;
+            color: #ff3333;
+            margin-bottom: 1rem;
+        }
+
+        .area-item h3 {
+            font-size: 1.3rem;
+            color: #333;
+        }
+
+        /* Note: Mobile styles for services and areas are included in the main mobile styles section above */
     </style>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
@@ -702,20 +824,20 @@
     <section class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1>Same-Day Junk Removal in Howard County</h1>
-                <p>Get your free quote in minutes. We'll haul away your unwanted items quickly, responsibly, and at an affordable price.</p>
+                <h1>Junk Removal Near Me in Howard County</h1>
+                <p>Get your free quote in minutes. We'll haul away your unwanted items with same-day service, responsible disposal, and affordable pricing.</p>
                 
                 <ul class="hero-benefits">
                     <li><i class="fas fa-check-circle"></i> Free, No-Obligation Quotes</li>
-                    <li><i class="fas fa-check-circle"></i> Same-Day Service Available</li>
+                    <li><i class="fas fa-check-circle"></i> Same-Day Junk Removal Available</li>
                     <li><i class="fas fa-check-circle"></i> Licensed & Insured Team</li>
-                    <li><i class="fas fa-check-circle"></i> Eco-Friendly Disposal</li>
+                    <li><i class="fas fa-check-circle"></i> Eco-Friendly Disposal Methods</li>
                     <li><i class="fas fa-check-circle"></i> Upfront Pricing - No Hidden Fees</li>
                 </ul>
             </div>
 
             <div class="quote-form-container">
-                <h2>Get Your Free Quote Today</h2>
+                <h2>Get Your Free Junk Removal Quote</h2>
                 <form class="quote-form" id="quoteForm" action="https://formspree.io/f/meoovajl" method="POST" onsubmit="return handleFormSubmit(event)">
                     <input type="hidden" name="_subject" value="New Quote Request from Grime To Dime Website">
                     <input type="hidden" name="_next" value="https://grimetodime.com/thank-you.html">
@@ -759,7 +881,7 @@
     <!-- How It Works Section -->
     <section class="process-section">
         <div class="process-container">
-            <h2>How It Works - Simple 3-Step Process</h2>
+            <h2>How Our Junk Removal Service Works</h2>
             <div class="process-steps">
                 <div class="process-step">
                     <div class="process-icon">
@@ -783,6 +905,62 @@
                     </div>
                     <h3 class="process-heading">3. We Haul It Away</h3>
                     <p class="process-description">Our professional team will arrive on time, remove your items quickly, and clean up afterward.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section - NEW -->
+    <section class="services-section">
+        <div class="services-container">
+            <h2>Our Junk Removal Services in Howard County</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-couch"></i>
+                    </div>
+                    <h3>Furniture Removal</h3>
+                    <p>We'll haul away sofas, mattresses, tables, chairs, and all unwanted furniture items quickly and efficiently.</p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Appliance Disposal</h3>
+                    <p>From refrigerators and TVs to washers and dryers, we properly dispose of all appliances, large and small.</p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <h3>Construction Debris Removal</h3>
+                    <p>Clean up your renovation or construction site with our fast and reliable debris removal service.</p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Basement & Garage Cleanouts</h3>
+                    <p>Reclaim your space with our complete basement and garage cleanout services.</p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-truck-moving"></i>
+                    </div>
+                    <h3>Moving Cleanouts</h3>
+                    <p>Make your move easier with our comprehensive moving cleanout services for homes and apartments.</p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h3>Electronics Recycling</h3>
+                    <p>Responsibly recycle computers, TVs, and other electronics with our eco-friendly disposal services.</p>
                 </div>
             </div>
         </div>
@@ -825,26 +1003,69 @@
         </div>
     </section>
 
+    <!-- Areas We Serve - NEW -->
+    <section class="areas-section">
+        <div class="areas-container">
+            <h2>Junk Removal Service Areas</h2>
+            <p class="areas-description">We provide fast, reliable junk removal services throughout Howard County and surrounding areas:</p>
+            
+            <div class="areas-grid">
+                <div class="area-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Ellicott City</h3>
+                </div>
+                <div class="area-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Columbia</h3>
+                </div>
+                <div class="area-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Elkridge</h3>
+                </div>
+                <div class="area-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Baltimore</h3>
+                </div>
+                <div class="area-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Howard County</h3>
+                </div>
+                <div class="area-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Maryland</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- FAQ Section -->
     <section class="faq-section">
         <div class="faq-container">
-            <h2>Frequently Asked Questions</h2>
+            <h2>Frequently Asked Questions About Junk Removal</h2>
             <div class="faq-grid">
                 <div class="faq-item">
-                    <h3>What items do you accept?</h3>
+                    <h3>What items do you accept for junk removal?</h3>
                     <p>We accept most household and commercial junk including furniture, appliances, electronics, yard waste, construction debris, and more. We cannot accept hazardous materials like paint, chemicals, or asbestos.</p>
                 </div>
                 <div class="faq-item">
-                    <h3>How much does junk removal cost?</h3>
-                    <p>Pricing depends on the volume and type of items being removed. We provide free, no-obligation quotes and transparent pricing with no hidden fees.</p>
+                    <h3>How much does junk removal cost in Howard County?</h3>
+                    <p>Pricing depends on the volume and type of items being removed. We provide free, no-obligation quotes and transparent pricing with no hidden fees. Our rates are competitive and affordable.</p>
                 </div>
                 <div class="faq-item">
-                    <h3>Do you offer same-day service?</h3>
-                    <p>Yes! We often have same-day availability. Contact us early in the day for the best chance of same-day service.</p>
+                    <h3>Do you offer same-day junk removal service?</h3>
+                    <p>Yes! We often have same-day availability for junk pickup. Contact us early in the day for the best chance of same-day service.</p>
                 </div>
                 <div class="faq-item">
-                    <h3>What areas do you serve?</h3>
+                    <h3>What areas do you serve for junk removal?</h3>
                     <p>We primarily serve Howard County and surrounding areas including Elkridge, Columbia, Ellicott City, and Baltimore.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How do you handle furniture removal and disposal?</h3>
+                    <p>Our team will carefully remove furniture from your home or business and load it onto our truck. We prioritize donation and recycling for furniture in good condition, ensuring eco-friendly disposal.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can you help with estate cleanouts or hoarding cleanup?</h3>
+                    <p>Yes, we specialize in estate cleanouts, hoarding cleanup, and other comprehensive junk removal services. Our team is professional, discreet, and thorough.</p>
                 </div>
             </div>
         </div>
@@ -853,10 +1074,10 @@
     <!-- Secondary CTA -->
     <section class="secondary-cta">
         <div class="secondary-cta-container">
-            <h2>Ready to Get Started?</h2>
-            <p>Get your free quote today and experience hassle-free junk removal!</p>
+            <h2>Ready for Fast, Affordable Junk Removal?</h2>
+            <p>Get your free quote today and experience hassle-free junk removal in Howard County!</p>
             <div class="cta-buttons">
-                <a href="#quoteForm" class="cta-button">Get My Free Quote</a>
+                <a href="#quoteForm" class="cta-button">Get My Free Junk Removal Quote</a>
                 <a href="tel:4103006743" class="cta-button phone-button"><i class="fas fa-phone"></i> Call (410) 300-6743</a>
             </div>
         </div>

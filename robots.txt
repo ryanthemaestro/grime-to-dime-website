@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /thank-you.html
+
+# Sitemap location
+Sitemap: https://grimetodime.com/sitemap.xml

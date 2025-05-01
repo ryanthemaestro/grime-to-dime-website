@@ -175,78 +175,321 @@ nav {
 }
 
 /* Contact Section */
-.contact {
+#contact {
     padding: 5rem 1rem;
-    background: #f9f9f9;
+    background: #f8f9fa; /* Match testimonials/transformations background */
 }
 
-.contact h2 {
+#contact h2 {
     text-align: center;
+    font-size: 2.8rem;
+    font-weight: 800;
     margin-bottom: 3rem;
-    color: #000;
+    color: #222;
 }
 
 .contact-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.contact-info {
-    padding: 2rem;
-}
-
-.contact-info p {
-    margin-bottom: 1rem;
-}
-
-.contact-info i {
-    color: #ff0000;
-    margin-right: 0.5rem;
-}
-
+.contact-info,
 .contact-form {
-    margin-top: 2rem;
+    flex: 1;
+    min-width: 300px; /* Prevent columns from getting too narrow */
+}
+
+.contact-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    height: 100%; /* Make card fill the flex item height */
     display: flex;
     flex-direction: column;
+}
+
+.contact-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.contact-icon {
+    font-size: 2rem;
+    color: #ff0000;
+}
+
+.contact-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.contact-tagline {
+    margin-bottom: 2rem;
+    color: #555;
+    font-size: 1rem;
+}
+
+.contact-details-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.contact-detail {
+    display: flex;
+    align-items: center;
     gap: 1rem;
 }
 
-.form-group {
-    margin-bottom: 1rem;
-    width: 100%;
+.contact-detail-icon {
+    font-size: 1.2rem;
+    color: #ff0000;
+    width: 20px; /* Fixed width for alignment */
+    text-align: center;
 }
 
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+.contact-detail-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-label {
+    font-size: 0.85rem;
+    color: #777;
+    margin-bottom: 0.2rem;
+}
+
+.contact-value {
     font-size: 1rem;
+    color: #333;
+    font-weight: 500;
 }
 
-.form-group textarea {
-    height: 150px;
+a.contact-link .contact-value {
+    color: #ff0000; /* Make links stand out */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a.contact-link:hover .contact-value {
+    color: #cc0000;
+    text-decoration: underline;
+}
+
+.hours {
+    margin-bottom: 2rem;
+    border-top: 1px solid #eee;
+    padding-top: 1.5rem;
+}
+
+.hours h4, .contact-social h4 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.hours-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem 1rem;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.hours-day {
+    font-weight: 500;
+}
+
+.contact-social {
+    margin-top: auto; /* Push social links to the bottom */
+    border-top: 1px solid #eee;
+    padding-top: 1.5rem;
+}
+
+.social-links-contact {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links-contact a {
+    color: #ff0000;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links-contact a:hover {
+    color: #cc0000;
+}
+
+.contact-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-row .form-group {
+    flex: 1;
+    margin-bottom: 0; /* Remove bottom margin since row handles spacing */
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box; /* Include padding and border in element's total width/height */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #ff0000; /* Highlight focus with accent color */
+    box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.1);
+    outline: none;
+}
+
+textarea {
+    min-height: 120px;
     resize: vertical;
 }
 
+/* Form Header Styles */
+.form-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.form-icon {
+    font-size: 2.5rem;
+    color: #ff0000;
+    margin-bottom: 0.5rem;
+}
+
+.form-header h3 {
+    margin: 0.5rem 0 0.5rem;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.form-tagline {
+    color: #555;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Checkbox Styles */
+.form-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-checkbox input[type="checkbox"] {
+    width: auto;
+    height: 1.2em;
+    width: 1.2em;
+    accent-color: #ff0000; /* Color the checkbox itself */
+}
+
+.form-checkbox label {
+    margin-bottom: 0; /* Override default label margin */
+    font-weight: normal;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* Submit Button Styles (matching .btn-primary) */
 .submit-button {
+    display: inline-block;
     background: #ff0000;
     color: white;
-    padding: 1rem 2rem;
+    padding: 0.8rem 2rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s ease;
-    width: 100%;
-    font-size: 1rem;
+    transition: background 0.3s ease, transform 0.2s ease;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 100%; /* Make button full width */
+    margin-top: 1rem; /* Add some space above the button */
+}
+
+.submit-button i {
+    margin-right: 0.5rem;
 }
 
 .submit-button:hover {
     background: #cc0000;
+    transform: translateY(-2px);
+}
+
+.submit-button:active {
+    transform: translateY(0);
+}
+
+/* Form Note Styles */
+.form-note {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* Responsive adjustments for contact columns */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 576px) {
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    .form-row .form-group {
+        margin-bottom: 1.5rem; /* Add margin back for stacked layout */
+    }
 }
 
 /* Footer */

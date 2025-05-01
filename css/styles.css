@@ -25,7 +25,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 5%;
+    padding: 0.5rem 5%; /* Reduced vertical padding */
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -46,18 +46,24 @@ nav {
 }
 
 .nav-links {
-    display: flex;
     list-style: none;
+    display: flex;
 }
 
-.nav-links li a {
-    color: #fff;
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    color: white;
     text-decoration: none;
-    padding: 0.5rem 1rem;
     transition: color 0.3s ease;
+    text-transform: uppercase; /* Uppercase links */
+    font-weight: 600; /* Make links slightly bolder */
+    font-size: 0.9rem; /* Slightly smaller font */
 }
 
-.nav-links li a:hover {
+.nav-links a:hover {
     color: #ff0000;
 }
 

@@ -102,6 +102,29 @@ nav {
     background: #cc0000;
 }
 
+/* Mobile adjustments for hero section */
+@media (max-width: 768px) {
+    .hero {
+        height: auto; /* Adjust height for content */
+        min-height: 80vh;
+        padding: 6rem 1rem 4rem; /* More vertical padding */
+    }
+
+    .hero h1 {
+        font-size: 2.2rem; /* Smaller H1 on mobile */
+    }
+
+    .hero h2 {
+        font-size: 1.1rem; /* Explicit size for H2 */
+        margin-bottom: 2.5rem; /* More space before button */
+    }
+
+    .cta-button {
+        padding: 0.8rem 1.5rem; /* Smaller padding */
+        font-size: 1rem; /* Explicit font size */
+    }
+}
+
 /* Services Section */
 .services {
     padding: 5rem 1rem;

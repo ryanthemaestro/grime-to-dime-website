@@ -172,10 +172,21 @@ header {
     transform: translateY(-5px);
 }
 
-.service-card i {
+.service-icon {
+    background-color: #ff0000; /* Red circle */
+    color: white;
+    border-radius: 50%;      /* Make it circular */
+    width: 60px;             /* Fixed width */
+    height: 60px;            /* Fixed height */
+    margin: 0 auto 1.5rem;   /* Center the circle itself and add bottom margin */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.service-icon i {
     font-size: 2.5rem;
-    color: #ff0000;
-    margin-bottom: 1rem;
+    color: white;
 }
 
 /* About Section */

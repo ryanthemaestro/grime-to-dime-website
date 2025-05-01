@@ -760,3 +760,86 @@ section.testimonials .testimonials-container h2 {
     max-height: 500px;
     overflow-y: auto;
 } 
+
+/* === Media Queries === */
+
+/* Mobile adjustments for hero section (Existing - adjust if needed) */
+@media (max-width: 768px) {
+    .hero {
+        height: auto; 
+        min-height: 80vh;
+        padding: 6rem 1rem 4rem; 
+    }
+
+    .hero h1 {
+        font-size: 2.2rem; 
+    }
+
+    .hero h2 {
+        font-size: 1.1rem; 
+        margin-bottom: 2.5rem; 
+    }
+
+    .cta-button {
+        padding: 0.8rem 1.5rem; 
+        font-size: 1rem; 
+    }
+}
+
+
+/* General Mobile Styles */
+@media (max-width: 768px) {
+
+    /* Service Cards Adjustments */
+    .service-content h3 {
+        font-size: 1.2rem; /* Slightly larger headline on mobile */
+    }
+
+    .service-content p {
+        font-size: 0.95rem; /* Slightly larger paragraph on mobile */
+        line-height: 1.5; /* Improve paragraph spacing */
+    }
+
+    /* Contact Section Stacking */
+    .contact-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    /* Form Stacking */
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    .form-row .form-group {
+        margin-bottom: 1.5rem; 
+    }
+
+    /* Footer Adjustments */
+    footer {
+        text-align: center;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .footer-links {
+        justify-content: center;
+    }
+}
+
+/* Hide mobile nav toggle on larger screens (Existing) */
+@media (min-width: 769px) {
+    .mobile-nav-toggle {
+        display: none;
+    }
+}
+
+/* Transformations Section (Existing - Placeholder) */
+.transformations {
+    padding: 5rem 1rem;
+    background: #f9f9fa;
+    text-align: center;
+}

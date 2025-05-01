@@ -790,6 +790,65 @@ section.testimonials .testimonials-container h2 {
 /* General Mobile Styles */
 @media (max-width: 768px) {
 
+    /* Header alignment on mobile */
+    .header-content-wrapper {
+        justify-content: space-between; /* Space out logo and toggle */
+    }
+
+    /* Hide Desktop Nav Links */
+    nav ul.nav-links {
+        display: none; /* Hide by default on mobile */
+        position: absolute;
+        top: 60px; /* Adjust based on header height */
+        right: 0;
+        background-color: #111; /* Dark background for dropdown */
+        width: 100%;
+        flex-direction: column;
+        padding: 1rem 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 998; /* Below header, above content */
+    }
+
+    /* Style for when mobile nav is active */
+    nav ul.nav-links.nav-active {
+        display: flex; /* Show when active class is added */
+    }
+
+    /* Mobile nav list items */
+    nav ul.nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Mobile nav links */
+    nav ul.nav-links li a {
+        display: block;
+        padding: 1rem;
+        color: white;
+        border-bottom: 1px solid #333; /* Separator */
+    }
+    nav ul.nav-links li:last-child a {
+        border-bottom: none;
+    }
+
+    /* Mobile nav link hover */
+    nav ul.nav-links li a:hover {
+        background-color: #333;
+    }
+
+    /* Mobile Nav Toggle Button */
+    .mobile-nav-toggle {
+        display: block; /* Show the button on mobile */
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.8rem; /* Make icon larger */
+        cursor: pointer;
+        padding: 0 1rem; /* Add some padding */
+        /* margin-left: auto; /* Let flexbox handle alignment */
+        z-index: 1000; /* Ensure it's clickable */
+    }
+
     /* Service Cards Adjustments */
     .service-content h3 {
         font-size: 1.2rem; /* Slightly larger headline on mobile */
@@ -830,10 +889,38 @@ section.testimonials .testimonials-container h2 {
     }
 }
 
-/* Hide mobile nav toggle on larger screens (Existing) */
 @media (min-width: 769px) {
     .mobile-nav-toggle {
         display: none;
+    }
+
+    /* Ensure nav-links are shown correctly on desktop */
+    nav ul.nav-links {
+        display: flex; /* Use flex for desktop horizontal layout */
+        position: static; /* Reset positioning */
+        width: auto;
+        background-color: transparent;
+        flex-direction: row;
+        padding: 0;
+        box-shadow: none;
+    }
+
+     nav ul.nav-links li {
+        width: auto;
+        margin: 0; /* Reset mobile margin if any */
+    }
+
+     nav ul.nav-links li a {
+        display: inline-block; /* Reset mobile block display */
+        padding: 0 1rem; /* Desktop padding */
+        color: white; /* Desktop color */
+        border: none;
+    }
+
+     nav ul.nav-links li a:hover {
+        background-color: transparent;
+        /* Optional: Add desktop hover effect if desired */
+        text-decoration: underline; /* Example desktop hover */
     }
 }
 

@@ -2853,47 +2853,10 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
-    <script>
-        // Debug script for image loading
-        document.addEventListener('DOMContentLoaded', function() {
-            const images = document.querySelectorAll('.gallery-grid.equipment img');
-            images.forEach(img => {
-                console.log('Attempting to load image:', img.src);
-                img.addEventListener('load', function() {
-                    console.log('Successfully loaded:', img.src);
-                });
-                img.addEventListener('error', function() {
-                    console.error('Failed to load image:', img.src);
-                    console.log('Alt text:', img.alt);
-                    console.log('Complete path:', img.src);
-                });
-            });
-        });
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-            const navLinks = document.querySelector('.nav-links');
-            const body = document.body;
-
-            mobileNavToggle.addEventListener('click', function() {
-                this.classList.toggle('active');
-                navLinks.classList.toggle('active');
-                body.classList.toggle('nav-active');
-            });
-
-            // Close mobile menu when clicking a link
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileNavToggle.classList.remove('active');
-                    navLinks.classList.remove('active');
-                    body.classList.remove('nav-active');
-                });
-            });
-        });
-    </script>
+    <script src="js/scripts.js"></script>
 
     <script>
+        // Testimonial Slider Script (Restored)
         document.addEventListener('DOMContentLoaded', function() {
             const track = document.querySelector('.testimonial-track');
             const cards = document.querySelectorAll('.testimonial-card');
@@ -2909,11 +2872,13 @@
                     card.style.display = 'none';
                 });
                 
-                // Show and activate current card
-                setTimeout(() => {
-                    cards[currentSlide].style.display = 'flex';
-                    cards[currentSlide].classList.add('active');
-                }, 50);
+                // Show and activate current card if cards exist
+                if (cards[currentSlide]) {
+                    setTimeout(() => {
+                        cards[currentSlide].style.display = 'flex'; // Use 'flex' or 'block' as appropriate
+                        cards[currentSlide].classList.add('active');
+                    }, 50); // Short delay for transition effect
+                }
                 
                 // Update dots
                 dots.forEach((dot, index) => {
@@ -2922,9 +2887,11 @@
             }
 
             function goToSlide(slideIndex) {
-                currentSlide = slideIndex;
-                updateSlidePosition();
-                resetAutoSlideTimer();
+                if (slideIndex >= 0 && slideIndex < totalSlides) {
+                    currentSlide = slideIndex;
+                    updateSlidePosition();
+                    resetAutoSlideTimer();
+                }
             }
 
             function resetAutoSlideTimer() {
@@ -2932,57 +2899,78 @@
                 autoSlideInterval = setInterval(() => {
                     currentSlide = (currentSlide + 1) % totalSlides;
                     updateSlidePosition();
-                }, 5000);
+                }, 5000); // Auto-slide every 5 seconds
             }
 
-            // Initialize first slide
-            cards.forEach((card, index) => {
-                if (index === 0) {
-                    card.style.display = 'flex';
-                    card.classList.add('active');
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-            
-            // Start auto-sliding
-            resetAutoSlideTimer();
+            // Initialize first slide and dots
+            if (totalSlides > 0) {
+                cards.forEach((card, index) => {
+                    card.style.display = (index === 0) ? 'flex' : 'none'; // Show only the first initially
+                    if (index === 0) card.classList.add('active');
+                });
+                 dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === 0);
+                     // Add click handlers to dots
+                    dot.addEventListener('click', () => goToSlide(index));
+                });
+                // Start auto-sliding
+                resetAutoSlideTimer();
+            }
 
-            // Add click handlers to dots
-            dots.forEach((dot, index) => {
-                dot.addEventListener('click', () => goToSlide(index));
-            });
+            // Add touch support if track exists
+            if (track) {
+                let touchStartX = 0;
+                let touchEndX = 0;
 
-            // Add touch support
-            let touchStartX = 0;
-            let touchEndX = 0;
+                track.addEventListener('touchstart', e => {
+                    touchStartX = e.changedTouches[0].screenX;
+                }, { passive: true }); // Use passive listener
 
-            track.addEventListener('touchstart', e => {
-                touchStartX = e.changedTouches[0].screenX;
-            }, false);
+                track.addEventListener('touchend', e => {
+                    touchEndX = e.changedTouches[0].screenX;
+                    handleSwipe();
+                }, { passive: true }); // Use passive listener
 
-            track.addEventListener('touchend', e => {
-                touchEndX = e.changedTouches[0].screenX;
-                handleSwipe();
-            }, false);
+                function handleSwipe() {
+                    const swipeThreshold = 50; // minimum distance for swipe
+                    const diff = touchStartX - touchEndX;
 
-            function handleSwipe() {
-                const swipeThreshold = 50; // minimum distance for swipe
-                const diff = touchStartX - touchEndX;
-
-                if (Math.abs(diff) > swipeThreshold) {
-                    if (diff > 0) {
-                        // Swipe left - next slide
-                        currentSlide = (currentSlide + 1) % totalSlides;
-                    } else {
-                        // Swipe right - previous slide
-                        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                    if (Math.abs(diff) > swipeThreshold && totalSlides > 0) {
+                        if (diff > 0) {
+                            // Swipe left - next slide
+                            currentSlide = (currentSlide + 1) % totalSlides;
+                        } else {
+                            // Swipe right - previous slide
+                            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                        }
+                        updateSlidePosition();
+                        resetAutoSlideTimer();
                     }
-                    updateSlidePosition();
-                    resetAutoSlideTimer();
                 }
             }
         });
     </script>
+
+    <script>
+        // Mobile Navigation Toggle Script (Appended)
+        const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+        const navLinks = document.querySelector('nav ul.nav-links');
+
+        if (mobileNavToggle && navLinks) {
+            mobileNavToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('nav-active');
+            });
+
+            // Optional: Close mobile menu if a link is clicked
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navLinks.classList.contains('nav-active')) {
+                        navLinks.classList.remove('nav-active');
+                    }
+                });
+            });
+        }
+    </script>
+
 </body>
 </html>

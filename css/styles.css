@@ -64,7 +64,7 @@ nav {
 /* Hero Section */
 .hero {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                url('../images/hero-bg.jpg') center/cover;
+                url('../images/before-after/warehouse-after-junk-removal.webp') center/cover;
     height: 100vh;
     display: flex;
     align-items: center;

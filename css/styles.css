@@ -560,10 +560,11 @@ footer {
 }
 
 .footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
     gap: 2rem;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -606,6 +607,17 @@ footer {
     border-top: 1px solid rgba(255,255,255,0.1);
 }
 
+/* Style first footer section: Red H4, White P */
+.footer-content > .footer-section:first-child h4 {
+    color: #ff0000; /* Red color for the heading */
+    font-size: 1.2em; /* Increased font size */
+}
+.footer-content > .footer-section:first-child p {
+    color: white; /* Ensure paragraph is white */
+    font-size: 0.95em; /* Slightly increased font size */
+    line-height: 1.4; /* Improve readability for wrapped text */
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-links {
@@ -621,7 +633,7 @@ footer {
     }
     
     .contact-container {
-        grid-template-columns: 1fr;
+        flex-direction: column;
     }
 }
 
@@ -893,7 +905,21 @@ section.testimonials .testimonials-container h2 {
 
     .footer-content {
         flex-direction: column;
+        align-items: center;
         gap: 1rem;
+    }
+
+    .footer-right-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    /* Ensure individual sections center text */
+    .footer-section {
+        text-align: center;
     }
 
     .footer-links {
@@ -941,4 +967,34 @@ section.testimonials .testimonials-container h2 {
     padding: 5rem 1rem;
     background: #f9f9fa;
     text-align: center;
+}
+
+/* Styles for the right-side group */
+.footer-right-group {
+    display: flex;
+    gap: 2rem; /* Gap between Quick Links and Connect */
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.social-links a:hover {
+    color: #ff0000;
+}
+
+@media (max-width: 768px) {
+    .footer-right-group {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+    }
 }

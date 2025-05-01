@@ -21,46 +21,54 @@ header {
     z-index: 1000;
 }
 
-nav {
+.header-content-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 5%; /* Reduced vertical padding */
+    padding: 0.5rem 1rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #fff;
     display: flex;
     align-items: center;
-    gap: 10px;
 }
 
-.logo-image {
-    height: 75px;
-    width: auto;
-    margin-right: 5px;
+.logo img {
+    height: 40px;
+    margin-right: 0.5rem;
+    display: block;
+}
+
+.logo a {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: bold;
+    white-space: nowrap;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
+    padding: 0;
+    margin: 0;
 }
 
 .nav-links li {
-    margin-left: 2rem;
+    margin-left: 1.5rem;
 }
 
 .nav-links a {
     color: white;
     text-decoration: none;
     transition: color 0.3s ease;
-    text-transform: uppercase; /* Uppercase links */
-    font-weight: 600; /* Make links slightly bolder */
-    font-size: 0.9rem; /* Slightly smaller font */
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.9rem;
 }
 
 .nav-links a:hover {
@@ -111,23 +119,23 @@ nav {
 /* Mobile adjustments for hero section */
 @media (max-width: 768px) {
     .hero {
-        height: auto; /* Adjust height for content */
+        height: auto;
         min-height: 80vh;
-        padding: 6rem 1rem 4rem; /* More vertical padding */
+        padding: 6rem 1rem 4rem;
     }
 
     .hero h1 {
-        font-size: 2.2rem; /* Smaller H1 on mobile */
+        font-size: 2.2rem;
     }
 
     .hero h2 {
-        font-size: 1.1rem; /* Explicit size for H2 */
-        margin-bottom: 2.5rem; /* More space before button */
+        font-size: 1.1rem;
+        margin-bottom: 2.5rem;
     }
 
     .cta-button {
-        padding: 0.8rem 1.5rem; /* Smaller padding */
-        font-size: 1rem; /* Explicit font size */
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
     }
 }
 
@@ -206,7 +214,7 @@ nav {
 /* Contact Section */
 #contact {
     padding: 5rem 1rem;
-    background: #f8f9fa; /* Match testimonials/transformations background */
+    background: #f8f9fa;
 }
 
 #contact h2 {
@@ -228,7 +236,7 @@ nav {
 .contact-info,
 .contact-form {
     flex: 1;
-    min-width: 300px; /* Prevent columns from getting too narrow */
+    min-width: 300px;
 }
 
 .contact-card {
@@ -236,7 +244,7 @@ nav {
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    height: 100%; /* Make card fill the flex item height */
+    height: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -283,7 +291,7 @@ nav {
 .contact-detail-icon {
     font-size: 1.2rem;
     color: #ff0000;
-    width: 20px; /* Fixed width for alignment */
+    width: 20px;
     text-align: center;
 }
 
@@ -305,7 +313,7 @@ nav {
 }
 
 a.contact-link .contact-value {
-    color: #ff0000; /* Make links stand out */
+    color: #ff0000;
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -340,7 +348,7 @@ a.contact-link:hover .contact-value {
 }
 
 .contact-social {
-    margin-top: auto; /* Push social links to the bottom */
+    margin-top: auto;
     border-top: 1px solid #eee;
     padding-top: 1.5rem;
 }
@@ -379,7 +387,7 @@ a.contact-link:hover .contact-value {
 
 .form-row .form-group {
     flex: 1;
-    margin-bottom: 0; /* Remove bottom margin since row handles spacing */
+    margin-bottom: 0;
 }
 
 label {
@@ -399,7 +407,7 @@ textarea {
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 1rem;
-    box-sizing: border-box; /* Include padding and border in element's total width/height */
+    box-sizing: border-box;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -408,7 +416,7 @@ input[type="email"]:focus,
 input[type="tel"]:focus,
 select:focus,
 textarea:focus {
-    border-color: #ff0000; /* Highlight focus with accent color */
+    border-color: #ff0000;
     box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.1);
     outline: none;
 }
@@ -456,11 +464,11 @@ textarea {
     width: auto;
     height: 1.2em;
     width: 1.2em;
-    accent-color: #ff0000; /* Color the checkbox itself */
+    accent-color: #ff0000;
 }
 
 .form-checkbox label {
-    margin-bottom: 0; /* Override default label margin */
+    margin-bottom: 0;
     font-weight: normal;
     font-size: 0.95rem;
     color: #555;
@@ -479,8 +487,8 @@ textarea {
     font-size: 1.1rem;
     font-weight: bold;
     text-transform: uppercase;
-    width: 100%; /* Make button full width */
-    margin-top: 1rem; /* Add some space above the button */
+    width: 100%;
+    margin-top: 1rem;
 }
 
 .submit-button i {
@@ -517,7 +525,7 @@ textarea {
         gap: 0;
     }
     .form-row .form-group {
-        margin-bottom: 1.5rem; /* Add margin back for stacked layout */
+        margin-bottom: 1.5rem;
     }
 }
 
@@ -591,6 +599,13 @@ footer {
     
     .contact-container {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Hide mobile nav toggle on larger screens */
+@media (min-width: 769px) {
+    .mobile-nav-toggle {
+        display: none;
     }
 }
 

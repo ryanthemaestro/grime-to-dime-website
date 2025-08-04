@@ -1056,23 +1056,46 @@
             }
         }
 
-        .howard-content, .faq-container {
+        .howard-content {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 1rem;
         }
 
-        faq details {
+        /* FAQ Details Styling */
+        details {
             background: white;
             padding: 1.5rem;
             border-radius: 15px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
             margin-bottom: 1rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
 
-        faq summary {
+        details:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        summary {
             font-weight: 600;
             cursor: pointer;
+            font-size: 1.2rem;
+            color: #222;
+            margin-bottom: 0.5rem;
+        }
+
+        details[open] summary {
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(255, 51, 51, 0.1);
+        }
+
+        details p {
+            margin: 0;
+            color: #666;
+            line-height: 1.6;
         }
     </style>
 
@@ -1325,6 +1348,20 @@
                     </a>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section id="howard-county-services" class="services">
+        <h2>Howard County Junk Removal Services</h2>
+        <div class="howard-content">
+            <p>Looking for reliable Howard County junk removal? Grime To Dime specializes in eco-friendly junk hauling in Howard County, MD, helping residents and businesses clear clutter quickly and responsibly. Our team handles everything from furniture to construction debris, ensuring minimal environmental impact through recycling and donations.</p>
+            <ul class="benefits">
+                <li><i class="fas fa-check"></i> Residential junk removal in Howard County for homes, garages, and attics.</li>
+                <li><i class="fas fa-check"></i> Commercial eco-friendly junk hauling for offices and retail spaces.</li>
+                <li><i class="fas fa-check"></i> Same-day Howard County junk removal services available 7 days a week.</li>
+                <li><i class="fas fa-check"></i> Check our <a href="#services">full services</a> or view <a href="#transformations">transformations</a>.</li>
+            </ul>
+            <p>Whether you're in Elkridge or elsewhere in Howard County, our licensed team provides transparent pricing and fast results. Contact us for a free quote on Howard County junk removal today!</p>
         </div>
     </section>
 
@@ -2572,6 +2609,32 @@
         </div>
     </section>
 
+    <section id="faq" class="about">
+        <div class="about-container">
+            <h2>Howard County Junk Removal FAQ</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <details>
+                        <summary>What areas do you serve for junk removal in Howard County?</summary>
+                        <p>We provide eco-friendly junk hauling throughout Howard County, MD, including Elkridge and surrounding areas. Contact us for same-day service!</p>
+                    </details>
+                </div>
+                <div class="feature-card">
+                    <details>
+                        <summary>How much does Howard County junk removal cost?</summary>
+                        <p>Our pricing is transparent and competitive, based on volume. Get a free quote for junk removal in Howard County today.</p>
+                    </details>
+                </div>
+                <div class="feature-card">
+                    <details>
+                        <summary>Is your junk hauling eco-friendly?</summary>
+                        <p>Yes, we prioritize recycling and donations in all Howard County junk removal projects to minimize environmental impact.</p>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <style>
         .about {
             padding: 5rem 0;
@@ -2993,54 +3056,6 @@
             });
         }
     </script>
-
-    <section id="howard-county-services" class="services">
-        <div class="howard-content">
-            <h2>Howard County Junk Removal Services</h2>
-            <div class="service-grid">
-                <div class="service-card">
-                    <p>Looking for reliable Howard County junk removal? Grime To Dime specializes in eco-friendly junk hauling in Howard County, MD, helping residents and businesses clear clutter quickly and responsibly. Our team handles everything from furniture to construction debris, ensuring minimal environmental impact through recycling and donations.</p>
-                </div>
-                <div class="service-card">
-                    <ul>
-                        <li>Residential junk removal in Howard County for homes, garages, and attics.</li>
-                        <li>Commercial eco-friendly junk hauling for offices and retail spaces.</li>
-                        <li>Same-day Howard County junk removal services available 7 days a week.</li>
-                        <li>Internal link: Check our <a href="#services">full services</a> or view <a href="#transformations">transformations</a>.</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <p>Whether you're in Elkridge or elsewhere in Howard County, our licensed team provides transparent pricing and fast results. Contact us for a free quote on Howard County junk removal today!</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="faq" class="about">
-        <div class="faq-container">
-            <h2>Howard County Junk Removal FAQ</h2>
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <details>
-                        <summary>What areas do you serve for junk removal in Howard County?</summary>
-                        <p>We provide eco-friendly junk hauling throughout Howard County, MD, including Elkridge and surrounding areas. Contact us for same-day service!</p>
-                    </details>
-                </div>
-                <div class="feature-card">
-                    <details>
-                        <summary>How much does Howard County junk removal cost?</summary>
-                        <p>Our pricing is transparent and competitive, based on volume. Get a free quote for junk removal in Howard County today.</p>
-                    </details>
-                </div>
-                <div class="feature-card">
-                    <details>
-                        <summary>Is your junk hauling eco-friendly?</summary>
-                        <p>Yes, we prioritize recycling and donations in all Howard County junk removal projects to minimize environmental impact.</p>
-                    </details>
-                </div>
-            </div>
-        </div>
-    </section>
 
 </body>
 </html>

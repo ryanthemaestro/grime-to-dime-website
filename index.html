@@ -1196,7 +1196,7 @@
             padding: 1rem;
             /* Account for fixed header and provide safe bottom space */
             padding-top: 96px;
-            padding-bottom: 32px;
+            padding-bottom: max(48px, env(safe-area-inset-bottom, 0px) + 24px);
         }
 
         .hero-content {
@@ -1207,6 +1207,8 @@
             background: rgba(0, 0, 0, 0.3);
             border-radius: 15px;
             backdrop-filter: blur(5px);
+            /* Ensure CTA at the bottom has breathing room */
+            margin-bottom: clamp(16px, 4vh, 56px);
         }
 
         .hero h1 {
@@ -1276,7 +1278,7 @@
                 /* Use small-viewport or dynamic-viewport units on mobile */
                 min-height: 100svh;
                 padding-top: 72px;
-                padding-bottom: 24px;
+                padding-bottom: max(32px, env(safe-area-inset-bottom, 0px) + 24px);
             }
 
             .hero-content {

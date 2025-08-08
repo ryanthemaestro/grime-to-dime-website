@@ -112,6 +112,8 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Preload hero background for faster first paint -->
+    <link rel="preload" as="image" href="images/optimized/warehouse-after-junk-removal-hero.webp" type="image/webp" fetchpriority="high">
     
     <style>
         html, body {
@@ -1174,8 +1176,17 @@
     <style>
         .hero {
             position: relative;
-            min-height: 90vh;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/before-after/warehouse-after-junk-removal.png');
+            /* Avoid fixed section height so content (CTA) never gets clipped */
+            height: auto;
+            /* Use dynamic viewport unit for better mobile behavior */
+            min-height: 100dvh;
+            /* Use optimized WebP with PNG fallback */
+            background-image:
+                linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                image-set(
+                    url('images/optimized/warehouse-after-junk-removal-hero.webp') type('image/webp'),
+                    url('images/before-after/warehouse-after-junk-removal.png') type('image/png')
+                );
             background-size: cover;
             background-position: center;
             display: flex;
@@ -1183,7 +1194,9 @@
             justify-content: center;
             text-align: center;
             padding: 1rem;
-            padding-top: 80px;
+            /* Account for fixed header and provide safe bottom space */
+            padding-top: 96px;
+            padding-bottom: 32px;
         }
 
         .hero-content {
@@ -1260,8 +1273,10 @@
 
         @media (max-width: 768px) {
             .hero {
-                min-height: 100vh;
-                padding-top: 60px;
+                /* Use small-viewport or dynamic-viewport units on mobile */
+                min-height: 100svh;
+                padding-top: 72px;
+                padding-bottom: 24px;
             }
 
             .hero-content {

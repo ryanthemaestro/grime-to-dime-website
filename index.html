@@ -1093,6 +1093,35 @@
             color: #666;
             line-height: 1.6;
         }
+
+        /* Unified CTA sizing (excludes gallery-cta) */
+        .service-cta,
+        .cta-button {
+          height: 44px;
+          min-width: 220px;
+          padding: 0 24px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 8px;
+          font-size: 16px;
+          font-weight: 600;
+        }
+
+        /* Ensure testimonial CTA is not full-width on desktop */
+        .testimonials-cta .cta-button {
+          width: auto !important;
+        }
+
+        /* Mobile: full-width buttons for easy tapping */
+        @media (max-width: 768px) {
+          .service-cta,
+          .testimonials-cta .cta-button,
+          .cta-button {
+            width: 100%;
+            min-width: 0;
+          }
+        }
     </style>
 
     <header>

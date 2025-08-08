@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Unsubscribe • Grime To Dime</title>
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+    :root{ --red:#FF0000; --red-dark:#CC0000; --black:#000000; }
+    body{margin:0;background:#f5f7fb;font-family:Arial,Helvetica,sans-serif;color:var(--black)}
+    .wrap{max-width:640px;margin:40px auto;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.06)}
+    .hdr{background:var(--black);color:#fff;padding:16px 22px;font-weight:800}
+    .content{padding:22px}
+    label{display:block;font-weight:700;margin:10px 0 6px}
+    input,textarea{width:100%;padding:12px;border:1px solid #e5e7eb;border-radius:10px;font-size:16px}
+    button{margin-top:14px;padding:12px 18px;background:var(--red);color:#fff;border:0;border-radius:10px;font-weight:800;cursor:pointer}
+    button:hover{background:var(--red-dark)}
+    .muted{color:#475569;font-size:13px;margin-top:10px}
+    .note{font-size:14px;color:#334155;margin-top:6px}
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="icon" type="image/png" href="../images/Faviconmaster.png">
+  <link rel="canonical" href="https://grimetodime.com/unsubscribe/">
+  <script>
+    // Prefill helper
+    document.addEventListener('DOMContentLoaded', function(){
+      const params = new URLSearchParams(location.search);
+      const email = params.get('email');
+      if(email){
+        const el = document.getElementById('email');
+        if(el) el.value = email;
+      }
+    });
+  </script>
+  <!-- Netlify identity widget optional: can be used later if needed -->
+</head>
+<body>
+  <div class="wrap">
+    <div class="hdr">Grime To Dime — Unsubscribe</div>
+    <div class="content">
+      <p>Confirm your email to unsubscribe from future marketing emails.</p>
+
+      <form name="unsubscribe" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/unsubscribed/">
+        <input type="hidden" name="form-name" value="unsubscribe">
+        <input type="text" name="bot-field" style="display:none" tabindex="-1" autocomplete="off">
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" required>
+
+        <label for="reason">Reason (optional)</label>
+        <textarea id="reason" name="reason" rows="3" placeholder="Optional"></textarea>
+
+        <button type="submit">Unsubscribe</button>
+        <p class="muted">This won’t affect transactional messages (e.g., job confirmations).</p>
+        <p class="note"><a href="/">Return to homepage</a></p>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
+
+

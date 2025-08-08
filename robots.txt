@@ -1,6 +1,8 @@
 User-agent: *
 Allow: /
 Disallow: /thank-you.html
+Disallow: /unsubscribe/
+Disallow: /unsubscribed/
 
 # Sitemap location
 Sitemap: https://grimetodime.com/sitemap.xml

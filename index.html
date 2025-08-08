@@ -1253,13 +1253,18 @@
         }
 
         .cta-button {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             background: #ff3333;
             color: white;
-            padding: 1.25rem 2.5rem;
+            padding: 14px 28px;
+            min-height: 48px;
+            height: auto; /* override generic fixed height */
             border-radius: 8px;
             font-size: 1.25rem;
             font-weight: 700;
+            line-height: 1; /* ensure optical centering */
             text-decoration: none;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(255, 51, 51, 0.3);

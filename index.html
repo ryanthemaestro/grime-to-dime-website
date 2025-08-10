@@ -624,7 +624,7 @@
         }
 
         .testimonials {
-            padding: 3rem 1rem 0.25rem;
+            padding: 3rem 1rem 0;
             background: #f8f9fa;
             position: relative;
             text-align: center;
@@ -717,7 +717,7 @@
             gap: 1.25rem;
             width: 100%;
             max-width: 1200px;
-            margin: 0 auto 0rem;
+            margin: 0 auto 0;
             padding: 0 1rem;
         }
 
@@ -879,6 +879,7 @@
             transition: all 0.3s ease;
             min-width: 200px;
             box-shadow: 0 4px 15px rgba(255, 51, 51, 0.2);
+            margin: 0 !important; /* override global CTA vertical margins */
         }
 
         .testimonials-cta .cta-button:hover {
@@ -2283,7 +2284,8 @@
 
         .testimonials-cta {
             text-align: center;
-            margin-top: 0.25rem;
+            margin-top: 0;
+            padding-bottom: 0;
         }
 
         .testimonials-cta .cta-button {

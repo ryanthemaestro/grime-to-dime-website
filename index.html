@@ -711,27 +711,16 @@
             }
         }
 
-        .testimonial-slider {
+        .testimonial-grid-simple {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
             width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            overflow: hidden;
-            min-height: 300px;
-        }
-
-        .testimonial-track {
-            display: flex;
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            gap: 0;
-            width: 100%;
-            margin: 0 auto;
+            max-width: 1200px;
+            margin: 0 auto 1.5rem;
         }
 
         .testimonial-card {
-            flex: 0 0 100%;
-            width: 100%;
-            max-width: 600px;
             background: white;
             padding: 2rem;
             border-radius: 15px;
@@ -740,23 +729,10 @@
             position: relative;
             transition: all 0.3s ease;
             text-align: left;
-            min-height: auto;
             display: flex;
             flex-direction: column;
-            opacity: 0;
-            transform: scale(0.95);
-            pointer-events: none;
-            margin: 0 auto;
             box-sizing: border-box;
-            visibility: hidden;
-        }
-
-        .testimonial-card.active {
-            opacity: 1;
-            transform: scale(1);
-            pointer-events: auto;
-            visibility: visible;
-            margin: 0 auto;
+            height: 100%;
         }
 
         .testimonial-stars {
@@ -792,10 +768,8 @@
             border-top: 2px solid rgba(255, 51, 51, 0.1);
         }
 
-        @media (min-width: 1024px) {
-            .testimonial-card {
-                flex: 0 0 960px; /* Fixed width for desktop */
-            }
+        @media (max-width: 1023px) {
+            .testimonial-grid-simple { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 768px) {
@@ -2082,47 +2056,40 @@
         <!-- Removed duplicate rating badge to keep single hero reference -->
         <h2 class="section-title">What Our Customers Say</h2>
         <div class="testimonials-container">
-            <div class="testimonial-slider">
-                <div class="testimonial-track">
-                    <div class="testimonial-card">
-                        <div class="testimonial-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">"Timely, good communication, and very polite. Accepted Venmo. Performed the job well quickly. Definitely recommend."</p>
-                        <p class="testimonial-author">- David P.<br>Baltimore, MD</p>
+            <div class="testimonial-grid-simple">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
                     </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">"Excellent service, very responsive, and the best price available. The company was very careful when removing a reclining sectional sofa from my family room; they took great care to avoid scraping walls and maneuvered the bulky sofa without making contact with the door."</p>
-                        <p class="testimonial-author">- Russell De Souza<br>Elkridge, MD</p>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">"Quick and efficient while respecting the space they hauled from. Incredible work for the price"</p>
-                        <p class="testimonial-author">- James B.<br>Odenton, MD</p>
-                    </div>
+                    <p class="testimonial-text">"Timely, good communication, and very polite. Accepted Venmo. Performed the job well quickly. Definitely recommend."</p>
+                    <p class="testimonial-author">- David P.<br>Baltimore, MD</p>
                 </div>
-            </div>
-            <div class="slider-dots">
-                <span class="dot active" onclick="goToSlide(0)"></span>
-                <span class="dot" onclick="goToSlide(1)"></span>
-                <span class="dot" onclick="goToSlide(2)"></span>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Excellent service, very responsive, and the best price available. The company was very careful when removing a reclining sectional sofa from my family room; they took great care to avoid scraping walls and maneuvered the bulky sofa without making contact with the door."</p>
+                    <p class="testimonial-author">- Russell De Souza<br>Elkridge, MD</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Quick and efficient while respecting the space they hauled from. Incredible work for the price"</p>
+                    <p class="testimonial-author">- James B.<br>Odenton, MD</p>
+                </div>
             </div>
             <div class="testimonials-cta">
                 <a href="#contact" class="cta-button">
@@ -2175,27 +2142,10 @@
             text-align: center;
         }
 
-        .testimonial-slider {
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            overflow: hidden;
-            min-height: 300px;
-        }
-
-        .testimonial-track {
-            display: flex;
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            gap: 0;
-            width: 100%;
-            margin: 0 auto;
-        }
+        /* simplified grid replaces slider */
+        .testimonial-slider, .testimonial-track { display: none; }
 
         .testimonial-card {
-            flex: 0 0 100%;
-            width: 100%;
-            max-width: 600px;
             background: white;
             padding: 2rem;
             border-radius: 15px;
@@ -2204,23 +2154,11 @@
             position: relative;
             transition: all 0.3s ease;
             text-align: left;
-            min-height: auto;
             display: flex;
             flex-direction: column;
-            opacity: 0;
-            transform: scale(0.95);
-            pointer-events: none;
-            margin: 0 auto;
+            margin: 0;
             box-sizing: border-box;
-            visibility: hidden;
-        }
-
-        .testimonial-card.active {
-            opacity: 1;
-            transform: scale(1);
-            pointer-events: auto;
-            visibility: visible;
-            margin: 0 auto;
+            height: 100%;
         }
 
         .testimonial-stars {
@@ -2256,11 +2194,7 @@
             border-top: 2px solid rgba(255, 51, 51, 0.1);
         }
 
-        @media (min-width: 1024px) {
-            .testimonial-card {
-                flex: 0 0 960px; /* Fixed width for desktop */
-            }
-        }
+        /* grid responsive handled above */
 
         @media (max-width: 768px) {
             .testimonial-slider {

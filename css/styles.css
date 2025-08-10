@@ -745,7 +745,8 @@ section.testimonials .testimonials-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
+    /* Let height be driven by content to avoid large empty area */
+    height: auto;
 }
 
 section.testimonials .testimonials-container h2 {

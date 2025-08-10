@@ -998,3 +998,34 @@ section.testimonials .testimonials-container h2 {
         width: 100%;
     }
 }
+
+/* ==============================
+   Unified CTA Vertical Spacing
+   ============================== */
+/* Ensure equal whitespace above and below key CTAs site-wide */
+:root {
+    --cta-vertical-margin: 1.25rem;
+}
+
+/* Core interactive CTAs */
+.cta-button,
+.gallery-cta,
+.section-cta,
+.sticky-cta-button,
+.chat-button,
+.submit-button {
+    margin-block: var(--cta-vertical-margin) !important;
+    margin-inline: 0;
+}
+
+/* Neutralize wrapper-specific margins so button margins control spacing */
+.testimonials-cta,
+.section-cta-container {
+    margin: 0 !important;
+}
+
+/* Preserve service card layout: CTA stays pinned to bottom without extra bottom margin */
+.service-cta {
+    margin-top: auto;
+    margin-bottom: 0;
+}

@@ -549,6 +549,34 @@
             line-height: 1.6;
         }
 
+        /* Google Reviews badge */
+        .google-rating-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #fff;
+            color: #222;
+            padding: 10px 16px;
+            border-radius: 999px;
+            border: 1px solid #ff3333;
+            box-shadow: 0 4px 15px rgba(255, 51, 51, 0.12);
+            text-decoration: none;
+        }
+        .google-rating-badge .google-icon {
+            color: #ff3333; /* site red */
+            font-size: 1.25rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .google-rating-badge .rating-score {
+            font-weight: 800;
+            font-size: 1rem;
+        }
+        .google-rating-badge .stars i { color: #FFD700; margin-right: 2px; font-size: 1rem; }
+        .google-rating-badge .badge-text { font-weight: 600; color: #444; font-size: 0.95rem; }
+        /* link text removed; whole badge is clickable */
+
         @media (max-width: 768px) {
             .about {
                 padding: 3rem 1rem;
@@ -1153,22 +1181,24 @@
     <section id="hero" class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1>Effortless Howard County Junk Removal: Reclaim Your Space</h1>
-            <h2>Trusted Howard County Junk Removal for Fast, Eco-Friendly Hauling</h2>
+            <h1>Howard County Junk Removal</h1>
+            <h2>Fast, eco‑friendly hauling. Same‑day service.</h2>
             <div class="trust-signals">
-                <div class="rating" style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 0.5rem;">
-                    <div style="display: flex; gap: 0.25rem;">
+                <a class="google-rating-badge" href="https://www.google.com/search?q=Grime+To+Dime+Elkridge+MD+reviews" target="_blank" rel="noopener nofollow" aria-label="5.0 rating on Google (opens reviews in a new tab)" title="5.0 on Google Reviews">
+                    <span class="google-icon" aria-hidden="true"><i class="fab fa-google"></i></span>
+                    <span class="rating-score">5.0</span>
+                    <span class="stars" aria-hidden="true">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
-                    </div>
-                    <span>Rated 5 Stars by Maryland Residents</span>
-                </div>
+                    </span>
+                    <span class="badge-text">on Google</span>
+                </a>
             </div>
             <a href="#contact" class="cta-button">
-                Clear My Junk - Free Quote!
+                Get Free Quote
             </a>
         </div>
     </section>
@@ -1212,26 +1242,24 @@
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3.4rem;
             font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            margin-bottom: 1rem;
             font-family: 'Roboto', sans-serif;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .hero h2 {
-            font-size: 1.8rem;
-            font-weight: 500;
+            font-size: 1.25rem;
+            font-weight: 600;
             line-height: 1.4;
-            margin-bottom: 2rem;
+            margin-bottom: 1.25rem;
             font-family: 'Open Sans', sans-serif;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
         }
 
-        .trust-signals {
-            margin-bottom: 2.5rem;
-        }
+        .trust-signals { margin-bottom: 1.25rem; }
 
         .rating {
             display: flex;
@@ -1331,16 +1359,7 @@
     </style>
 
     <section id="services" class="services">
-        <div class="services-trust-banner">
-            <div class="trust-content">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <span>Rated 5 Stars by Maryland Residents</span>
-            </div>
-        </div>
+        <!-- Removed duplicate rating badge to avoid repetition -->
         <h2>Our Howard County Junk Removal Services</h2>
         <div class="service-grid">
             <div class="service-card">
@@ -1351,8 +1370,8 @@
                     <h3>Home Cleanouts</h3>
                     <p>Complete house clean out services, garage junk removal, and residential property cleanouts</p>
                     <a href="#contact" class="service-cta">
-                        <span class="cta-text">Free Quote</span>
-                        <span class="cta-hover">Act Fast—Get a Quote!</span>
+                        <span class="cta-text">Get Free Quote</span>
+                        <span class="cta-hover">Get Free Quote</span>
                     </a>
                 </div>
             </div>
@@ -1364,8 +1383,8 @@
                     <h3>Commercial Haul Away</h3>
                     <p>Professional junk disposal and hauling services for offices, retail, and construction sites</p>
                     <a href="#contact" class="service-cta">
-                        <span class="cta-text">Free Quote</span>
-                        <span class="cta-hover">Act Fast—Get a Quote!</span>
+                        <span class="cta-text">Get Free Quote</span>
+                        <span class="cta-hover">Get Free Quote</span>
                     </a>
                 </div>
             </div>
@@ -1377,8 +1396,8 @@
                     <h3>Junk Recycling</h3>
                     <p>Eco-friendly junk disposal with focus on recycling and responsible waste management</p>
                     <a href="#contact" class="service-cta">
-                        <span class="cta-text">Free Quote</span>
-                        <span class="cta-hover">Act Fast—Get a Quote!</span>
+                        <span class="cta-text">Get Free Quote</span>
+                        <span class="cta-hover">Get Free Quote</span>
                     </a>
                 </div>
             </div>
@@ -1390,8 +1409,8 @@
                     <h3>Same-Day Junk Service</h3>
                     <p>Quick response hauling services with flexible scheduling for urgent cleanouts</p>
                     <a href="#contact" class="service-cta">
-                        <span class="cta-text">Free Quote</span>
-                        <span class="cta-hover">Act Fast—Get a Quote!</span>
+                        <span class="cta-text">Get Free Quote</span>
+                        <span class="cta-hover">Get Free Quote</span>
                     </a>
                 </div>
             </div>
@@ -1415,21 +1434,8 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
 
-        .trust-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            color: #222;
-            font-size: 18px;
-            font-weight: 600;
-        }
-
-        .trust-content i {
-            color: #ffd700;
-            font-size: 24px;
-            filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.1));
-        }
+        .trust-content { display: flex; align-items: center; justify-content: center; }
+        .trust-content .google-rating-badge { margin: 0 auto; }
 
         .services h2 {
             text-align: center;
@@ -1705,16 +1711,6 @@
     </style>
 
     <section id="transformations" class="transformations">
-        <div class="transformations-trust-banner">
-            <div class="trust-content">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <span>See Our 5-Star Transformations</span>
-            </div>
-        </div>
         <h2>Howard County Junk Removal Transformations</h2>
         <div class="gallery-container">
             <div class="gallery-section">
@@ -1724,18 +1720,12 @@
                         <img src="images/before-after/warehouse-before-junk-removal.webp" alt="Warehouse Before Howard County Junk Removal Service" class="gallery-image" loading="lazy">
                         <div class="gallery-overlay">
                             <p class="gallery-caption">Warehouse Before</p>
-                            <a href="#contact" class="gallery-cta">
-                                <span class="cta-text">Get My Quote</span>
-                            </a>
                         </div>
                     </div>
                     <div class="gallery-item">
                         <img src="images/before-after/warehouse-after-junk-removal.webp" alt="Warehouse After Howard County Junk Removal Service" class="gallery-image" loading="lazy">
                         <div class="gallery-overlay">
                             <p class="gallery-caption">Warehouse After</p>
-                            <a href="#contact" class="gallery-cta">
-                                <span class="cta-text">Get My Quote</span>
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -1748,60 +1738,42 @@
                         <img src="images/trailer-loads/truckloadout.webp" alt="Loaded Truck for Eco-Friendly Junk Hauling in Howard County" class="gallery-image" loading="lazy">
                         <div class="gallery-overlay">
                             <p class="gallery-caption">Loaded Truck</p>
-                            <a href="#contact" class="gallery-cta">
-                                <span class="cta-text">Get My Quote</span>
-                            </a>
                         </div>
                     </div>
                     <div class="gallery-item">
                         <img src="images/trailer-loads/trailerloadout.webp" alt="Loaded Trailer for Howard County Junk Removal" class="gallery-image" loading="lazy">
                         <div class="gallery-overlay">
                             <p class="gallery-caption">Trailer Load</p>
-                            <a href="#contact" class="gallery-cta">
-                                <span class="cta-text">Get My Quote</span>
-                            </a>
                         </div>
                     </div>
                     <div class="gallery-item">
                         <img src="images/trailer-loads/trailerloadout2.webp" alt="Full Load Service in Howard County" class="gallery-image" loading="lazy">
                         <div class="gallery-overlay">
                             <p class="gallery-caption">Full Load Service</p>
-                            <a href="#contact" class="gallery-cta">
-                                <span class="cta-text">Get My Quote</span>
-                            </a>
                         </div>
                     </div>
                     <div class="gallery-item">
                         <img src="images/trailer-loads/trailerloadout3.webp" alt="Heavy Load Howard County Junk Hauling" class="gallery-image" loading="lazy">
                         <div class="gallery-overlay">
                             <p class="gallery-caption">Heavy Load Service</p>
-                            <a href="#contact" class="gallery-cta">
-                                <span class="cta-text">Get My Quote</span>
-                            </a>
                         </div>
                     </div>
                     <div class="gallery-item">
                         <img src="images/trailer-loads/IMG_9150.webp" alt="Winter Junk Removal in Howard County" class="gallery-image" loading="lazy">
                         <div class="gallery-overlay">
                             <p class="gallery-caption">Winter Cleanout Service</p>
-                            <a href="#contact" class="gallery-cta">
-                                <span class="cta-text">Get My Quote</span>
-                            </a>
                         </div>
                     </div>
                     <div class="gallery-item">
                         <img src="images/trailer-loads/IMG_9212.webp" alt="Night Junk Removal Service in Howard County" class="gallery-image" loading="lazy">
                         <div class="gallery-overlay">
                             <p class="gallery-caption">Night Service Available</p>
-                            <a href="#contact" class="gallery-cta">
-                                <span class="cta-text">Get My Quote</span>
-                            </a>
                         </div>
                     </div>
                 </div>
                 <div class="section-cta-container">
                     <a href="#contact" class="section-cta">
-                        <i class="fas fa-bolt"></i> Get Your Free Quote Now—Transform Your Space Today!
+                        Get Free Quote
                     </a>
                 </div>
             </div>
@@ -1810,19 +1782,12 @@
 
     <style>
         .transformations {
-            padding: 5rem 1rem;
+            padding: 4rem 1rem;
             background: #f8f9fa;
             position: relative;
         }
 
-        .transformations-trust-banner {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 15px;
-            margin-bottom: 2rem;
-            text-align: center;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-        }
+        /* removed transformations trust banner */
 
         .transformations h2 {
             text-align: center;
@@ -1900,19 +1865,25 @@
             right: 0;
             background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6));
             padding: 20px;
-            transform: translateY(100%);
+            transform: translateY(100%); /* hidden by default on desktop */
             transition: transform 0.3s ease;
         }
 
-        /* Desktop hover behavior */
+        /* Hide overlay and caption by default so nothing peeks out */
+        .gallery-overlay, .transformations .gallery-caption { will-change: transform; }
+
+        /* Desktop hover behavior: reveal caption on hover */
         @media (hover: hover) {
             .gallery-item:hover .gallery-overlay {
                 transform: translateY(0);
             }
+            /* On desktop, ensure starting state fully hidden */
+            .transformations .gallery-overlay { transform: translateY(100%); }
         }
 
         /* Mobile specific styles */
         @media (hover: none) {
+            /* On touch devices, keep caption hidden until tap (simulate hover) */
             .gallery-overlay {
                 padding: 8px;
                 background: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent);
@@ -1922,30 +1893,11 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
+                transform: translateY(100%);
             }
-
-            .gallery-caption {
-                display: none;
-            }
-
-            .gallery-cta {
-                padding: 6px 12px;
-                font-size: 12px;
-                background: #ff0000;
-                border-radius: 4px;
-                width: auto;
-                display: inline-block;
-                margin: 0;
-            }
-
-            .gallery-cta .cta-text {
-                position: static;
-                transform: none;
-                opacity: 1;
-            }
-
-            .gallery-cta .cta-hover {
-                display: none;
+            .gallery-item:active .gallery-overlay,
+            .gallery-item:focus-within .gallery-overlay {
+                transform: translateY(0);
             }
         }
 
@@ -1961,7 +1913,11 @@
             }
         }
 
-        .gallery-caption {
+        /* Ensure captions are hidden with the overlay by default */
+        .transformations .gallery-caption {
+            position: static !important;
+            background: transparent !important;
+            padding: 0 !important;
             color: white;
             font-size: 16px;
             font-weight: 600;
@@ -2011,7 +1967,7 @@
 
         .section-cta-container {
             text-align: center;
-            margin-top: 2rem;
+            margin-top: 1rem;
         }
 
         .section-cta {
@@ -2123,16 +2079,7 @@
     </style>
 
     <section id="testimonials" class="testimonials">
-        <div class="testimonials-trust-banner">
-            <div class="trust-content">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <span>See Why We're Rated 5 Stars</span>
-            </div>
-        </div>
+        <!-- Removed duplicate rating badge to keep single hero reference -->
         <h2 class="section-title">What Our Customers Say</h2>
         <div class="testimonials-container">
             <div class="testimonial-slider">
@@ -2179,8 +2126,8 @@
             </div>
             <div class="testimonials-cta">
                 <a href="#contact" class="cta-button">
-                    <span class="cta-text">Get Your Free Quote Now</span>
-                    <span class="cta-hover">Act Fast—Get a Quote!</span>
+                    <span class="cta-text">Get Free Quote</span>
+                    <span class="cta-hover">Get Free Quote</span>
                 </a>
             </div>
         </div>

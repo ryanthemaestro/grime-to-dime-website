@@ -732,9 +732,8 @@ section.testimonials {
     background: #f8f9fa;
     width: 100%;
     text-align: center;
-    height: 750px;
-    display: flex;
-    flex-direction: column;
+    height: auto; /* allow content to define height */
+    display: block;
 }
 
 section.testimonials .testimonials-container {

@@ -2626,6 +2626,21 @@
             border-radius: 8px !important;
         }
 
+        /* Force identical wrapper widths for visual parity */
+        .testimonials-cta,
+        .section-cta-container {
+            width: 300px !important;
+            max-width: 300px !important;
+        }
+
+        @media (max-width: 480px) {
+            .testimonials-cta,
+            .section-cta-container {
+                width: 90% !important;
+                max-width: 90% !important;
+            }
+        }
+
         .feature-icon {
             width: 60px;
             height: 60px;

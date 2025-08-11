@@ -2629,8 +2629,8 @@
         /* Force identical wrapper widths for visual parity */
         .testimonials-cta,
         .section-cta-container {
-            width: 300px !important;
-            max-width: 300px !important;
+            width: 320px !important;
+            max-width: 320px !important;
         }
 
         @media (max-width: 480px) {
@@ -2639,6 +2639,19 @@
                 width: 90% !important;
                 max-width: 90% !important;
             }
+        }
+
+        /* Absolute parity for both CTA buttons */
+        .testimonials-cta .cta-button,
+        .section-cta {
+            box-sizing: border-box !important;
+            width: 100% !important;
+            padding: 16px 32px !important;
+            font-size: 16px !important;
+            line-height: 1 !important;
+            min-height: 48px !important;
+            border-radius: 8px !important;
+            box-shadow: 0 4px 15px rgba(255,51,51,0.2) !important;
         }
 
         .feature-icon {

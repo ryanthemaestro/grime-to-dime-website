@@ -482,6 +482,7 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
+            align-items: stretch; /* make both columns equal height per row */
         }
 
         /* FAQ accordion */
@@ -491,7 +492,6 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
             padding: 1rem 1.25rem;
         }
-        details.faq-accordion + details.faq-accordion { margin-top: 1rem; }
         .faq-accordion summary {
             font-size: 1.3rem;
             font-weight: 700;
@@ -500,6 +500,10 @@
             list-style: none;
             position: relative;
             outline: none;
+            display: flex;
+            align-items: center;
+            min-height: 64px; /* normalize card heights */
+            padding-right: 28px; /* room for chevron */
         }
         .faq-accordion summary::-webkit-details-marker { display: none; }
         .faq-accordion summary::after {

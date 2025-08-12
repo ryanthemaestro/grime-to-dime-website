@@ -516,6 +516,13 @@
         .feature-text { color: #222; font-weight: 600; font-size: .98rem; line-height: 1.4; }
         .section-card a:focus-visible { outline: 3px solid #ff3333; outline-offset: 3px; border-radius: 6px; }
 
+        /* Keyword chips (subtle relevance cues) */
+        .keyword-chips { display:flex; flex-wrap:wrap; gap:6px; margin:.25rem 0 .75rem; justify-content:center; }
+        .keyword-chip { background:#f1f3f5; color:#444; border:1px solid #e8eaed; border-radius:999px; padding:4px 10px; font-size:.8rem; }
+        .more-benefits { margin-top:.5rem; text-align:left; }
+        .more-benefits summary { cursor:pointer; font-weight:700; color:#222; }
+        .more-benefits[open] { border-top:1px solid #e9ecef; padding-top:.5rem; }
+
         /* FAQ Section Styles */
         .faq-section {
             padding: 5rem 1rem;
@@ -879,14 +886,26 @@
             <div class="section-card">
                 <div class="section-header">
                     <h2>Same‑Day Junk Removal</h2>
-                    <p class="section-subhead">Need junk gone today? We offer fast scheduling, on‑time arrival, and responsible disposal throughout Howard County so you can take back your space quickly.</p>
+                    <p class="section-subhead">Fast junk removal near you in Howard County. Same‑day pickup, on‑time arrival, and eco‑friendly disposal.</p>
+                    <div class="keyword-chips" aria-hidden="true">
+                        <span class="keyword-chip">junk removal</span>
+                        <span class="keyword-chip">junk removal near me</span>
+                        <span class="keyword-chip">Howard County</span>
+                    </div>
                 </div>
                 <ul class="feature-list" role="list">
-                    <li class="feature-item"><i class="fas fa-check-circle feature-icon" aria-hidden="true"></i><span class="feature-text">Same‑day or next‑day scheduling</span></li>
-                    <li class="feature-item"><i class="fas fa-check-circle feature-icon" aria-hidden="true"></i><span class="feature-text">On‑time 2‑hour arrival window</span></li>
-                    <li class="feature-item"><i class="fas fa-check-circle feature-icon" aria-hidden="true"></i><span class="feature-text">Licensed & insured crew</span></li>
-                    <li class="feature-item"><i class="fas fa-check-circle feature-icon" aria-hidden="true"></i><span class="feature-text">Upfront, volume‑based pricing</span></li>
+                    <li class="feature-item"><i class="fas fa-check-circle feature-icon" aria-hidden="true"></i><span class="feature-text">Same‑day or next‑day pickup</span></li>
+                    <li class="feature-item"><i class="fas fa-check-circle feature-icon" aria-hidden="true"></i><span class="feature-text">On‑time 2‑hour window</span></li>
+                    <li class="feature-item"><i class="fas fa-check-circle feature-icon" aria-hidden="true"></i><span class="feature-text">Licensed & insured</span></li>
+                    <li class="feature-item"><i class="fas fa-check-circle feature-icon" aria-hidden="true"></i><span class="feature-text">Upfront pricing</span></li>
                 </ul>
+                <details class="more-benefits">
+                    <summary>More details</summary>
+                    <ul class="feature-list" role="list">
+                        <li class="feature-item"><i class="fas fa-check-circle feature-icon" aria-hidden="true"></i><span class="feature-text">Curbside or in‑home pickup</span></li>
+                        <li class="feature-item"><i class="fas fa-check-circle feature-icon" aria-hidden="true"></i><span class="feature-text">Responsible recycling/donations</span></li>
+                    </ul>
+                </details>
             </div>
         </div>
     </section>
@@ -896,14 +915,26 @@
             <div class="section-card">
                 <div class="section-header">
                     <h2>Hot Tub Removal</h2>
-                    <p class="section-subhead">We remove and haul away hot tubs safely with property protection and eco‑friendly disposal, leaving your yard or deck clean and ready for what’s next.</p>
+                    <p class="section-subhead">Hot tub removal in Howard County. Safe haul‑away with property protection and eco‑friendly disposal.</p>
+                    <div class="keyword-chips" aria-hidden="true">
+                        <span class="keyword-chip">hot tub removal</span>
+                        <span class="keyword-chip">spa removal</span>
+                        <span class="keyword-chip">Howard County</span>
+                    </div>
                 </div>
                 <ul class="feature-list" role="list">
-                    <li class="feature-item"><i class="fas fa-check-circle feature-icon" aria-hidden="true"></i><span class="feature-text">Drain/disconnect assistance</span></li>
-                    <li class="feature-item"><i class="fas fa-check-circle feature-icon" aria-hidden="true"></i><span class="feature-text">Safe removal with property protection</span></li>
-                    <li class="feature-item"><i class="fas fa-check-circle feature-icon" aria-hidden="true"></i><span class="feature-text">Responsible disposal or recycling</span></li>
-                    <li class="feature-item"><i class="fas fa-check-circle feature-icon" aria-hidden="true"></i><span class="feature-text">Site sweep and cleanup included</span></li>
+                    <li class="feature-item"><i class="fas fa-check-circle feature-icon" aria-hidden="true"></i><span class="feature-text">Drain/disconnect help</span></li>
+                    <li class="feature-item"><i class="fas fa-check-circle feature-icon" aria-hidden="true"></i><span class="feature-text">Property protection</span></li>
+                    <li class="feature-item"><i class="fas fa-check-circle feature-icon" aria-hidden="true"></i><span class="feature-text">Recycling/disposal</span></li>
+                    <li class="feature-item"><i class="fas fa-check-circle feature-icon" aria-hidden="true"></i><span class="feature-text">Sweep & cleanup</span></li>
                 </ul>
+                <details class="more-benefits">
+                    <summary>More details</summary>
+                    <ul class="feature-list" role="list">
+                        <li class="feature-item"><i class="fas fa-check-circle feature-icon" aria-hidden="true"></i><span class="feature-text">Deck access planning</span></li>
+                        <li class="feature-item"><i class="fas fa-check-circle feature-icon" aria-hidden="true"></i><span class="feature-text">Tight‑space removal</span></li>
+                    </ul>
+                </details>
             </div>
         </div>
     </section>

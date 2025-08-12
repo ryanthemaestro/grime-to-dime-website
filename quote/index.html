@@ -1231,30 +1231,13 @@
       function markInvalid(el){ el?.classList.add('field-invalid'); }
       function clearInvalid(el){ el?.classList.remove('field-invalid'); }
 
-      addHint(nameEl, 'Please enter your full name.');
+      // Minimal helpful hints (phone for formatting, message for quality)
       addHint(phoneEl, 'Use digits only, e.g. (410) 300-6743');
-      addHint(emailEl, 'We’ll send your quote here.');
       addHint(msgEl, 'A few details help us quote accurately (min 10 characters).');
       phoneEl?.addEventListener('invalid', () => markInvalid(phoneEl));
       phoneEl?.addEventListener('input', () => clearInvalid(phoneEl));
 
-      // Move Address into an optional details block below the fold
-      if (addrEl) {
-        const group = addrEl.closest('.form-group') || addrEl.parentElement;
-        if (group && !document.getElementById('opt-address-wrap')) {
-          const wrap = document.createElement('details');
-          wrap.id = 'opt-address-wrap';
-          wrap.style.marginTop = '8px';
-          const sum = document.createElement('summary');
-          sum.textContent = 'Add Address (optional)';
-          sum.style.fontWeight = '700';
-          sum.style.cursor = 'pointer';
-          wrap.appendChild(sum);
-          wrap.appendChild(group);
-          const msgGroup = msgEl ? (msgEl.closest('.form-group') || msgEl.parentElement) : null;
-          (msgGroup?.parentElement || form).appendChild(wrap);
-        }
-      }
+      // Keep Address inline (no optional fold)
 
       // Lazy-load non-hero images
       document.querySelectorAll('img').forEach(img => {

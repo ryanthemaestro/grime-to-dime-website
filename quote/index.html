@@ -41,6 +41,8 @@
     <link rel="preconnect" href="https://connect.facebook.net" crossorigin>
     
     <style>
+        /* Smooth scrolling across anchors */
+        html { scroll-behavior: smooth; }
         /* Reset and base styles */
         * {
             margin: 0;
@@ -495,6 +497,25 @@
             font-weight: 600;
         }
 
+        /* Section cards and feature lists for readability and conversions */
+        .section-card {
+            background: #fff;
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0,0,0,.06);
+            padding: 1.25rem;
+            margin: 0 auto 1.5rem;
+            max-width: 900px;
+        }
+        .section-card .section-header h2 { margin: 0 0 .5rem 0; line-height: 1.2; }
+        .section-subhead { margin: 0 0 1rem 0; color: #444; line-height: 1.6; font-size: 1rem; max-width: 75ch; }
+        .feature-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr; gap: .75rem 1rem; }
+        @media (min-width: 480px) { .feature-list { grid-template-columns: 1fr 1fr; } }
+        .feature-item { display: flex; align-items: flex-start; gap: .65rem; background: #f8f9fa; border: 1px solid #e8eaed; border-radius: 10px; padding: .75rem .9rem; }
+        .feature-icon { color: #ff3333; font-size: 1.05rem; line-height: 1; margin-top: 2px; }
+        .feature-text { color: #222; font-weight: 600; font-size: .98rem; line-height: 1.4; }
+        .section-card a:focus-visible { outline: 3px solid #ff3333; outline-offset: 3px; border-radius: 6px; }
+
         /* FAQ Section Styles */
         .faq-section {
             padding: 5rem 1rem;
@@ -855,15 +876,35 @@
     <!-- Sitelink target sections -->
     <section id="same-day" class="process-section" style="padding-top:2rem">
         <div class="process-container">
-            <h2>Same‑Day Junk Removal</h2>
-            <p>Need junk gone today? We offer fast scheduling, on‑time arrival, and responsible disposal in Howard County.</p>
+            <div class="section-card">
+                <div class="section-header">
+                    <h2>Same‑Day Junk Removal</h2>
+                    <p class="section-subhead">Need junk gone today? We offer fast scheduling, on‑time arrival, and responsible disposal throughout Howard County so you can take back your space quickly.</p>
+                </div>
+                <ul class="feature-list" role="list">
+                    <li class="feature-item"><i class="fas fa-check-circle feature-icon" aria-hidden="true"></i><span class="feature-text">Same‑day or next‑day scheduling</span></li>
+                    <li class="feature-item"><i class="fas fa-check-circle feature-icon" aria-hidden="true"></i><span class="feature-text">On‑time 2‑hour arrival window</span></li>
+                    <li class="feature-item"><i class="fas fa-check-circle feature-icon" aria-hidden="true"></i><span class="feature-text">Licensed & insured crew</span></li>
+                    <li class="feature-item"><i class="fas fa-check-circle feature-icon" aria-hidden="true"></i><span class="feature-text">Upfront, volume‑based pricing</span></li>
+                </ul>
+            </div>
         </div>
     </section>
 
     <section id="hot-tub" class="process-section">
         <div class="process-container">
-            <h2>Hot Tub Removal</h2>
-            <p>Safe, insured removal and haul‑away of hot tubs and spas, with clean‑up included.</p>
+            <div class="section-card">
+                <div class="section-header">
+                    <h2>Hot Tub Removal</h2>
+                    <p class="section-subhead">We remove and haul away hot tubs safely with property protection and eco‑friendly disposal, leaving your yard or deck clean and ready for what’s next.</p>
+                </div>
+                <ul class="feature-list" role="list">
+                    <li class="feature-item"><i class="fas fa-check-circle feature-icon" aria-hidden="true"></i><span class="feature-text">Drain/disconnect assistance</span></li>
+                    <li class="feature-item"><i class="fas fa-check-circle feature-icon" aria-hidden="true"></i><span class="feature-text">Safe removal with property protection</span></li>
+                    <li class="feature-item"><i class="fas fa-check-circle feature-icon" aria-hidden="true"></i><span class="feature-text">Responsible disposal or recycling</span></li>
+                    <li class="feature-item"><i class="fas fa-check-circle feature-icon" aria-hidden="true"></i><span class="feature-text">Site sweep and cleanup included</span></li>
+                </ul>
+            </div>
         </div>
     </section>
 
@@ -952,7 +993,7 @@
     </section>
 
     <!-- FAQ Section -->
-    <section class="faq-section">
+    <section id="faq" class="faq-section">
         <div class="faq-container">
             <h2>Frequently Asked Questions About Junk Removal</h2>
             <div class="faq-grid">

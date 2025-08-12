@@ -732,20 +732,7 @@
     </style>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
-    <script>
-        // Prefer WebP hero on capable browsers; swap src if needed
-        (function(){
-            try {
-                const supportsWebP = document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') === 0;
-                if (supportsWebP) {
-                    const hero = document.querySelector('.hero');
-                    if (hero) {
-                        hero.style.backgroundImage = "linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/trailer-loads/IMG_9150.webp')";
-                    }
-                }
-            } catch(e) {}
-        })();
-    </script>
+    <!-- No extra runtime swaps needed; image-set handles modern formats -->
 
     
 
@@ -948,7 +935,7 @@
             <p>Get your free quote today and experience hassle-free junk removal in Howard County!</p>
             <div class="cta-buttons">
                 <a href="#quoteForm" class="cta-button">Get Free Quote</a>
-                <a id="call-btn" href="#" class="cta-button phone-button"><i class="fas fa-phone"></i> Call <span class="gfn">(410) 300-6743</span></a>
+                <a href="tel:+14103006743" class="cta-button phone-button gfn"><i class="fas fa-phone"></i> Call <span class="gfn">(410) 300-6743</span></a>
             </div>
         </div>
     </section>

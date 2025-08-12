@@ -777,31 +777,31 @@
                 <form class="quote-form" id="quoteForm" action="https://formspree.io/f/meoovajl" method="POST" onsubmit="return handleFormSubmit(event)">
                     <input type="hidden" name="_subject" value="New Quote Request from Grime To Dime Website">
                     <input type="hidden" name="_next" value="https://grimetodime.com/thank-you.html">
-                    <input type="text" name="_gotcha" style="display:none">
+                    <input type="text" name="_gotcha" style="display:none" aria-hidden="true" tabindex="-1">
                     
                     <div class="form-group">
                         <label for="name">Full Name</label>
-                        <input type="text" id="name" name="_name" required>
+                        <input type="text" id="name" name="_name" required autocomplete="name" autocapitalize="words" enterkeyhint="next">
                     </div>
                     
                     <div class="form-group">
                         <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="_phone" required>
+                        <input type="tel" id="phone" name="_phone" required autocomplete="tel" inputmode="tel" pattern="[\d\-\+\(\)\s]{10,}" enterkeyhint="next">
                     </div>
                     
                     <div class="form-group">
                         <label for="email">Email Address</label>
-                        <input type="email" id="email" name="_replyto" required>
+                        <input type="email" id="email" name="_replyto" required autocomplete="email" autocapitalize="off" autocorrect="off" spellcheck="false" inputmode="email" enterkeyhint="next">
                     </div>
                     
                     <div class="form-group">
                         <label for="address">Address (Optional)</label>
-                        <input type="text" id="address" name="_address">
+                        <input type="text" id="address" name="_address" autocomplete="street-address" enterkeyhint="next">
                     </div>
                     
                     <div class="form-group">
                         <label for="description">What items need removal?</label>
-                        <textarea id="description" name="_message" placeholder="Please describe the items you need removed..."></textarea>
+                        <textarea id="description" name="_message" placeholder="Please describe the items you need removed..." minlength="10" enterkeyhint="send"></textarea>
                     </div>
                     
                     <button type="submit" class="submit-button">Get Free Quote</button>

@@ -1042,15 +1042,7 @@
                 }
             });
         });
-        // Expand FAQs by default on desktop (>= 1024px), collapsed on mobile
-        function setFaqOpenState() {
-            const shouldOpen = window.matchMedia('(min-width: 1024px)').matches;
-            document.querySelectorAll('details.faq-accordion').forEach(d => {
-                d.open = shouldOpen;
-            });
-        }
-        setFaqOpenState();
-        window.addEventListener('resize', setFaqOpenState);
+        // Keep FAQs collapsed by default on all devices
     </script>
 </body>
 </html> 

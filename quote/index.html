@@ -864,7 +864,7 @@
                     
                     <div class="form-group">
                         <label for="description">What items need removal?</label>
-                        <textarea id="description" name="_message" placeholder="Please describe the items you need removed..." minlength="10" enterkeyhint="send"></textarea>
+                        <textarea id="description" name="_message" placeholder="Please describe the items you need removed..." enterkeyhint="send"></textarea>
                     </div>
                     
                     <button type="submit" class="submit-button">Get Free Quote</button>
@@ -1260,7 +1260,7 @@
 
       // Minimal helpful hints (phone for formatting, message for quality)
       addHint(phoneEl, 'Use digits only, e.g. (410) 300-6743');
-      addHint(msgEl, 'A few details help us quote accurately (min 10 characters).');
+      // Removed min length requirement; keep copy lightweight
       phoneEl?.addEventListener('invalid', () => markInvalid(phoneEl));
       phoneEl?.addEventListener('input', () => clearInvalid(phoneEl));
 

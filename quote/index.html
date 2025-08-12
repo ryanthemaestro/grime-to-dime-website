@@ -34,6 +34,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Preload hero image (WebP) for faster first paint -->
     <link rel="preload" as="image" href="../images/trailer-loads/IMG_9150.webp" type="image/webp" fetchpriority="high">
+    <!-- Performance preconnects -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://connect.facebook.net" crossorigin>
     
     <style>
         /* Reset and base styles */
@@ -109,6 +114,7 @@
             background-image:
                 linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
                 image-set(
+                    url('../images/optimized/IMG_9150-optimized.avif') type('image/avif'),
                     url('../images/trailer-loads/IMG_9150.webp') type('image/webp'),
                     url('../images/optimized/IMG_9150-optimized.jpg') type('image/jpeg')
                 );
@@ -427,6 +433,25 @@
             color: #444; 
             font-size: 0.95rem; 
         }
+
+        /* Accessible focus without CLS */
+        a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+            outline: 3px solid #ff3333;
+            outline-offset: 3px;
+            border-radius: 6px;
+        }
+
+        /* Sticky mobile bar */
+        .sticky-bar { position: sticky; bottom: 0; left: 0; right: 0; display: none; background: #111; z-index: 999; padding: 10px; gap: 10px; box-shadow: 0 -6px 18px rgba(0,0,0,.18); }
+        .sticky-bar .btn { display: inline-flex; align-items:center; justify-content:center; height: 48px; border-radius: 8px; font-weight: 700; flex: 1 1 0; text-decoration: none; color: #fff; }
+        .sticky-bar .btn.call { background:#222; border:1px solid #444; }
+        .sticky-bar .btn.quote { background:#ff3333; }
+        .sticky-bar .btn:active { transform: translateY(1px); }
+        @media (max-width: 768px) { .sticky-bar { display: grid; grid-template-columns: 1fr 1fr; } }
+
+        /* Inline validation hints */
+        .field-hint { font-size:.85rem; color:#666; margin-top:.35rem; }
+        .field-invalid { border-color:#cc0000 !important; box-shadow:0 0 0 3px rgba(204,0,0,.12) !important; }
 
         .rating-number {
             font-size: 2rem;
@@ -762,6 +787,19 @@
             <div class="hero-content">
                 <h1>Junk Removal Near Me in Howard County</h1>
                 <p>Get your free quote in minutes. We'll haul away your unwanted items with same-day service, responsible disposal, and affordable pricing.</p>
+                <!-- Decorative trust badge near CTA -->
+                <div class="google-rating-badge" aria-label="5.0 on Google" style="margin-top:.5rem">
+                    <span class="google-icon"><i class="fab fa-google"></i></span>
+                    <span class="rating-score">5.0</span>
+                    <span class="stars">★★★★★</span>
+                    <span class="badge-text">on Google</span>
+                </div>
+                <p style="margin-top:.75rem;font-weight:600">
+                    Service Areas: Howard County, Columbia, Ellicott City, Elkridge, Jessup
+                </p>
+                <p style="margin-top:1rem">
+                    <a href="#quoteForm" class="cta-button" style="display:inline-block">Get Free Quote</a>
+                </p>
                 
                 <ul class="hero-benefits">
                     <li><i class="fas fa-check-circle"></i> Free, No-Obligation Quotes</li>
@@ -811,6 +849,35 @@
                     </p>
                 </form>
             </div>
+        </div>
+    </section>
+
+    <!-- Sitelink target sections -->
+    <section id="same-day" class="process-section" style="padding-top:2rem">
+        <div class="process-container">
+            <h2>Same‑Day Junk Removal</h2>
+            <p>Need junk gone today? We offer fast scheduling, on‑time arrival, and responsible disposal in Howard County.</p>
+        </div>
+    </section>
+
+    <section id="hot-tub" class="process-section">
+        <div class="process-container">
+            <h2>Hot Tub Removal</h2>
+            <p>Safe, insured removal and haul‑away of hot tubs and spas, with clean‑up included.</p>
+        </div>
+    </section>
+
+    <section id="areas" class="process-section">
+        <div class="process-container">
+            <h2>Service Areas</h2>
+            <p>Howard County, Columbia, Ellicott City, Elkridge, Jessup. Nearby? Ask us—we often service surrounding areas.</p>
+        </div>
+    </section>
+
+    <section id="pricing" class="process-section">
+        <div class="process-container">
+            <h2>Junk Removal Pricing</h2>
+            <p>Upfront, volume‑based pricing with no hidden fees. Get a free quote in minutes.</p>
         </div>
     </section>
 
@@ -945,12 +1012,15 @@
         </div>
     </section>
 
-    <!-- Sticky CTA for mobile -->
-    <div class="sticky-cta">
-        <a href="#quoteForm" class="sticky-cta-button">
-            <i class="fas fa-clipboard-list"></i> Get Free Quote
-        </a>
-    </div>
+    <!-- Sticky Mobile Bar (quick actions) -->
+    <nav class="sticky-bar" aria-label="Quick actions">
+      <a class="btn call" href="tel:+14103006743" aria-label="Call Grime To Dime at 410-300-6743">
+        <i class="fas fa-phone" aria-hidden="true" style="margin-right:8px"></i> Call
+      </a>
+      <a class="btn quote" href="#quoteForm" aria-label="Get a free junk removal quote">
+        <i class="fas fa-clipboard-list" aria-hidden="true" style="margin-right:8px"></i> Get Free Quote
+      </a>
+    </nav>
 
     <script>
         function handleFormSubmit(event) {
@@ -1087,5 +1157,116 @@
             }
         })();
     </script>
+
+    <!-- UX/perf enhancements: hints, lazy-load, optional address fold, safe and additive -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Enhance anchors to #quoteForm without changing URLs
+      document.querySelectorAll('a[href="#quoteForm"]').forEach(a => {
+        a.addEventListener('click', e => {
+          const t = document.getElementById('quoteForm');
+          if (t) { e.preventDefault(); t.scrollIntoView({behavior:'smooth', block:'start'}); }
+        });
+      });
+
+      const form = document.getElementById('quoteForm');
+      if (!form) return;
+      const nameEl = document.getElementById('name');
+      const phoneEl = document.getElementById('phone');
+      const emailEl = document.getElementById('email');
+      const addrEl  = document.getElementById('address');
+      const msgEl   = document.getElementById('description');
+
+      function addHint(el, text) {
+        if (!el) return;
+        const id = el.id || el.name;
+        if (!id || document.getElementById(id + '-hint')) return;
+        const hint = document.createElement('div');
+        hint.className = 'field-hint';
+        hint.id = id + '-hint';
+        hint.textContent = text;
+        (el.closest('.form-group') || el.parentElement)?.appendChild(hint);
+      }
+      function markInvalid(el){ el?.classList.add('field-invalid'); }
+      function clearInvalid(el){ el?.classList.remove('field-invalid'); }
+
+      addHint(nameEl, 'Please enter your full name.');
+      addHint(phoneEl, 'Use digits only, e.g. (410) 300-6743');
+      addHint(emailEl, 'We’ll send your quote here.');
+      addHint(msgEl, 'A few details help us quote accurately (min 10 characters).');
+      phoneEl?.addEventListener('invalid', () => markInvalid(phoneEl));
+      phoneEl?.addEventListener('input', () => clearInvalid(phoneEl));
+
+      // Move Address into an optional details block below the fold
+      if (addrEl) {
+        const group = addrEl.closest('.form-group') || addrEl.parentElement;
+        if (group && !document.getElementById('opt-address-wrap')) {
+          const wrap = document.createElement('details');
+          wrap.id = 'opt-address-wrap';
+          wrap.style.marginTop = '8px';
+          const sum = document.createElement('summary');
+          sum.textContent = 'Add Address (optional)';
+          sum.style.fontWeight = '700';
+          sum.style.cursor = 'pointer';
+          wrap.appendChild(sum);
+          wrap.appendChild(group);
+          const msgGroup = msgEl ? (msgEl.closest('.form-group') || msgEl.parentElement) : null;
+          (msgGroup?.parentElement || form).appendChild(wrap);
+        }
+      }
+
+      // Lazy-load non-hero images
+      document.querySelectorAll('img').forEach(img => {
+        if (!img.closest('.hero')) {
+          if (!img.hasAttribute('loading')) img.setAttribute('loading','lazy');
+          if (!img.hasAttribute('decoding')) img.setAttribute('decoding','async');
+        }
+      });
+    });
+    </script>
+
+    <!-- JSON-LD: LocalBusiness + AggregateRating + FAQPage (non-blocking) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Grime To Dime",
+      "url": "https://grimetodime.com/quote",
+      "telephone": "+14103006743",
+      "image": "https://grimetodime.com/images/MASTERPARENT.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Elkridge",
+        "addressRegion": "MD",
+        "postalCode": "21075",
+        "addressCountry": "US"
+      },
+      "areaServed": "Howard County, MD",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "ratingCount": "25"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+14103006743",
+        "contactType": "customer service",
+        "areaServed": "US",
+        "availableLanguage": "en"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"What items do you accept for junk removal?","acceptedAnswer":{"@type":"Answer","text":"We accept most household and commercial junk including furniture, appliances, electronics, yard waste, and construction debris. We cannot accept hazardous materials."}},
+        {"@type":"Question","name":"Do you offer same-day junk removal service?","acceptedAnswer":{"@type":"Answer","text":"Yes, we often have same-day availability. Contact us early for the best chance of same-day service."}},
+        {"@type":"Question","name":"How much does junk removal cost?","acceptedAnswer":{"@type":"Answer","text":"Pricing is upfront and based on volume. Get a free quote for an accurate estimate with no hidden fees."}}
+      ]
+    }
+    </script>
+
 </body>
 </html> 

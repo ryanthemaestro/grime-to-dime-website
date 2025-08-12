@@ -484,20 +484,40 @@
             gap: 2rem;
         }
 
-        .faq-item {
+        /* FAQ accordion */
+        details.faq-accordion {
             background: #f9f9f9;
-            padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            padding: 1rem 1.25rem;
         }
-
-        .faq-item h3 {
+        details.faq-accordion + details.faq-accordion { margin-top: 1rem; }
+        .faq-accordion summary {
             font-size: 1.3rem;
-            margin-bottom: 1rem;
+            font-weight: 700;
             color: #333;
+            cursor: pointer;
+            list-style: none;
+            position: relative;
+            outline: none;
         }
-
-        .faq-item p {
+        .faq-accordion summary::-webkit-details-marker { display: none; }
+        .faq-accordion summary::after {
+            content: "\f107"; /* Font Awesome chevron-down */
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #ff3333;
+            transition: transform 0.2s ease;
+        }
+        .faq-accordion[open] summary::after { transform: translateY(-50%) rotate(180deg); }
+        .faq-answer {
+            margin-top: 0.75rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid #eee;
             color: #666;
             line-height: 1.6;
         }
@@ -851,30 +871,42 @@
         <div class="faq-container">
             <h2>Frequently Asked Questions About Junk Removal</h2>
             <div class="faq-grid">
-                <div class="faq-item">
-                    <h3>What items do you accept for junk removal?</h3>
-                    <p>We accept most household and commercial junk including furniture, appliances, electronics, yard waste, construction debris, and more. We cannot accept hazardous materials like paint, chemicals, or asbestos.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>How much does junk removal cost in Howard County?</h3>
-                    <p>Pricing depends on the volume and type of items being removed. We provide free, no-obligation quotes and transparent pricing with no hidden fees. Our rates are competitive and affordable.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Do you offer same-day junk removal service?</h3>
-                    <p>Yes! We often have same-day availability for junk pickup. Contact us early in the day for the best chance of same-day service.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>What areas do you serve for junk removal?</h3>
-                    <p>We primarily serve Howard County and surrounding areas including Elkridge, Columbia, Ellicott City, and Baltimore.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>How do you handle furniture removal and disposal?</h3>
-                    <p>Our team will carefully remove furniture from your home or business and load it onto our truck. We prioritize donation and recycling for furniture in good condition, ensuring eco-friendly disposal.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Can you help with estate cleanouts or hoarding cleanup?</h3>
-                    <p>Yes, we specialize in estate cleanouts, hoarding cleanup, and other comprehensive junk removal services. Our team is professional, discreet, and thorough.</p>
-                </div>
+                <details class="faq-accordion">
+                    <summary>What items do you accept for junk removal?</summary>
+                    <div class="faq-answer">
+                        We accept most household and commercial junk including furniture, appliances, electronics, yard waste, construction debris, and more. We cannot accept hazardous materials like paint, chemicals, or asbestos.
+                    </div>
+                </details>
+                <details class="faq-accordion">
+                    <summary>How much does junk removal cost in Howard County?</summary>
+                    <div class="faq-answer">
+                        Pricing depends on the volume and type of items being removed. We provide free, no-obligation quotes and transparent pricing with no hidden fees. Our rates are competitive and affordable.
+                    </div>
+                </details>
+                <details class="faq-accordion">
+                    <summary>Do you offer same-day junk removal service?</summary>
+                    <div class="faq-answer">
+                        Yes! We often have same-day availability for junk pickup. Contact us early in the day for the best chance of same-day service.
+                    </div>
+                </details>
+                <details class="faq-accordion">
+                    <summary>What areas do you serve for junk removal?</summary>
+                    <div class="faq-answer">
+                        We primarily serve Howard County and surrounding areas including Elkridge, Columbia, Ellicott City, and Baltimore.
+                    </div>
+                </details>
+                <details class="faq-accordion">
+                    <summary>How do you handle furniture removal and disposal?</summary>
+                    <div class="faq-answer">
+                        Our team will carefully remove furniture from your home or business and load it onto our truck. We prioritize donation and recycling for furniture in good condition, ensuring eco-friendly disposal.
+                    </div>
+                </details>
+                <details class="faq-accordion">
+                    <summary>Can you help with estate cleanouts or hoarding cleanup?</summary>
+                    <div class="faq-answer">
+                        Yes, we specialize in estate cleanouts, hoarding cleanup, and other comprehensive junk removal services. Our team is professional, discreet, and thorough.
+                    </div>
+                </details>
             </div>
         </div>
     </section>
@@ -1010,6 +1042,15 @@
                 }
             });
         });
+        // Expand FAQs by default on desktop (>= 1024px), collapsed on mobile
+        function setFaqOpenState() {
+            const shouldOpen = window.matchMedia('(min-width: 1024px)').matches;
+            document.querySelectorAll('details.faq-accordion').forEach(d => {
+                d.open = shouldOpen;
+            });
+        }
+        setFaqOpenState();
+        window.addEventListener('resize', setFaqOpenState);
     </script>
 </body>
 </html> 

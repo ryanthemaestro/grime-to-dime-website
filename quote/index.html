@@ -925,7 +925,7 @@
             <p>Get your free quote today and experience hassle-free junk removal in Howard County!</p>
             <div class="cta-buttons">
                 <a href="#quoteForm" class="cta-button">Get Free Quote</a>
-                <a href="tel:4103006743" class="cta-button phone-button gfn"><i class="fas fa-phone"></i> Call (410) 300-6743</a>
+                <a id="call-btn" href="#" class="cta-button phone-button gfn"><i class="fas fa-phone"></i> Call (410) 300-6743</a>
             </div>
         </div>
     </section>
@@ -1050,6 +1050,27 @@
             });
         });
         // Keep FAQs collapsed by default on all devices
+
+        // Phone button behavior: mobile dials, desktop copies to clipboard
+        (function(){
+            const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+            const btn = document.getElementById('call-btn');
+            if (!btn) return;
+            if (isMobile) {
+                btn.setAttribute('href','tel:+14103006743');
+            } else {
+                btn.setAttribute('href','#');
+                btn.addEventListener('click', e => {
+                    e.preventDefault();
+                    if (navigator.clipboard && navigator.clipboard.writeText) {
+                        navigator.clipboard.writeText('(410) 300-6743');
+                        alert('Number copied: (410) 300-6743');
+                    } else {
+                        alert('Call: (410) 300-6743');
+                    }
+                });
+            }
+        })();
     </script>
 </body>
 </html> 

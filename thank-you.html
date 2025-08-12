@@ -258,6 +258,25 @@
             font-weight: 600;
         }
 
+        /* Google rating badge (non-click decorative) */
+        .google-rating-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #fff;
+            color: #222;
+            padding: 10px 16px;
+            border-radius: 999px;
+            border: 1px solid #ff3333;
+            box-shadow: 0 4px 15px rgba(255, 51, 51, 0.12);
+            pointer-events: none;
+            user-select: none;
+        }
+        .google-rating-badge .google-icon { color: #ff3333; font-size: 1.25rem; display: inline-flex; align-items: center; justify-content: center; }
+        .google-rating-badge .rating-score { font-weight: 800; font-size: 1rem; }
+        .google-rating-badge .stars { color: #FFD700; margin-right: 2px; font-size: 1rem; letter-spacing: 1px; }
+        .google-rating-badge .badge-text { font-weight: 600; color: #444; font-size: 0.95rem; }
+
         @media (max-width: 768px) {
             .thank-you-header h1 {
                 font-size: 2rem;
@@ -383,9 +402,11 @@
                 </div>
                 
                 <div class="social-proof">
-                    <div class="review-badge">
-                        <div class="stars">★★★★★</div>
-                        <div class="review-text">4.9 out of 5 based on 50+ reviews</div>
+                    <div class="google-rating-badge" aria-label="5.0 rating on Google">
+                        <span class="google-icon"><i class="fab fa-google"></i></span>
+                        <span class="rating-score">5.0</span>
+                        <span class="stars">★★★★★</span>
+                        <span class="badge-text">on Google</span>
                     </div>
                     
                     <div class="trust-badge">

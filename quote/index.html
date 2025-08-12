@@ -860,10 +860,7 @@
                         <input type="email" id="email" name="_replyto" required autocomplete="email" autocapitalize="off" autocorrect="off" spellcheck="false" inputmode="email" enterkeyhint="next">
                     </div>
                     
-                    <div class="form-group">
-                        <label for="address">Address (Optional)</label>
-                        <input type="text" id="address" name="_address" autocomplete="street-address" enterkeyhint="next">
-                    </div>
+                    
                     
                     <div class="form-group">
                         <label for="description">What items need removal?</label>
@@ -1246,7 +1243,6 @@
       const nameEl = document.getElementById('name');
       const phoneEl = document.getElementById('phone');
       const emailEl = document.getElementById('email');
-      const addrEl  = document.getElementById('address');
       const msgEl   = document.getElementById('description');
 
       function addHint(el, text) {
@@ -1268,7 +1264,6 @@
       phoneEl?.addEventListener('invalid', () => markInvalid(phoneEl));
       phoneEl?.addEventListener('input', () => clearInvalid(phoneEl));
 
-      // Keep Address inline (no optional fold)
 
       // Lazy-load non-hero images
       document.querySelectorAll('img').forEach(img => {

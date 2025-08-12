@@ -31,6 +31,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../images/Faviconmaster.png">
     <link rel="shortcut icon" href="../images/Faviconmaster.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Preload hero image (WebP) for faster first paint -->
+    <link rel="preload" as="image" href="../images/trailer-loads/IMG_9150.webp" type="image/webp" fetchpriority="high">
     
     <style>
         /* Reset and base styles */
@@ -103,8 +105,12 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                        url('../images/optimized/IMG_9150-optimized.jpg');
+            background-image:
+                linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                image-set(
+                    url('../images/trailer-loads/IMG_9150.webp') type('image/webp'),
+                    url('../images/optimized/IMG_9150-optimized.jpg') type('image/jpeg')
+                );
             background-size: cover;
             background-position: center;
             min-height: 100vh;
@@ -533,7 +539,10 @@
         .secondary-cta {
             padding: 5rem 1rem;
             background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-                        url('../images/trailer-loads/IMG_9150.png');
+                        image-set(
+                            url('../images/trailer-loads/IMG_9150.webp') type('image/webp'),
+                            url('../images/trailer-loads/IMG_9150.png') type('image/png')
+                        );
             background-size: cover;
             background-position: center;
             color: white;
@@ -723,6 +732,20 @@
     </style>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script>
+        // Prefer WebP hero on capable browsers; swap src if needed
+        (function(){
+            try {
+                const supportsWebP = document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') === 0;
+                if (supportsWebP) {
+                    const hero = document.querySelector('.hero');
+                    if (hero) {
+                        hero.style.backgroundImage = "linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/trailer-loads/IMG_9150.webp')";
+                    }
+                }
+            } catch(e) {}
+        })();
+    </script>
 
     
 

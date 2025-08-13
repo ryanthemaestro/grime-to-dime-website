@@ -1035,6 +1035,26 @@ section.testimonials .testimonials-container h2 {
     margin-bottom: 0;
 }
 
+/* Service CTA hover text swap (Get Quote → Get Free Quote) */
+.service-cta {
+    position: relative;
+    overflow: hidden;
+}
+
+.service-cta .cta-text,
+.service-cta .cta-hover {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    left: 0;
+}
+
+.service-cta .cta-text { transform: translateY(0); opacity: 1; }
+.service-cta .cta-hover { transform: translateY(100%); opacity: 0; }
+.service-cta:hover .cta-text { transform: translateY(-100%); opacity: 0; }
+.service-cta:hover .cta-hover { transform: translateY(0); opacity: 1; }
+
 /* Benefit Cards (Why Choose) */
 .benefits-grid {
     display: grid;

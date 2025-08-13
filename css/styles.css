@@ -1177,3 +1177,54 @@ section.testimonials .testimonials-container h2 {
     color: #cc0000;
     border-color: #cc0000;
 }
+
+/* Elevate Neighborhoods & ZIPs cards */
+.about .feature-card:has(.zip-chips),
+.about .feature-card:has(.nearby-links) {
+    border: 1px solid rgba(255, 0, 0, 0.18);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+    padding: 1.75rem;
+    position: relative;
+}
+
+.about .feature-card:has(.zip-chips)::before,
+.about .feature-card:has(.nearby-links)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: #ff0000;
+    border-radius: 12px 12px 0 0;
+}
+
+.about .feature-card:has(.zip-chips) h3,
+.about .feature-card:has(.nearby-links) h3 {
+    text-align: left;
+    color: #222;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+}
+
+/* Nearby cities as chips */
+.about .feature-card .nearby-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.about .feature-card .nearby-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 0, 0, 0.06);
+    border: 1px solid rgba(255,0,0,0.2);
+    border-radius: 999px;
+    padding: 8px 14px;
+    font-weight: 700;
+}
+
+.about .feature-card .nearby-links a:hover {
+    background: rgba(255, 0, 0, 0.1);
+}

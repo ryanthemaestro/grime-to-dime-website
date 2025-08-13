@@ -1,0 +1,8 @@
+Add a small list under footer Quick Links:
+  Service Areas
+    - /locations/ellicott-city-md/
+    - /locations/columbia-md/
+    - /locations/elkridge-md/
+    - /locations/laurel-md/
+    - /locations/catonsville-md/
+

@@ -1039,6 +1039,18 @@ section.testimonials .testimonials-container h2 {
 .service-cta {
     position: relative;
     overflow: hidden;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    background: #ff0000 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    border: none;
+    border-radius: 8px;
+    height: 44px;
+    min-width: 180px;
+    padding: 0 20px;
+    white-space: nowrap;
 }
 
 .service-cta .cta-text,

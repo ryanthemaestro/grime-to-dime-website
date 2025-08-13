@@ -9,50 +9,110 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/images/Faviconmaster.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/Faviconmaster.png">
     <link rel="shortcut icon" href="/images/Faviconmaster.png">
+    <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <section class="hero" style="min-height:40vh;padding:2rem 1rem;background:linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)), url('/images/MASTERPARENT.png') center/cover; color:#fff; display:flex; align-items:center;">
-        <div class="hero-container" style="max-width:1200px;margin:0 auto;">
-            <div class="hero-content" style="padding:1rem;">
-                <h1>Junk Removal in Laurel, MD</h1>
-                <p>Same‑day service when available. Upfront pricing. Eco‑friendly disposal.</p>
-                <p style="margin-top:1rem"><a href="/quote/" class="cta-button" style="background:#ff3333;color:#fff;padding:.8rem 1.5rem;border-radius:8px;text-decoration:none;font-weight:700;">Get Free Quote</a></p>
+    <header>
+        <div class="header-content-wrapper">
+            <div class="logo">
+                <a href="/"><img src="/images/Faviconmaster.png" alt="Grime To Dime Logo">Grime To Dime</a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Junk Removal in Laurel, MD</h1>
+            <h2>Fast, eco‑friendly hauling. Same‑day service.</h2>
+            <a href="/quote/" class="cta-button">Get Free Quote</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="about-container">
+            <h2>Why Choose Grime To Dime</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-check-circle"></i></div>
+                    <h3>Licensed and Insured</h3>
+                    <p>Local team serving Laurel with full coverage for peace of mind.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                    <h3>Same‑Day Available</h3>
+                    <p>Flexible scheduling and quick response for urgent cleanouts.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-leaf"></i></div>
+                    <h3>Eco‑Friendly</h3>
+                    <p>We prioritize recycling and donations to reduce landfill waste.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="about" style="padding:3rem 1rem;background:#fff;">
-        <div class="about-container" style="max-width:1200px;margin:0 auto;">
-            <h2>Why Choose Us</h2>
-            <ul>
-                <li>Licensed & insured local team</li>
-                <li>Same‑day availability</li>
-                <li>Responsible recycling and donations</li>
-            </ul>
+    <section id="services" class="services">
+        <h2>Our Laurel Junk Removal Services</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-home"></i></div>
+                <div class="service-content">
+                    <h3>Home Cleanouts</h3>
+                    <p>House, garage, and estate cleanouts handled with care.</p>
+                    <a href="/quote/" class="service-cta"><span class="cta-text">Get Free Quote</span><span class="cta-hover">Get Free Quote</span></a>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-building"></i></div>
+                <div class="service-content">
+                    <h3>Commercial Haul Away</h3>
+                    <p>Office, retail, and light construction debris removal.</p>
+                    <a href="/quote/" class="service-cta"><span class="cta-text">Get Free Quote</span><span class="cta-hover">Get Free Quote</span></a>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-recycle"></i></div>
+                <div class="service-content">
+                    <h3>Junk Recycling</h3>
+                    <p>Eco‑friendly disposal with emphasis on recycling.</p>
+                    <a href="/quote/" class="service-cta"><span class="cta-text">Get Free Quote</span><span class="cta-hover">Get Free Quote</span></a>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-truck-moving"></i></div>
+                <div class="service-content">
+                    <h3>Same‑Day Service</h3>
+                    <p>Fast scheduling for urgent pickups when available.</p>
+                    <a href="/quote/" class="service-cta"><span class="cta-text">Get Free Quote</span><span class="cta-hover">Get Free Quote</span></a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="services" style="padding:3rem 1rem;background:#f8f9fa;">
-        <div class="about-container" style="max-width:1200px;margin:0 auto;">
-            <h2>Services in Laurel</h2>
-            <ul>
-                <li>Furniture and appliance removal</li>
-                <li>Garage, basement, and estate cleanouts</li>
-                <li>Construction debris and yard waste</li>
-            </ul>
-        </div>
-    </section>
-
-    <section class="about" style="padding:3rem 1rem;background:#fff;">
-        <div class="about-container" style="max-width:1200px;margin:0 auto;">
+    <section class="about">
+        <div class="about-container">
             <h2>Neighborhoods & ZIPs</h2>
             <p>Serving Laurel including 20707, 20708 and nearby areas.</p>
         </div>
     </section>
 
-    <section class="about" style="padding:3rem 1rem;background:#fff;">
-        <div class="about-container" style="max-width:1200px;margin:0 auto;">
+    <section class="about">
+        <div class="about-container">
             <h2>How It Works</h2>
             <ol>
                 <li>Request a free quote</li>
@@ -62,15 +122,15 @@
         </div>
     </section>
 
-    <section class="about" style="padding:3rem 1rem;background:#fff;">
-        <div class="about-container" style="max-width:1200px;margin:0 auto;">
+    <section class="about">
+        <div class="about-container">
             <h2>Nearby Cities</h2>
             <p><a href="/locations/columbia-md/">Columbia</a> · <a href="/locations/elkridge-md/">Elkridge</a> · <a href="/locations/catonsville-md/">Catonsville</a></p>
         </div>
     </section>
 
-    <section class="about" style="padding:3rem 1rem;background:#fff;">
-        <div class="about-container" style="max-width:1200px;margin:0 auto;">
+    <section id="faq" class="about">
+        <div class="about-container">
             <h2>FAQ</h2>
             <details><summary>Do you offer same‑day junk removal in Laurel?</summary><p>Often yes. Contact us early for the best availability.</p></details>
             <details><summary>How is pricing calculated?</summary><p>Based on volume and item type with upfront pricing.</p></details>
@@ -78,11 +138,58 @@
         </div>
     </section>
 
-    <section class="about" style="padding:3rem 1rem;background:#fff;">
-        <div class="about-container" style="max-width:1200px;margin:0 auto;">
-            <p><a href="/quote/" class="cta-button" style="background:#ff3333;color:#fff;padding:1rem 2rem;border-radius:8px;text-decoration:none;font-weight:700;">Get Your Free Quote</a></p>
+    <section id="contact" class="about">
+        <div class="about-container" style="text-align:center;">
+            <a href="/quote/" class="cta-button">Get Your Free Quote</a>
         </div>
     </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Grime To Dime</h4>
+                <p>Grime To Dime: Your professional junk removal solution.</p>
+            </div>
+            <div class="footer-right-group">
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/quote/">Get a Quote</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61571988560834" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Grime To Dime. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+        const navLinks = document.querySelector('nav ul.nav-links');
+        if (mobileNavToggle && navLinks) {
+            mobileNavToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('nav-active');
+            });
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navLinks.classList.contains('nav-active')) {
+                        navLinks.classList.remove('nav-active');
+                    }
+                });
+            });
+        }
+    </script>
 
     <script type="application/ld+json">
     {

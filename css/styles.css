@@ -1134,3 +1134,46 @@ section.testimonials .testimonials-container h2 {
         padding: 1.5rem;
     }
 }
+
+/* Neighborhoods & ZIPs styling */
+.about .feature-card .zip-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 0.5rem;
+}
+
+.about .feature-card .zip-chips .zip-chip {
+    background: rgba(255, 0, 0, 0.06);
+    color: #ff0000;
+    border: 1px solid rgba(255, 0, 0, 0.2);
+    border-radius: 999px;
+    padding: 8px 14px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 6px rgba(255, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.about .feature-card .zip-chips .zip-chip:hover {
+    transform: translateY(-1px);
+    background: rgba(255, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(255, 0, 0, 0.12);
+}
+
+.about .feature-card .nearby-links {
+    margin-top: 0.75rem;
+}
+
+.about .feature-card .nearby-links a {
+    color: #ff0000;
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.about .feature-card .nearby-links a:hover {
+    color: #cc0000;
+    border-color: #cc0000;
+}

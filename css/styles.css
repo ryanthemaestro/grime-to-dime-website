@@ -1034,3 +1034,66 @@ section.testimonials .testimonials-container h2 {
     margin-top: auto;
     margin-bottom: 0;
 }
+
+/* Benefit Cards (Why Choose) */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.benefit-card {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.benefit-card i {
+    background: rgba(255, 0, 0, 0.1);
+    color: #ff0000;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto 1rem;
+}
+
+.benefit-card h4 {
+    font-size: 1.25rem;
+    color: #222;
+    margin-bottom: 0.5rem;
+}
+
+.benefit-card p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.benefit-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.benefit-card:hover i {
+    background: #ff0000;
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .benefit-card {
+        padding: 1.5rem;
+    }
+}

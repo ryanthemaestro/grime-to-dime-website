@@ -1135,6 +1135,71 @@ section.testimonials .testimonials-container h2 {
     }
 }
 
+/* ==============================
+   How It Works (Process) - Global
+   ============================== */
+.process-section {
+    padding: 5rem 1rem;
+    background: #ffffff;
+}
+
+.process-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.process-step {
+    background: #f9f9f9;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.process-icon {
+    font-size: 2rem;
+    color: #ff0000;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .process-steps { grid-template-columns: 1fr; }
+}
+
+/* ==============================
+   FAQ Accordion (details/summary)
+   ============================== */
+details {
+    background: #ffffff;
+    padding: 1.25rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+summary {
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 1.05rem;
+    color: #222;
+    margin-bottom: 0.25rem;
+}
+
+details[open] summary {
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 0, 0, 0.15);
+}
+
+details p { margin: 0; color: #555; line-height: 1.6; }
+
 /* Neighborhoods & ZIPs styling */
 .about .feature-card .zip-chips {
     display: flex;

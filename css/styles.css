@@ -1067,6 +1067,11 @@ section.testimonials .testimonials-container h2 {
 .service-cta:hover .cta-text { transform: translateY(-100%); opacity: 0; }
 .service-cta:hover .cta-hover { transform: translateY(0); opacity: 1; }
 
+/* Add a little extra breathing room above CTAs inside service cards */
+.service-card .service-content {
+    gap: 0.75rem;
+}
+
 /* Benefit Cards (Why Choose) */
 .benefits-grid {
     display: grid;

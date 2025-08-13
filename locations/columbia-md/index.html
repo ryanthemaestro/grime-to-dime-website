@@ -12,12 +12,33 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        /* Hero transparent content box (match homepage) */
+        .hero { position: relative; min-height: 70vh; display:flex; align-items:center; justify-content:center; text-align:center; padding: 1rem; }
+        .hero-content { max-width: 900px; margin: 0 auto; color: #ffffff; padding: 40px; background: rgba(0, 0, 0, 0.3); border-radius: 15px; backdrop-filter: blur(5px); }
         .google-rating-badge { display:inline-flex; align-items:center; gap:10px; background:#fff; color:#222; padding:10px 16px; border-radius:999px; border:1px solid #ff3333; box-shadow:0 4px 15px rgba(255,51,51,0.12); text-decoration:none; }
         .google-rating-badge .google-icon { color:#ff3333; font-size:1.25rem; display:inline-flex; align-items:center; justify-content:center; }
         .google-rating-badge .rating-score { font-weight:800; font-size:1rem; }
         .google-rating-badge .stars { color:#FFD700; margin-right:2px; font-size:1rem; letter-spacing:1px; }
         .google-rating-badge .badge-text { font-weight:600; color:#444; font-size:.95rem; }
         .trust-signals { margin: .75rem 0 0.5rem; }
+
+        /* FAQ cards like homepage */
+        details { background:#fff; padding:1.5rem; border-radius:15px; box-shadow:0 8px 20px rgba(0,0,0,.08); margin-bottom:1rem; border:1px solid rgba(0,0,0,.05); }
+        summary { font-weight:600; cursor:pointer; font-size:1.1rem; color:#222; margin-bottom:.5rem; }
+        details[open] summary { margin-bottom:1rem; padding-bottom:.5rem; border-bottom:1px solid rgba(255,51,51,0.1); }
+        details p { margin:0; color:#666; line-height:1.6; }
+
+        /* Chips for ZIPs */
+        .zip-chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:.5rem; }
+        .zip-chip { background:#f1f3f5; color:#444; border:1px solid #e8eaed; border-radius:999px; padding:6px 12px; font-weight:600; font-size:.9rem; }
+
+        /* Process (How it works) styled like quote page */
+        .process-section { padding:5rem 1rem; background:#fff; }
+        .process-container { max-width:1200px; margin:0 auto; text-align:center; }
+        .process-steps { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
+        .process-step { padding:2rem; border-radius:10px; background:#f9f9f9; box-shadow:0 4px 10px rgba(0,0,0,.05); }
+        .process-icon { font-size:2rem; color:#ff3333; margin-bottom:1rem; }
+        @media (max-width:768px){ .process-steps{ grid-template-columns:1fr; } }
     </style>
 </head>
 <body>
@@ -90,7 +111,7 @@
                 <div class="service-content">
                     <h3>Home Cleanouts</h3>
                     <p>House, garage, and estate cleanouts handled with care.</p>
-                    <a href="/quote/" class="service-cta"><span class="cta-text">Get Free Quote</span><span class="cta-hover">Get Free Quote</span></a>
+                    <a href="/quote/" class="service-cta"><span class="cta-text">Get Free Quote</span></a>
                 </div>
             </div>
             <div class="service-card">
@@ -98,7 +119,7 @@
                 <div class="service-content">
                     <h3>Commercial Haul Away</h3>
                     <p>Office, retail, and light construction debris removal.</p>
-                    <a href="/quote/" class="service-cta"><span class="cta-text">Get Free Quote</span><span class="cta-hover">Get Free Quote</span></a>
+                    <a href="/quote/" class="service-cta"><span class="cta-text">Get Free Quote</span></a>
                 </div>
             </div>
             <div class="service-card">
@@ -106,7 +127,7 @@
                 <div class="service-content">
                     <h3>Junk Recycling</h3>
                     <p>Eco‑friendly disposal with emphasis on recycling.</p>
-                    <a href="/quote/" class="service-cta"><span class="cta-text">Get Free Quote</span><span class="cta-hover">Get Free Quote</span></a>
+                    <a href="/quote/" class="service-cta"><span class="cta-text">Get Free Quote</span></a>
                 </div>
             </div>
             <div class="service-card">
@@ -114,7 +135,7 @@
                 <div class="service-content">
                     <h3>Same‑Day Service</h3>
                     <p>Fast scheduling for urgent pickups when available.</p>
-                    <a href="/quote/" class="service-cta"><span class="cta-text">Get Free Quote</span><span class="cta-hover">Get Free Quote</span></a>
+                    <a href="/quote/" class="service-cta"><span class="cta-text">Get Free Quote</span></a>
                 </div>
             </div>
         </div>
@@ -123,18 +144,43 @@
     <section class="about">
         <div class="about-container">
             <h2>Neighborhoods & ZIPs</h2>
-            <p>Serving Columbia including 21044, 21045, 21046 and nearby areas.</p>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>ZIP Codes</h3>
+                    <div class="zip-chips">
+                        <span class="zip-chip">21044</span>
+                        <span class="zip-chip">21045</span>
+                        <span class="zip-chip">21046</span>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <h3>Nearby Cities</h3>
+                    <p class="nearby-links"><a href="/locations/ellicott-city-md/">Ellicott City</a> · <a href="/locations/elkridge-md/">Elkridge</a> · <a href="/locations/laurel-md/">Laurel</a></p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="about">
-        <div class="about-container">
+    <section class="process-section">
+        <div class="process-container">
             <h2>How It Works</h2>
-            <ol>
-                <li>Request a free quote</li>
-                <li>Schedule your pickup</li>
-                <li>We haul it away and clean up</li>
-            </ol>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="process-icon"><i class="fas fa-clipboard-list"></i></div>
+                    <h3>1. Request a Quote</h3>
+                    <p>Tell us what you need removed and get a fast, free estimate.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-icon"><i class="fas fa-calendar-check"></i></div>
+                    <h3>2. Schedule Pickup</h3>
+                    <p>Choose a convenient time. Same‑day service often available.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-icon"><i class="fas fa-truck-loading"></i></div>
+                    <h3>3. We Haul It Away</h3>
+                    <p>Our team removes your items quickly and cleans up afterward.</p>
+                </div>
+            </div>
         </div>
     </section>
 

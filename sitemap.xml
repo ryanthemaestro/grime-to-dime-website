@@ -106,7 +106,7 @@
   </url>
   <url>
     <loc>https://grimetodime.com/locations/catonsville-md/</loc>
-    <lastmod>2025-04-13</lastmod>
+    <lastmod>2025-08-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -114,19 +114,14 @@
   <!-- Legal Pages -->
   <url>
     <loc>https://grimetodime.com/privacy-policy.html</loc>
-    <lastmod>2025-04-13</lastmod>
+    <lastmod>2025-08-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
-  <url>
-    <loc>https://grimetodime.com/terms-of-service.html</loc>
-    <lastmod>2025-04-13</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
+  <!-- Removed: terms-of-service.html (consolidated under /terms.html) -->
   <url>
     <loc>https://grimetodime.com/terms.html</loc>
-    <lastmod>2025-04-13</lastmod>
+    <lastmod>2025-08-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>

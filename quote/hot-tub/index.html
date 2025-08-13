@@ -74,11 +74,13 @@
         .feature-icon { color:#ff3333; margin-top:2px; }
         .feature-text { color:#222; font-weight:600; }
         /* Sticky bar */
-        .sticky-bar { position:sticky; bottom:0; left:0; right:0; display:grid; grid-template-columns:1fr 1fr; background:#111; z-index:999; padding:10px; gap:10px; box-shadow:0 -6px 18px rgba(0,0,0,.18); }
+        .sticky-bar { position:sticky; bottom:0; left:0; right:0; display:none; background:#111; z-index:999; padding:10px; gap:10px; box-shadow:0 -6px 18px rgba(0,0,0,.18); }
         .sticky-bar .btn { display:inline-flex; align-items:center; justify-content:center; height:48px; border-radius:8px; font-weight:700; text-decoration:none; color:#fff; }
         .sticky-bar .btn.call { background:#222; border:1px solid #444; }
         .sticky-bar .btn.quote { background:#ff3333; }
         a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline:3px solid #ff3333; outline-offset:3px; border-radius:6px; }
+        /* Mobile tweaks to mirror /quote */
+        @media (max-width: 768px){ .hero-container{grid-template-columns:1fr;} .sticky-bar{display:grid; grid-template-columns:1fr 1fr;} }
     </style>
 </head>
 <body>

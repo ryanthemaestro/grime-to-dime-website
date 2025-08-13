@@ -1729,21 +1729,11 @@
         <div class="about-container">
             <h2>Service Areas</h2>
             <div class="feature-grid">
-                <div class="feature-card">
-                    <h3><a href="/locations/ellicott-city-md/">Ellicott City, MD</a></h3>
-                </div>
-                <div class="feature-card">
-                    <h3><a href="/locations/columbia-md/">Columbia, MD</a></h3>
-                </div>
-                <div class="feature-card">
-                    <h3><a href="/locations/elkridge-md/">Elkridge, MD</a></h3>
-                </div>
-                <div class="feature-card">
-                    <h3><a href="/locations/laurel-md/">Laurel, MD</a></h3>
-                </div>
-                <div class="feature-card">
-                    <h3><a href="/locations/catonsville-md/">Catonsville, MD</a></h3>
-                </div>
+                <div class="feature-card"><div class="feature-icon"><i class="fas fa-map-marker-alt"></i></div><h3><a href="/locations/ellicott-city-md/">Ellicott City, MD</a></h3></div>
+                <div class="feature-card"><div class="feature-icon"><i class="fas fa-map-marker-alt"></i></div><h3><a href="/locations/columbia-md/">Columbia, MD</a></h3></div>
+                <div class="feature-card"><div class="feature-icon"><i class="fas fa-map-marker-alt"></i></div><h3><a href="/locations/elkridge-md/">Elkridge, MD</a></h3></div>
+                <div class="feature-card"><div class="feature-icon"><i class="fas fa-map-marker-alt"></i></div><h3><a href="/locations/laurel-md/">Laurel, MD</a></h3></div>
+                <div class="feature-card"><div class="feature-icon"><i class="fas fa-map-marker-alt"></i></div><h3><a href="/locations/catonsville-md/">Catonsville, MD</a></h3></div>
             </div>
         </div>
     </section>
@@ -2694,6 +2684,16 @@
         .testimonials { padding-bottom: 7rem !important; }
         .testimonials-cta { margin-top: 1.25rem !important; margin-bottom: 0 !important; }
         .about { padding-top: 4rem !important; margin-top: 0 !important; }
+
+        /* Service Areas styling: reuse cards, adjust link style */
+        #service-areas .feature-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+        #service-areas .feature-card h3 { margin: 0; }
+        #service-areas .feature-card a {
+            color: #222;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        #service-areas .feature-card a:hover { color: #ff3333; text-decoration: none; }
 
         /* Final CTA consistency: match Transformations CTA to Testimonials CTA */
         .testimonials-cta .cta-button {

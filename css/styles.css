@@ -1297,7 +1297,14 @@ details p { margin: 0; color: #555; line-height: 1.6; }
 
 /* Service Areas specific styling */
 #service-areas .feature-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 1.5rem;
+}
+
+#service-areas .feature-icon {
+    margin-bottom: 0;
 }
 
 .service-area-item {
@@ -1308,4 +1315,5 @@ details p { margin: 0; color: #555; line-height: 1.6; }
 
 .service-area-item h3 {
     margin: 0;
+    line-height: 1;
 }

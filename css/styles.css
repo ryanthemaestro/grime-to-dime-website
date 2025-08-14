@@ -1137,43 +1137,6 @@ section.testimonials .testimonials-container h2 {
 }
 
 /* ==============================
-   How It Works (Process) - Global
-   ============================== */
-.process-section {
-    padding: 5rem 1rem;
-    background: #ffffff;
-}
-
-.process-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.process-steps {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-}
-
-.process-step {
-    background: #f9f9f9;
-    border-radius: 12px;
-    padding: 2rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-}
-
-.process-icon {
-    font-size: 2rem;
-    color: #ff0000;
-    margin-bottom: 1rem;
-}
-
-@media (max-width: 768px) {
-    .process-steps { grid-template-columns: 1fr; }
-}
-
-/* ==============================
    FAQ Accordion (details/summary)
    ============================== */
 details {

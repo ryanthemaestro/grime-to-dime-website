@@ -1047,10 +1047,11 @@ section.testimonials .testimonials-container h2 {
     text-decoration: none !important;
     border: none;
     border-radius: 8px;
-    height: 40px;
-    min-width: 160px;
-    padding: 0 16px;
+    height: 36px !important;
+    min-width: 140px !important;
+    padding: 0 12px !important;
     white-space: nowrap;
+    margin-top: 0.75rem !important;
 }
 
 .service-cta .cta-text,
@@ -1069,7 +1070,7 @@ section.testimonials .testimonials-container h2 {
 
 /* Add a little extra breathing room above CTAs inside service cards */
 .service-card .service-content {
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 /* Benefit Cards (Why Choose) */

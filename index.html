@@ -1,18 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KGQDKQFZNF"></script>
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+    <link rel="dns-prefetch" href="//www.google-analytics.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://formspree.io" crossorigin>
+    <link rel="dns-prefetch" href="//formspree.io">
+    <!-- Google tag (gtag.js) - deferred for performance -->
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-KGQDKQFZNF', {
-            'cookie_flags': 'SameSite=None;Secure',
-            'cookie_domain': 'grimetodime.com',
-            'send_page_view': true
-        });
+        function gtag(){ dataLayer.push(arguments); }
+        (function(){
+            function loadGA(){
+                if (window.__gaLoaded) return; window.__gaLoaded = true;
+                var s = document.createElement('script');
+                s.src = 'https://www.googletagmanager.com/gtag/js?id=G-KGQDKQFZNF';
+                s.async = true;
+                s.onload = function(){
+                    gtag('js', new Date());
+                    gtag('config', 'G-KGQDKQFZNF', {
+                        'cookie_flags': 'SameSite=None;Secure',
+                        'cookie_domain': 'grimetodime.com',
+                        'send_page_view': true
+                    });
+                };
+                document.head.appendChild(s);
+            }
+            if ('requestIdleCallback' in window) {
+                requestIdleCallback(loadGA, { timeout: 3000 });
+            } else {
+                window.addEventListener('load', loadGA);
+            }
+        })();
     </script>
 
     <!-- Google tag (gtag.js) event - delayed navigation helper -->
@@ -150,11 +173,12 @@
     <title>Howard County Junk Removal | Grime To Dime</title>
     <meta property="og:locale" content="en_US">
     
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+    <!-- Stylesheets (make main CSS non-blocking) -->
+    <link rel="preload" href="css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/styles.css"></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" media="print" onload="this.media='all'">
     <!-- Preload hero background for faster first paint -->
-    <link rel="preload" as="image" href="images/optimized/warehouse-after-junk-removal-hero-q65.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="/images/optimized/warehouse-after-junk-removal-hero-q60.webp" fetchpriority="high">
     
     <style>
         html, body {
@@ -1166,58 +1190,117 @@
             min-width: 0;
           }
         }
-    </style>
 
-    <header>
-        <div class="header-content-wrapper">
-            <div class="logo">
-                <a href="#hero">
-                    <img src="images/optimized/Faviconmaster-optimized.webp" alt="Grime To Dime Junk Removal Logo" width="50" height="50">
-                    Grime To Dime
-                </a>
-            </div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#testimonials">Reviews</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </nav>
-        </div>
-    </header>
+        /* ==============================
+           Critical Above-the-Fold CSS
+           Header & Navigation
+           ============================== */
+        header {
+            background: #000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
 
-    <section id="hero" class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>Howard County Junk Removal</h1>
-            <h2>Fast, eco‑friendly hauling. Same‑day service.</h2>
-            <div class="trust-signals">
-                    <a class="google-rating-badge" href="https://www.google.com/search?q=Grime+To+Dime+Elkridge+MD+reviews" target="_blank" rel="noopener nofollow" aria-label="5.0 rating on Google (opens reviews in a new tab)" title="5.0 on Google Reviews">
-                    <span class="google-icon" aria-hidden="true"><i class="fab fa-google"></i></span>
-                    <span class="rating-score">5.0</span>
-                    <span class="stars" aria-hidden="true">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </span>
-                    <span class="badge-text">on Google</span>
-                </a>
-            </div>
-            <a href="#contact" class="cta-button">
-                Get Free Quote
-            </a>
-        </div>
-    </section>
+        .header-content-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-    <style>
+        .nav-links {
+            list-style: none;
+            display: flex;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-links li { margin-left: 1.5rem; }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a:hover { color: #ff0000; }
+
+        .mobile-nav-toggle {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 0 1rem;
+        }
+
+        /* Hamburger bars */
+        .mobile-nav-toggle span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: #fff;
+            border-radius: 2px;
+            margin: 4px 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .header-content-wrapper { justify-content: space-between; }
+            nav ul.nav-links {
+                display: none; /* Hide by default on mobile */
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background-color: #111;
+                width: 100%;
+                flex-direction: column;
+                padding: 1rem 0;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                z-index: 998;
+            }
+            nav ul.nav-links.nav-active { display: flex; }
+            nav ul.nav-links li { width: 100%; text-align: center; }
+            nav ul.nav-links li a {
+                display: block;
+                padding: 1rem;
+                color: white;
+                border-bottom: 1px solid #333;
+            }
+            .mobile-nav-toggle { display: block; z-index: 1000; }
+        }
+
+        @media (min-width: 769px) {
+            .mobile-nav-toggle { display: none; }
+            nav ul.nav-links {
+                display: flex;
+                position: static;
+                width: auto;
+                background-color: transparent;
+                flex-direction: row;
+                padding: 0;
+                box-shadow: none;
+            }
+            nav ul.nav-links li a {
+                display: inline-block;
+                padding: 0 1rem;
+                color: white;
+                border: none;
+            }
+        }
+
+        /* ==============================
+           Critical Above-the-Fold CSS
+           Hero Section
+           ============================== */
         .hero {
             position: relative;
             /* Avoid fixed section height so content (CTA) never gets clipped */
@@ -1323,11 +1406,13 @@
                 min-height: 100svh;
                 padding-top: 72px;
                 padding-bottom: max(32px, env(safe-area-inset-bottom, 0px) + 24px);
+                /* Lighter mobile hero background to reduce LCP bytes */
+                background-image:
+                    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                    url('/images/optimized/warehouse-after-junk-removal-hero-q60.webp');
             }
 
-            .hero-content {
-                padding: 30px 20px;
-            }
+            .hero-content { padding: 30px 20px; }
 
             .hero h1 {
                 font-size: 2.5rem;
@@ -1339,13 +1424,8 @@
                 margin-bottom: 1.5rem;
             }
 
-            .rating i {
-                font-size: 1.25rem;
-            }
-
-            .rating span {
-                font-size: 1rem;
-            }
+            .rating i { font-size: 1.25rem; }
+            .rating span { font-size: 1rem; }
 
             .cta-button {
                 padding: 1rem 2rem;
@@ -1355,19 +1435,60 @@
         }
 
         @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero h2 {
-                font-size: 1.2rem;
-            }
-
-            .hero-content {
-                padding: 20px 15px;
-            }
+            .hero h1 { font-size: 2rem; }
+            .hero h2 { font-size: 1.2rem; }
+            .hero-content { padding: 20px 15px; }
         }
     </style>
+
+    <header>
+        <div class="header-content-wrapper">
+            <div class="logo">
+                <a href="#hero">
+                    <img src="images/optimized/Faviconmaster-optimized.webp" alt="Grime To Dime Junk Removal Logo" width="50" height="50" decoding="async">
+                    Grime To Dime
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>Howard County Junk Removal</h1>
+            <h2>Fast, eco‑friendly hauling. Same‑day service.</h2>
+            <div class="trust-signals">
+                    <a class="google-rating-badge" href="https://www.google.com/search?q=Grime+To+Dime+Elkridge+MD+reviews" target="_blank" rel="noopener nofollow" aria-label="5.0 rating on Google (opens reviews in a new tab)" title="5.0 on Google Reviews">
+                    <span class="google-icon" aria-hidden="true"><i class="fab fa-google"></i></span>
+                    <span class="rating-score">5.0</span>
+                    <span class="stars" aria-hidden="true">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </span>
+                    <span class="badge-text">on Google</span>
+                </a>
+            </div>
+            <a href="#contact" class="cta-button">
+                Get Free Quote
+            </a>
+        </div>
+    </section>
+    <!-- Hero critical CSS moved to the <head> for faster first paint -->
 
     <section id="services" class="services">
         <!-- Removed duplicate rating badge to avoid repetition -->
@@ -1764,13 +1885,13 @@
                 <h3>Before & After</h3>
                 <div class="gallery-grid before-after">
                     <div class="gallery-item">
-                        <img src="images/optimized/warehouse-before-junk-removal-q60.webp" alt="Warehouse Before Eco-Friendly Junk Removal Service in Howard County MD" class="gallery-image" loading="lazy" width="1200" height="900">
+                        <img src="images/optimized/warehouse-before-junk-removal-q60.webp" alt="Warehouse Before Eco-Friendly Junk Removal Service in Howard County MD" class="gallery-image" loading="lazy" decoding="async" fetchpriority="low" width="1200" height="900">
                         <div class="gallery-overlay">
                             <p class="gallery-caption">Warehouse Before</p>
                         </div>
                     </div>
                     <div class="gallery-item">
-                        <img src="images/optimized/warehouse-after-junk-removal-optimized.webp" alt="Warehouse After Professional Junk Hauling in Howard County MD" class="gallery-image" loading="lazy" width="1200" height="900">
+                        <img src="images/optimized/warehouse-after-junk-removal-optimized.webp" alt="Warehouse After Professional Junk Hauling in Howard County MD" class="gallery-image" loading="lazy" decoding="async" fetchpriority="low" width="1200" height="900">
                         <div class="gallery-overlay">
                             <p class="gallery-caption">Warehouse After</p>
                         </div>
@@ -1782,37 +1903,37 @@
                 <h3>Our Equipment & Loads</h3>
                 <div class="gallery-grid equipment">
                     <div class="gallery-item">
-                        <img src="images/optimized/truckloadout-optimized.webp" alt="Loaded Truck for Eco-Friendly Junk Hauling Service in Howard County MD" class="gallery-image" loading="lazy" width="1200" height="1600">
+                        <img src="images/optimized/truckloadout-optimized.webp" alt="Loaded Truck for Eco-Friendly Junk Hauling Service in Howard County MD" class="gallery-image" loading="lazy" decoding="async" fetchpriority="low" width="1200" height="1600">
                         <div class="gallery-overlay">
                             <p class="gallery-caption">Loaded Truck</p>
                         </div>
                     </div>
                     <div class="gallery-item">
-                        <img src="images/optimized/trailerloadout-optimized.webp" alt="Loaded Trailer for Howard County Junk Removal" class="gallery-image" loading="lazy" width="1200" height="900">
+                        <img src="images/optimized/trailerloadout-optimized.webp" alt="Loaded Trailer for Howard County Junk Removal" class="gallery-image" loading="lazy" decoding="async" fetchpriority="low" width="1200" height="900">
                         <div class="gallery-overlay">
                             <p class="gallery-caption">Trailer Load</p>
                         </div>
                     </div>
                     <div class="gallery-item">
-                        <img src="images/optimized/trailerloadout2-optimized.webp" alt="Full Load Service in Howard County" class="gallery-image" loading="lazy" width="1200" height="900">
+                        <img src="images/optimized/trailerloadout2-optimized.webp" alt="Full Load Service in Howard County" class="gallery-image" loading="lazy" decoding="async" fetchpriority="low" width="1200" height="900">
                         <div class="gallery-overlay">
                             <p class="gallery-caption">Full Load Service</p>
                         </div>
                     </div>
                     <div class="gallery-item">
-                        <img src="images/optimized/trailerloadout3-optimized.webp" alt="Heavy Load Howard County Junk Hauling" class="gallery-image" loading="lazy" width="1200" height="900">
+                        <img src="images/optimized/trailerloadout3-optimized.webp" alt="Heavy Load Howard County Junk Hauling" class="gallery-image" loading="lazy" decoding="async" fetchpriority="low" width="1200" height="900">
                         <div class="gallery-overlay">
                             <p class="gallery-caption">Heavy Load Service</p>
                         </div>
                     </div>
                     <div class="gallery-item">
-                        <img src="images/optimized/IMG_9150-optimized.webp" alt="Winter Junk Removal in Howard County" class="gallery-image" loading="lazy" width="1200" height="900">
+                        <img src="images/optimized/IMG_9150-optimized.webp" alt="Winter Junk Removal in Howard County" class="gallery-image" loading="lazy" decoding="async" fetchpriority="low" width="1200" height="900">
                         <div class="gallery-overlay">
                             <p class="gallery-caption">Winter Cleanout Service</p>
                         </div>
                     </div>
                     <div class="gallery-item">
-                        <img src="images/optimized/IMG_9212-optimized.webp" alt="Night Junk Removal Service in Howard County" class="gallery-image" loading="lazy" width="1200" height="900">
+                        <img src="images/optimized/IMG_9212-optimized.webp" alt="Night Junk Removal Service in Howard County" class="gallery-image" loading="lazy" decoding="async" fetchpriority="low" width="1200" height="900">
                         <div class="gallery-overlay">
                             <p class="gallery-caption">Night Service Available</p>
                         </div>
@@ -2995,7 +3116,7 @@
         </div>
     </footer>
 
-    <script src="js/scripts.js" defer></script>
+    <script src="js/main.js" defer></script>
 
     <script>
         // Testimonial Slider Script (Restored)

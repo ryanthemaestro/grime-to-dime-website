@@ -1294,3 +1294,18 @@ details p { margin: 0; color: #555; line-height: 1.6; }
 .about .feature-card .nearby-links a:hover {
     background: rgba(255, 0, 0, 0.1);
 }
+
+/* Service Areas specific styling */
+#service-areas .feature-card {
+    padding: 1.5rem;
+}
+
+.service-area-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.service-area-item h3 {
+    margin: 0;
+}

@@ -177,7 +177,13 @@
     <!-- Stylesheets (make main CSS non-blocking) -->
     <link rel="preload" href="css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="css/styles.css"></noscript>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    <!-- Preconnect and load Google Fonts with swap to reduce CLS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:wght@800&family=Open+Sans:wght@600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@800&family=Open+Sans:wght@600&display=swap"></noscript>
     <!-- Preload hero background for faster first paint -->
     <link rel="preload" as="image" href="/images/optimized/warehouse-after-junk-removal-hero-q60.webp" fetchpriority="high">
     
@@ -471,6 +477,10 @@
             border: 1px solid #ff3333;
             box-shadow: 0 4px 15px rgba(255, 51, 51, 0.12);
             text-decoration: none;
+            line-height: 1; /* stabilize inline height */
+            min-height: 42px; /* reserve vertical space */
+            min-width: 220px; /* reserve horizontal space */
+            white-space: nowrap; /* keep contents on one line */
         }
         .google-rating-badge .google-icon {
             color: #ff3333; /* site red */
@@ -478,12 +488,18 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
+            width: 20px; /* reserve width for icon regardless of font load */
+            height: 20px;
+            flex: 0 0 20px;
         }
+        .google-rating-badge .stars { display: inline-flex; }
         .google-rating-badge .rating-score {
             font-weight: 800;
             font-size: 1rem;
+            width: 2.5ch; /* reserve width for e.g., "5.0" */
+            text-align: right;
         }
-        .google-rating-badge .stars i { color: #FFD700; margin-right: 2px; font-size: 1rem; }
+        .google-rating-badge .stars i { color: #FFD700; margin-right: 2px; font-size: 1rem; width: 1em; text-align: center; }
         .google-rating-badge .badge-text { font-weight: 600; color: #444; font-size: 0.95rem; }
         /* link text removed; whole badge is clickable */
 
@@ -907,7 +923,7 @@
             border-radius: 15px;
             backdrop-filter: blur(5px);
             /* Ensure CTA at the bottom has breathing room */
-            margin-bottom: clamp(16px, 4vh, 56px);
+            margin-bottom: 32px; /* fixed spacing to avoid viewport unit shifts */
         }
 
         .hero h1 {

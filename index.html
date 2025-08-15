@@ -46,11 +46,12 @@
                     window.location = url;
                 }
             };
-            gtag('event', 'conversion', {
+            gtag('event', 'select_content', {
+                'content_type': 'cta',
+                'event_label': 'CTA Click',
+                'link_url': url,
                 'event_callback': callback,
-                'event_timeout': 2000,
-                'event_category': 'CTA',
-                'event_label': 'Click'
+                'event_timeout': 2000
             });
             return false;
         }
@@ -315,163 +316,7 @@
             margin: 0 auto 1.5rem;
         }
 
-        /* Testimonial Enhancements */
-        .testimonial-card {
-            flex: 0 0 25%;
-            width: 25%;
-            padding: 1.5rem;
-            opacity: 0;
-            transition: all 0.5s ease;
-            position: relative;
-            display: block;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            border: 2px solid #ff0000;
-            margin: 0;
-            transform: scale(0.95);
-        }
-
-        .testimonial-card.active {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        @media (max-width: 768px) {
-            .testimonial-track {
-                width: 400%;
-            }
-            
-            .testimonial-card {
-                padding: 1.5rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .testimonial-card {
-                padding: 1.25rem;
-            }
-        }
-
-        .testimonial-stars {
-            display: flex;
-            gap: 4px;
-            margin-bottom: 1.5rem;
-        }
-
-        .testimonial-stars i {
-            color: #ffd700;
-            font-size: 1.2rem;
-        }
-
-        .testimonial-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #444;
-            margin-bottom: 2rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .testimonial-author {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #333;
-            padding-top: 1.5rem;
-            margin-top: 1.5rem;
-            border-top: 2px solid rgba(255, 51, 51, 0.1);
-        }
-
-        /* Enhanced Testimonials */
-        .testimonial-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(255, 51, 51, 0.2);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-        }
-
-        .testimonial-card:before {
-            content: '"';
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 4rem;
-            color: rgba(255, 51, 51, 0.1);
-            font-family: Georgia, serif;
-            line-height: 1;
-        }
-
-        .testimonial-stars {
-            display: flex;
-            gap: 4px;
-            margin-bottom: 1rem;
-        }
-
-        .testimonial-stars i {
-            color: #ffd700;
-            font-size: 1.2rem;
-        }
-
-        .testimonial-text {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: #444;
-            margin-bottom: 1rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .testimonial-author {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #333;
-            padding-top: 1rem;
-            margin-top: 1rem;
-            border-top: 2px solid rgba(255, 51, 51, 0.1);
-        }
-
-        @media (max-width: 768px) {
-            .testimonial-card {
-                padding: 1rem;
-                margin-bottom: 0.5rem;
-            }
-
-            .testimonial-text {
-                font-size: 1rem;
-                margin-bottom: 1rem;
-            }
-
-            .testimonial-author {
-                font-size: 1rem;
-                padding-top: 0.75rem;
-                margin-top: 0.75rem;
-            }
-
-            .testimonial-card:before {
-                font-size: 3rem;
-                top: 15px;
-                right: 15px;
-            }
-
-            .testimonials {
-                padding: 1rem;
-            }
-
-            .testimonial-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-        }
+        /* Consolidated: .testimonial-card base styles live in Testimonials Section */
 
         /* About Section */
         .about {
@@ -728,39 +573,8 @@
             text-align: center;
         }
 
-        .slider-dots {
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-            margin: 2rem auto 0 auto;
-            width: 100%;
-            padding: 0;
-        }
+        /* Removed unused slider dots */
 
-        .testimonials-cta {
-            text-align: center;
-            margin: 0.25rem auto 0 auto;
-            width: 100%;
-            max-width: 300px;
-        }
-
-        .testimonials-cta .cta-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: #ff0000;
-            color: white;
-            padding: 16px 32px;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            text-decoration: none;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            width: 100%;
-            box-shadow: 0 4px 15px rgba(255, 51, 51, 0.2);
-        }
 
         @media (max-width: 768px) {
             .section-title {
@@ -786,200 +600,18 @@
             padding: 0 1rem;
         }
 
-        .testimonial-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            border: 2px solid #ff0000;
-            position: relative;
-            transition: all 0.3s ease;
-            text-align: left;
-            display: flex;
-            flex-direction: column;
-            box-sizing: border-box;
-            height: 100%;
-        }
+        /* .testimonial-card base styles consolidated in Testimonials Section Styles below */
 
-        .testimonial-stars {
-            display: flex;
-            gap: 4px;
-            margin-bottom: 1.5rem;
-            justify-content: center;
-        }
+        /* Stars, text, author styles defined with consolidated block below */
 
-        .testimonial-stars i {
-            color: #ffd700;
-            font-size: 1.2rem;
-        }
-
-        .testimonial-text {
-            font-size: 1.05rem;
-            line-height: 1.7;
-            color: #333;
-            position: relative;
-            z-index: 1;
-            max-height: none;
-            overflow: visible;
-            text-align: center;
-            margin-bottom: 1.25rem;
-        }
-
-        .testimonial-author {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #333;
-            padding-top: 1.5rem;
-            margin-top: auto;
-            border-top: 2px solid rgba(255, 51, 51, 0.1);
-        }
-
+        
         @media (max-width: 1023px) {
             .testimonial-grid-simple { grid-template-columns: 1fr; }
         }
 
-        @media (max-width: 768px) {
-            .testimonial-slider {
-                padding: 0 50px; /* Adjusted padding for mobile */
-            }
-            
-            .testimonial-card {
-                flex: 0 0 calc(100% - 30px);
-                width: calc(100% - 30px);
-                margin: 0 15px;
-                padding: 1.5rem;
-            }
-        }
+        /* Responsive padding for testimonial card defined with consolidated block below */
 
-        @media (max-width: 480px) {
-            .testimonial-slider {
-                padding: 0 40px; /* Further reduced padding for smaller screens */
-            }
-            
-            .testimonial-card {
-                flex: 0 0 calc(100% - 20px);
-                width: calc(100% - 20px);
-                margin: 0 10px;
-                padding: 1.25rem;
-            }
-        }
-
-        /* Enhanced Navigation Arrows */
-        @keyframes pulse {
-            0% { transform: translateY(-50%) scale(1); }
-            50% { transform: translateY(-50%) scale(1.05); }
-            100% { transform: translateY(-50%) scale(1); }
-        }
-
-        .slider-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 10;
-            width: 40px;
-            height: 40px;
-        }
-
-        .prev-btn {
-            left: 10px;
-        }
-
-        .next-btn {
-            right: 10px;
-        }
-
-        /* Touch Device Optimizations */
-        @media (hover: none) {
-            .slider-btn {
-                opacity: 1;
-                width: 40px;
-                height: 40px;
-            }
-            
-            .slider-btn:active {
-                background: #cc0000;
-                transform: translateY(-50%) scale(0.95);
-            }
-        }
-
-        .slider-dots {
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-top: 2rem;
-        }
-
-        .dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: #ccc;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .dot.active {
-            background: #ff3333;
-            transform: scale(1.2);
-        }
-
-        .testimonials-cta {
-            text-align: center;
-            margin-top: 1.5rem;
-        }
-
-        .testimonials-cta .cta-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: #ff0000;
-            color: white;
-            padding: 16px 32px;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            text-decoration: none;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            min-width: 200px;
-            box-shadow: 0 4px 15px rgba(255, 51, 51, 0.2);
-            margin: 0 !important; /* override global CTA vertical margins */
-        }
-
-        .testimonials-cta .cta-button:hover {
-            background: #cc0000;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 51, 51, 0.3);
-        }
-
-        .testimonials-cta .cta-text,
-        .testimonials-cta .cta-hover {
-            position: absolute;
-            width: 100%;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .testimonials-cta .cta-text {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        .testimonials-cta .cta-hover {
-            transform: translateY(100%);
-            opacity: 0;
-        }
-
-        .testimonials-cta .cta-button:hover .cta-text {
-            transform: translateY(-100%);
-            opacity: 0;
-        }
-
-        .testimonials-cta .cta-button:hover .cta-hover {
-            transform: translateY(0);
-            opacity: 1;
-        }
+        /* CTA styles consolidated later in file */
 
         @keyframes fadeIn {
             from {
@@ -1032,17 +664,6 @@
 
             .testimonial-text { font-size: 14px; margin-bottom: 0.75rem; }
 
-            .slider-btn {
-                width: 36px;
-                height: 36px;
-                font-size: 18px;
-            }
-
-            .dot {
-                width: 12px;
-                height: 12px;
-            }
-
             .testimonials-cta .cta-button {
                 padding: 14px 28px;
                 font-size: 14px;
@@ -1058,70 +679,24 @@
             .testimonial-card {
                 padding: 1.25rem;
             }
-
-            .slider-btn {
-                width: 32px;
-                height: 32px;
-                font-size: 16px;
-            }
-
-            .dot {
-                width: 10px;
-                height: 10px;
-            }
         }
 
         /* Mobile Responsive Adjustments */
         @media (max-width: 768px) {
-            .testimonial-slider {
-                padding: 0 50px; /* Adjusted padding for mobile */
-            }
-            
             .testimonial-card {
-                flex: 0 0 calc(100% - 30px);
-                width: calc(100% - 30px);
-                margin: 0 15px;
                 padding: 1.5rem;
-            }
-
-            .slider-btn {
-                width: 36px;
-                height: 36px;
-                font-size: 20px;
             }
         }
 
         @media (max-width: 480px) {
-            .testimonial-slider {
-                padding: 0 40px; /* Further reduced padding for smaller screens */
-            }
-            
             .testimonial-card {
-                flex: 0 0 calc(100% - 20px);
-                width: calc(100% - 20px);
-                margin: 0 10px;
                 padding: 1.25rem;
-            }
-
-            .slider-btn {
-                width: 32px;
-                height: 32px;
-                font-size: 18px;
-                background: rgba(255, 0, 0, 0.95);
             }
         }
 
         /* Small Screen Optimizations */
         @media (max-width: 360px) {
-            .testimonial-slider {
-                padding: 0 35px; /* Even smaller padding for very small screens */
-            }
-
-            .slider-btn {
-                width: 30px;
-                height: 30px;
-                font-size: 16px;
-            }
+            /* No slider-specific rules */
         }
 
 
@@ -2342,8 +1917,7 @@
             text-align: center;
         }
 
-        /* simplified grid replaces slider */
-        .testimonial-slider, .testimonial-track { display: none; }
+        
 
         .testimonial-card {
             background: white;
@@ -2363,6 +1937,23 @@
             flex: initial !important;
         }
 
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 51, 51, 0.2);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 4rem;
+            color: rgba(255, 51, 51, 0.1);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
         .testimonial-stars {
             display: flex;
             gap: 4px;
@@ -2376,8 +1967,8 @@
         }
 
         .testimonial-text {
-            font-size: 16px;
-            line-height: 1.6;
+            font-size: 1.05rem;
+            line-height: 1.7;
             color: #333;
             position: relative;
             z-index: 1;
@@ -2396,91 +1987,21 @@
             border-top: 2px solid rgba(255, 51, 51, 0.1);
         }
 
-        /* grid responsive handled above */
+        @media (max-width: 1023px) {
+            .testimonial-grid-simple { grid-template-columns: 1fr; }
+        }
 
         @media (max-width: 768px) {
-            .testimonial-slider {
-                padding: 0 50px; /* Adjusted padding for mobile */
-            }
-            
             .testimonial-card {
-                flex: 0 0 calc(100% - 30px);
-                width: calc(100% - 30px);
-                margin: 0 15px;
                 padding: 1.5rem;
+                min-height: auto;
             }
         }
 
         @media (max-width: 480px) {
-            .testimonial-slider {
-                padding: 0 40px; /* Further reduced padding for smaller screens */
-            }
-            
             .testimonial-card {
-                flex: 0 0 calc(100% - 20px);
-                width: calc(100% - 20px);
-                margin: 0 10px;
                 padding: 1.25rem;
             }
-        }
-
-        /* Enhanced Navigation Arrows */
-        @keyframes pulse {
-            0% { transform: translateY(-50%) scale(1); }
-            50% { transform: translateY(-50%) scale(1.05); }
-            100% { transform: translateY(-50%) scale(1); }
-        }
-
-        .slider-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 10;
-            width: 40px;
-            height: 40px;
-        }
-
-        .prev-btn {
-            left: 10px;
-        }
-
-        .next-btn {
-            right: 10px;
-        }
-
-        /* Touch Device Optimizations */
-        @media (hover: none) {
-            .slider-btn {
-                opacity: 1;
-                width: 40px;
-                height: 40px;
-            }
-            
-            .slider-btn:active {
-                background: #cc0000;
-                transform: translateY(-50%) scale(0.95);
-            }
-        }
-
-        .slider-dots {
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-top: 2rem;
-        }
-
-        .dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: #ccc;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .dot.active {
-            background: #ff3333;
-            transform: scale(1.2);
         }
 
         .testimonials-cta {
@@ -2592,16 +2113,7 @@
 
             .testimonial-text { font-size: 14px; margin-bottom: 0.75rem; }
 
-            .slider-btn {
-                width: 36px;
-                height: 36px;
-                font-size: 18px;
-            }
-
-            .dot {
-                width: 12px;
-                height: 12px;
-            }
+            
 
             .testimonials-cta .cta-button {
                 padding: 14px 28px;
@@ -2618,71 +2130,28 @@
             .testimonial-card {
                 padding: 1.25rem;
             }
-
-            .slider-btn {
-                width: 32px;
-                height: 32px;
-                font-size: 16px;
-            }
-
-            .dot {
-                width: 10px;
-                height: 10px;
-            }
         }
 
         /* Mobile Responsive Adjustments */
         @media (max-width: 768px) {
-            .testimonial-slider {
-                padding: 0 50px; /* Adjusted padding for mobile */
-            }
-            
             .testimonial-card {
                 flex: 0 0 calc(100% - 30px);
                 width: calc(100% - 30px);
                 margin: 0 15px;
                 padding: 1.5rem;
             }
-
-            .slider-btn {
-                width: 36px;
-                height: 36px;
-                font-size: 20px;
-            }
         }
 
         @media (max-width: 480px) {
-            .testimonial-slider {
-                padding: 0 40px; /* Further reduced padding for smaller screens */
-            }
-            
             .testimonial-card {
                 flex: 0 0 calc(100% - 20px);
                 width: calc(100% - 20px);
                 margin: 0 10px;
                 padding: 1.25rem;
             }
-
-            .slider-btn {
-                width: 32px;
-                height: 32px;
-                font-size: 18px;
-                background: rgba(255, 0, 0, 0.95);
-            }
         }
 
-        /* Small Screen Optimizations */
-        @media (max-width: 360px) {
-            .testimonial-slider {
-                padding: 0 35px; /* Even smaller padding for very small screens */
-            }
-
-            .slider-btn {
-                width: 30px;
-                height: 30px;
-                font-size: 16px;
-            }
-        }
+        /* Small Screen Optimizations: no slider-specific rules */
     </style>
 
     <section id="about" class="about">
@@ -3118,101 +2587,7 @@
 
     <script src="js/main.js" defer></script>
 
-    <script>
-        // Testimonial Slider Script (Restored)
-        document.addEventListener('DOMContentLoaded', function() {
-            const track = document.querySelector('.testimonial-track');
-            const cards = document.querySelectorAll('.testimonial-card');
-            const dots = document.querySelectorAll('.dot');
-            const totalSlides = cards.length;
-            let currentSlide = 0;
-            let autoSlideInterval;
-
-            function updateSlidePosition() {
-                // Hide all cards first
-                cards.forEach(card => {
-                    card.classList.remove('active');
-                    card.style.display = 'none';
-                });
-                
-                // Show and activate current card if cards exist
-                if (cards[currentSlide]) {
-                    setTimeout(() => {
-                        cards[currentSlide].style.display = 'flex'; // Use 'flex' or 'block' as appropriate
-                        cards[currentSlide].classList.add('active');
-                    }, 50); // Short delay for transition effect
-                }
-                
-                // Update dots
-                dots.forEach((dot, index) => {
-                    dot.classList.toggle('active', index === currentSlide);
-                });
-            }
-
-            function goToSlide(slideIndex) {
-                if (slideIndex >= 0 && slideIndex < totalSlides) {
-                    currentSlide = slideIndex;
-                    updateSlidePosition();
-                    resetAutoSlideTimer();
-                }
-            }
-
-            function resetAutoSlideTimer() {
-                clearInterval(autoSlideInterval);
-                autoSlideInterval = setInterval(() => {
-                    currentSlide = (currentSlide + 1) % totalSlides;
-                    updateSlidePosition();
-                }, 5000); // Auto-slide every 5 seconds
-            }
-
-            // Initialize first slide and dots
-            if (totalSlides > 0) {
-                cards.forEach((card, index) => {
-                    card.style.display = (index === 0) ? 'flex' : 'none'; // Show only the first initially
-                    if (index === 0) card.classList.add('active');
-                });
-                 dots.forEach((dot, index) => {
-                    dot.classList.toggle('active', index === 0);
-                     // Add click handlers to dots
-                    dot.addEventListener('click', () => goToSlide(index));
-                });
-                // Start auto-sliding
-                resetAutoSlideTimer();
-            }
-
-            // Add touch support if track exists
-            if (track) {
-                let touchStartX = 0;
-                let touchEndX = 0;
-
-                track.addEventListener('touchstart', e => {
-                    touchStartX = e.changedTouches[0].screenX;
-                }, { passive: true }); // Use passive listener
-
-                track.addEventListener('touchend', e => {
-                    touchEndX = e.changedTouches[0].screenX;
-                    handleSwipe();
-                }, { passive: true }); // Use passive listener
-
-                function handleSwipe() {
-                    const swipeThreshold = 50; // minimum distance for swipe
-                    const diff = touchStartX - touchEndX;
-
-                    if (Math.abs(diff) > swipeThreshold && totalSlides > 0) {
-                        if (diff > 0) {
-                            // Swipe left - next slide
-                            currentSlide = (currentSlide + 1) % totalSlides;
-                        } else {
-                            // Swipe right - previous slide
-                            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-                        }
-                        updateSlidePosition();
-                        resetAutoSlideTimer();
-                    }
-                }
-            }
-        });
-    </script>
+    <!-- Removed testimonial slider script -->
 
     <script>
         // Mobile Navigation Toggle Script (Appended)

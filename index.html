@@ -1933,7 +1933,8 @@
             text-align: center;
         }
 
-        
+        /* Ensure grid items center within their tracks */
+        .testimonial-grid-simple { justify-items: center; }
 
         .testimonial-card {
             background: white;
@@ -2151,19 +2152,19 @@
         /* Mobile Responsive Adjustments */
         @media (max-width: 768px) {
             .testimonial-card {
-                flex: 0 0 calc(100% - 30px);
-                width: calc(100% - 30px);
-                margin: 0 15px;
+                width: 100% !important;
+                margin: 0 auto !important;
                 padding: 1.5rem;
+                justify-self: center;
             }
         }
 
         @media (max-width: 480px) {
             .testimonial-card {
-                flex: 0 0 calc(100% - 20px);
-                width: calc(100% - 20px);
-                margin: 0 10px;
+                width: 100% !important;
+                margin: 0 auto !important;
                 padding: 1.25rem;
+                justify-self: center;
             }
         }
 

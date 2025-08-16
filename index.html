@@ -2309,6 +2309,13 @@
 
         /* Service Areas styling: reuse cards, adjust link style */
         #service-areas .feature-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+        #service-areas .feature-card { text-align: left; }
+        /* Make the card itself a grid to lock icon column */
+        #service-areas .feature-card {
+            display: grid;
+            grid-template-columns: 60px 1fr;
+            align-items: center;
+        }
         #service-areas .feature-card h3 { margin: 0; }
         #service-areas .feature-card a {
             color: #222;
@@ -2318,18 +2325,21 @@
         #service-areas .feature-card a:hover { color: #ff3333; text-decoration: none; }
 
         /* Service Areas: align icon and text horizontally and center vertically */
-        #service-areas .service-area-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        #service-areas .service-area-item .feature-icon {
+        #service-areas .service-area-item { display: contents; }
+        #service-areas .feature-card .feature-icon {
+            grid-column: 1;
             margin: 0;               /* remove vertical spacing used in other cards */
-            margin-right: 1rem;      /* horizontal gap between icon and text */
+            justify-self: start;
         }
-        #service-areas .service-area-item .feature-icon i {
+        #service-areas .feature-card h3 { grid-column: 2; }
+        #service-areas .feature-card .feature-icon i {
             line-height: 1;          /* avoid font line-height affecting centering */
             display: inline-block;
+        }
+
+        @media (max-width: 768px) {
+            /* Tighter icon column on mobile to match smaller icon size */
+            #service-areas .feature-card { grid-template-columns: 50px 1fr; }
         }
 
         /* Final CTA consistency: match Transformations CTA to Testimonials CTA */

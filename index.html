@@ -2317,6 +2317,21 @@
         }
         #service-areas .feature-card a:hover { color: #ff3333; text-decoration: none; }
 
+        /* Service Areas: align icon and text horizontally and center vertically */
+        #service-areas .service-area-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        #service-areas .service-area-item .feature-icon {
+            margin: 0;               /* remove vertical spacing used in other cards */
+            margin-right: 1rem;      /* horizontal gap between icon and text */
+        }
+        #service-areas .service-area-item .feature-icon i {
+            line-height: 1;          /* avoid font line-height affecting centering */
+            display: inline-block;
+        }
+
         /* Final CTA consistency: match Transformations CTA to Testimonials CTA */
         .testimonials-cta .cta-button {
             width: 100% !important;

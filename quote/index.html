@@ -1062,12 +1062,20 @@
                 })
                 .then(response => {
                     if (response.ok) {
-                        // Track conversion
+                        // Track conversion in GA4 and Google Ads
                         if (typeof gtag !== 'undefined') {
+                            // GA4 standard events
                             gtag('event', 'generate_lead');
                             gtag('event', 'form_submission', {
                                 'event_category': 'Quote',
                                 'event_label': 'Quote Request'
+                            });
+                            
+                            // Explicit Google Ads conversion tracking
+                            gtag('event', 'conversion', {
+                                'send_to': 'AW-11553122519/0KjoCPG_6oQbENfR-oQr',
+                                'value': 1.0,
+                                'transaction_id': new Date().getTime().toString()
                             });
                         }
                         

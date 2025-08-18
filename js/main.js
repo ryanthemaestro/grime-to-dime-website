@@ -16,13 +16,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       el.addEventListener('click', function(e){
         var href = el.getAttribute('href') || '';
         if (!href) return;
+        var isDebug = (window.__gaDebug === true);
         // Hash links: fire event and let existing smooth-scroll handler run
         if (href.charAt(0) === '#') {
           if (typeof gtag === 'function') {
             gtag('event', 'select_content', {
               'content_type': 'cta',
               'event_label': 'CTA Click',
-              'link_url': href
+              'link_url': href,
+              'debug_mode': isDebug
             });
           }
           return;
@@ -41,6 +43,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             'content_type': 'cta',
             'event_label': 'CTA Click',
             'link_url': href,
+            'debug_mode': isDebug,
             'event_callback': done,
             'event_timeout': 2000
           });

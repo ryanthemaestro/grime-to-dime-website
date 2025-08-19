@@ -2337,14 +2337,11 @@
         #service-areas .feature-card a:hover { color: #ff3333; text-decoration: none; }
 
         /* Service Areas: align icon and text horizontally and center vertically */
-        #service-areas .service-area-item { 
-            display: flex; 
-            align-items: center;
-            gap: 1rem; /* Add spacing between icon and text */
-        }
+        #service-areas .service-area-item { display: contents; }
         #service-areas .feature-card .feature-icon {
             grid-column: 1;
             margin: 0;               /* remove vertical spacing used in other cards */
+            margin-right: 10px;     /* add spacing between icon and city name */
             justify-self: start;
         }
         #service-areas .feature-card h3 { grid-column: 2; }

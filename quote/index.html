@@ -1035,7 +1035,8 @@
             }
             
             // Phone validation
-            const phoneRegex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+            // Handle both standard US format and international format with +1 or 1 prefix
+            const phoneRegex = /^(\+?1[-. ]?)?\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
             if (!phoneRegex.test(phone)) {
                 isValid = false;
                 alert('Please enter a valid phone number.');
@@ -1102,6 +1103,12 @@
         const phoneInput = document.getElementById('phone');
         phoneInput.addEventListener('input', function(e) {
             let value = e.target.value.replace(/\D/g, '');
+            
+            // If begins with country code 1, remove it for formatting purposes
+            if (value.length > 10 && value.charAt(0) === '1') {
+                value = value.substring(1);
+            }
+            
             if (value.length > 0) {
                 if (value.length <= 3) {
                     value = '(' + value;

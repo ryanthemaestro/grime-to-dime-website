@@ -1010,7 +1010,57 @@
       </a>
     </nav>
 
-    <script>
+  <script>
+        // Google Ads GCLID tracking: capture from URL, persist, and submit with the form
+        // - Stores in localStorage and a 90-day cookie (SameSite=Lax, Secure on HTTPS)
+        // - Ensures a hidden input named "gclid" exists on the form with the latest value
+        function getQueryParam(name) {
+            var params = new URLSearchParams(window.location.search);
+            var v = params.get(name);
+            return v && v.trim() ? v.trim() : '';
+        }
+        function setCookie(name, value, maxAgeSeconds) {
+            if (!name) return;
+            var parts = [name + '=' + encodeURIComponent(value || '')];
+            parts.push('path=/');
+            if (maxAgeSeconds) parts.push('max-age=' + maxAgeSeconds);
+            parts.push('samesite=Lax');
+            if (location.protocol === 'https:') parts.push('secure');
+            document.cookie = parts.join('; ');
+        }
+        function getCookie(name) {
+            var m = document.cookie.match(new RegExp('(?:^|; )' + name.replace(/([.$?*|{}()\[\]\\\/\+^])/g, '\\$1') + '=([^;]*)'));
+            return m ? decodeURIComponent(m[1]) : '';
+        }
+        function storeGclidFromUrl() {
+            var gclid = getQueryParam('gclid');
+            if (!gclid) return;
+            try { localStorage.setItem('gclid', gclid); } catch(e) {}
+            setCookie('gclid', gclid, 60 * 60 * 24 * 90); // 90 days
+        }
+        function getStoredGclid() {
+            try { var ls = localStorage.getItem('gclid'); if (ls) return ls; } catch(e) {}
+            return getCookie('gclid') || '';
+        }
+        function ensureGclidInput(form) {
+            if (!form) return;
+            var input = form.querySelector('input[name="gclid"]');
+            if (!input) {
+                input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = 'gclid';
+                form.appendChild(input);
+            }
+            var v = getStoredGclid();
+            if (v) input.value = v;
+        }
+        // Capture and prep hidden input ASAP
+        document.addEventListener('DOMContentLoaded', function() {
+            try { storeGclidFromUrl(); } catch(e) {}
+            var form = document.getElementById('quoteForm');
+            if (form) { try { ensureGclidInput(form); } catch(e) {} }
+        });
+
         function handleFormSubmit(event) {
             event.preventDefault();
             
@@ -1052,6 +1102,8 @@
                 
                 // Submit the form
                 const form = document.getElementById('quoteForm');
+                // Ensure the hidden GCLID field exists and is up-to-date
+                try { ensureGclidInput(form); } catch (e) {}
                 const formData = new FormData(form);
                 
                 fetch(form.action, {

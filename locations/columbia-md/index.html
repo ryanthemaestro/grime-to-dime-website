@@ -10,42 +10,19 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/images/Faviconmaster.png">
     <link rel="shortcut icon" href="/images/Faviconmaster.png">
     <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        /* Hero transparent content box (match homepage) */
-        .hero { position: relative; min-height: 70vh; display:flex; align-items:center; justify-content:center; text-align:center; padding: 1rem; }
-        .hero-content { max-width: 900px; margin: 0 auto; color: #ffffff; padding: 40px; background: rgba(0, 0, 0, 0.3); border-radius: 15px; backdrop-filter: blur(5px); }
-        .google-rating-badge { display:inline-flex; align-items:center; gap:10px; background:#fff; color:#222; padding:10px 16px; border-radius:999px; border:1px solid #ff3333; box-shadow:0 4px 15px rgba(255,51,51,0.12); text-decoration:none; }
-        .google-rating-badge .google-icon { color:#ff3333; font-size:1.25rem; display:inline-flex; align-items:center; justify-content:center; }
-        .google-rating-badge .rating-score { font-weight:800; font-size:1rem; }
-        .google-rating-badge .stars { color:#FFD700; margin-right:2px; font-size:1rem; letter-spacing:1px; }
-        .google-rating-badge .badge-text { font-weight:600; color:#444; font-size:.95rem; }
-        .trust-signals { margin: .75rem 0 0.5rem; }
-
-        /* FAQ cards like homepage */
-        details { background:#fff; padding:1.5rem; border-radius:15px; box-shadow:0 8px 20px rgba(0,0,0,.08); margin-bottom:1rem; border:1px solid rgba(0,0,0,.05); }
-        summary { font-weight:600; cursor:pointer; font-size:1.1rem; color:#222; margin-bottom:.5rem; }
-        details[open] summary { margin-bottom:1rem; padding-bottom:.5rem; border-bottom:1px solid rgba(255,51,51,0.1); }
-        details p { margin:0; color:#666; line-height:1.6; }
-
-        /* Chips for ZIPs */
-        .zip-chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:.5rem; }
-        .zip-chip { background:#f1f3f5; color:#444; border:1px solid #e8eaed; border-radius:999px; padding:6px 12px; font-weight:600; font-size:.9rem; }
-
-        /* Process (How it works) styled like quote page */
-        .process-section { padding:5rem 1rem; background:#fff; }
-        .process-container { max-width:1200px; margin:0 auto; text-align:center; }
-        .process-steps { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
-        .process-step { padding:2rem; border-radius:10px; background:#f9f9f9; box-shadow:0 4px 10px rgba(0,0,0,.05); }
-        .process-icon { font-size:2rem; color:#ff3333; margin-bottom:1rem; }
-        @media (max-width:768px){ .process-steps{ grid-template-columns:1fr; } }
-    </style>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:wght@800&family=Open+Sans:wght@600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@800&family=Open+Sans:wght@600&display=swap"></noscript>
+    <link rel="preload" as="image" href="/images/optimized/warehouse-after-junk-removal-hero-q60.webp" fetchpriority="high">
 </head>
-<body>
+<body class="page-location location-columbia">
     <header>
         <div class="header-content-wrapper">
             <div class="logo">
-                <a href="/"><img src="images/optimized/Faviconmaster-optimized.webp" alt="Grime To Dime Junk Removal Logo - Columbia MD" width="50" height="50">Grime To Dime</a>
+                <a href="#hero"><img src="/images/optimized/Faviconmaster-optimized.webp" alt="Grime To Dime Junk Removal Logo" width="50" height="50" decoding="async">Grime To Dime</a>
             </div>
             <nav>
                 <ul class="nav-links">
@@ -64,7 +41,6 @@
     </header>
 
     <section id="hero" class="hero">
-        <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1>Junk Removal in Columbia, MD</h1>
             <h2>Fast, eco‑friendly hauling. Same‑day service.</h2>
@@ -72,11 +48,17 @@
                 <a class="google-rating-badge" href="https://www.google.com/search?q=Grime+To+Dime+Elkridge+MD+reviews" target="_blank" rel="noopener nofollow" aria-label="5.0 rating on Google (opens reviews in a new tab)" title="5.0 on Google Reviews">
                     <span class="google-icon" aria-hidden="true"><i class="fab fa-google"></i></span>
                     <span class="rating-score">5.0</span>
-                    <span class="stars" aria-hidden="true">★★★★★</span>
+                    <span class="stars" aria-hidden="true">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </span>
                     <span class="badge-text">on Google</span>
                 </a>
             </div>
-            <a href="/quote/" class="cta-button">Get Free Quote</a>
+            <a href="https://grimetodime.com/quote" class="cta-button">Get Free Quote</a>
         </div>
     </section>
 
@@ -196,7 +178,7 @@
     </section>
 
     <section id="contact" class="about">
-        <div class="about-container" style="text-align:center;">
+        <div class="about-container text-center">
             <a href="/quote/" class="cta-button">Get Your Free Quote</a>
         </div>
     </section>

@@ -35,7 +35,6 @@
             background-color: #f9f9f9;
         }
 
-        /* Header and Navigation */
         header {
             position: fixed;
             top: 0;
@@ -76,212 +75,95 @@
             font-weight: bold;
         }
 
-        .logo a span {
-            display: inline-block;
-            margin-left: 10px;
-            color: white;
-            font-weight: bold;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: #ff3333;
-        }
-
-        .mobile-menu {
-            display: none;
-            position: fixed;
-            top: 60px;
-            left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.95);
-            padding: 1rem;
-            transform: translateY(-100%);
-            transition: transform 0.3s ease;
-            opacity: 0;
-            visibility: hidden;
-            z-index: 1000;
-        }
-
-        .mobile-menu.active {
-            transform: translateY(0);
-            display: block;
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .mobile-menu-links {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: none;
-        }
-
-        .mobile-menu-links li {
-            margin: 1rem 0;
-            text-align: center;
-        }
-
-        .mobile-menu-links a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.1rem;
-            display: block;
-            padding: 0.5rem;
-            transition: color 0.3s ease;
-        }
-
-        .mobile-menu-links a:hover {
-            color: #ff3333;
-        }
-
-        .hamburger-menu {
-            display: none;
-            flex-direction: column;
-            justify-content: space-around;
-            width: 30px;
-            height: 25px;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            padding: 0;
-            z-index: 10;
-        }
-
-        .hamburger-menu span {
-            width: 30px;
-            height: 3px;
-            background: white;
-            border-radius: 3px;
-            transition: all 0.3s ease;
-        }
-
-        @media (max-width: 768px) {
-            .hamburger-menu {
-                display: flex;
-            }
-
-            .mobile-menu {
-                display: block;
-            }
-
-            .nav-links {
-                display: none;
-            }
-        }
-
-        /* Breadcrumbs */
-        .breadcrumbs {
-            background: #f5f5f5;
-            padding: 10px 0;
-            border-bottom: 1px solid #ddd;
-            font-size: 0.9rem;
-        }
-
-        .breadcrumbs-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .breadcrumbs {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .breadcrumbs a {
-            color: #666;
-            text-decoration: none;
-        }
-
-        .breadcrumbs a:hover {
-            color: #ff3333;
-        }
-
-        .breadcrumbs span {
-            color: #999;
-        }
-
-        .breadcrumbs i {
-            font-size: 0.8rem;
-        }
-
-        /* Blog Container */
-        .blog-container {
-            max-width: 800px;
-            margin: 120px auto 50px;
-            padding: 0 20px;
+        .blog-post {
+            max-width: 900px;
+            margin: 100px auto 50px;
+            padding: 2rem;
             background: white;
             border-radius: 15px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
         }
 
-        /* Blog Header */
-        .blog-header {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../../images/blog-posts/END-OF-SUMMER.png');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 60px 40px;
+        .post-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .post-title {
+            font-size: 2.5rem;
+            color: #222;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .post-meta {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .post-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .post-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        .post-content h2 {
+            font-size: 1.8rem;
+            color: #222;
+            margin: 2rem 0 1rem;
+        }
+
+        .post-content h3 {
+            font-size: 1.4rem;
+            color: #333;
+            margin: 1.5rem 0 1rem;
+        }
+
+        .post-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .post-content ul {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+
+        .post-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-section {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 3rem 0;
             text-align: center;
         }
 
-        .blog-header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            font-weight: 700;
+        .cta-button {
+            display: inline-block;
+            background: #ff3333;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
         }
 
-        .blog-header .subtitle {
-            font-size: 1.2rem;
-            margin-bottom: 25px;
-            opacity: 0.9;
-        }
-
-        .blog-meta {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            font-size: 0.95rem;
-            opacity: 0.8;
-        }
-
-        .blog-content {
-            padding: 40px;
-        }
-
-        .blog-content h2 {
-            font-size: 1.8rem;
-            color: #222;
-            margin: 40px 0 20px 0;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #ff3333;
-        }
-
-        .blog-content h3 {
-            font-size: 1.4rem;
-            color: #333;
-            margin: 30px 0 15px 0;
-        }
-
-        .blog-content p {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-            line-height: 1.7;
+        .cta-button:hover {
+            background: #cc0000;
+            transform: translateY(-2px);
         }
 
         .checklist {
@@ -317,41 +199,6 @@
             left: 0;
         }
 
-        .cta-box {
-            background: linear-gradient(135deg, #ff3333, #cc0000);
-            color: white;
-            padding: 30px;
-            border-radius: 12px;
-            text-align: center;
-            margin: 40px 0;
-        }
-
-        .cta-box h3 {
-            margin-bottom: 15px;
-            font-size: 1.5rem;
-        }
-
-        .cta-box p {
-            margin-bottom: 20px;
-            opacity: 0.9;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: white;
-            color: #ff3333;
-            padding: 15px 30px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-
-        .cta-button:hover {
-            background: #f0f0f0;
-            transform: translateY(-2px);
-        }
-
         .tip-box {
             background: #e8f4f8;
             border-left: 4px solid #17a2b8;
@@ -365,43 +212,100 @@
             margin-bottom: 10px;
         }
 
+        .breadcrumbs {
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .breadcrumbs a {
+            color: #ff3333;
+            text-decoration: none;
+        }
+
+        .breadcrumbs a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumbs .separator {
+            margin: 0 0.5rem;
+        }
+
+        .social-share {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .social-share a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #f0f0f0;
+            color: #333;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-share a:hover {
+            background: #ff3333;
+            color: white;
+            transform: translateY(-3px);
+        }
+
         @media (max-width: 768px) {
-            .blog-header {
-                padding: 40px 20px;
+            .blog-post {
+                padding: 1.5rem;
+                margin: 80px auto 30px;
             }
 
-            .blog-header h1 {
+            .post-title {
                 font-size: 2rem;
             }
 
-            .blog-meta {
-                flex-direction: column;
-                gap: 10px;
+            .post-image {
+                height: 300px;
             }
 
-            .blog-content {
-                padding: 25px;
-            }
-
-            .blog-content h2 {
-                font-size: 1.5rem;
-            }
-
-            .blog-container {
-                margin-top: 100px;
+            .post-content {
+                font-size: 1rem;
             }
         }
     </style>
 
+    <meta name="description" content="Complete guide to end-of-summer deep cleaning in Howard County. Professional tips for seasonal cleaning, organization, and junk removal.">
+    <meta name="keywords" content="end of summer cleaning, seasonal deep clean, Howard County cleaning, junk removal, home organization, summer cleanup">
+    <meta name="author" content="Grime To Dime">
+    <meta property="og:title" content="End-of-Summer Deep Clean Guide: Professional Tips for Howard County Homes">
+    <meta property="og:description" content="Complete guide to end-of-summer deep cleaning with room-by-room checklists, professional tips, and junk removal strategies for Howard County homeowners.">
+    <meta property="og:image" content="https://grimetodime.com/images/blog-posts/END-OF-SUMMER.png">
+    <meta property="og:url" content="https://grimetodime.com/blog/end-of-summer-deep-clean">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>End-of-Summer Deep Clean Guide: Professional Tips for Howard County Homes</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../../images/Faviconmaster.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../images/Faviconmaster.png">
+    <link rel="shortcut icon" href="../../images/Faviconmaster.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="canonical" href="https://grimetodime.com/blog/end-of-summer-deep-clean">
+
+    <!-- Structured Data for Article -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
       "headline": "End-of-Summer Deep Clean Guide: Professional Tips for Howard County Homes",
-      "image": "https://grimetodime.com/images/optimized/warehouse-after-junk-removal-hero-q60.webp",
+      "image": "https://grimetodime.com/images/blog-posts/END-OF-SUMMER.png",
+      "datePublished": "2025-08-21T08:00:00+00:00",
+      "dateModified": "2025-08-21T08:00:00+00:00",
       "author": {
         "@type": "Organization",
-        "name": "Grime To Dime"
+        "name": "Grime To Dime",
+        "url": "https://grimetodime.com"
       },
       "publisher": {
         "@type": "Organization",
@@ -411,9 +315,7 @@
           "url": "https://grimetodime.com/images/MASTERPARENT.png"
         }
       },
-      "datePublished": "2025-08-21",
-      "dateModified": "2025-08-21",
-      "description": "Complete guide to end-of-summer deep cleaning in Howard County. Professional tips for seasonal cleaning, organization, and junk removal.",
+      "description": "Complete guide to end-of-summer deep cleaning with room-by-room checklists, professional tips, and junk removal strategies for Howard County homeowners.",
       "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://grimetodime.com/blog/end-of-summer-deep-clean"
@@ -426,60 +328,41 @@
     <header>
         <nav>
             <div class="logo">
-                <a href="/"><img src="../../images/MASTERPARENT.png" alt="Grime To Dime Logo"><span>Grime To Dime</span></a>
-            </div>
-            <ul class="nav-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="/blog">Blog</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button class="hamburger-menu" onclick="toggleMobileMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <div class="mobile-menu">
-                <ul class="mobile-menu-links">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="/blog">Blog</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="tel:410-300-6743" class="phone-number"><i class="fas fa-phone"></i> (410) 300-6743</a></li>
-                </ul>
+                <a href="/"><img src="../../images/MASTERPARENT.png" alt="Grime To Dime Logo">Grime To Dime</a>
             </div>
         </nav>
     </header>
 
-    <div class="breadcrumbs">
-        <div class="breadcrumbs-container">
-            <a href="/"><i class="fas fa-home"></i> Home</a>
-            <i class="fas fa-chevron-right"></i>
-            <a href="/blog">Blog</a>
-            <i class="fas fa-chevron-right"></i>
+    <article class="blog-post">
+        <div class="breadcrumbs">
+            <a href="/">Home</a> <span class="separator">></span>
+            <a href="/blog">Blog</a> <span class="separator">></span>
             <span>End-of-Summer Deep Clean Guide</span>
         </div>
-    </div>
 
-    <div class="blog-container">
-        <div class="blog-header">
-            <h1>End-of-Summer Deep Clean Guide</h1>
-            <div class="subtitle">Professional Tips for Howard County Homes</div>
-            <div class="blog-meta">
-                <span>August 21, 2025</span>
-                <span>12 min read</span>
-                <span>By Grime To Dime Team</span>
+        <div class="post-header">
+            <h1 class="post-title">End-of-Summer Deep Clean Guide: Professional Tips for Howard County Homes</h1>
+            <div class="post-meta">
+                <i class="far fa-calendar"></i> August 21, 2025
+                <span class="separator">•</span>
+                <i class="far fa-clock"></i> 12 min read
+                <span class="separator">•</span>
+                <i class="far fa-folder"></i> <a href="/blog?category=cleaning">Cleaning</a>, <a href="/blog?category=organization">Organization</a>
             </div>
+            <img src="../../images/blog-posts/END-OF-SUMMER.png" alt="Professional end-of-summer deep cleaning service in Howard County - fresh, organized home after cleanup" class="post-image">
         </div>
 
-        <div class="blog-content">
-            <p>As summer winds down and we prepare for the back-to-school season and cooler weather, it's the perfect time for a comprehensive end-of-summer deep clean. Whether you're getting ready to sell your home, want to start the school year fresh, or simply want to reclaim your space from summer clutter, this guide will walk you through everything you need to know about seasonal cleaning in Howard County.</p>
+        <div class="social-share">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://grimetodime.com/blog/end-of-summer-deep-clean" target="_blank" aria-label="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://grimetodime.com/blog/end-of-summer-deep-clean" target="_blank" aria-label="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="mailto:?subject=End-of-Summer Deep Clean Guide&body=Check out this comprehensive guide for end-of-summer cleaning: https://grimetodime.com/blog/end-of-summer-deep-clean" aria-label="Share via Email"><i class="fas fa-envelope"></i></a>
+        </div>
+
+        <div class="post-content">
+            <p>As summer winds down and we prepare for the back-to-school season and cooler weather, it's the perfect time for a comprehensive end-of-summer deep clean. Whether you're getting ready to sell your home, want to start the school year fresh, or simply want to reclaim your space from summer clutter, this guide will walk you through everything you need to know about seasonal cleaning in <strong>Howard County</strong>.</p>
 
             <h2>Why End-of-Summer Cleaning Matters</h2>
             <p>Summer is a time of increased activity - barbecues, pool parties, outdoor projects, and family gatherings all contribute to extra mess and clutter. An end-of-summer deep clean isn't just about aesthetics; it's about:</p>
-
             <ul>
                 <li><strong>Health & Safety:</strong> Removing dust, allergens, and moisture that accumulated during humid summer months</li>
                 <li><strong>Seasonal Transition:</strong> Preparing your home for fall and winter comfort</li>
@@ -551,7 +434,6 @@
 
             <h2>Outdoor & Exterior Areas</h2>
             <p>Don't forget the areas around your Howard County home that saw heavy summer use:</p>
-
             <div class="checklist">
                 <h4>Exterior Summer Cleanup:</h4>
                 <ul>
@@ -568,7 +450,6 @@
 
             <h2>Junk Removal & Decluttering Strategy</h2>
             <p>The end of summer is the perfect time to tackle accumulated junk. Here's how to approach it efficiently:</p>
-
             <h3>Decluttering Categories:</h3>
             <ul>
                 <li><strong>Broken Items:</strong> Summer activities often lead to broken outdoor equipment, toys, and furniture</li>
@@ -585,7 +466,6 @@
 
             <h2>Professional vs. DIY: When to Call Grime To Dime</h2>
             <p>While many cleaning tasks can be handled yourself, some situations call for professional help:</p>
-
             <h3>Call Us For:</h3>
             <ul>
                 <li>Large furniture removal or heavy item disposal</li>
@@ -596,15 +476,14 @@
                 <li>When time is limited but thorough cleaning is needed</li>
             </ul>
 
-            <div class="cta-box">
-                <h3>Ready for Professional End-of-Summer Cleanup?</h3>
-                <p>Don't let summer clutter carry into fall. Our Howard County team is ready to handle the heavy lifting so you can enjoy a fresh, clean home.</p>
-                <a href="tel:410-300-6743" class="cta-button">Call (410) 300-6743</a>
+            <div class="cta-section">
+                <h2>Ready for Professional End-of-Summer Cleanup?</h2>
+                <p>Don't let summer clutter carry into fall. Contact Grime To Dime for fast, eco-friendly junk removal in Howard County!</p>
+                <a href="/form" class="cta-button">Get Free Quote</a>
             </div>
 
             <h2>Seasonal Maintenance Tips</h2>
             <p>Keep your Howard County home in top shape year-round:</p>
-
             <div class="tip-box">
                 <h4>Preventive Summer Maintenance:</h4>
                 <ul>
@@ -632,45 +511,59 @@
             </div>
 
             <h2>Final Thoughts</h2>
-            <p>An end-of-summer deep clean is more than just tidying up - it's an investment in your home's longevity, your family's health, and your peace of mind. By tackling this project systematically and knowing when to call in professional help like Grime To Dime for the heavy lifting, you'll create a welcoming, organized space that lasts through the seasons.</p>
+            <p>An end-of-summer deep clean is more than just tidying up - it's an investment in your home's longevity, your family's health, and your peace of mind. By tackling this project systematically and knowing when to call in professional help like <a href="/">Grime To Dime</a> for the heavy lifting, you'll create a welcoming, organized space that lasts through the seasons.</p>
 
             <p>Remember, the goal isn't perfection, but progress. A well-maintained home in Howard County not only looks better but functions better for everyone who lives there.</p>
+        </div>
 
-            <div class="cta-box">
-                <h3>Need Help with Your End-of-Summer Clean?</h3>
-                <p>Let our professional team handle the tough stuff while you focus on enjoying your fresh, clean space.</p>
-                <a href="https://grimetodime.com/quote" class="cta-button">Get Free Quote</a>
+        <div class="related-posts">
+            <h3>Related Articles</h3>
+            <div class="related-posts-grid">
+                <div class="related-post">
+                    <h4 class="related-post-title">10 Items You Didn't Know Could Be Recycled</h4>
+                    <p>Surprising items that can be recycled and how to properly dispose of them.</p>
+                    <a href="https://grimetodime.com/blog/10-items-you-didnt-know-could-be-recycled/index.html">Read More</a>
+                </div>
+                <div class="related-post">
+                    <h4 class="related-post-title">Upcycling Guide: Creative Ways to Repurpose Items Before Disposal</h4>
+                    <p>Transform your unwanted items into functional treasures with our comprehensive upcycling guide.</p>
+                    <a href="/blog/upcycling-guide">Read More</a>
+                </div>
             </div>
         </div>
-    </div>
+    </article>
 
     <script>
-        function toggleMobileMenu() {
-            const mobileMenu = document.querySelector('.mobile-menu');
-            const hamburgerBtn = document.querySelector('.hamburger-menu');
-            const spans = hamburgerBtn.querySelectorAll('span');
+        // Add structured data for breadcrumbs
+        const breadcrumbsSchema = {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://grimetodime.com/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Blog",
+                    "item": "https://grimetodime.com/blog"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "End-of-Summer Deep Clean Guide",
+                    "item": "https://grimetodime.com/blog/end-of-summer-deep-clean"
+                }
+            ]
+        };
 
-            mobileMenu.classList.toggle('active');
-
-            if (mobileMenu.classList.contains('active')) {
-                spans[0].style.transform = 'rotate(45deg) translate(8px, 8px)';
-                spans[1].style.opacity = '0';
-                spans[2].style.transform = 'rotate(-45deg) translate(7px, -7px)';
-            } else {
-                spans[0].style.transform = 'none';
-                spans[1].style.opacity = '1';
-                spans[2].style.transform = 'none';
-            }
-        }
-
-        document.addEventListener('click', function(event) {
-            const mobileMenu = document.querySelector('.mobile-menu');
-            const hamburgerBtn = document.querySelector('.hamburger-menu');
-
-            if (!hamburgerBtn.contains(event.target) && !mobileMenu.contains(event.target) && mobileMenu.classList.contains('active')) {
-                toggleMobileMenu();
-            }
-        });
+        const script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.text = JSON.stringify(breadcrumbsSchema);
+        document.head.appendChild(script);
     </script>
 </body>
 </html>

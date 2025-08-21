@@ -2650,16 +2650,18 @@
     <!-- Removed testimonial slider script -->
 
     <script>
-        // Mobile Navigation Toggle Script (Appended)
-        const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-        const navLinks = document.querySelector('nav ul.nav-links');
+        // Optimized Mobile Navigation - Deferred for better performance
+        function initMobileNav() {
+            const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+            const navLinks = document.querySelector('nav ul.nav-links');
 
-        if (mobileNavToggle && navLinks) {
+            if (!mobileNavToggle || !navLinks) return;
+
             mobileNavToggle.addEventListener('click', () => {
                 navLinks.classList.toggle('nav-active');
             });
 
-            // Optional: Close mobile menu if a link is clicked
+            // Close mobile menu when link is clicked
             navLinks.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
                     if (navLinks.classList.contains('nav-active')) {
@@ -2667,6 +2669,13 @@
                     }
                 });
             });
+        }
+
+        // Defer mobile nav initialization
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initMobileNav);
+        } else {
+            initMobileNav();
         }
     </script>
 

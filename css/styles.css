@@ -1217,6 +1217,7 @@ details p { margin: 0; color: #555; line-height: 1.6; }
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 0.5rem;
+    justify-content: center;
 }
 
 .about .feature-card .zip-chips .zip-chip {
@@ -1239,6 +1240,7 @@ details p { margin: 0; color: #555; line-height: 1.6; }
 
 .about .feature-card .nearby-links {
     margin-top: 0.75rem;
+    text-align: center;
 }
 
 .about .feature-card .nearby-links a {
@@ -1277,7 +1279,7 @@ details p { margin: 0; color: #555; line-height: 1.6; }
 
 .about .feature-card:has(.zip-chips) h3,
 .about .feature-card:has(.nearby-links) h3 {
-    text-align: left;
+    text-align: center;
     color: #222;
     font-weight: 800;
     margin-bottom: 0.75rem;
@@ -1288,6 +1290,7 @@ details p { margin: 0; color: #555; line-height: 1.6; }
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    justify-content: center;
 }
 
 .about .feature-card .nearby-links a {

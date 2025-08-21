@@ -18,8 +18,17 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../images/Faviconmaster.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../images/Faviconmaster.png">
     <link rel="shortcut icon" href="../images/Faviconmaster.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+    <!-- Stylesheets (make main CSS non-blocking) -->
+    <link rel="preload" href="../css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../css/styles.css"></noscript>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    <!-- Preconnect and load Google Fonts with swap to reduce CLS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:wght@800&family=Open+Sans:wght@600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@800&family=Open+Sans:wght@600&display=swap"></noscript>
+
     <style>
         * {
             margin: 0;
@@ -83,8 +92,8 @@
 
         .blog-container {
             max-width: 1200px;
-            margin: 100px auto 50px;
-            padding: 0 20px;
+            margin: 120px auto 50px;
+            padding: 0 1rem;
         }
 
         .blog-hero {
@@ -214,6 +223,29 @@
         }
 
         @media (max-width: 768px) {
+            .header-content-wrapper { justify-content: space-between; }
+            nav ul.nav-links {
+                display: none; /* Hide by default on mobile */
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background-color: #111;
+                width: 100%;
+                flex-direction: column;
+                padding: 1rem 0;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                z-index: 998;
+            }
+            nav ul.nav-links.nav-active { display: flex; }
+            nav ul.nav-links li { width: 100%; text-align: center; }
+            nav ul.nav-links li a {
+                display: block;
+                padding: 1rem;
+                color: white;
+                border-bottom: 1px solid #333;
+            }
+            .mobile-nav-toggle { display: block; z-index: 1000; }
+
             .featured-post {
                 flex-direction: column;
             }
@@ -238,90 +270,32 @@
             .blog-hero h1 {
                 font-size: 2rem;
             }
+
+            .blog-container {
+                margin: 100px auto 30px;
+            }
         }
 
-        /* Mobile menu styles */
-        .mobile-menu {
-            display: none;
-            position: fixed;
-            top: 60px;
-            left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.95);
-            padding: 1rem;
-            transform: translateY(-100%);
-            transition: transform 0.3s ease;
-            opacity: 0;
-            visibility: hidden;
-            z-index: 1000;
-        }
-
-        .mobile-menu.active {
-            transform: translateY(0);
-            display: block;
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .mobile-menu-links {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: none;
-        }
-
-        .mobile-menu-links li {
-            margin: 1rem 0;
-            text-align: center;
-        }
-
-        .mobile-menu-links a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.1rem;
-            display: block;
-            padding: 0.5rem;
-            transition: color 0.3s ease;
-        }
-
-        .mobile-menu-links a:hover {
-            color: #ff3333;
-        }
-
-        .hamburger-menu {
-            display: none;
-            flex-direction: column;
-            justify-content: space-around;
-            width: 30px;
-            height: 25px;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            padding: 0;
-            z-index: 10;
-        }
-
-        .hamburger-menu span {
-            width: 30px;
-            height: 3px;
-            background: white;
-            border-radius: 3px;
-            transition: all 0.3s ease;
-        }
-
-        @media (max-width: 768px) {
-            .hamburger-menu {
+        @media (min-width: 769px) {
+            .mobile-nav-toggle { display: none; }
+            nav ul.nav-links {
                 display: flex;
+                position: static;
+                width: auto;
+                background-color: transparent;
+                flex-direction: row;
+                padding: 0;
+                box-shadow: none;
             }
-
-            .mobile-menu {
-                display: block;
-            }
-
-            .nav-links {
-                display: none;
+            nav ul.nav-links li a {
+                display: inline-block;
+                padding: 0 1rem;
+                color: white;
+                border: none;
             }
         }
+
+
     </style>
     <script type="application/ld+json">
     {

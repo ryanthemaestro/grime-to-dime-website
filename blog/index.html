@@ -124,6 +124,11 @@
             color: #ff0000;
         }
 
+        /* Ensure proper spacing for navigation items */
+        nav ul.nav-links li:first-child {
+            margin-left: 0;
+        }
+
         .mobile-nav-toggle {
             background: none;
             border: none;
@@ -313,7 +318,7 @@
                 z-index: 998;
             }
             nav ul.nav-links.nav-active { display: flex; }
-            nav ul.nav-links li { width: 100%; text-align: center; margin-left: 0; }
+            nav ul.nav-links li { width: 100%; text-align: center; }
             nav ul.nav-links li a {
                 display: block;
                 padding: 1rem;
@@ -362,9 +367,6 @@
                 flex-direction: row;
                 padding: 0;
                 box-shadow: none;
-            }
-            nav ul.nav-links li {
-                margin-left: 1.5rem;
             }
             nav ul.nav-links li a {
                 display: inline-block;

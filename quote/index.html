@@ -1128,15 +1128,22 @@
                                 'event_label': 'Quote Request'
                             });
                             
-                            // Explicit Google Ads conversion tracking with enhanced parameters
+                            // Primary Google Ads conversion tracking - Lead Form Submission
                             gtag('event', 'conversion', {
-                                'send_to': 'AW-11553122519/0KjoCPG_6oQbENfR-oQr',
-                                'value': 1.0,
+                                'send_to': 'AW-11553122519/JftTCI3O64QbENfR-oQr',
+                                'value': 25.0,
                                 'transaction_id': email + '_' + new Date().getTime().toString(),
                                 'user_data': {
                                     'email': email,
                                     'phone_number': phone.replace(/\D/g, '')
                                 }
+                            });
+
+                            // Secondary conversion for form submissions
+                            gtag('event', 'conversion', {
+                                'send_to': 'AW-11553122519/0KjoCPG_6oQbENfR-oQr',
+                                'value': 1.0,
+                                'transaction_id': 'lead_' + new Date().getTime().toString()
                             });
                         }
                         

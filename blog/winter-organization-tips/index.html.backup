@@ -2,8 +2,6 @@
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
-    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-    <link rel="dns-prefetch" href="//www.googletagmanager.com">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KGQDKQFZNF"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -27,7 +25,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../../images/Faviconmaster.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../../images/Faviconmaster.png">
     <link rel="shortcut icon" href="../../images/Faviconmaster.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="canonical" href="https://grimetodime.com/blog/winter-organization-tips">
     
     <!-- Structured Data for Article -->
@@ -75,133 +73,24 @@
             background-color: #f9f9f9;
         }
 
-        /* ==============================
-           Critical Above-the-Fold CSS
-           Header & Navigation
-           ============================== */
         header {
-            background: #000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
             position: fixed;
-            width: 100%;
             top: 0;
+            left: 0;
+            right: 0;
             z-index: 1000;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 0.75rem 0;
         }
 
-        .header-content-wrapper {
+        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0.5rem 1rem;
+            padding: 0 1rem;
             max-width: 1200px;
             margin: 0 auto;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            padding: 0;
-            margin: 0;
-        }
-
-        .nav-links li { margin-left: 1.5rem; }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s ease;
-            text-transform: uppercase;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        .nav-links a:hover { color: #ff0000; }
-
-        .mobile-nav-toggle {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.8rem;
-            cursor: pointer;
-            padding: 0 1rem;
-        }
-
-        /* Hamburger bars */
-        .mobile-nav-toggle span {
-            display: block;
-            width: 22px;
-            height: 2px;
-            background: #fff;
-            border-radius: 2px;
-            margin: 4px 0;
-            transition: transform 0.3s ease, opacity 0.3s ease;
-        }
-
-        @media (max-width: 768px) {
-            .header-content-wrapper { justify-content: space-between; }
-            nav ul.nav-links {
-                display: none; /* Hide by default on mobile */
-                position: absolute;
-                top: 60px;
-                right: 0;
-                background-color: #111;
-                width: 100%;
-                flex-direction: column;
-                padding: 1rem 0;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                z-index: 998;
-            }
-            nav ul.nav-links.nav-active { display: flex; }
-            nav ul.nav-links li { width: 100%; text-align: center; }
-            nav ul.nav-links li a {
-                display: block;
-                padding: 1rem;
-                color: white;
-                border-bottom: 1px solid #333;
-            }
-            /* Special styling for Services (first item) */
-            nav ul.nav-links li:first-child {
-                order: -1;
-                background: rgba(255, 51, 51, 0.1);
-                border-bottom: 2px solid #ff3333;
-            }
-            nav ul.nav-links li:first-child a {
-                font-weight: 700;
-                text-transform: uppercase;
-                letter-spacing: 1px;
-            }
-            /* Special styling for Contact (last item) */
-            nav ul.nav-links li:last-child {
-                text-align: center;
-                padding: 1rem;
-                margin-top: auto;
-                border-top: 1px solid #333;
-                background: rgba(255, 255, 255, 0.05);
-            }
-            nav ul.nav-links li:last-child a {
-                font-weight: 600;
-                color: #ff3333;
-            }
-            .mobile-nav-toggle { display: block; z-index: 1000; }
-        }
-
-        @media (min-width: 769px) {
-            .mobile-nav-toggle { display: none; }
-            nav ul.nav-links {
-                display: flex;
-                position: static;
-                width: auto;
-                background-color: transparent;
-                flex-direction: row;
-                padding: 0;
-                box-shadow: none;
-            }
-            nav ul.nav-links li a {
-                display: inline-block;
-                padding: 0 1rem;
-                color: white;
-                border: none;
-            }
+            width: 100%;
         }
 
         .logo {
@@ -210,17 +99,9 @@
         }
 
         .logo img {
-            height: 50px;
+            height: 40px;
             width: auto;
-            margin-right: 12px;
-            object-fit: contain;
-            display: block;
-            max-width: none;
-            transition: transform 0.3s ease;
-        }
-
-        .logo img:hover {
-            transform: scale(1.05);
+            margin-right: 10px;
         }
 
         .logo a {
@@ -228,25 +109,8 @@
             align-items: center;
             text-decoration: none;
             color: white;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             font-weight: bold;
-            padding: 5px 0;
-            white-space: nowrap;
-            transition: color 0.3s ease;
-        }
-
-        .logo a:hover {
-            color: #ff3333;
-        }
-
-        @media (max-width: 768px) {
-            .logo img {
-                height: 40px;
-            }
-
-            .logo a {
-                font-size: 1.2rem;
-            }
         }
 
         .blog-post {
@@ -340,50 +204,49 @@
             transform: translateY(-2px);
         }
 
-        .checklist {
+        .related-posts {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+        }
+
+        .related-posts h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #222;
+        }
+
+        .related-posts-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .related-post {
             background: #f8f9fa;
-            border-left: 4px solid #ff3333;
-            padding: 25px;
-            margin: 25px 0;
-            border-radius: 0 8px 8px 0;
+            padding: 1rem;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
         }
 
-        .checklist h4 {
+        .related-post:hover {
+            transform: translateY(-5px);
+        }
+
+        .related-post-title {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .related-post a {
             color: #ff3333;
-            margin-bottom: 15px;
-            font-size: 1.2rem;
+            text-decoration: none;
+            font-weight: 600;
         }
 
-        .checklist ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .checklist li {
-            margin-bottom: 10px;
-            padding-left: 25px;
-            position: relative;
-        }
-
-        .checklist li::before {
-            content: "✓";
-            color: #ff3333;
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-
-        .tip-box {
-            background: #e8f4f8;
-            border-left: 4px solid #17a2b8;
-            padding: 20px;
-            margin: 25px 0;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .tip-box h4 {
-            color: #17a2b8;
-            margin-bottom: 10px;
+        .related-post a:hover {
+            text-decoration: underline;
         }
 
         .breadcrumbs {
@@ -431,51 +294,6 @@
             transform: translateY(-3px);
         }
 
-        .related-posts {
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid #eee;
-        }
-
-        .related-posts h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            color: #222;
-        }
-
-        .related-posts-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-        }
-
-        .related-post {
-            background: #f8f9fa;
-            padding: 1rem;
-            border-radius: 8px;
-            transition: transform 0.3s ease;
-        }
-
-        .related-post:hover {
-            transform: translateY(-5px);
-        }
-
-        .related-post-title {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            color: #333;
-        }
-
-        .related-post a {
-            color: #ff3333;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .related-post a:hover {
-            text-decoration: underline;
-        }
-
         @media (max-width: 768px) {
             .blog-post {
                 padding: 1.5rem;
@@ -498,7 +316,6 @@
                 grid-template-columns: 1fr;
             }
         }
-    </style>
     </style>
 </head>
 <body>

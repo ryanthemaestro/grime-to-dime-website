@@ -335,26 +335,28 @@
 </head>
 <body>
     <header>
-        <nav>
+        <div class="header-content-wrapper">
             <div class="logo">
-                <a href="/"><img src="../images/MASTERPARENT.png" alt="Grime To Dime Logo"><span>Grime To Dime</span></a>
+                <a href="/">
+                    <img src="../images/MASTERPARENT.png" alt="Grime To Dime Junk Removal Logo" width="50" height="50" decoding="async">
+                    Grime To Dime
+                </a>
             </div>
-            <button class="hamburger-menu" onclick="toggleMobileMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <div class="mobile-menu">
-                <ul class="mobile-menu-links">
+            <nav>
+                <ul class="nav-links">
                     <li><a href="/">Home</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#about">About Us</a></li>
-                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="tel:410-300-6743" class="phone-number"><i class="fas fa-phone"></i> (410) 300-6743</a></li>
                 </ul>
-            </div>
-        </nav>
+                <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
     </header>
 
     <div class="blog-container">
@@ -437,32 +439,33 @@
     </div>
 
     <script>
-        function toggleMobileMenu() {
-            const mobileMenu = document.querySelector('.mobile-menu');
-            const hamburgerBtn = document.querySelector('.hamburger-menu');
-            const spans = hamburgerBtn.querySelectorAll('span');
-            
-            mobileMenu.classList.toggle('active');
-            
-            if (mobileMenu.classList.contains('active')) {
-                spans[0].style.transform = 'rotate(45deg) translate(8px, 8px)';
-                spans[1].style.opacity = '0';
-                spans[2].style.transform = 'rotate(-45deg) translate(7px, -7px)';
-            } else {
-                spans[0].style.transform = 'none';
-                spans[1].style.opacity = '1';
-                spans[2].style.transform = 'none';
-            }
+        // Optimized Mobile Navigation - Deferred for better performance
+        function initMobileNav() {
+            const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+            const navLinks = document.querySelector('nav ul.nav-links');
+
+            if (!mobileNavToggle || !navLinks) return;
+
+            mobileNavToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('nav-active');
+            });
+
+            // Close mobile menu when link is clicked
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navLinks.classList.contains('nav-active')) {
+                        navLinks.classList.remove('nav-active');
+                    }
+                });
+            });
         }
 
-        document.addEventListener('click', function(event) {
-            const mobileMenu = document.querySelector('.mobile-menu');
-            const hamburgerBtn = document.querySelector('.hamburger-menu');
-            
-            if (!hamburgerBtn.contains(event.target) && !mobileMenu.contains(event.target) && mobileMenu.classList.contains('active')) {
-                toggleMobileMenu();
-            }
-        });
+        // Defer mobile nav initialization
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initMobileNav);
+        } else {
+            initMobileNav();
+        }
     </script>
 </body>
 </html> 

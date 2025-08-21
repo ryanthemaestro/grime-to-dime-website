@@ -1,8 +1,24 @@
 User-agent: *
 Allow: /
+
+# Disallow admin and sensitive pages
 Disallow: /thank-you.html
 Disallow: /unsubscribe/
 Disallow: /unsubscribed/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+
+# Allow important directories
+Allow: /blog/
+Allow: /locations/
+Allow: /landing/
+Allow: /images/
+Allow: /css/
+Allow: /js/
 
 # Sitemap location
 Sitemap: https://grimetodime.com/sitemap.xml
+
+# Additional sitemap for blog posts
+Sitemap: https://grimetodime.com/blog/sitemap.xml

@@ -8,7 +8,11 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-KGQDKQFZNF');
-        gtag('config', 'AW-11553122519');
+        gtag('config', 'AW-11553122519', {
+            'linker': {
+                'domains': ['grimetodime.com']
+            }
+        });
         gtag('config', 'AW-11553122519/JftTCI3O64QbENfR-oQr', {
             'phone_conversion_css_class': 'gfn',
             'phone_conversion_number': '(410) 300-6743'
@@ -1002,7 +1006,7 @@
 
     <!-- Sticky Mobile Bar (quick actions) -->
     <nav class="sticky-bar" aria-label="Quick actions">
-      <a class="btn call" href="tel:+14103006743" onclick="gtag('event', 'phone_call', {'event_category': 'Engagement', 'event_label': 'Mobile Sticky Bar'});" aria-label="Call Grime To Dime at 410-300-6743">
+      <a class="btn call gfn" href="tel:+14103006743" onclick="gtag('event', 'phone_call', {'event_category': 'Engagement', 'event_label': 'Mobile Sticky Bar'});" aria-label="Call Grime To Dime at 410-300-6743">
         <i class="fas fa-phone" aria-hidden="true" style="margin-right:8px"></i> Call
       </a>
       <a class="btn quote" href="#quoteForm" aria-label="Get a free junk removal quote">
@@ -1124,11 +1128,15 @@
                                 'event_label': 'Quote Request'
                             });
                             
-                            // Explicit Google Ads conversion tracking
+                            // Explicit Google Ads conversion tracking with enhanced parameters
                             gtag('event', 'conversion', {
                                 'send_to': 'AW-11553122519/0KjoCPG_6oQbENfR-oQr',
                                 'value': 1.0,
-                                'transaction_id': new Date().getTime().toString()
+                                'transaction_id': email + '_' + new Date().getTime().toString(),
+                                'user_data': {
+                                    'email': email,
+                                    'phone_number': phone.replace(/\D/g, '')
+                                }
                             });
                         }
                         

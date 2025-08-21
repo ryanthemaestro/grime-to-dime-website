@@ -47,6 +47,10 @@
             width: 100%;
         }
 
+        /* ==============================
+           Critical Above-the-Fold CSS
+           Header & Navigation
+           ============================== */
         header {
             background: #000;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
@@ -56,48 +60,13 @@
             z-index: 1000;
         }
 
-        nav {
+        .header-content-wrapper {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 1rem;
+            padding: 0.5rem 1rem;
             max-width: 1200px;
             margin: 0 auto;
-            width: 100%;
-        }
-
-        nav ul {
-            display: flex;
-            padding: 0;
-            margin: 0;
-            list-style: none;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo img {
-            height: 40px;
-            width: auto;
-            margin-right: 10px;
-        }
-
-        .logo a {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: white;
-            font-size: 1.4rem;
-            font-weight: bold;
-            padding: 5px 0;
-            white-space: nowrap;
-            transition: color 0.3s ease;
-        }
-
-        .logo a:hover {
-            color: #ff3333;
         }
 
         .nav-links {
@@ -107,9 +76,7 @@
             margin: 0;
         }
 
-        .nav-links li {
-            margin-left: 2rem;
-        }
+        .nav-links li { margin-left: 1.5rem; }
 
         .nav-links a {
             color: white;
@@ -120,14 +87,7 @@
             font-size: 0.9rem;
         }
 
-        .nav-links a:hover {
-            color: #ff0000;
-        }
-
-        /* Ensure proper spacing for navigation items */
-        nav ul.nav-links li:first-child {
-            margin-left: 0;
-        }
+        .nav-links a:hover { color: #ff0000; }
 
         .mobile-nav-toggle {
             background: none;
@@ -149,24 +109,49 @@
             transition: transform 0.3s ease, opacity 0.3s ease;
         }
 
-        .mobile-nav-toggle:hover span:nth-child(1) {
-            transform: translateY(-2px) rotate(10deg);
+        .logo {
+            display: flex;
+            align-items: center;
         }
 
-        .mobile-nav-toggle:hover span:nth-child(3) {
-            transform: translateY(2px) rotate(-10deg);
+        .logo img {
+            height: 50px;
+            width: auto;
+            margin-right: 12px;
+            object-fit: contain;
+            display: block;
+            max-width: none;
+            transition: transform 0.3s ease;
         }
 
-        .mobile-nav-toggle.nav-active span:nth-child(1) {
-            transform: rotate(45deg) translate(8px, 8px);
+        .logo img:hover {
+            transform: scale(1.05);
         }
 
-        .mobile-nav-toggle.nav-active span:nth-child(2) {
-            opacity: 0;
+        .logo a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            font-size: 1.4rem;
+            font-weight: bold;
+            padding: 5px 0;
+            white-space: nowrap;
+            transition: color 0.3s ease;
         }
 
-        .mobile-nav-toggle.nav-active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -7px);
+        .logo a:hover {
+            color: #ff3333;
+        }
+
+        @media (max-width: 768px) {
+            .logo img {
+                height: 40px;
+            }
+
+            .logo a {
+                font-size: 1.2rem;
+            }
         }
 
 
@@ -318,7 +303,7 @@
                 z-index: 998;
             }
             nav ul.nav-links.nav-active { display: flex; }
-            nav ul.nav-links li { width: 100%; text-align: center; margin-left: 0; }
+            nav ul.nav-links li { width: 100%; text-align: center; }
             nav ul.nav-links li a {
                 display: block;
                 padding: 1rem;
@@ -326,35 +311,6 @@
                 border-bottom: 1px solid #333;
             }
             .mobile-nav-toggle { display: block; z-index: 1000; }
-
-            .featured-post {
-                flex-direction: column;
-            }
-
-            .featured-post-image {
-                min-height: 250px;
-            }
-
-            .featured-post-content {
-                padding: 25px;
-            }
-
-            .blog-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .blog-hero {
-                padding: 40px 20px;
-            }
-
-            .blog-hero h1 {
-                font-size: 2rem;
-            }
-
-            .blog-container {
-                margin: 100px auto 30px;
-            }
         }
 
         @media (min-width: 769px) {
@@ -373,12 +329,6 @@
                 padding: 0 1rem;
                 color: white;
                 border: none;
-                text-transform: uppercase;
-                font-weight: 600;
-                font-size: 0.9rem;
-            }
-            nav ul.nav-links li a:hover {
-                color: #ff0000;
             }
         }
 
@@ -398,18 +348,18 @@
     <header>
         <div class="header-content-wrapper">
             <div class="logo">
-                <a href="/">
+                <a href="../">
                     <img src="../images/MASTERPARENT.png" alt="Grime To Dime Junk Removal Logo" width="50" height="50" decoding="async">
                     Grime To Dime
                 </a>
             </div>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#testimonials">Reviews</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="../#services">Services</a></li>
+                    <li><a href="../#about">About</a></li>
+                    <li><a href="../blog">Blog</a></li>
+                    <li><a href="../#testimonials">Reviews</a></li>
+                    <li><a href="../#contact">Contact</a></li>
                 </ul>
                 <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
                     <span></span>
@@ -509,7 +459,6 @@
 
             mobileNavToggle.addEventListener('click', () => {
                 navLinks.classList.toggle('nav-active');
-                mobileNavToggle.classList.toggle('nav-active');
             });
 
             // Close mobile menu when link is clicked
@@ -517,7 +466,6 @@
                 link.addEventListener('click', () => {
                     if (navLinks.classList.contains('nav-active')) {
                         navLinks.classList.remove('nav-active');
-                        mobileNavToggle.classList.remove('nav-active');
                     }
                 });
             });

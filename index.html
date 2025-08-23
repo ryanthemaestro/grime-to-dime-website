@@ -2620,7 +2620,9 @@
         #service-areas .feature-card {
             display: grid;
             grid-template-columns: 60px 1fr;
-            align-items: center;
+            align-items: flex-start;
+            min-height: 120px;
+            padding: 1.5rem;
         }
         #service-areas .feature-card h3 { margin: 0; }
         #service-areas .feature-card a {
@@ -2639,6 +2641,14 @@
             justify-self: start;
         }
         #service-areas .feature-card h3 { grid-column: 2; }
+        #service-areas .feature-card p {
+            grid-column: 2;
+            margin: 0.5rem 0 0 0;
+            line-height: 1.5;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            text-align: left;
+        }
         #service-areas .feature-card .feature-icon i {
             line-height: 1;          /* avoid font line-height affecting centering */
             display: inline-block;
@@ -2646,7 +2656,15 @@
 
         @media (max-width: 768px) {
             /* Tighter icon column on mobile to match smaller icon size */
-            #service-areas .feature-card { grid-template-columns: 50px 1fr; }
+            #service-areas .feature-card {
+                grid-template-columns: 50px 1fr;
+                min-height: 100px;
+                padding: 1rem;
+            }
+            #service-areas .feature-card p {
+                font-size: 0.9rem;
+                line-height: 1.4;
+            }
         }
 
         /* Final CTA consistency: match Transformations CTA to Testimonials CTA */

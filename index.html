@@ -312,7 +312,7 @@
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:wght@800&family=Open+Sans:wght@600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@800&family=Open+Sans:wght@600&display=swap"></noscript>
     <!-- Preload hero background for faster first paint -->
-    <link rel="preload" as="image" href="/images/optimized/lightellicottcity-optimized.png" fetchpriority="high">
+    <link rel="preload" as="image" href="/images/optimized/ellicottcitybridge-optimized.jpg" fetchpriority="high">
     
     <style>
         html, body {
@@ -1050,10 +1050,10 @@
             min-height: 100dvh;
             /* Use optimized WebP with PNG fallback */
             background-image:
-                linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-                url('/images/optimized/lightellicottcity-optimized.png');
-            background-size: 100% auto;
-            background-position: center 30%;
+                linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('/images/optimized/ellicottcitybridge-optimized.jpg');
+            background-size: cover;
+            background-position: center;
             background-repeat: no-repeat;
             display: flex;
             align-items: center;
@@ -1156,10 +1156,10 @@
                 padding-bottom: max(32px, env(safe-area-inset-bottom, 0px) + 24px);
                 /* Lighter mobile hero background to reduce LCP bytes */
                 background-image:
-                    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
-                    url('/images/optimized/lightellicottcity-optimized.png');
-                background-size: 100% auto;
-                background-position: center 35%;
+                    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+                    url('/images/optimized/ellicottcitybridge-optimized.jpg');
+                background-size: cover;
+                background-position: center;
                 background-repeat: no-repeat;
             }
 

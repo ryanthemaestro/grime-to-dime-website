@@ -1050,7 +1050,7 @@
             min-height: 100dvh;
             /* Use optimized WebP with PNG fallback */
             background-image:
-                linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
                 url('/images/optimized/ellicottcitybridge-optimized.jpg');
             background-size: cover;
             background-position: center;
@@ -1068,10 +1068,12 @@
             max-width: 900px;
             margin: 0 auto;
             color: #ffffff;
-            padding: 40px;
-            background: rgba(0, 0, 0, 0.3);
+            padding: 45px;
+            background: rgba(0, 0, 0, 0.4);
             border-radius: 15px;
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
             /* Ensure CTA at the bottom has breathing room */
             margin-bottom: 32px; /* fixed spacing to avoid viewport unit shifts */
         }
@@ -1082,7 +1084,8 @@
             line-height: 1.1;
             margin-bottom: 1rem;
             font-family: 'Roboto', sans-serif;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 255, 255, 0.1);
+            letter-spacing: -0.02em;
         }
 
         .hero h2 {
@@ -1091,7 +1094,8 @@
             line-height: 1.4;
             margin-bottom: 1.25rem;
             font-family: 'Open Sans', sans-serif;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+            opacity: 0.95;
         }
 
         .trust-signals { margin-bottom: 1.25rem; }
@@ -1119,20 +1123,22 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            background: #ff3333;
+            background: linear-gradient(135deg, #ff3333 0%, #e62e2e 100%);
             color: white;
-            padding: 14px 28px;
-            min-height: 48px;
+            padding: 16px 32px;
+            min-height: 52px;
             height: auto; /* override generic fixed height */
-            border-radius: 8px;
+            border-radius: 12px;
             font-size: 1.25rem;
             font-weight: 700;
             line-height: 1; /* ensure optical centering */
             text-decoration: none;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255, 51, 51, 0.3);
+            box-shadow: 0 6px 20px rgba(255, 51, 51, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1);
             border: none;
             cursor: pointer;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+            letter-spacing: 0.02em;
         }
 
         .cta-button:hover {
@@ -1149,7 +1155,7 @@
                 padding-bottom: max(32px, env(safe-area-inset-bottom, 0px) + 24px);
                 /* Lighter mobile hero background to reduce LCP bytes */
                 background-image:
-                    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
                     url('/images/optimized/ellicottcitybridge-optimized.jpg');
             }
 

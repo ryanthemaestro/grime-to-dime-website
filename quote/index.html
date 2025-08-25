@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KGQDKQFZNF"></script>
+    <!-- Defer Google Tag Manager for better performance -->
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-KGQDKQFZNF');
-        gtag('config', 'AW-11553122519', {
-            'linker': {
-                'domains': ['grimetodime.com']
-            }
-        });
-        gtag('config', 'AW-11553122519/JftTCI3O64QbENfR-oQr', {
-            'phone_conversion_css_class': 'gfn',
-            'phone_conversion_number': '(410) 300-6743'
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                var script = document.createElement('script');
+                script.async = true;
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=G-KGQDKQFZNF';
+                document.head.appendChild(script);
+
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-KGQDKQFZNF');
+                gtag('config', 'AW-11553122519', {
+                    'linker': {
+                        'domains': ['grimetodime.com']
+                    }
+                });
+                gtag('config', 'AW-11553122519/JftTCI3O64QbENfR-oQr', {
+                    'phone_conversion_css_class': 'gfn',
+                    'phone_conversion_number': '(410) 300-6743'
+                });
+            }, 3000); // Load after 3 seconds
         });
     </script>
     
@@ -26,14 +34,18 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../images/Faviconmaster.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../images/Faviconmaster.png">
     <link rel="shortcut icon" href="../images/Faviconmaster.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Defer Font Awesome to improve LCP -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
     <!-- Preload hero image (JPEG) for faster first paint -->
     <link rel="preload" as="image" href="../images/optimized/ellicottcitybridge-optimized.jpg" fetchpriority="high">
-    <!-- Performance preconnects -->
+    <!-- Performance preconnects and prefetch -->
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
     <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preconnect" href="https://connect.facebook.net" crossorigin>
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//www.gstatic.com">
     
     <style>
         /* Smooth scrolling across anchors */
@@ -46,11 +58,14 @@
             font-family: 'Arial', sans-serif;
         }
 
+        /* Optimize font loading and base body styles */
         body {
             line-height: 1.6;
             color: #333;
             background-color: #f9f9f9;
             overflow-x: hidden;
+            font-display: swap;
+            text-rendering: optimizeSpeed;
         }
 
         /* Header - Minimal for landing page */

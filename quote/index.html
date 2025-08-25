@@ -37,8 +37,7 @@
     <!-- Defer Font Awesome to improve LCP -->
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
-    <!-- Preload hero image (WebP) for faster first paint -->
-    <link rel="preload" as="image" href="../images/optimized/ellicottcitybridge-optimized.webp" fetchpriority="high">
+
     <!-- Performance preconnects and prefetch -->
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
     <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
@@ -123,11 +122,8 @@
 
         /* Hero Section */
         .hero {
-            background-image:
-                linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                url('../images/optimized/ellicottcitybridge-optimized.webp');
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            background-attachment: fixed;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -135,14 +131,7 @@
             position: relative;
         }
 
-        /* Fallback for browsers that don't support WebP */
-        @supports not (background-image: url('data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAACQAQCdASoBAAEAAQAcJaQAA3AA/v89MDQAA')) {
-            .hero {
-                background-image:
-                    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                    url('../images/optimized/ellicottcitybridge-optimized.jpg');
-            }
-        }
+
 
         .hero-container {
             max-width: 1200px;

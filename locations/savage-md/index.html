@@ -17,6 +17,67 @@
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:wght@800&family=Open+Sans:wght@600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@800&family=Open+Sans:wght@600&display=swap"></noscript>
     <link rel="preload" as="image" href="/images/optimized/warehouse-after-junk-removal-hero-q60.webp" fetchpriority="high">
+
+    <!-- Google tag (gtag.js) - deferred for performance -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ dataLayer.push(arguments); }
+        (function(){
+            // Detect debug mode via query string (?debug=1)
+            var __debug = /[?&]debug=1(?!\d)/.test(location.search);
+            window.__gaDebug = __debug;
+            function loadGA(){
+                if (window.__gaLoaded) return; window.__gaLoaded = true;
+                var s = document.createElement('script');
+                s.src = 'https://www.googletagmanager.com/gtag/js?id=G-KGQDKQFZNF';
+                s.async = true;
+                s.onload = function(){
+        gtag('js', new Date());
+        gtag('config', 'G-KGQDKQFZNF', {
+            'cookie_flags': 'SameSite=None;Secure',
+            'cookie_domain': 'grimetodime.com',
+                        'send_page_view': true,
+                    });
+                    // Google Ads configuration
+                    gtag('config', 'AW-11553122519');
+                    gtag('config', 'AW-11553122519/JftTCI3O64QbENfR-oQr', {
+                        'phone_conversion_css_class': 'gfn',
+                        'phone_conversion_number': '(410) 300-6743',
+                        'debug_mode': __debug
+                    });
+                };
+                document.head.appendChild(s);
+            }
+            // If debugging, load immediately; otherwise defer for performance
+            if (__debug) {
+                loadGA();
+            } else if ('requestIdleCallback' in window) {
+                requestIdleCallback(loadGA, { timeout: 3000 });
+            } else {
+                window.addEventListener('load', loadGA);
+            }
+        })();
+    </script>
+
+    <!-- Google tag (gtag.js) event - delayed navigation helper -->
+    <script>
+        function gtagSendEvent(url) {
+            var callback = function () {
+                if (typeof url === 'string') {
+                    window.location = url;
+                }
+            };
+            gtag('event', 'select_content', {
+                'content_type': 'cta',
+                'event_label': 'CTA Click',
+                'link_url': url,
+                'debug_mode': (window.__gaDebug === true),
+                'event_callback': callback,
+                'event_timeout': 2000
+            });
+            return false;
+        }
+    </script>
 </head>
 <body class="page-location location-savage">
     <header>

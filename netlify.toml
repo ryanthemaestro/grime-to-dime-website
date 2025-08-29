@@ -12,10 +12,31 @@
   to = "/unsubscribed/"
   status = 301
 
-# Blog category redirects - redirect to main blog page with anchor
+# Blog category redirects - redirect to main blog page
 [[redirects]]
   from = "/blog?category=*"
-  to = "/blog"
+  to = "/blog/"
+  status = 302
+
+# Specific category URL redirects (catch remaining GSC detected URLs)
+[[redirects]]
+  from = "/blog/?category=recycling"
+  to = "/blog/"
+  status = 302
+
+[[redirects]]
+  from = "/blog/?category=diy"
+  to = "/blog/"
+  status = 302
+
+[[redirects]]
+  from = "/blog?category=recycling"
+  to = "/blog/"
+  status = 302
+
+[[redirects]]
+  from = "/blog?category=diy"
+  to = "/blog/"
   status = 302
 
 # Blog post trailing slash redirects

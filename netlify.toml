@@ -11,3 +11,36 @@
   from = "/unsubscribed"
   to = "/unsubscribed/"
   status = 301
+
+# Blog category redirects - redirect to main blog page with anchor
+[[redirects]]
+  from = "/blog?category=*"
+  to = "/blog"
+  status = 302
+
+# Blog post trailing slash redirects
+[[redirects]]
+  from = "/blog/10-items-you-didnt-know-could-be-recycled"
+  to = "/blog/10-items-you-didnt-know-could-be-recycled/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/upcycling-guide"
+  to = "/blog/upcycling-guide/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/winter-organization-tips"
+  to = "/blog/winter-organization-tips/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/end-of-summer-deep-clean"
+  to = "/blog/end-of-summer-deep-clean/"
+  status = 301
+
+# Form redirect - ensure proper handling
+[[redirects]]
+  from = "/form"
+  to = "/quote/"
+  status = 302

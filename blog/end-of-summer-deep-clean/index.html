@@ -508,6 +508,34 @@
       "keywords": "end of summer cleaning, seasonal deep clean, Howard County cleaning, junk removal, home organization"
     }
     </script>
+
+    <!-- Breadcrumb Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://grimetodime.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://grimetodime.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "End-of-Summer Deep Clean Guide",
+          "item": "https://grimetodime.com/blog/end-of-summer-deep-clean/"
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
     <header>
@@ -734,37 +762,6 @@
     </article>
 
     <script>
-        // Add structured data for breadcrumbs
-        const breadcrumbsSchema = {
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-                {
-                    "@type": "ListItem",
-                    "position": 1,
-                    "name": "Home",
-                    "item": "https://grimetodime.com/"
-                },
-                {
-                    "@type": "ListItem",
-                    "position": 2,
-                    "name": "Blog",
-                    "item": "https://grimetodime.com/blog"
-                },
-                {
-                    "@type": "ListItem",
-                    "position": 3,
-                    "name": "End-of-Summer Deep Clean Guide",
-                    "item": "https://grimetodime.com/blog/end-of-summer-deep-clean"
-                }
-            ]
-        };
-
-        const script = document.createElement('script');
-        script.type = 'application/ld+json';
-        script.text = JSON.stringify(breadcrumbsSchema);
-        document.head.appendChild(script);
-
         // Optimized Mobile Navigation
         function initMobileNav() {
             const mobileNavToggle = document.querySelector('.mobile-nav-toggle');

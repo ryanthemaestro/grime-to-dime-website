@@ -2,15 +2,7 @@
   publish = "."
   command = ""  # No build command needed for static HTML 
 
-[[redirects]]
-  from = "/unsubscribe"
-  to = "/unsubscribe/"
-  status = 301
 
-[[redirects]]
-  from = "/unsubscribed"
-  to = "/unsubscribed/"
-  status = 301
 
 # Blog category redirects - redirect to main blog page
 [[redirects]]

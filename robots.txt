@@ -3,8 +3,6 @@ Allow: /
 
 # Disallow admin and sensitive pages
 Disallow: /thank-you.html
-Disallow: /unsubscribe/
-Disallow: /unsubscribed/
 Disallow: /admin/
 Disallow: /private/
 Disallow: /tmp/

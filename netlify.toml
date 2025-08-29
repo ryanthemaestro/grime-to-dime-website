@@ -39,6 +39,37 @@
   to = "/blog/"
   status = 302
 
+# Additional specific category URL redirects (new GSC detected URLs)
+[[redirects]]
+  from = "/blog/?category=sustainability"
+  to = "/blog/"
+  status = 302
+
+[[redirects]]
+  from = "/blog/?category=organization"
+  to = "/blog/"
+  status = 302
+
+[[redirects]]
+  from = "/blog/?category=cleaning"
+  to = "/blog/"
+  status = 302
+
+[[redirects]]
+  from = "/blog?category=sustainability"
+  to = "/blog/"
+  status = 302
+
+[[redirects]]
+  from = "/blog?category=organization"
+  to = "/blog/"
+  status = 302
+
+[[redirects]]
+  from = "/blog?category=cleaning"
+  to = "/blog/"
+  status = 302
+
 # Blog post trailing slash redirects
 [[redirects]]
   from = "/blog/10-items-you-didnt-know-could-be-recycled"

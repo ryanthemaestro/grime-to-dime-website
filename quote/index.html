@@ -50,6 +50,7 @@
     <style>
         /* Smooth scrolling across anchors */
         html { scroll-behavior: smooth; }
+        :root { --header-h: 64px; }
         /* Reset and base styles */
         * {
             margin: 0;
@@ -66,6 +67,7 @@
             overflow-x: hidden;
             font-display: swap;
             text-rendering: optimizeSpeed;
+            padding-top: var(--header-h); /* Prevent fixed header overlap */
         }
 
         /* Header - Minimal for landing page */
@@ -185,6 +187,8 @@
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
+        /* Ensure anchor scroll positions account for the fixed header */
+        #quoteForm { scroll-margin-top: var(--header-h); }
 
         .quote-form-container h2 {
             text-align: center;
@@ -451,7 +455,6 @@
         /* Sticky mobile bar */
         .sticky-bar { position: sticky; bottom: 0; left: 0; right: 0; display: none; background: #111; z-index: 999; padding: 10px; gap: 10px; box-shadow: 0 -6px 18px rgba(0,0,0,.18); }
         .sticky-bar .btn { display: inline-flex; align-items:center; justify-content:center; height: 48px; border-radius: 8px; font-weight: 700; flex: 1 1 0; text-decoration: none; color: #fff; text-align: center; }
-        .sticky-bar .btn.call { background:#222; border:1px solid #444; }
         .sticky-bar .btn.quote { background:#ff3333; }
         .sticky-bar .btn.sms { background:#333; border:1px solid #444; }
         .sticky-bar .btn:active { transform: translateY(1px); }
@@ -813,6 +816,24 @@
             return false;
         }
     </script>
+    <script>
+        // Smooth scroll to anchors with header offset
+        document.addEventListener('DOMContentLoaded', function() {
+            var header = document.querySelector('header');
+            var headerH = function() { return header ? header.getBoundingClientRect().height : 0; };
+            function scrollWithOffset(target) {
+                if (!target) return;
+                var y = target.getBoundingClientRect().top + window.pageYOffset - headerH();
+                window.scrollTo({ top: y, behavior: 'smooth' });
+            }
+            document.querySelectorAll('a[href="#quoteForm"]').forEach(function(a){
+                a.addEventListener('click', function(ev){
+                    ev.preventDefault();
+                    scrollWithOffset(document.getElementById('quoteForm'));
+                });
+            });
+        });
+    </script>
 </head>
 <body>
     <header>
@@ -1033,9 +1054,6 @@
 
     <!-- Sticky Mobile Bar (quick actions) -->
     <nav class="sticky-bar" aria-label="Quick actions">
-      <a class="btn call gfn" href="tel:+14103006743" onclick="gtag('event', 'phone_call', {'event_category': 'Engagement', 'event_label': 'Mobile Sticky Bar'});" aria-label="Call Grime To Dime at 410-300-6743">
-        <i class="fas fa-phone" aria-hidden="true" style="margin-right:8px"></i> Call
-      </a>
       <a class="btn quote" href="#quoteForm" aria-label="Get a free junk removal quote">
         <i class="fas fa-clipboard-list" aria-hidden="true" style="margin-right:8px"></i> Get Free Quote
       </a>

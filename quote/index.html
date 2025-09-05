@@ -280,6 +280,9 @@
                 margin: 2rem auto;
             }
 
+            /* Light trim for mobile: show only top 3 bullets */
+            .hero-benefits li:nth-child(n+4) { display: none; }
+
             .quote-form-container {
                 margin: 0 1rem;
             }
@@ -287,6 +290,14 @@
             .phone-number span {
                 display: none;
             }
+
+            /* Hide large badge on mobile; show micro trust line instead */
+            .google-rating-badge { display: none; }
+            .micro-trust { display: block; font-size: 0.95rem; opacity: 0.9; margin-top: .5rem; color: #fff; }
+            /* Hide service areas line on mobile */
+            .service-areas { display: none; }
+            /* Downweight SMS link */
+            .sms-link { font-size: .95rem; opacity: .9; }
         }
 
         /* Process Section Styles */
@@ -869,12 +880,13 @@
                     <span class="stars">★★★★★</span>
                     <span class="badge-text">on Google • 10 reviews</span>
                 </div>
-                <p style="margin-top:.75rem;font-weight:600">Proudly serving Howard County and nearby.</p>
+                <p class="micro-trust" style="display:none">5.0 on Google • 10 reviews</p>
+                <p class="service-areas" style="margin-top:.75rem;font-weight:600">Proudly serving Howard County and nearby.</p>
                 <p style="margin-top:1rem">
                     <a href="#quoteForm" class="cta-button" style="display:inline-block">Get My Free Quote — Takes 60 Seconds</a>
                 </p>
-                <p style="margin-top:.5rem">
-                    <a href="sms:+14103006743?body=Hi%2C%20I%E2%80%99d%20like%20a%20junk%20removal%20quote.%20My%20items%20are%3A%20" style="color:#fff; text-decoration: underline;">Or text us a photo for a faster quote</a>
+                <p class="sms-link" style="margin-top:.5rem">
+                    <a href="sms:+14103006743?body=Hi%2C%20I%E2%80%99d%20like%20a%20junk%20removal%20quote.%20My%20items%20are%3A%20" style="color:#fff; text-decoration: underline;">Prefer text? Send a photo for a faster quote</a>
                 </p>
                 
                 <ul class="hero-benefits">

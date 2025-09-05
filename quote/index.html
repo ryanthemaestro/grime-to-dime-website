@@ -453,6 +453,7 @@
         .sticky-bar .btn { display: inline-flex; align-items:center; justify-content:center; height: 48px; border-radius: 8px; font-weight: 700; flex: 1 1 0; text-decoration: none; color: #fff; text-align: center; }
         .sticky-bar .btn.call { background:#222; border:1px solid #444; }
         .sticky-bar .btn.quote { background:#ff3333; }
+        .sticky-bar .btn.sms { background:#333; border:1px solid #444; }
         .sticky-bar .btn:active { transform: translateY(1px); }
         @media (max-width: 768px) { .sticky-bar { display: grid; grid-template-columns: 1fr 1fr; } }
 
@@ -814,6 +815,20 @@
     </script>
 </head>
 <body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="/">
+                    <img src="../images/Faviconmaster.png" alt="Grime To Dime logo">
+                    Grime To Dime
+                </a>
+            </div>
+            <a href="tel:+14103006743" class="phone-number gfn" aria-label="Call Grime To Dime at 410-300-6743">
+                <i class="fas fa-phone" aria-hidden="true"></i>
+                <span>(410) 300-6743</span>
+            </a>
+        </div>
+    </header>
     <section class="hero">
         <div class="hero-container">
             <div class="hero-content">
@@ -829,6 +844,9 @@
                 <p style="margin-top:.75rem;font-weight:600">Proudly serving Howard County and nearby.</p>
                 <p style="margin-top:1rem">
                     <a href="#quoteForm" class="cta-button" style="display:inline-block">Get My Free Quote — Takes 60 Seconds</a>
+                </p>
+                <p style="margin-top:.5rem">
+                    <a href="sms:+14103006743?body=Hi%2C%20I%E2%80%99d%20like%20a%20junk%20removal%20quote.%20My%20items%20are%3A%20" style="color:#fff; text-decoration: underline;">Or text us a photo for a faster quote</a>
                 </p>
                 
                 <ul class="hero-benefits">
@@ -858,8 +876,8 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="_replyto" required autocomplete="email" autocapitalize="off" autocorrect="off" spellcheck="false" inputmode="email" enterkeyhint="next">
+                        <label for="email">Email Address <span style="font-weight:400;color:#777">(optional)</span></label>
+                        <input type="email" id="email" name="_replyto" autocomplete="email" autocapitalize="off" autocorrect="off" spellcheck="false" inputmode="email" enterkeyhint="next">
                     </div>
                     
                     
@@ -869,6 +887,7 @@
                         <textarea id="description" name="_message" placeholder="Please describe the items you need removed..." enterkeyhint="send"></textarea>
                     </div>
                     
+                    <p class="field-hint" aria-live="polite">We reply in 10–15 minutes during business hours.</p>
                     <button type="submit" class="submit-button">Get My Free Quote — Takes 60 Seconds</button>
                     
                     <p class="privacy-note">
@@ -1020,6 +1039,9 @@
       <a class="btn quote" href="#quoteForm" aria-label="Get a free junk removal quote">
         <i class="fas fa-clipboard-list" aria-hidden="true" style="margin-right:8px"></i> Get Free Quote
       </a>
+      <a class="btn sms" href="sms:+14103006743?body=Hi%2C%20I%E2%80%99d%20like%20a%20junk%20removal%20quote.%20My%20items%20are%3A%20" aria-label="Text us a photo for a faster quote">
+        <i class="fas fa-comment-dots" aria-hidden="true" style="margin-right:8px"></i> Text Photo
+      </a>
     </nav>
 
   <script>
@@ -1082,7 +1104,7 @@
             const phone = document.getElementById('phone').value;
             const email = document.getElementById('email').value;
             
-            if (!name || !phone || !email) {
+            if (!name || !phone) {
                 isValid = false;
                 alert('Please fill in all required fields.');
                 return false;
@@ -1090,7 +1112,7 @@
             
             // Email validation
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
+            if (email && !emailRegex.test(email)) {
                 isValid = false;
                 alert('Please enter a valid email address.');
                 return false;

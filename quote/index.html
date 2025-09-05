@@ -817,10 +817,17 @@
         }
     </script>
     <script>
-        // Smooth scroll to anchors with header offset
+        // Smooth scroll to anchors with header offset and dynamic header height padding
         document.addEventListener('DOMContentLoaded', function() {
             var header = document.querySelector('header');
-            var headerH = function() { return header ? header.getBoundingClientRect().height : 0; };
+            function headerH() { return header ? Math.ceil(header.getBoundingClientRect().height) : 0; }
+            function setHeaderOffsetVar() {
+                var h = headerH();
+                if (h) document.documentElement.style.setProperty('--header-h', h + 'px');
+            }
+            setHeaderOffsetVar();
+            window.addEventListener('resize', setHeaderOffsetVar);
+
             function scrollWithOffset(target) {
                 if (!target) return;
                 var y = target.getBoundingClientRect().top + window.pageYOffset - headerH();

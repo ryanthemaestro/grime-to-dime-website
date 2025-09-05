@@ -1244,10 +1244,6 @@
                 <div class="service-content">
                     <h3>Residential Junk Removal</h3>
                     <p>Whole-home, apartment, attic, and garage cleanouts. We remove furniture, appliances, mattresses, and more with upfront pricing.</p>
-                    <a href="#contact" class="service-cta">
-                        <span class="cta-text">Get Your Free Quote Today</span>
-                        <span class="cta-hover">Get Your Free Quote Now</span>
-                    </a>
                 </div>
             </div>
             <div class="service-card">
@@ -1257,10 +1253,6 @@
                 <div class="service-content">
                     <h3>Commercial Junk Removal</h3>
                     <p>Office, retail, and warehouse cleanouts with minimal downtime. Flexible scheduling and clear, upfront pricing for businesses.</p>
-                    <a href="#contact" class="service-cta">
-                        <span class="cta-text">Get Your Free Quote Today</span>
-                        <span class="cta-hover">Get Your Free Quote Now</span>
-                    </a>
                 </div>
             </div>
             <div class="service-card">
@@ -1270,10 +1262,6 @@
                 <div class="service-content">
                     <h3>Eco-Friendly Junk Removal</h3>
                     <p>Donation first. Recycle what we can. Clear, responsible disposal that keeps Howard County cleaner and greener.</p>
-                    <a href="#contact" class="service-cta">
-                        <span class="cta-text">Get Your Free Quote Today</span>
-                        <span class="cta-hover">Get Your Free Quote Now</span>
-                    </a>
                 </div>
             </div>
             <div class="service-card">
@@ -1283,14 +1271,41 @@
                 <div class="service-content">
                     <h3>Same-Day Junk Removal</h3>
                     <p>Need it gone today? Call by noon for same‑day or next‑day pickup when available. On‑time arrivals across Howard County.</p>
-                    <a href="#contact" class="service-cta">
-                        <span class="cta-text">Get Your Free Quote Today</span>
-                        <span class="cta-hover">Get Your Free Quote Now</span>
-                    </a>
                 </div>
             </div>
         </div>
     </section>
+
+    <script>
+    // Capture attribution (GCLID + UTM + referrer) and populate hidden fields on the contact form
+    (function(){
+      function qp(n){ try { return new URLSearchParams(window.location.search).get(n) || ''; } catch(e){ return ''; } }
+      function setCookie(name,value,maxAge){ try { document.cookie = name+'='+encodeURIComponent(value||'')+'; path=/; samesite=Lax'+(location.protocol==='https:'?'; secure':'')+(maxAge?'; max-age='+maxAge:''); } catch(e){} }
+      function getCookie(name){ var m=document.cookie.match(new RegExp('(?:^|; )'+name.replace(/([.$?*|{}()\[\]\\\/\+^])/g,'\\$1')+'=([^;]*)')); return m?decodeURIComponent(m[1]):''; }
+      function storeGclid(){ var g=qp('gclid'); if(g){ try{ localStorage.setItem('gclid', g);}catch(e){} setCookie('gclid', g, 60*60*24*90);} }
+      function getGclid(){ try{ var v=localStorage.getItem('gclid'); if(v) return v; }catch(e){} return getCookie('gclid')||''; }
+      function ensure(name,val,form){ var el=form.querySelector('[name="'+name+'"]'); if(!el){ el=document.createElement('input'); el.type='hidden'; el.name=name; form.appendChild(el);} if(val) el.value=val; }
+      document.addEventListener('DOMContentLoaded', function(){
+        storeGclid();
+        var form = document.getElementById('lead-form');
+        if(!form) return;
+        ensure('gclid', getGclid(), form);
+        ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(function(k){ ensure(k, qp(k), form); });
+        ensure('referrer', document.referrer || '', form);
+        // Basic front-end validation: require name + phone; email optional but if present must be valid
+        form.addEventListener('submit', function(ev){
+          var name = document.getElementById('name');
+          var phone = document.getElementById('phone');
+          var email = document.getElementById('email');
+          var emailVal = email && email.value ? email.value.trim() : '';
+          var ok = true;
+          if(!name.value.trim() || !phone.value.trim()) ok=false;
+          if(emailVal){ var re=/^[^\s@]+@[^\s@]+\.[^\s@]+$/; if(!re.test(emailVal)) ok=false; }
+          if(!ok){ ev.preventDefault(); alert('Please provide your name and phone. If you include an email, make sure it’s valid.'); }
+        });
+      });
+    })();
+    </script>
 
 
     <style>
@@ -1623,15 +1638,17 @@
                 </div>
             </div>
             <div class="local-seo-content" style="text-align: center; margin-top: 3rem; padding: 2rem; background: #f8f9fa; border-radius: 10px;">
-                <h3 style="color: #222; margin-bottom: 1rem;">Why Choose Our Superior Junk Removal Service?</h3>
-                <p style="font-size: 1.1rem; color: #444; margin-bottom: 1.5rem;">Experience the unmatched advantage of proven local expertise. Swift, dependable service with time-tested methods that exceed expectations. Your trustworthy solution for exceptional results you can count on.</p>
-                <a href="tel:4103006743" style="display: inline-block; background: #ff3333; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold;">Call Now for Your Free Quote</a>
+                <h3 style="color: #222; margin-bottom: 1rem;">Why Choose Us</h3>
+                <p style="font-size: 1.1rem; color: #444; margin-bottom: 0;">Same‑day or next‑day availability. Upfront prices — no surprise fees. Licensed & insured.</p>
             </div>
         </div>
     </section>
 
     <section id="transformations" class="transformations">
         <h2>Howard County Junk Removal Transformations</h2>
+        <p style="text-align:center;margin-top:-1rem;margin-bottom:2rem;color:#444;">
+            <a href="https://www.google.com/search?q=Grime+To+Dime+Elkridge+MD+reviews" target="_blank" rel="noopener nofollow" style="color:#444;text-decoration:underline">5.0 on Google • 10 reviews</a>
+        </p>
         <div class="gallery-container">
             <div class="gallery-section">
                 <h3>Before & After</h3>
@@ -1691,11 +1708,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="section-cta-container">
-                    <a href="#contact" class="section-cta">
-                        Get Free Quote
-                    </a>
-                </div>
+                
             </div>
         </div>
     </section>
@@ -2043,12 +2056,7 @@
                     <p class="testimonial-author">- James B.<br>Odenton, MD</p>
                 </div>
             </div>
-            <div class="testimonials-cta">
-                <a href="#contact" class="cta-button">
-                    <span class="cta-text">Get Free Quote</span>
-                    <span class="cta-hover">Get Free Quote</span>
-                </a>
-            </div>
+            
         </div>
     </section>
 
@@ -2182,34 +2190,7 @@
             }
         }
 
-        .testimonials-cta {
-            text-align: center;
-            margin-top: 0.75rem;
-            padding-bottom: 0;
-        }
-
-        .testimonials-cta .cta-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: #ff0000;
-            color: white;
-            padding: 16px 32px;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            text-decoration: none;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            min-width: 200px;
-            box-shadow: 0 4px 15px rgba(255, 51, 51, 0.2);
-        }
-
-        .testimonials-cta .cta-button:hover {
-            background: #cc0000;
-            box-shadow: 0 6px 20px rgba(255, 51, 51, 0.3);
-        }
+        /* testimonials-cta removed to streamline CTAs */
 
         .testimonials-cta .cta-text,
         .testimonials-cta .cta-hover {
@@ -2947,11 +2928,19 @@
                 <div class="form-header">
                     <i class="fas fa-paper-plane form-icon"></i>
                     <h3>Send Us a Message</h3>
-                    <p class="form-tagline">Get a quick response to your inquiry</p>
+                    <p class="form-tagline">We reply in 10–15 minutes during business hours</p>
                 </div>
                 <input type="hidden" name="_subject" value="New Contact from Grime To Dime Website">
                 <input type="hidden" name="_next" value="https://grimetodime.com/thank-you.html">
                 <input type="text" name="_gotcha" style="display:none">
+                <!-- Attribution & tracking fields populated by script -->
+                <input type="hidden" name="gclid">
+                <input type="hidden" name="utm_source">
+                <input type="hidden" name="utm_medium">
+                <input type="hidden" name="utm_campaign">
+                <input type="hidden" name="utm_term">
+                <input type="hidden" name="utm_content">
+                <input type="hidden" name="referrer">
                 <div class="form-row">
                     <div class="form-group">
                         <label for="name">Your Name</label>
@@ -2959,12 +2948,12 @@
                     </div>
                     <div class="form-group">
                         <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="_phone" placeholder="(410) 555-1234">
+                        <input type="tel" id="phone" name="_phone" placeholder="(410) 555-1234" required pattern="[\d\-\+\(\)\s]{10,}">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="_replyto" placeholder="johnsmith@example.com" required>
+                    <label for="email">Email Address <span style="font-weight:400;color:#777">(optional)</span></label>
+                    <input type="email" id="email" name="_replyto" placeholder="johnsmith@example.com">
                 </div>
                 <div class="form-group">
                     <label for="service">Service Needed</label>
@@ -2999,7 +2988,7 @@
                 <button type="submit" class="submit-button">
                     <i class="fas fa-paper-plane"></i> Send Message
                 </button>
-                <p class="form-note">We typically respond within 1 business day</p>
+                <p class="form-note">Prefer text? <a href="sms:+14103006743?body=Hi%2C%20I%E2%80%99d%20like%20a%20junk%20removal%20quote.%20My%20items%20are%3A%20">Send a photo for a faster quote</a></p>
             </form>
         </div>
     </section>

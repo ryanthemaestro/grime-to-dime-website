@@ -1457,14 +1457,31 @@
     <script>
     document.addEventListener('DOMContentLoaded', function(){
         var box = document.getElementById('description');
+        function getLines(){ return (box ? (box.value||'') : '').split(/?
+/).map(function(l){return l.trim();}).filter(Boolean); }
+        function setLines(lines){ if (box) box.value = lines.join('
+'); }
         document.querySelectorAll('.quick-chip').forEach(function(btn){
+            btn.setAttribute('aria-pressed','false');
             btn.addEventListener('click', function(){
                 if (!box) return;
-                var v = (box.value||'').trim();
-                var toAdd = this.getAttribute('data-insert') || '';
-                if (!toAdd) return;
-                box.value = v ? (v + "
-" + toAdd) : toAdd;
+                var label = this.getAttribute('data-insert') || '';
+                if (!label) return;
+                var lines = getLines();
+                var idx = lines.indexOf(label);
+                var selecting = !this.classList.contains('selected');
+                if (selecting){
+                    this.classList.add('selected');
+                    this.setAttribute('aria-pressed','true');
+                    if (idx === -1) {
+                        lines.push(label); }
+                } else {
+                    this.classList.remove('selected');
+                    this.setAttribute('aria-pressed','false');
+                    if (idx !== -1) {
+                        lines.splice(idx,1); }
+                }
+                setLines(lines);
                 box.focus();
             });
         });

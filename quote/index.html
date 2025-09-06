@@ -219,9 +219,11 @@
         .contact-preference { display:flex; gap:1rem; flex-wrap:wrap; }
         .contact-preference .radio { display:inline-flex; align-items:center; gap:.5rem; background:#f8f9fa; border:1px solid #e8eaed; border-radius:8px; padding:.6rem .9rem; cursor:pointer; }
         .contact-preference input { width:1.1rem; height:1.1rem; }
-        .quick-chips { display:flex; flex-wrap:wrap; gap:.5rem; margin:.35rem 0 .25rem; }
-        .quick-chip { background:#f1f3f5; border:1px solid #e8eaed; color:#222; border-radius:999px; padding:.45rem .8rem; font-weight:600; cursor:pointer; }
+        .quick-chips { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0 .35rem; }
+        .quick-chip { display:inline-block; background:#f1f3f5; border:1px solid #e8eaed; color:#222; border-radius:999px; padding:.5rem .9rem; font-weight:600; cursor:pointer; user-select:none; }
         .quick-chip:active { transform: translateY(1px); }
+        .quick-chip.selected { background:#ff3333; border-color:#ff3333; color:#fff; }
+        .quick-chip:focus-visible { outline:3px solid #ff3333; outline-offset:2px; }
 
 
         .form-group {

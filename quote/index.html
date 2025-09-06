@@ -213,6 +213,17 @@
             gap: 1rem;
         }
 
+        /* Senior-friendly touch targets */
+        .quote-form input, .quote-form textarea, .quote-form select { font-size: 1.05rem; }
+        .submit-button { font-size: 1.1rem; min-height: 52px; }
+        .contact-preference { display:flex; gap:1rem; flex-wrap:wrap; }
+        .contact-preference .radio { display:inline-flex; align-items:center; gap:.5rem; background:#f8f9fa; border:1px solid #e8eaed; border-radius:8px; padding:.6rem .9rem; cursor:pointer; }
+        .contact-preference input { width:1.1rem; height:1.1rem; }
+        .quick-chips { display:flex; flex-wrap:wrap; gap:.5rem; margin:.35rem 0 .25rem; }
+        .quick-chip { background:#f1f3f5; border:1px solid #e8eaed; color:#222; border-radius:999px; padding:.45rem .8rem; font-weight:600; cursor:pointer; }
+        .quick-chip:active { transform: translateY(1px); }
+
+
         .form-group {
             margin-bottom: 1rem;
         }
@@ -930,12 +941,32 @@
                         <label for="email">Email Address <span style="font-weight:400;color:#777">(optional)</span></label>
                         <input type="email" id="email" name="_replyto" autocomplete="email" autocapitalize="off" autocorrect="off" spellcheck="false" inputmode="email" enterkeyhint="next">
                     </div>
-                    
-                    
-                    
+
+                    <div class="form-group">
+                        <label>Preferred Contact</label>
+                        <div class="contact-preference" role="group" aria-label="Preferred contact method">
+                            <label class="radio"><input type="radio" name="_contact_pref" value="Text" checked> Text</label>
+                            <label class="radio"><input type="radio" name="_contact_pref" value="Call"> Call</label>
+                        </div>
+                    </div>
+
                     <div class="form-group">
                         <label for="description">What items need removal?</label>
+                        <div class="quick-chips" aria-label="Quick add items">
+                            <button type="button" class="quick-chip" data-insert="Furniture removal">Furniture</button>
+                            <button type="button" class="quick-chip" data-insert="Appliance removal">Appliances</button>
+                            <button type="button" class="quick-chip" data-insert="Whole‑home cleanout">Cleanout</button>
+                            <button type="button" class="quick-chip" data-insert="Yard waste">Yard Waste</button>
+                            <button type="button" class="quick-chip" data-insert="Mattress removal">Mattress</button>
+                            <button type="button" class="quick-chip" data-insert="Hot tub removal">Hot Tub</button>
+                        </div>
                         <textarea id="description" name="_message" placeholder="Please describe the items you need removed..." enterkeyhint="send"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="photo">Add a Photo (optional)</label>
+                        <input type="file" id="photo" name="attachment" accept="image/*" capture="environment">
+                        <div class="field-hint">A photo can speed up your quote.</div>
                     </div>
                     
                     <p class="field-hint" aria-live="polite">We reply in 10–15 minutes during business hours.</p>
@@ -1418,6 +1449,24 @@
         {"@type":"Question","name":"How much does junk removal cost?","acceptedAnswer":{"@type":"Answer","text":"Pricing is upfront and based on volume. Get a free quote for an accurate estimate with no hidden fees."}}
       ]
     }
+    </script>
+
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function(){
+        var box = document.getElementById('description');
+        document.querySelectorAll('.quick-chip').forEach(function(btn){
+            btn.addEventListener('click', function(){
+                if (!box) return;
+                var v = (box.value||'').trim();
+                var toAdd = this.getAttribute('data-insert') || '';
+                if (!toAdd) return;
+                box.value = v ? (v + "
+" + toAdd) : toAdd;
+                box.focus();
+            });
+        });
+    });
     </script>
 
 </body>

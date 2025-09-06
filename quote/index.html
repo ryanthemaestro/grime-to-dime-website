@@ -218,11 +218,11 @@
         .submit-button { font-size: 1.1rem; min-height: 52px; }
         .contact-preference { display:flex; gap:1rem; flex-wrap:wrap; }
         .contact-preference .radio { display:inline-flex; align-items:center; gap:.5rem; background:#f8f9fa; border:1px solid #e8eaed; border-radius:8px; padding:.6rem .9rem; cursor:pointer; }
-        .contact-preference input { width:1.1rem; height:1.1rem; }
-        .quick-chips { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0 .35rem; }
-        .quick-chip { display:inline-block; background:#f1f3f5; border:1px solid #e8eaed; color:#222; border-radius:999px; padding:.5rem .9rem; font-weight:600; cursor:pointer; user-select:none; }
+        .contact-preference input { width:1.25rem; height:1.25rem; accent-color:#ff3333; }
+        .quick-chips { display:flex; flex-wrap:wrap; gap:.6rem; margin:.75rem 0 .5rem; }
+        .quick-chip { display:inline-block; -webkit-appearance:none; appearance:none; background:#f1f3f5; border:1px solid #e8eaed; color:#222; border-radius:999px; padding:.6rem 1rem; font-weight:700; font-size:1rem; cursor:pointer; user-select:none; touch-action:manipulation; line-height:1; }
         .quick-chip:active { transform: translateY(1px); }
-        .quick-chip.selected { background:#ff3333; border-color:#ff3333; color:#fff; }
+        .quick-chip.selected, .quick-chip[aria-pressed="true"] { background:#ff3333; border-color:#ff3333; color:#fff; }
         .quick-chip:focus-visible { outline:3px solid #ff3333; outline-offset:2px; }
 
 
@@ -1470,20 +1470,16 @@
                 if (!label) return;
                 var lines = getLines();
                 var idx = lines.indexOf(label);
-                var selecting = !this.classList.contains('selected');
+                var pressed = this.getAttribute('aria-pressed') === 'true';
+                var selecting = !pressed;
+                this.setAttribute('aria-pressed', selecting ? 'true' : 'false');
                 if (selecting){
                     this.classList.add('selected');
-                    this.setAttribute('aria-pressed','true');
-                    this.style.background = '#ff3333';
-                    this.style.borderColor = '#ff3333';
-                    this.style.color = '#fff';
+                    this.style.background = '#ff3333'; this.style.borderColor = '#ff3333'; this.style.color = '#fff';
                     if (idx === -1) { lines.push(label); }
                 } else {
                     this.classList.remove('selected');
-                    this.setAttribute('aria-pressed','false');
-                    this.style.background = '';
-                    this.style.borderColor = '';
-                    this.style.color = '';
+                    this.style.background = ''; this.style.borderColor = ''; this.style.color = '';
                     if (idx !== -1) { lines.splice(idx,1); }
                 }
                 setLines(lines);

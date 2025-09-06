@@ -144,8 +144,6 @@
             position: relative;
         }
 
-
-
         .hero-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -219,12 +217,11 @@
         .contact-preference { display:flex; gap:1rem; flex-wrap:wrap; }
         .contact-preference .radio { display:inline-flex; align-items:center; gap:.5rem; background:#f8f9fa; border:1px solid #e8eaed; border-radius:8px; padding:.6rem .9rem; cursor:pointer; }
         .contact-preference input { width:1.25rem; height:1.25rem; accent-color:#ff3333; }
-        .quick-chips { display:flex; flex-wrap:wrap; gap:.6rem; margin:.75rem 0 .5rem; }
-        .quick-chip { display:inline-block; -webkit-appearance:none; appearance:none; background:#f1f3f5; border:1px solid #e8eaed; color:#222; border-radius:999px; padding:.6rem 1rem; font-weight:700; font-size:1rem; cursor:pointer; user-select:none; touch-action:manipulation; line-height:1; }
-        .quick-chip:active { transform: translateY(1px); }
-        .quick-chip.selected, .quick-chip[aria-pressed="true"] { background:#ff3333; border-color:#ff3333; color:#fff; }
-        .quick-chip:focus-visible { outline:3px solid #ff3333; outline-offset:2px; }
-
+        
+        
+        
+        
+        
 
         .form-group {
             margin-bottom: 1rem;
@@ -954,14 +951,6 @@
 
                     <div class="form-group">
                         <label for="description">What items need removal?</label>
-                        <div class="quick-chips" aria-label="Quick add items">
-                            <button type="button" class="quick-chip" data-insert="Furniture removal">Furniture</button>
-                            <button type="button" class="quick-chip" data-insert="Appliance removal">Appliances</button>
-                            <button type="button" class="quick-chip" data-insert="Whole‑home cleanout">Cleanout</button>
-                            <button type="button" class="quick-chip" data-insert="Yard waste">Yard Waste</button>
-                            <button type="button" class="quick-chip" data-insert="Mattress removal">Mattress</button>
-                            <button type="button" class="quick-chip" data-insert="Hot tub removal">Hot Tub</button>
-                        </div>
                         <textarea id="description" name="_message" placeholder="Please describe the items you need removed..." enterkeyhint="send"></textarea>
                     </div>
 
@@ -1352,142 +1341,5 @@
     </script>
 
     <!-- UX/perf enhancements: hints, lazy-load, optional address fold, safe and additive -->
-    <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      // Enhance anchors to #quoteForm without changing URLs
-      document.querySelectorAll('a[href="#quoteForm"]').forEach(a => {
-        a.addEventListener('click', e => {
-          const t = document.getElementById('quoteForm');
-          if (t) { e.preventDefault(); t.scrollIntoView({behavior:'smooth', block:'start'}); }
-        });
-      });
-
-      const form = document.getElementById('quoteForm');
-      if (!form) return;
-      const nameEl = document.getElementById('name');
-      const phoneEl = document.getElementById('phone');
-      const emailEl = document.getElementById('email');
-      const msgEl   = document.getElementById('description');
-
-      function addHint(el, text) {
-        if (!el) return;
-        const id = el.id || el.name;
-        if (!id || document.getElementById(id + '-hint')) return;
-        const hint = document.createElement('div');
-        hint.className = 'field-hint';
-        hint.id = id + '-hint';
-        hint.textContent = text;
-        (el.closest('.form-group') || el.parentElement)?.appendChild(hint);
-      }
-      function markInvalid(el){ el?.classList.add('field-invalid'); }
-      function clearInvalid(el){ el?.classList.remove('field-invalid'); }
-
-      // Minimal helpful hints (phone for formatting, message for quality)
-      addHint(phoneEl, 'Use digits only, e.g. (410) 300-6743');
-      // Removed min length requirement; keep copy lightweight
-      phoneEl?.addEventListener('invalid', () => markInvalid(phoneEl));
-      phoneEl?.addEventListener('input', () => clearInvalid(phoneEl));
-
-
-      // Lazy-load non-hero images
-      document.querySelectorAll('img').forEach(img => {
-        if (!img.closest('.hero')) {
-          if (!img.hasAttribute('loading')) img.setAttribute('loading','lazy');
-          if (!img.hasAttribute('decoding')) img.setAttribute('decoding','async');
-        }
-      });
-    });
-    </script>
-
-    <!-- JSON-LD: LocalBusiness + AggregateRating + FAQPage (non-blocking) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Grime To Dime",
-      "url": "https://grimetodime.com/quote",
-      "telephone": "+14103006743",
-      "image": "https://grimetodime.com/images/MASTERPARENT.png",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Elkridge",
-        "addressRegion": "MD",
-        "postalCode": "21075",
-        "addressCountry": "US"
-      },
-      "areaServed": [
-        "Howard County, MD",
-        "Columbia, MD",
-        "Ellicott City, MD",
-        "Elkridge, MD",
-        "Jessup, MD",
-        "Savage, MD",
-        "Annapolis Junction, MD",
-        "Clarksville, MD",
-        "Highland, MD",
-        "Fulton, MD"
-      ],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "ratingCount": "25"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+14103006743",
-        "contactType": "customer service",
-        "areaServed": "US",
-        "availableLanguage": "en"
-      }
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {"@type":"Question","name":"What items do you accept for junk removal?","acceptedAnswer":{"@type":"Answer","text":"We accept most household and commercial junk including furniture, appliances, electronics, yard waste, and construction debris. We cannot accept hazardous materials."}},
-        {"@type":"Question","name":"Do you offer same-day junk removal service?","acceptedAnswer":{"@type":"Answer","text":"Yes, we often have same-day availability. Contact us early for the best chance of same-day service."}},
-        {"@type":"Question","name":"How much does junk removal cost?","acceptedAnswer":{"@type":"Answer","text":"Pricing is upfront and based on volume. Get a free quote for an accurate estimate with no hidden fees."}}
-      ]
-    }
-    </script>
-
-
-    <script>
-    document.addEventListener('DOMContentLoaded', function(){
-        var box = document.getElementById('description');
-        function getLines(){ return (box ? (box.value||'') : '').split(/
-?
-/).map(function(l){return l.trim();}).filter(Boolean); }
-        function setLines(lines){ if (box) box.value = lines.join('
-'); }
-        document.querySelectorAll('.quick-chip').forEach(function(btn){
-            btn.setAttribute('aria-pressed','false');
-            btn.addEventListener('click', function(){
-                if (!box) return;
-                var label = this.getAttribute('data-insert') || '';
-                if (!label) return;
-                var lines = getLines();
-                var idx = lines.indexOf(label);
-                var pressed = this.getAttribute('aria-pressed') === 'true';
-                var selecting = !pressed;
-                this.setAttribute('aria-pressed', selecting ? 'true' : 'false');
-                if (selecting){
-                    this.classList.add('selected');
-                    this.style.background = '#ff3333'; this.style.borderColor = '#ff3333'; this.style.color = '#fff';
-                    if (idx === -1) { lines.push(label); }
-                } else {
-                    this.classList.remove('selected');
-                    this.style.background = ''; this.style.borderColor = ''; this.style.color = '';
-                    if (idx !== -1) { lines.splice(idx,1); }
-                }
-                setLines(lines);
-                box.focus();
-            });
-        });
-    });
-    </script>
-
-</body>
+    </body>
 </html> 

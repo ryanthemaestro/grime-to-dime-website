@@ -955,21 +955,17 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Service Needed</label>
+                        <label>Service Needed <span style="font-weight:400;color:#777">(optional)</span></label>
                         <div class="service-options" role="group" aria-label="Select service type">
                             <label class="check"><input type="checkbox" name="_services[]" value="Furniture removal"> Furniture</label>
                             <label class="check"><input type="checkbox" name="_services[]" value="Appliance removal"> Appliances</label>
                             <label class="check"><input type="checkbox" name="_services[]" value="Whole-home cleanout"> Cleanout</label>
                             <label class="check"><input type="checkbox" name="_services[]" value="Yard waste"> Yard Waste</label>
-                            <label class="check"><input type="checkbox" name="_services[]" value="Mattress removal"> Mattress</label>
-                            <label class="check"><input type="checkbox" name="_services[]" value="Hot tub removal"> Hot Tub</label>
+                            <label class="check"><input type="checkbox" name="_services[]" value="Other (single item)"> Other (single item)</label>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="description">What items need removal?</label>
-                        <textarea id="description" name="_message" placeholder="Please describe the items you need removed..." enterkeyhint="send"></textarea>
-                    </div>
+                    
 
                     <div class="form-group">
                         <label for="photo">Add a Photo (optional)</label>
@@ -977,6 +973,10 @@
                         <div class="field-hint">A photo can speed up your quote.</div>
                     </div>
                     
+                    <div class="form-group">
+                        <label for="description">Add details <span style="font-weight:400;color:#777">(optional)</span></label>
+                        <textarea id="description" name="_message" placeholder="Examples: sofa, TV, fridge, 6 yard bags" enterkeyhint="send"></textarea>
+                    </div>
                     <p class="field-hint" aria-live="polite">We reply in 10–15 minutes during business hours.</p>
                     <button type="submit" class="submit-button">Get My Free Quote — Takes 60 Seconds</button>
                     

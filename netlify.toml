@@ -8,59 +8,59 @@
 [[redirects]]
   from = "/blog?category=*"
   to = "/blog/"
-  status = 302
+  status = 301
 
 # Specific category URL redirects (catch remaining GSC detected URLs)
 [[redirects]]
   from = "/blog/?category=recycling"
   to = "/blog/"
-  status = 302
+  status = 301
 
 [[redirects]]
   from = "/blog/?category=diy"
   to = "/blog/"
-  status = 302
+  status = 301
 
 [[redirects]]
   from = "/blog?category=recycling"
   to = "/blog/"
-  status = 302
+  status = 301
 
 [[redirects]]
   from = "/blog?category=diy"
   to = "/blog/"
-  status = 302
+  status = 301
 
 # Additional specific category URL redirects (new GSC detected URLs)
 [[redirects]]
   from = "/blog/?category=sustainability"
   to = "/blog/"
-  status = 302
+  status = 301
 
 [[redirects]]
   from = "/blog/?category=organization"
   to = "/blog/"
-  status = 302
+  status = 301
 
 [[redirects]]
   from = "/blog/?category=cleaning"
   to = "/blog/"
-  status = 302
+  status = 301
 
 [[redirects]]
   from = "/blog?category=sustainability"
   to = "/blog/"
-  status = 302
+  status = 301
 
 [[redirects]]
   from = "/blog?category=organization"
   to = "/blog/"
-  status = 302
+  status = 301
 
 [[redirects]]
   from = "/blog?category=cleaning"
   to = "/blog/"
-  status = 302
+  status = 301
 
 # Blog post trailing slash redirects
 [[redirects]]
@@ -83,3 +83,18 @@
   to = "/blog/end-of-summer-deep-clean/"
   status = 301
 
+
+
+# Redirect legacy /form to /quote
+[[redirects]]
+  from = "/form"
+  to = "/quote/"
+  status = 301
+
+# Canonicalize host: redirect www -> apex
+[[redirects]]
+  from = "/:splat"
+  to = "https://grimetodime.com/:splat"
+  status = 301
+  force = true
+  conditions = { Host = "www.grimetodime.com" }

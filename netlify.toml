@@ -93,6 +93,10 @@
   path = "/blog/"
   function = "strip-blog-query"
 
+[[edge_functions]]
+  path = "/blog/*"
+  function = "strip-blog-query"
+
 [[redirects]]
   from = "/blog"
   to = "/blog/"

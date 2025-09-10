@@ -10,78 +10,32 @@
   to = "/blog/"
   status = 301
 
-# Specific category URL redirects (catch remaining GSC detected URLs)
+## Removed specific category redirects in favor of generic query matching above
+
+# Query-param aware redirects (Netlify TOML syntax)
 [[redirects]]
-  from = "/blog/?category=recycling"
+  from = "/blog"
   to = "/blog/"
   status = 301
+  query = { category = ":category" }
 
 [[redirects]]
-  from = "/blog/?category=diy"
+  from = "/blog/"
   to = "/blog/"
   status = 301
-
-[[redirects]]
-  from = "/blog?category=recycling"
-  to = "/blog/"
-  status = 301
-
-[[redirects]]
-  from = "/blog?category=diy"
-  to = "/blog/"
-  status = 301
-
-# Additional specific category URL redirects (new GSC detected URLs)
-[[redirects]]
-  from = "/blog/?category=sustainability"
-  to = "/blog/"
-  status = 301
-
-[[redirects]]
-  from = "/blog/?category=organization"
-  to = "/blog/"
-  status = 301
-
-[[redirects]]
-  from = "/blog/?category=cleaning"
-  to = "/blog/"
-  status = 301
-
-[[redirects]]
-  from = "/blog?category=sustainability"
-  to = "/blog/"
-  status = 301
-
-[[redirects]]
-  from = "/blog?category=organization"
-  to = "/blog/"
-  status = 301
-
-[[redirects]]
-  from = "/blog?category=cleaning"
-  to = "/blog/"
-  status = 301
+  query = { category = ":category" }
 
 # Blog post trailing slash redirects
 [[redirects]]
-  from = "/blog/10-items-you-didnt-know-could-be-recycled"
-  to = "/blog/10-items-you-didnt-know-could-be-recycled/"
+  from = "/blog"
+  to = "/blog/"
   status = 301
 
 [[redirects]]
-  from = "/blog/upcycling-guide"
-  to = "/blog/upcycling-guide/"
+  from = "/blog/:slug"
+  to = "/blog/:slug/"
   status = 301
-
-[[redirects]]
-  from = "/blog/winter-organization-tips"
-  to = "/blog/winter-organization-tips/"
-  status = 301
-
-[[redirects]]
-  from = "/blog/end-of-summer-deep-clean"
-  to = "/blog/end-of-summer-deep-clean/"
-  status = 301
+## Removed specific slug trailing-slash redirects; covered by /blog/:slug rule
 
 
 
@@ -98,3 +52,39 @@
   status = 301
   force = true
   conditions = { Host = "www.grimetodime.com" }
+
+# Ensure HTTP -> HTTPS (single hop)
+[[redirects]]
+  from = "http://grimetodime.com/:splat"
+  to = "https://grimetodime.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.grimetodime.com/:splat"
+  to = "https://grimetodime.com/:splat"
+  status = 301
+  force = true
+
+# Catch blog tag querystrings to canonical URL
+[[redirects]]
+  from = "/blog?tag=*"
+  to = "/blog/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/?tag=*"
+  to = "/blog/"
+  status = 301
+
+[[redirects]]
+  from = "/blog"
+  to = "/blog/"
+  status = 301
+  query = { tag = ":tag" }
+
+[[redirects]]
+  from = "/blog/"
+  to = "/blog/"
+  status = 301
+  query = { tag = ":tag" }

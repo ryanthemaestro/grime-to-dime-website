@@ -2,8 +2,7 @@
   publish = "."
   command = ""  # No build command needed for static HTML 
 
-[edge_functions]
-  directory = "netlify/edge-functions"
+edge_functions = "netlify/edge-functions"
 
 
 

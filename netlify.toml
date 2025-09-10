@@ -2,6 +2,9 @@
   publish = "."
   command = ""  # No build command needed for static HTML 
 
+[edge_functions]
+  directory = "netlify/edge-functions"
+
 
 
 # Blog category redirects - redirect to main blog page
@@ -81,6 +84,14 @@
   from = "/blog/?tag=*"
   to = "/blog/"
   status = 301
+
+[[edge_functions]]
+  path = "/blog"
+  function = "strip-blog-query"
+
+[[edge_functions]]
+  path = "/blog/"
+  function = "strip-blog-query"
 
 [[redirects]]
   from = "/blog"

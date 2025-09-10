@@ -45,6 +45,11 @@
   to = "/quote/"
   status = 301
 
+[[redirects]]
+  from = "/form/"
+  to = "/quote/"
+  status = 301
+
 # Canonicalize host: redirect www -> apex
 [[redirects]]
   from = "/:splat"

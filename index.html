@@ -114,10 +114,22 @@
       function applyFilters(){
         var q = (search && search.value) ? search.value.trim() : '';
         var cat = activeCategory();
+        var anyVisible = false;
         items.forEach(function(el){
           var ok = matchesCategory(el, cat) && matchesText(el, q);
           if (!ok) { el.setAttribute('hidden',''); } else { el.removeAttribute('hidden'); }
+          if (ok) anyVisible = true;
         });
+        var empty = document.getElementById('faq-empty');
+        if (!empty) {
+          empty = document.createElement('div');
+          empty.id = 'faq-empty';
+          empty.className = 'faq-empty';
+          empty.textContent = 'No results. Try another term or category.';
+          var controls = document.querySelector('.faq-controls');
+          if (controls && controls.parentNode) controls.parentNode.insertBefore(empty, controls.nextSibling);
+        }
+        empty.style.display = anyVisible ? 'none' : 'block';
       }
       if (chips && chips.length){
         chips.forEach(function(btn){ btn.addEventListener('click', function(){ chips.forEach(function(b){ b.classList.remove('active'); }); btn.classList.add('active'); applyFilters(); }); });
@@ -2624,7 +2636,7 @@
         .faq-categories {
             display: flex;
             flex-direction: column;
-            gap: 3rem;
+            gap: 1.25rem; /* tighter to reduce vertical bulk */
         }
 
         /* FAQ Redesign (Option 1) */
@@ -2636,6 +2648,16 @@
         .faq-actions { display:flex; gap:.5rem; flex-wrap:wrap; }
         .faq-toggle { background:#fff; border:1px solid #e5e7eb; color:#222; padding:.45rem .8rem; border-radius:8px; cursor:pointer; font-weight:700; font-size:.9rem; }
         .faq-item[hidden] { display:none !important; }
+        .faq-empty { text-align:center; color:#666; margin-top:.5rem; }
+
+        /* Simplify FAQ visual style */
+        #faq .feature-grid { gap: 1rem; }
+        #faq .feature-card { background:#fff; border:1px solid #eee; box-shadow:none; padding: 1rem 1.25rem; border-radius: 12px; }
+        #faq details { background:#fff; border:1px solid #eee; border-radius:10px; padding: .75rem 1rem; box-shadow:none; }
+        #faq summary { font-weight:700; }
+        #faq details[open] { border-color:#ff3333; }
+        /* Hide legacy subsection headings for a cleaner single-list look */
+        #faq .faq-category h3 { display:none; }
 
         .faq-category h3 {
             font-size: 1.4rem;

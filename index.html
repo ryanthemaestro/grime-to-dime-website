@@ -103,42 +103,57 @@
     <!-- Enhanced Structured Data -->
     <script>
     (function(){
-      var search = document.getElementById('faq-search');
-      var chips = document.querySelectorAll('.faq-chips .chip');
-      var items = document.querySelectorAll('.faq-item');
-      var expandBtn = document.querySelector('.faq-actions [data-action="expand"]');
-      var collapseBtn = document.querySelector('.faq-actions [data-action="collapse"]');
-      function activeCategory(){ var a=document.querySelector('.faq-chips .chip.active'); return a ? a.getAttribute('data-chip') : 'all'; }
+      function qs(sel, root){ return (root||document).querySelector(sel); }
+      function qsa(sel, root){ return Array.prototype.slice.call((root||document).querySelectorAll(sel)); }
+      function activeCategory(){ var a=qs('.faq-chips .chip.active'); return a ? a.getAttribute('data-chip') : 'all'; }
       function matchesText(el, q){ if(!q) return true; q=q.toLowerCase(); return (el.textContent||'').toLowerCase().indexOf(q) !== -1; }
       function matchesCategory(el, cat){ if(cat==='all') return true; return (el.getAttribute('data-category')||'').indexOf(cat) !== -1; }
       function applyFilters(){
+        var search = qs('#faq-search');
         var q = (search && search.value) ? search.value.trim() : '';
         var cat = activeCategory();
+        var items = qsa('.faq-item');
         var anyVisible = false;
         items.forEach(function(el){
           var ok = matchesCategory(el, cat) && matchesText(el, q);
           if (!ok) { el.setAttribute('hidden',''); } else { el.removeAttribute('hidden'); }
           if (ok) anyVisible = true;
         });
-        var empty = document.getElementById('faq-empty');
+        var empty = qs('#faq-empty');
         if (!empty) {
           empty = document.createElement('div');
           empty.id = 'faq-empty';
           empty.className = 'faq-empty';
           empty.textContent = 'No results. Try another term or category.';
-          var controls = document.querySelector('.faq-controls');
+          var controls = qs('.faq-controls');
           if (controls && controls.parentNode) controls.parentNode.insertBefore(empty, controls.nextSibling);
         }
         empty.style.display = anyVisible ? 'none' : 'block';
       }
-      if (chips && chips.length){
-        chips.forEach(function(btn){ btn.addEventListener('click', function(){ chips.forEach(function(b){ b.classList.remove('active'); }); btn.classList.add('active'); applyFilters(); }); });
-      }
-      if (search){ search.addEventListener('input', function(){ applyFilters(); }); }
-      if (expandBtn){ expandBtn.addEventListener('click', function(){ document.querySelectorAll('.faq-item details').forEach(function(d){ d.setAttribute('open',''); }); }); }
-      if (collapseBtn){ collapseBtn.addEventListener('click', function(){ document.querySelectorAll('.faq-item details[open]').forEach(function(d){ d.removeAttribute('open'); }); }); }
-      // Initialize
-      applyFilters();
+
+      // Event delegation for robust binding
+      document.addEventListener('click', function(e){
+        var chip = e.target.closest('.faq-chips .chip');
+        if (chip){
+          qsa('.faq-chips .chip').forEach(function(b){ b.classList.remove('active'); });
+          chip.classList.add('active');
+          applyFilters();
+        }
+        var toggle = e.target.closest('.faq-actions [data-action]');
+        if (toggle){
+          var action = toggle.getAttribute('data-action');
+          if (action === 'expand') qsa('.faq-item:not([hidden]) details').forEach(function(d){ d.setAttribute('open',''); });
+          if (action === 'collapse') qsa('.faq-item:not([hidden]) details[open]').forEach(function(d){ d.removeAttribute('open'); });
+        }
+      });
+      document.addEventListener('input', function(e){
+        if (e.target && e.target.id === 'faq-search') applyFilters();
+      });
+
+      // Initialize after paint
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', applyFilters);
+      } else { applyFilters(); }
     })();
     </script>
     <script type="application/ld+json">
@@ -2656,8 +2671,9 @@
         #faq details { background:#fff; border:1px solid #eee; border-radius:10px; padding: .75rem 1rem; box-shadow:none; }
         #faq summary { font-weight:700; }
         #faq details[open] { border-color:#ff3333; }
-        /* Hide legacy subsection headings for a cleaner single-list look */
-        #faq .faq-category h3 { display:none; }
+        /* Optional: render category headers as subtle dividers */
+        #faq .faq-category h3 { display:block; text-align:left; font-size:1.1rem; font-weight:800; color:#222; margin: 1rem 0 .5rem; }
+        #faq .faq-category h3::after { display:none; }
 
         .faq-category h3 {
             font-size: 1.4rem;

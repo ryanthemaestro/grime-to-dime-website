@@ -2530,43 +2530,44 @@
 
         .about h2 {
             text-align: center;
-            font-size: 2.2rem;
+            font-size: clamp(1.8rem, 1.2rem + 2vw, 2.6rem);
             font-weight: 800;
             color: #222;
-            margin: 0 auto 0.75rem auto; /* even tighter */
-            line-height: 1.2;
+            margin: 0 auto 0.85rem auto;
+            line-height: 1.15;
         }
 
         .about-main-text {
             max-width: 800px;
-            margin: 0 auto 4rem;
+            margin: 0 auto 3rem;
             text-align: center;
         }
 
         .about-main-text p {
-            font-size: 1.1rem;
-            line-height: 1.8;
+            font-size: clamp(1rem, .95rem + .3vw, 1.1rem);
+            line-height: 1.75;
             color: #444;
         }
 
         .feature-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.25rem;
         }
 
         .feature-card {
             background: #fff;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0, 0, 0, 0.05);
+            padding: clamp(1.25rem, 1rem + .6vw, 1.75rem);
+            border-radius: 16px;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+            transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+            border: 1px solid rgba(0, 0, 0, 0.06);
         }
 
         .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+            transform: translateY(-4px);
+            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.10);
+            border-color: rgba(255, 51, 51, 0.15);
         }
 
         /* Final spacing overrides to tune gap between testimonials and about */
@@ -2718,41 +2719,47 @@
         }
 
         .feature-icon {
-            width: 60px;
-            height: 60px;
-            background: rgba(255, 51, 51, 0.1);
+            width: 64px;
+            height: 64px;
+            background:
+                radial-gradient(40% 40% at 30% 30%, rgba(255, 51, 51, 0.18), rgba(255, 51, 51, 0) 60%),
+                rgba(255, 51, 51, 0.08);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1.5rem;
-            transition: all 0.3s ease;
+            margin-bottom: 1.25rem;
+            border: 2px solid rgba(255, 51, 51, 0.25);
+            box-shadow: 0 6px 16px rgba(255, 51, 51, 0.12);
+            transition: transform 200ms ease, background 200ms ease, color 200ms ease;
         }
 
         .feature-icon i {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             color: #ff3333;
-            transition: all 0.3s ease;
+            transition: transform 200ms ease, color 200ms ease;
         }
 
         .feature-card:hover .feature-icon {
             background: #ff3333;
+            box-shadow: 0 10px 24px rgba(255, 51, 51, 0.18);
         }
 
         .feature-card:hover .feature-icon i {
             color: #fff;
+            transform: translateY(-1px);
         }
 
         .feature-card h3 {
-            font-size: 1.4rem;
+            font-size: clamp(1.1rem, 1rem + .4vw, 1.35rem);
             font-weight: 600;
             color: #222;
-            margin-bottom: 1rem;
+            margin-bottom: .6rem;
         }
 
         .feature-card p {
-            font-size: 1rem;
-            line-height: 1.6;
+            font-size: .98rem;
+            line-height: 1.65;
             color: #666;
         }
 
@@ -2834,32 +2841,29 @@
 
         @media (max-width: 768px) {
             .about {
-                padding: 4rem 0;
+                padding: 3rem 0;
             }
 
             .about h2 {
-                font-size: 2rem;
                 padding: 0 1rem;
             }
 
             .about-main-text {
                 padding: 0 1rem;
-                margin-bottom: 3rem;
+                margin-bottom: 2rem;
             }
 
             .feature-grid {
                 grid-template-columns: 1fr;
-                gap: 1.5rem;
+                gap: 1rem;
                 padding: 0 1rem;
             }
 
             .feature-card {
-                padding: 1.25rem;
+                padding: 1.1rem 1rem;
             }
 
-            .feature-card {
-                padding: 1.5rem;
-            }
+            .feature-card { padding: 1.2rem; }
 
             /* FAQ categories mobile styles */
             .faq-categories {
@@ -2872,16 +2876,16 @@
             }
 
             .feature-icon {
-                width: 50px;
-                height: 50px;
+                width: 56px;
+                height: 56px;
             }
 
             .feature-icon i {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
             }
 
             .feature-card h3 {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
         }
 
@@ -2898,9 +2902,11 @@
                 font-size: 1rem;
             }
 
-            .feature-card {
-                padding: 1.25rem;
-            }
+            .feature-card { padding: 1rem; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .feature-card, .feature-icon, .feature-card:hover .feature-icon i { transition: none !important; }
         }
     </style>
 

@@ -2765,9 +2765,10 @@
 
         /* SEO Content Section Styles */
         .seo-content-section {
-            background: white;
-            padding: 3rem 1rem;
+            background: #fff;
+            padding: 3.5rem 1rem;
             border-top: 1px solid #eee;
+            position: relative;
         }
 
         .seo-content-container {
@@ -2777,68 +2778,99 @@
 
         .seo-content-section h2 {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: clamp(1.8rem, 1.2rem + 2vw, 2.4rem);
             color: #222;
-            margin-bottom: 3rem;
+            margin-bottom: 2.25rem;
             font-weight: 800;
         }
 
         .seo-content-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
-            margin-bottom: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 2rem;
         }
 
         .seo-content-card {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 10px;
-            border-left: 4px solid #ff3333;
+            background: #fff;
+            padding: clamp(1.25rem, 1rem + .6vw, 1.75rem);
+            border-radius: 16px;
+            border: 1px solid #eef0f2;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+            position: relative;
+            transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+        }
+        .seo-content-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ff3333, #ff6b6b);
+            border-top-left-radius: 16px;
+            border-top-right-radius: 16px;
+        }
+        .seo-content-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 30px rgba(0,0,0,0.10);
+            border-color: rgba(255,51,51,0.18);
         }
 
         .seo-content-card h3 {
             color: #222;
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
+            margin-bottom: .6rem;
+            font-size: clamp(1.05rem, .95rem + .4vw, 1.25rem);
+            font-weight: 800;
         }
 
         .seo-content-card p {
-            color: #444;
-            line-height: 1.6;
-            margin-bottom: 1rem;
+            color: #555;
+            line-height: 1.65;
+            margin-bottom: .75rem;
         }
 
         .seo-keywords {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            margin-top: 2rem;
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+            border: 1px solid #eef0f2;
+            margin-top: 1.5rem;
         }
 
         .seo-keywords h3 {
             text-align: center;
             color: #222;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
         }
 
         .keyword-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
+            gap: .5rem .6rem;
             justify-content: center;
         }
 
         .keyword-tag {
-            background: #ff3333;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
+            background: rgba(255,51,51,0.08);
+            color: #c22020;
+            border: 1px solid rgba(255,51,51,0.25);
+            padding: .45rem .9rem;
+            border-radius: 999px;
+            font-size: .92rem;
+            font-weight: 700;
+            box-shadow: 0 2px 6px rgba(255,51,51,0.08);
+            transition: background 160ms ease, transform 160ms ease, box-shadow 160ms ease;
         }
+        .keyword-tag:hover { background: rgba(255,51,51,0.12); transform: translateY(-1px); box-shadow: 0 4px 10px rgba(255,51,51,0.12); }
 
+        @media (max-width: 768px) {
+            .seo-content-section { padding: 2.5rem 1rem; }
+            .seo-content-grid { gap: 1rem; }
+            .seo-keywords { padding: 1.25rem; }
+            .keyword-list { justify-content: center; gap: .45rem .5rem; }
+            .keyword-tag { font-size: .9rem; padding: .4rem .8rem; }
+        }
         @media (max-width: 768px) {
             .about {
                 padding: 3rem 0;

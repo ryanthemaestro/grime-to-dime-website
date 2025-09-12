@@ -101,6 +101,34 @@
     <meta name="twitter:image" content="https://grimetodime.com/images/MASTERPARENT.png">
     
     <!-- Enhanced Structured Data -->
+    <script>
+    (function(){
+      var search = document.getElementById('faq-search');
+      var chips = document.querySelectorAll('.faq-chips .chip');
+      var items = document.querySelectorAll('.faq-item');
+      var expandBtn = document.querySelector('.faq-actions [data-action="expand"]');
+      var collapseBtn = document.querySelector('.faq-actions [data-action="collapse"]');
+      function activeCategory(){ var a=document.querySelector('.faq-chips .chip.active'); return a ? a.getAttribute('data-chip') : 'all'; }
+      function matchesText(el, q){ if(!q) return true; q=q.toLowerCase(); return (el.textContent||'').toLowerCase().indexOf(q) !== -1; }
+      function matchesCategory(el, cat){ if(cat==='all') return true; return (el.getAttribute('data-category')||'').indexOf(cat) !== -1; }
+      function applyFilters(){
+        var q = (search && search.value) ? search.value.trim() : '';
+        var cat = activeCategory();
+        items.forEach(function(el){
+          var ok = matchesCategory(el, cat) && matchesText(el, q);
+          if (!ok) { el.setAttribute('hidden',''); } else { el.removeAttribute('hidden'); }
+        });
+      }
+      if (chips && chips.length){
+        chips.forEach(function(btn){ btn.addEventListener('click', function(){ chips.forEach(function(b){ b.classList.remove('active'); }); btn.classList.add('active'); applyFilters(); }); });
+      }
+      if (search){ search.addEventListener('input', function(){ applyFilters(); }); }
+      if (expandBtn){ expandBtn.addEventListener('click', function(){ document.querySelectorAll('.faq-item details').forEach(function(d){ d.setAttribute('open',''); }); }); }
+      if (collapseBtn){ collapseBtn.addEventListener('click', function(){ document.querySelectorAll('.faq-item details[open]').forEach(function(d){ d.removeAttribute('open'); }); }); }
+      // Initialize
+      applyFilters();
+    })();
+    </script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -2375,23 +2403,36 @@
     <section id="faq" class="about">
         <div class="about-container">
             <h2>Howard County Junk Removal FAQ</h2>
+            <div class="faq-controls">
+                <input id="faq-search" class="faq-search" type="search" placeholder="Search FAQs" aria-label="Search FAQs">
+                <div class="faq-chips" role="tablist" aria-label="FAQ categories">
+                    <button class="chip active" data-chip="all" type="button">All</button>
+                    <button class="chip" data-chip="service" type="button">Service</button>
+                    <button class="chip" data-chip="pricing" type="button">Pricing</button>
+                    <button class="chip" data-chip="trust" type="button">Trust & Process</button>
+                </div>
+                <div class="faq-actions">
+                    <button class="faq-toggle" data-action="expand" type="button">Expand all</button>
+                    <button class="faq-toggle" data-action="collapse" type="button">Collapse all</button>
+                </div>
+            </div>
             <div class="faq-categories">
                 <div class="faq-category">
                     <h3>Service Information</h3>
             <div class="feature-grid">
-                <div class="feature-card">
+                <div class="feature-card faq-item" data-category="service">
                     <details>
                                 <summary>What areas do you serve for junk removal in Howard County?</summary>
                                 <p>We serve Howard County, including Elkridge, Columbia, Laurel, Catonsville, and nearby. Same‑day or next‑day available.</p>
                     </details>
                 </div>
-                        <div class="feature-card">
+                        <div class="feature-card faq-item" data-category="service">
                             <details>
                                 <summary>Do you offer same-day junk removal service?</summary>
                                 <p>Yes — often same‑day if you call by noon; otherwise next‑day.</p>
                             </details>
                         </div>
-                        <div class="feature-card">
+                        <div class="feature-card faq-item" data-category="service">
                             <details>
                                 <summary>What types of items do you remove?</summary>
                                 <p>Furniture, appliances, electronics, construction debris, yard waste, and household junk. No hazardous materials.</p>
@@ -2403,13 +2444,13 @@
                 <div class="faq-category">
                     <h3>Pricing & Payment</h3>
                     <div class="feature-grid">
-                <div class="feature-card">
+                <div class="feature-card faq-item" data-category="pricing">
                     <details>
                         <summary>How much does Howard County junk removal cost?</summary>
                                 <p>Transparent, volume‑based pricing with no hidden fees. Most residential cleanouts start at $150–$300.</p>
                             </details>
                         </div>
-                        <div class="feature-card">
+                        <div class="feature-card faq-item" data-category="pricing">
                             <details>
                                 <summary>What payment methods do you accept?</summary>
                                 <p>Cash, cards, checks, and Venmo. Payment is due upon completion.</p>
@@ -2421,25 +2462,25 @@
                 <div class="faq-category">
                     <h3>Trust & Process</h3>
                     <div class="feature-grid">
-                        <div class="feature-card">
+                        <div class="feature-card faq-item" data-category="trust">
                             <details>
                                 <summary>Are you licensed and insured?</summary>
                                 <p>Yes — fully licensed and insured.</p>
                     </details>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card faq-item" data-category="trust">
                     <details>
                                 <summary>Is your junk hauling eco-friendly?</summary>
                                 <p>Yes — we donate first and recycle whenever possible.</p>
                     </details>
                 </div>
-                        <div class="feature-card">
+                        <div class="feature-card faq-item" data-category="trust">
                             <details>
                                 <summary>What should I do to prepare for junk removal?</summary>
                                 <p>Place items in a clear, accessible area; we handle sorting. Tell us about any heavy or fragile items.</p>
                             </details>
                         </div>
-                        <div class="feature-card">
+                        <div class="feature-card faq-item" data-category="trust">
                             <details>
                                 <summary>How long does a typical junk removal take?</summary>
                                 <p>Most residential jobs take 1–3 hours; commercial projects may take longer.</p>
@@ -2585,6 +2626,16 @@
             flex-direction: column;
             gap: 3rem;
         }
+
+        /* FAQ Redesign (Option 1) */
+        .faq-controls { display:flex; flex-direction:column; gap: 0.75rem; margin: 0 auto 1.25rem; max-width: 900px; }
+        .faq-search { width:100%; max-width:900px; padding: 0.9rem 1rem; border:1px solid #e5e7eb; border-radius:10px; font-size:1rem; }
+        .faq-chips { display:flex; flex-wrap:wrap; gap:.5rem; align-items:center; }
+        .faq-chips .chip { background:#f3f4f6; border:1px solid #e5e7eb; color:#222; padding:.45rem .8rem; border-radius:999px; cursor:pointer; font-weight:700; font-size:.9rem; }
+        .faq-chips .chip.active { background:#ff3333; color:#fff; border-color:#ff3333; }
+        .faq-actions { display:flex; gap:.5rem; flex-wrap:wrap; }
+        .faq-toggle { background:#fff; border:1px solid #e5e7eb; color:#222; padding:.45rem .8rem; border-radius:8px; cursor:pointer; font-weight:700; font-size:.9rem; }
+        .faq-item[hidden] { display:none !important; }
 
         .faq-category h3 {
             font-size: 1.4rem;

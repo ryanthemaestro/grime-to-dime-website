@@ -133,17 +133,11 @@
 
       // Event delegation for robust binding
       document.addEventListener('click', function(e){
-        var chip = e.target.closest('.faq-chips .chip');
-        if (chip){
-          qsa('.faq-chips .chip').forEach(function(b){ b.classList.remove('active'); });
-          chip.classList.add('active');
-          applyFilters();
-        }
         var toggle = e.target.closest('.faq-actions [data-action]');
         if (toggle){
           var action = toggle.getAttribute('data-action');
-          if (action === 'expand') qsa('.faq-item:not([hidden]) details').forEach(function(d){ d.setAttribute('open',''); });
-          if (action === 'collapse') qsa('.faq-item:not([hidden]) details[open]').forEach(function(d){ d.removeAttribute('open'); });
+          if (action === 'expand') qsa('.faq-list .faq-item:not([hidden]) details').forEach(function(d){ d.setAttribute('open',''); });
+          if (action === 'collapse') qsa('.faq-list .faq-item:not([hidden]) details[open]').forEach(function(d){ d.removeAttribute('open'); });
         }
       });
       document.addEventListener('input', function(e){
@@ -2431,91 +2425,27 @@
         <div class="about-container">
             <h2>Howard County Junk Removal FAQ</h2>
             <div class="faq-controls">
-                <input id="faq-search" class="faq-search" type="search" placeholder="Search FAQs" aria-label="Search FAQs">
-                <div class="faq-chips" role="tablist" aria-label="FAQ categories">
-                    <button class="chip active" data-chip="all" type="button">All</button>
-                    <button class="chip" data-chip="service" type="button">Service</button>
-                    <button class="chip" data-chip="pricing" type="button">Pricing</button>
-                    <button class="chip" data-chip="trust" type="button">Trust & Process</button>
-                </div>
-                <div class="faq-actions">
-                    <button class="faq-toggle" data-action="expand" type="button">Expand all</button>
-                    <button class="faq-toggle" data-action="collapse" type="button">Collapse all</button>
-                </div>
-            </div>
-            <div class="faq-categories">
-                <div class="faq-category">
-                    <h3>Service Information</h3>
-            <div class="feature-grid">
-                <div class="feature-card faq-item" data-category="service">
-                    <details>
-                                <summary>What areas do you serve for junk removal in Howard County?</summary>
-                                <p>We serve Howard County, including Elkridge, Columbia, Laurel, Catonsville, and nearby. Same‑day or next‑day available.</p>
-                    </details>
-                </div>
-                        <div class="feature-card faq-item" data-category="service">
-                            <details>
-                                <summary>Do you offer same-day junk removal service?</summary>
-                                <p>Yes — often same‑day if you call by noon; otherwise next‑day.</p>
-                            </details>
-                        </div>
-                        <div class="feature-card faq-item" data-category="service">
-                            <details>
-                                <summary>What types of items do you remove?</summary>
-                                <p>Furniture, appliances, electronics, construction debris, yard waste, and household junk. No hazardous materials.</p>
-                            </details>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-category">
-                    <h3>Pricing & Payment</h3>
-                    <div class="feature-grid">
-                <div class="feature-card faq-item" data-category="pricing">
-                    <details>
-                        <summary>How much does Howard County junk removal cost?</summary>
-                                <p>Transparent, volume‑based pricing with no hidden fees. Most residential cleanouts start at $150–$300.</p>
-                            </details>
-                        </div>
-                        <div class="feature-card faq-item" data-category="pricing">
-                            <details>
-                                <summary>What payment methods do you accept?</summary>
-                                <p>Cash, cards, checks, and Venmo. Payment is due upon completion.</p>
-                            </details>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-category">
-                    <h3>Trust & Process</h3>
-                    <div class="feature-grid">
-                        <div class="feature-card faq-item" data-category="trust">
-                            <details>
-                                <summary>Are you licensed and insured?</summary>
-                                <p>Yes — fully licensed and insured.</p>
-                    </details>
-                </div>
-                <div class="feature-card faq-item" data-category="trust">
-                    <details>
-                                <summary>Is your junk hauling eco-friendly?</summary>
-                                <p>Yes — we donate first and recycle whenever possible.</p>
-                    </details>
-                </div>
-                        <div class="feature-card faq-item" data-category="trust">
-                            <details>
-                                <summary>What should I do to prepare for junk removal?</summary>
-                                <p>Place items in a clear, accessible area; we handle sorting. Tell us about any heavy or fragile items.</p>
-                            </details>
-                        </div>
-                        <div class="feature-card faq-item" data-category="trust">
-                            <details>
-                                <summary>How long does a typical junk removal take?</summary>
-                                <p>Most residential jobs take 1–3 hours; commercial projects may take longer.</p>
-                            </details>
-                        </div>
+                <div class="faq-controls-row">
+                    <input id="faq-search" class="faq-search" type="search" placeholder="Search questions" aria-label="Search FAQs">
+                    <div class="faq-actions">
+                        <button class="faq-toggle" data-action="expand" type="button">Expand all</button>
+                        <button class="faq-toggle" data-action="collapse" type="button">Collapse all</button>
                     </div>
                 </div>
             </div>
+
+            <ul class="faq-list">
+                <li class="faq-item"><details><summary>Where do you serve?</summary><p>We serve Howard County, including Elkridge, Columbia, Laurel, Catonsville, and nearby. Same‑day or next‑day available.</p></details></li>
+                <li class="faq-item"><details><summary>Same‑day service?</summary><p>Often yes — call by noon for the best chance. Otherwise next‑day.</p></details></li>
+                <li class="faq-item"><details><summary>What items do you take?</summary><p>Furniture, appliances, electronics, construction debris, yard waste, and household junk. No hazardous materials.</p></details></li>
+                <li class="faq-item"><details><summary>How much does it cost?</summary><p>Transparent, volume‑based pricing with no hidden fees. Most residential cleanouts start at $150–$300.</p></details></li>
+                <li class="faq-item"><details><summary>Payment methods?</summary><p>Cash, cards, checks, and Venmo. Payment is due upon completion.</p></details></li>
+                <li class="faq-item"><details><summary>Licensed and insured?</summary><p>Yes — fully licensed and insured.</p></details></li>
+                <li class="faq-item"><details><summary>Eco‑friendly?</summary><p>Yes — we donate first and recycle whenever possible.</p></details></li>
+                <li class="faq-item"><details><summary>How to prepare?</summary><p>Place items in a clear, accessible area; we handle sorting. Tell us about any heavy or fragile items.</p></details></li>
+                <li class="faq-item"><details><summary>How long does it take?</summary><p>Most residential jobs take 1–3 hours; commercial projects may take longer.</p></details></li>
+            </ul>
+            <!-- Condensed list replaces legacy grid layout above -->
         </div>
     </section>
 
@@ -2655,25 +2585,20 @@
         }
 
         /* FAQ Redesign (Option 1) */
-        .faq-controls { display:flex; flex-direction:column; gap: 0.75rem; margin: 0 auto 1.25rem; max-width: 900px; }
-        .faq-search { width:100%; max-width:900px; padding: 0.9rem 1rem; border:1px solid #e5e7eb; border-radius:10px; font-size:1rem; }
-        .faq-chips { display:flex; flex-wrap:wrap; gap:.5rem; align-items:center; }
-        .faq-chips .chip { background:#f3f4f6; border:1px solid #e5e7eb; color:#222; padding:.45rem .8rem; border-radius:999px; cursor:pointer; font-weight:700; font-size:.9rem; }
-        .faq-chips .chip.active { background:#ff3333; color:#fff; border-color:#ff3333; }
-        .faq-actions { display:flex; gap:.5rem; flex-wrap:wrap; }
-        .faq-toggle { background:#fff; border:1px solid #e5e7eb; color:#222; padding:.45rem .8rem; border-radius:8px; cursor:pointer; font-weight:700; font-size:.9rem; }
+        .faq-controls { display:flex; flex-direction:column; gap: .5rem; margin: 0 auto 1rem; max-width: 900px; }
+        .faq-controls-row { display:flex; gap:.5rem; align-items:center; }
+        .faq-search { flex:1 1 auto; width:100%; max-width:none; padding: 0.75rem 0.9rem; border:1px solid #e5e7eb; border-radius:10px; font-size:1rem; }
+        .faq-actions { display:flex; gap:.5rem; flex:0 0 auto; }
+        .faq-toggle { background:#fff; border:1px solid #e5e7eb; color:#222; padding:.55rem .8rem; border-radius:10px; cursor:pointer; font-weight:700; font-size:.9rem; }
         .faq-item[hidden] { display:none !important; }
         .faq-empty { text-align:center; color:#666; margin-top:.5rem; }
 
-        /* Simplify FAQ visual style */
-        #faq .feature-grid { gap: 1rem; }
-        #faq .feature-card { background:#fff; border:1px solid #eee; box-shadow:none; padding: 1rem 1.25rem; border-radius: 12px; }
-        #faq details { background:#fff; border:1px solid #eee; border-radius:10px; padding: .75rem 1rem; box-shadow:none; }
-        #faq summary { font-weight:700; }
-        #faq details[open] { border-color:#ff3333; }
-        /* Optional: render category headers as subtle dividers */
-        #faq .faq-category h3 { display:block; text-align:left; font-size:1.1rem; font-weight:800; color:#222; margin: 1rem 0 .5rem; }
-        #faq .faq-category h3::after { display:none; }
+        /* Simplify FAQ visual style (ul list) */
+        .faq-list { list-style:none; padding:0; margin: 0 auto; max-width: 900px; display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: .75rem; }
+        .faq-list .faq-item details { background:#fff; border:1px solid #eee; border-radius:12px; padding:.75rem 1rem; transition:border-color .2s ease; }
+        .faq-list .faq-item details[open] { border-color:#ff3333; }
+        .faq-list summary { font-weight:800; font-size:1rem; cursor:pointer; }
+        .faq-list p { margin-top:.5rem; color:#555; line-height:1.6; }
 
         .faq-category h3 {
             font-size: 1.4rem;

@@ -25,6 +25,15 @@
         .section{padding:3.5rem 1rem}.container{max-width:1200px;margin:0 auto}.section h2{text-align:center;font-size:2.2rem;font-weight:900;color:#222;margin-bottom:1.75rem}.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}.pill{display:inline-flex;align-items:center;justify-content:center;padding:.6rem .9rem;border-radius:999px;font-weight:800;font-size:.95rem}.chip{background:rgba(255,51,51,.08);border:1px solid rgba(255,51,51,.22);color:#c22020}.feature{padding:1.25rem;background:#fff;border:1px solid #e9ecef;border-radius:14px;box-shadow:0 8px 24px rgba(0,0,0,.06)}.feature i{color:#ff3333;font-size:1.4rem;margin-right:.4rem}.feature h3{font-size:1.2rem;margin-bottom:.35rem;color:#222}.feature p{color:#555}
         @media (max-width:1024px){.hero-inner{grid-template-columns:1fr}}@media (max-width:768px){.hero{min-height:100svh;padding-top:72px}.hero h1{font-size:2.4rem}.grid-3,.grid-2{grid-template-columns:1fr}.quote-card{padding:1.25rem}}
     </style>
+    <style>
+        /* Standardize Google rating badge to match home page */
+        .google-rating-badge { display:inline-flex; align-items:center; gap:10px; line-height:1; min-height:42px; min-width:220px; white-space:nowrap; background:#fff; color:#222; padding:10px 16px; border-radius:999px; border:1px solid #ff3333; box-shadow:0 4px 15px rgba(255,51,51,0.12); text-decoration:none; }
+        .google-rating-badge .google-icon { color:#ff3333; font-size:1.25rem; display:inline-flex; align-items:center; justify-content:center; width:20px; height:20px; flex:0 0 20px; }
+        .google-rating-badge .stars { display:inline-flex; }
+        .google-rating-badge .stars i { color:#FFD700; margin-right:2px; font-size:1rem; width:1em; text-align:center; }
+        .google-rating-badge .rating-score { font-weight:800; font-size:1rem; width:2.5ch; text-align:right; }
+        .google-rating-badge .badge-text { font-weight:600; color:#444; font-size:0.95rem; }
+    </style>
     <script>function gtagSendEvent(u){var c=function(){if(typeof u==='string')window.location=u}; gtag('event','select_content',{content_type:'cta',event_label:'Service CTA',link_url:u,event_callback:c,event_timeout:2000}); return false;}</script>
     <script>
         function getQueryParam(n){var p=new URLSearchParams(window.location.search);var v=p.get(n);return v&&v.trim()?v.trim():''}

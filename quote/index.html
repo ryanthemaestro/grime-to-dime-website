@@ -56,8 +56,8 @@
     <link rel="preconnect" href="https://connect.facebook.net" crossorigin>
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//www.gstatic.com">
-    <!-- Preload hero image for faster first paint (swap file to your owner photo path) -->
-    <link rel="preload" as="image" href="/images/optimized/owner-dog-hero.webp" type="image/webp" fetchpriority="high">
+    <!-- Preload hero image for faster first paint (fallback that exists) -->
+    <link rel="preload" as="image" href="/images/optimized/IMG_9150-optimized.webp" type="image/webp" fetchpriority="high">
     
     <style>
         /* Smooth scrolling across anchors */
@@ -157,12 +157,13 @@
 
         /* Media column shows the owner + dog photo clearly */
         .hero-media { grid-column: 1; }
-        .hero-media picture, .hero-media img { display:block; width:100%; }
+        .hero-media img { display:block; width:100%; height:auto; }
         .hero-media img {
             border-radius: 12px;
             box-shadow: 0 8px 24px rgba(0,0,0,.10);
             object-fit: cover;
             aspect-ratio: 4/3;
+            object-position: center;
         }
 
         .hero-content h1 {
@@ -298,7 +299,8 @@
             /* Order for mobile: headline, form, image */
             .hero-content { grid-column: 1; padding: 1rem 0; text-align: center; }
             .quote-form-container { grid-column: 1; }
-            .hero-media { grid-column: 1; }
+            .hero-media { grid-column: 1; margin-top: 0.75rem; }
+            .hero-media img { aspect-ratio: 16/9; max-height: 40vh; }
 
             .hero-content h1 {
                 font-size: 2.2rem;
@@ -902,8 +904,8 @@
         <div class="hero-container">
             <figure class="hero-media">
                 <picture>
-                    <source srcset="/images/optimized/owner-dog-hero.webp" type="image/webp">
-                    <img src="/images/optimized/owner-dog-hero.webp" alt="Owner Sawyer with his dog on a local junk removal job" loading="eager" decoding="async" width="960" height="720">
+                    <source srcset="/images/optimized/IMG_9150-optimized.webp" type="image/webp">
+                    <img src="/images/optimized/IMG_9150-optimized.jpg" alt="Owner Sawyer with his dog on a local junk removal job" loading="eager" decoding="async" width="960" height="720">
                 </picture>
             </figure>
             <div class="hero-content">

@@ -56,6 +56,8 @@
     <link rel="preconnect" href="https://connect.facebook.net" crossorigin>
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//www.gstatic.com">
+    <!-- Preload hero image for faster first paint (swap file to your owner photo path) -->
+    <link rel="preload" as="image" href="/images/optimized/owner-dog-hero.webp" type="image/webp" fetchpriority="high">
     
     <style>
         /* Smooth scrolling across anchors */
@@ -136,11 +138,8 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            background-attachment: fixed;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
+            background: #ffffff;
+            min-height: auto;
             padding: 2rem 1rem;
             position: relative;
         }
@@ -149,14 +148,21 @@
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1.2fr 1fr; /* image a bit wider than form */
             gap: 2rem;
             align-items: center;
         }
 
-        .hero-content {
-            color: white;
-            padding: 2rem;
+        .hero-content { color: #222; padding: 2rem; grid-column: 2; }
+
+        /* Media column shows the owner + dog photo clearly */
+        .hero-media { grid-column: 1; }
+        .hero-media picture, .hero-media img { display:block; width:100%; }
+        .hero-media img {
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,.10);
+            object-fit: cover;
+            aspect-ratio: 4/3;
         }
 
         .hero-content h1 {
@@ -195,6 +201,7 @@
             padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            grid-column: 2;
         }
         /* Ensure anchor scroll positions account for the fixed header */
         #quoteForm { scroll-margin-top: var(--header-h); }
@@ -287,14 +294,11 @@
 
         /* Mobile Styles */
         @media (max-width: 768px) {
-            .hero-container {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-content {
-                padding: 1rem 0;
-                text-align: center;
-            }
+            .hero-container { grid-template-columns: 1fr; }
+            /* Order for mobile: headline, form, image */
+            .hero-content { grid-column: 1; padding: 1rem 0; text-align: center; }
+            .quote-form-container { grid-column: 1; }
+            .hero-media { grid-column: 1; }
 
             .hero-content h1 {
                 font-size: 2.2rem;
@@ -896,6 +900,12 @@
     </header>
     <section class="hero">
         <div class="hero-container">
+            <figure class="hero-media">
+                <picture>
+                    <source srcset="/images/optimized/owner-dog-hero.webp" type="image/webp">
+                    <img src="/images/optimized/owner-dog-hero.webp" alt="Owner Sawyer with his dog on a local junk removal job" loading="eager" decoding="async" width="960" height="720">
+                </picture>
+            </figure>
             <div class="hero-content">
                 <h1>Get a Free Junk Removal Quote in Minutes — Howard County</h1>
                 <p>Same-day pickup available. Licensed &amp; insured. Upfront pricing.</p>

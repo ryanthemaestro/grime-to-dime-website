@@ -978,11 +978,61 @@
                         By submitting this form, you agree to our <a href="/privacy-policy.html">Privacy Policy</a>. We'll never share your information. No obligation. No credit card required.
                     </p>
                 </form>
+                <div class="section-card" aria-label="Trust and guarantees" style="margin-top:1rem">
+                    <ul class="feature-list" style="margin:0">
+                        <li class="feature-item"><span class="feature-icon"><i class="fas fa-user-check" aria-hidden="true"></i></span><span class="feature-text">Background‑checked, friendly crew</span></li>
+                        <li class="feature-item"><span class="feature-icon"><i class="fas fa-broom" aria-hidden="true"></i></span><span class="feature-text">Broom‑sweep guarantee before we leave</span></li>
+                        <li class="feature-item"><span class="feature-icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></span><span class="feature-text">Licensed & insured — COI available on request</span></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Removed additional marketing sections for simplicity -->
+
+    <!-- Service schema for Junk Removal: price range and areas served -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Junk Removal",
+      "serviceType": "Junk Removal",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Grime To Dime",
+        "telephone": "+14103006743",
+        "areaServed": [
+          {"@type":"Place","name":"Howard County, MD"},
+          {"@type":"Place","name":"Elkridge, MD"},
+          {"@type":"Place","name":"Columbia, MD"},
+          {"@type":"Place","name":"Laurel, MD"},
+          {"@type":"Place","name":"Catonsville, MD"},
+          {"@type":"Place","name":"Clarksville, MD"},
+          {"@type":"Place","name":"Savage, MD"},
+          {"@type":"Place","name":"Annapolis Junction, MD"}
+        ]
+      },
+      "areaServed": [
+        {"@type":"Place","name":"Howard County, MD"},
+        {"@type":"Place","name":"Elkridge, MD"},
+        {"@type":"Place","name":"Columbia, MD"},
+        {"@type":"Place","name":"Laurel, MD"},
+        {"@type":"Place","name":"Catonsville, MD"},
+        {"@type":"Place","name":"Clarksville, MD"},
+        {"@type":"Place","name":"Savage, MD"},
+        {"@type":"Place","name":"Annapolis Junction, MD"}
+      ],
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "USD",
+        "lowPrice": "125",
+        "highPrice": "700",
+        "offerCount": "1",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+    </script>
 
     <!-- How It Works Section -->
     <section class="process-section">

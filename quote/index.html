@@ -147,7 +147,7 @@
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr; /* single-column without hero image */
+            grid-template-columns: 1fr; /* single-column default (mobile-first) */
             gap: 2rem;
             align-items: center;
         }
@@ -156,6 +156,13 @@
 
         /* Removed hero-media image 
            Keeping minimal space rules for layout consistency */
+
+        /* Desktop layout: two columns (content left, form right) */
+        @media (min-width: 992px) {
+            .hero-container { grid-template-columns: 1.2fr 1fr; }
+            .hero-content { grid-column: 1; text-align: left; padding: 2rem; }
+            .quote-form-container { grid-column: 2; }
+        }
 
         .hero-content h1 {
             font-size: 3rem;

@@ -56,8 +56,7 @@
     <link rel="preconnect" href="https://connect.facebook.net" crossorigin>
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//www.gstatic.com">
-    <!-- Preload hero image for faster first paint (fallback that exists) -->
-    <link rel="preload" as="image" href="/images/optimized/sawyerpickuppro-768.webp" type="image/webp" imagesrcset="/images/optimized/sawyerpickuppro-480.webp 480w, /images/optimized/sawyerpickuppro-768.webp 768w, /images/optimized/sawyerpickuppro-960.webp 960w" imagesizes="(max-width: 768px) 100vw, 50vw" fetchpriority="high">
+    
     
     <style>
         /* Smooth scrolling across anchors */
@@ -148,20 +147,15 @@
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1.2fr 1fr; /* image a bit wider than form */
+            grid-template-columns: 1fr; /* single-column without hero image */
             gap: 2rem;
             align-items: center;
         }
 
-        .hero-content { color: #222; padding: 2rem; grid-column: 2; }
+        .hero-content { color: #222; padding: 2rem; grid-column: 1; }
 
-        /* Media column shows the owner + dog photo clearly */
-        .hero-media { grid-column: 1; }
-        .hero-media img { display:block; width:100%; height:auto; }
-        .hero-media img {
-            border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(0,0,0,.10);
-        }
+        /* Removed hero-media image 
+           Keeping minimal space rules for layout consistency */
 
         .hero-content h1 {
             font-size: 3rem;
@@ -293,11 +287,10 @@
         /* Mobile Styles */
         @media (max-width: 768px) {
             .hero-container { grid-template-columns: 1fr; }
-            /* Order for mobile: headline, form, image */
+            /* Order for mobile: headline then form */
             .hero-content { grid-column: 1; padding: 1rem 0; text-align: center; }
             .quote-form-container { grid-column: 1; }
-            .hero-media { grid-column: 1; margin-top: 0.75rem; }
-            .hero-media img { max-height: 40vh; }
+            
 
             .hero-content h1 {
                 font-size: 2.2rem;
@@ -899,12 +892,7 @@
     </header>
     <section class="hero">
         <div class="hero-container">
-            <figure class="hero-media">
-                <picture>
-                    <source type="image/webp" srcset="/images/optimized/sawyerpickuppro-480.webp 480w, /images/optimized/sawyerpickuppro-768.webp 768w, /images/optimized/sawyerpickuppro-960.webp 960w">
-                    <img src="/images/optimized/sawyerpickuppro-768.jpg" srcset="/images/optimized/sawyerpickuppro-480.jpg 480w, /images/optimized/sawyerpickuppro-768.jpg 768w, /images/optimized/sawyerpickuppro-960.jpg 960w" sizes="(max-width: 768px) 100vw, 50vw" alt="Sawyer next to the work truck on a local junk removal job" loading="eager" decoding="async" width="960" height="897">
-                </picture>
-            </figure>
+            <!-- Removed hero photo per request -->
             <div class="hero-content">
                 <h1>Get a Free Junk Removal Quote in Minutes — Howard County</h1>
                 <p>Same-day pickup available. Licensed &amp; insured. Upfront pricing.</p>

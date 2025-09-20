@@ -1200,8 +1200,8 @@
 
         .guarantee-feature {
             display: flex;
-            align-items: center;
-            justify-content: center;
+            align-items: flex-start;
+            justify-content: flex-start;
             gap: 1rem;
             background: rgba(255, 255, 255, 0.9);
             padding: 1.5rem 2rem;
@@ -1210,6 +1210,7 @@
             box-shadow: 0 6px 20px rgba(40, 167, 69, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.6);
             transition: all 0.3s ease;
             border: 1px solid rgba(40, 167, 69, 0.1);
+            text-align: left;
         }
 
         .guarantee-feature:hover {
@@ -1222,6 +1223,7 @@
             font-size: 1.4rem;
             flex-shrink: 0;
             filter: drop-shadow(0 2px 4px rgba(40, 167, 69, 0.2));
+            margin-top: 0.1rem;
         }
 
         /* Mobile guarantee section */
@@ -1424,7 +1426,7 @@
                     
                     <div class="form-group">
                         <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="_phone" required autocomplete="tel" inputmode="tel" pattern="[\d\-\+\(\)\s]{10,}" enterkeyhint="next" placeholder="410-300-6743 or (410) 300-6743">
+                        <input type="tel" id="phone" name="_phone" required autocomplete="tel" inputmode="tel" pattern="[\d\-\+\(\)\s]{10,}" enterkeyhint="next" placeholder="(410) 300-6743">
                     </div>
                     
                     <div class="form-group">

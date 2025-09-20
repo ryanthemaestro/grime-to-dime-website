@@ -831,6 +831,187 @@
             }
         }
 
+        /* Urgency Banner Styles */
+        .urgency-banner {
+            background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+            border: 2px solid #ff6b35;
+            color: #856404;
+            text-align: center;
+            margin: 0;
+            padding: 1rem;
+        }
+
+        .urgency-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .urgency-icon {
+            font-size: 1.5rem;
+            color: #ff6b35;
+            flex-shrink: 0;
+        }
+
+        .urgency-text {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .urgency-text strong {
+            font-size: 1.1rem;
+            color: #704403;
+        }
+
+        .urgency-cta {
+            background: #ff6b35;
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .urgency-cta:hover {
+            background: #e55a2b;
+            transform: translateY(-1px);
+        }
+
+        /* Mobile urgency banner */
+        @media (max-width: 768px) {
+            .urgency-banner {
+                padding: 1rem;
+                margin: 0 0.5rem;
+                border-radius: 8px;
+            }
+
+            .urgency-content {
+                flex-direction: column;
+                gap: 0.75rem;
+                text-align: center;
+            }
+
+            .urgency-text {
+                font-size: 0.95rem;
+                line-height: 1.4;
+            }
+
+            .urgency-text strong {
+                display: block;
+                margin-bottom: 0.25rem;
+                font-size: 1rem;
+            }
+
+            .urgency-cta {
+                width: 100%;
+                max-width: 280px;
+                padding: 0.75rem 1rem;
+                font-size: 1rem;
+            }
+        }
+
+        /* Guarantee Section Styles */
+        .guarantee-section {
+            background: linear-gradient(135deg, #d4edda, #c3e6cb);
+            border: 2px solid #28a745;
+            color: #155724;
+            padding: 4rem 1rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .guarantee-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .guarantee-icon {
+            font-size: 3.5rem;
+            color: #28a745;
+            margin-bottom: 1.5rem;
+        }
+
+        .guarantee-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #155724;
+            font-weight: 700;
+        }
+
+        .guarantee-text {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .guarantee-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .guarantee-feature {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+
+        .guarantee-feature i {
+            color: #28a745;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        /* Mobile guarantee section */
+        @media (max-width: 768px) {
+            .guarantee-section {
+                padding: 3rem 1rem;
+                margin: 1rem 0.5rem;
+                border-radius: 10px;
+            }
+
+            .guarantee-section h2 {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            .guarantee-text {
+                font-size: 1.1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .guarantee-icon {
+                font-size: 3rem;
+                margin-bottom: 1rem;
+            }
+
+            .guarantee-features {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .guarantee-feature {
+                padding: 0.875rem 1rem;
+                font-size: 0.95rem;
+            }
+        }
+
         /* Note: Services and Areas sections have been removed as requested */
     </style>
 
@@ -938,6 +1119,19 @@
             </a>
         </div>
     </header>
+
+    <!-- Urgency Banner -->
+    <section class="urgency-banner">
+        <div class="urgency-content">
+            <i class="fas fa-clock urgency-icon"></i>
+            <span class="urgency-text">
+                <strong>⚡ Same-Day Service Alert:</strong>
+                Only 2 slots available today! Schedule fills up fast in Howard County.
+            </span>
+            <a href="#quoteForm" class="urgency-cta">Claim Your Spot Now</a>
+        </div>
+    </section>
+
     <section class="hero">
         <div class="hero-container">
             <!-- Removed hero photo per request -->
@@ -1011,11 +1205,14 @@
                         By submitting this form, you agree to our <a href="/privacy-policy.html">Privacy Policy</a>. We'll never share your information. No obligation. No credit card required.
                     </p>
                 </form>
-                <div class="section-card" aria-label="Trust and guarantees" style="margin-top:1rem">
+                <div class="section-card" aria-label="Professional Certifications" style="margin-top:1rem">
+                    <div class="section-header">
+                        <h3 style="margin:0 0 .75rem 0; font-size:1.1rem; color:#222;">Licensed & Certified Professionals</h3>
+                    </div>
                     <ul class="feature-list" style="margin:0">
-                        <li class="feature-item"><span class="feature-icon"><i class="fas fa-user-check" aria-hidden="true"></i></span><span class="feature-text">Background‑checked, friendly crew</span></li>
-                        <li class="feature-item"><span class="feature-icon"><i class="fas fa-broom" aria-hidden="true"></i></span><span class="feature-text">Broom‑sweep guarantee before we leave</span></li>
-                        <li class="feature-item"><span class="feature-icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></span><span class="feature-text">Licensed & insured — COI available on request</span></li>
+                        <li class="feature-item"><span class="feature-icon"><i class="fas fa-certificate" aria-hidden="true"></i></span><span class="feature-text">Licensed Maryland Junk Removal Contractor</span></li>
+                        <li class="feature-item"><span class="feature-icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></span><span class="feature-text">Fully Bonded & Insured ($1M+ Coverage)</span></li>
+                        <li class="feature-item"><span class="feature-icon"><i class="fas fa-leaf" aria-hidden="true"></i></span><span class="feature-text">EPA-Compliant Waste Disposal & Recycling</span></li>
                     </ul>
                 </div>
             </div>
@@ -1107,6 +1304,18 @@
                 <div class="testimonial-track">
                     <div class="testimonial-card">
                         <div class="testimonial-stars">★★★★★</div>
+                        <p class="testimonial-text">"Great experience with Grime to Dime. They were on time, reasonably priced, and professional. Will definitely recommend."</p>
+                        <p class="testimonial-author">- Edie<br>Columbia, MD</p>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p class="testimonial-text">"They were prompt, worked with my schedule, and fantastic with their price. I will not only use them again, but will happily recommend them to anyone in the future."</p>
+                        <p class="testimonial-author">- Robert Mcmillen<br>Odenton, MD</p>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★★★★★</div>
                         <p class="testimonial-text">"Timely, good communication, and very polite. Accepted Venmo. Performed the job well quickly. Definitely recommend."</p>
                         <p class="testimonial-author">- David P.<br>Baltimore, MD</p>
                     </div>
@@ -1132,6 +1341,34 @@
                         <i class="fas fa-hand-holding-usd"></i>
                         <span>Satisfaction Guaranteed</span>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 100% Satisfaction Guarantee Section -->
+    <section class="guarantee-section">
+        <div class="guarantee-container">
+            <div class="guarantee-icon">
+                <i class="fas fa-shield-alt"></i>
+            </div>
+            <h2>Our 100% Satisfaction Guarantee</h2>
+            <p class="guarantee-text">
+                If you're not completely satisfied with our junk removal service, we'll make it right or refund your money.
+                <strong>No questions asked.</strong> Your satisfaction is our priority in Howard County.
+            </p>
+            <div class="guarantee-features">
+                <div class="guarantee-feature">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Licensed & Background-Checked Team</span>
+                </div>
+                <div class="guarantee-feature">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Broom-Sweep Clean Guarantee</span>
+                </div>
+                <div class="guarantee-feature">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Eco-Friendly Disposal Practices</span>
                 </div>
             </div>
         </div>

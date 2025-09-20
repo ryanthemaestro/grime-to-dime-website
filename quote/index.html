@@ -135,21 +135,49 @@
             color: #ff3333;
         }
 
-        /* Hero Section */
+        /* Hero Section - Renaissance Grandeur */
         .hero {
-            background: #ffffff;
-            min-height: auto;
-            padding: 2rem 1rem;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 25%, #16213e 75%, #0f3460 100%);
+            color: white;
+            padding: 5rem 1rem;
+            min-height: 75vh;
+            display: flex;
+            align-items: center;
             position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at top left, rgba(255, 51, 51, 0.08) 0%, transparent 50%), 
+                        radial-gradient(ellipse at bottom right, rgba(255, 107, 53, 0.08) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
         }
 
         .hero-container {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr; /* single-column default (mobile-first) */
-            gap: 2rem;
-            align-items: center;
+            grid-template-columns: 1fr 420px;
+            gap: 5rem;
+            align-items: start;
+            position: relative;
+            z-index: 1;
         }
 
         .hero-content { color: #222; padding: 2rem; grid-column: 1; }
@@ -159,15 +187,19 @@
 
         /* Desktop layout: two columns (content left, form right) */
         @media (min-width: 992px) {
-            .hero-container { grid-template-columns: 1.2fr 1fr; }
+            .hero-container { grid-template-columns: 1fr 420px; }
             .hero-content { grid-column: 1; text-align: left; padding: 2rem; }
             .quote-form-container { grid-column: 2; }
         }
 
         .hero-content h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            line-height: 1.2;
+            font-size: 3.25rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.15);
+            letter-spacing: -1px;
         }
 
         .hero-content p {
@@ -178,38 +210,69 @@
 
         .hero-benefits {
             list-style: none;
-            margin: 2rem 0;
+            padding: 0;
+            margin: 2.5rem auto 0;
+            max-width: 480px;
         }
 
         .hero-benefits li {
-            margin-bottom: 0.8rem;
             display: flex;
             align-items: center;
+            margin-bottom: 1rem;
             font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.92);
+            padding: 0.5rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .hero-benefits li:hover {
+            color: rgba(255, 255, 255, 1);
+            transform: translateX(5px);
         }
 
         .hero-benefits i {
             color: #ff3333;
-            margin-right: 0.8rem;
+            margin-right: 1rem;
             font-size: 1.2rem;
+            filter: drop-shadow(0 2px 4px rgba(255, 51, 51, 0.3));
+            transition: all 0.3s ease;
+        }
+
+        .hero-benefits li:hover i {
+            color: #ff6b35;
+            transform: scale(1.1);
         }
 
         /* Quote Form */
         .quote-form-container {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            grid-column: 2;
+            background: rgba(255, 255, 255, 0.98);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 8px 32px rgba(0, 0, 0, 0.12);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
         }
-        /* Ensure anchor scroll positions account for the fixed header */
-        #quoteForm { scroll-margin-top: var(--header-h); }
+
+        .quote-form-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ff3333, #ff6b35, #17a2b8);
+        }
 
         .quote-form-container h2 {
+            color: #2c3e50;
+            font-size: 1.75rem;
+            margin-bottom: 2rem;
             text-align: center;
-            margin-bottom: 1.5rem;
-            color: #222;
-            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
         }
 
         .quote-form {
@@ -236,47 +299,88 @@
         
 
         .form-group {
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
+            color: #34495e;
             font-weight: 600;
-            color: #444;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .form-group input,
-        .form-group textarea,
-        .form-group select {
+        .form-group textarea {
             width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+            padding: 1rem 1.25rem;
+            border: 2px solid #e8ecf0;
+            border-radius: 12px;
             font-size: 1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-sizing: border-box;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
         }
 
-        .form-group textarea {
-            height: 100px;
-            resize: vertical;
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #ff3333;
+            box-shadow: 0 0 0 4px rgba(255, 51, 51, 0.08), inset 0 1px 3px rgba(0, 0, 0, 0.05);
+            background: rgba(255, 255, 255, 0.95);
+            transform: translateY(-1px);
+        }
+
+        .form-group input:hover,
+        .form-group textarea:hover {
+            border-color: #d1d8e0;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.08);
         }
 
         .submit-button {
-            background: #ff3333;
+            background: linear-gradient(135deg, #ff3333 0%, #e62e2e 100%);
             color: white;
-            padding: 1rem;
+            padding: 1.25rem 2rem;
             border: none;
-            border-radius: 5px;
+            border-radius: 50px;
             font-size: 1.1rem;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 1rem;
+            width: 100%;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 6px 20px rgba(255, 51, 51, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s;
+        }
+
+        .submit-button:hover::before {
+            left: 100%;
         }
 
         .submit-button:hover {
-            background: #e62e2e;
-            transform: translateY(-2px);
+            background: linear-gradient(135deg, #e62e2e 0%, #cc1f1f 100%);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(255, 51, 51, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+
+        .submit-button:active {
+            transform: translateY(-1px) scale(1.01);
         }
 
         .privacy-note {
@@ -903,14 +1007,27 @@
             }
         }
 
-        /* Urgency Banner Styles */
+        /* Urgency Banner Styles - Michelangelo Aesthetic */
         .urgency-banner {
-            background: linear-gradient(135deg, #fff3cd, #ffeaa7);
-            border: 2px solid #ff6b35;
-            color: #856404;
+            background: linear-gradient(135deg, #fff9e6 0%, #fff3cd 35%, #ffeaa7 100%);
+            border: none;
+            box-shadow: 0 4px 20px rgba(255, 107, 53, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            color: #8b5a00;
             text-align: center;
             margin: 0;
-            padding: 1rem;
+            padding: 1.75rem 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .urgency-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #ff3333, #ff6b35, #ff8c42);
         }
 
         .urgency-content {
@@ -919,102 +1036,150 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 1rem;
+            gap: 1.5rem;
             flex-wrap: wrap;
         }
 
         .urgency-icon {
-            font-size: 1.5rem;
+            font-size: 1.75rem;
             color: #ff6b35;
             flex-shrink: 0;
+            filter: drop-shadow(0 2px 4px rgba(255, 107, 53, 0.3));
         }
 
         .urgency-text {
             flex: 1;
-            min-width: 200px;
+            min-width: 250px;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
         }
 
         .urgency-text strong {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: #704403;
+            font-weight: 700;
+            letter-spacing: 0.5px;
         }
 
         .urgency-cta {
-            background: #ff6b35;
+            background: linear-gradient(135deg, #ff6b35 0%, #e55a2b 100%);
             color: white;
-            padding: 0.6rem 1.2rem;
-            border-radius: 5px;
+            padding: 0.875rem 2rem;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
+            font-size: 1rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             flex-shrink: 0;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .urgency-cta:hover {
-            background: #e55a2b;
-            transform: translateY(-1px);
+            background: linear-gradient(135deg, #e55a2b 0%, #d64d1f 100%);
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3);
         }
 
         /* Mobile urgency banner */
         @media (max-width: 768px) {
             .urgency-banner {
-                padding: 1rem;
-                margin: 0 0.5rem;
-                border-radius: 8px;
+                padding: 1.5rem 1rem;
+                margin: 0.5rem;
+                border-radius: 12px;
             }
 
             .urgency-content {
                 flex-direction: column;
-                gap: 0.75rem;
+                gap: 1rem;
                 text-align: center;
             }
 
             .urgency-text {
-                font-size: 0.95rem;
-                line-height: 1.4;
+                font-size: 1rem;
+                line-height: 1.5;
             }
 
             .urgency-text strong {
                 display: block;
-                margin-bottom: 0.25rem;
-                font-size: 1rem;
+                margin-bottom: 0.5rem;
+                font-size: 1.1rem;
             }
 
             .urgency-cta {
                 width: 100%;
-                max-width: 280px;
-                padding: 0.75rem 1rem;
+                max-width: 320px;
+                padding: 1rem 1.5rem;
                 font-size: 1rem;
+            }
+
+            .urgency-icon {
+                font-size: 1.5rem;
             }
         }
 
-        /* Guarantee Section Styles */
+        /* Guarantee Section Styles - Renaissance Elegance */
         .guarantee-section {
-            background: linear-gradient(135deg, #d4edda, #c3e6cb);
-            border: 2px solid #28a745;
-            color: #155724;
-            padding: 4rem 1rem;
+            background: linear-gradient(135deg, #e8f8ea 0%, #d4edda 35%, #c3e6cb 100%);
+            border: none;
+            color: #0d4b14;
+            padding: 5rem 1rem;
             text-align: center;
-            margin: 2rem 0;
+            margin: 3rem 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(40, 167, 69, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+
+        .guarantee-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #28a745, #20c997, #17a2b8);
+        }
+
+        .guarantee-section::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(40, 167, 69, 0.05) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            z-index: 0;
         }
 
         .guarantee-container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .guarantee-icon {
-            font-size: 3.5rem;
+            font-size: 4rem;
             color: #28a745;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            filter: drop-shadow(0 4px 8px rgba(40, 167, 69, 0.3));
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
 
         .guarantee-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            color: #155724;
+            font-size: 2.75rem;
+            margin-bottom: 2rem;
+            color: #0d4b14;
             font-weight: 700;
+            text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
+            letter-spacing: -0.5px;
         }
 
         .guarantee-text {
@@ -1028,26 +1193,35 @@
 
         .guarantee-features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
         }
 
         .guarantee-feature {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 0.75rem;
-            background: rgba(255, 255, 255, 0.8);
-            padding: 1rem 1.5rem;
-            border-radius: 10px;
+            gap: 1rem;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1.5rem 2rem;
+            border-radius: 16px;
             font-weight: 600;
+            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(40, 167, 69, 0.1);
+        }
+
+        .guarantee-feature:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(40, 167, 69, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.8);
         }
 
         .guarantee-feature i {
             color: #28a745;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             flex-shrink: 0;
+            filter: drop-shadow(0 2px 4px rgba(40, 167, 69, 0.2));
         }
 
         /* Mobile guarantee section */

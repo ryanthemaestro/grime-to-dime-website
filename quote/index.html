@@ -857,26 +857,67 @@
         }
     </script>
     <script>
-        // Smooth scroll to anchors with header offset and dynamic header height padding
+        // Real-time validation with helpful hints
         document.addEventListener('DOMContentLoaded', function() {
-            var header = document.querySelector('header');
-            function headerH() { return header ? Math.ceil(header.getBoundingClientRect().height) : 0; }
-            function setHeaderOffsetVar() {
-                var h = headerH();
-                if (h) document.documentElement.style.setProperty('--header-h', h + 'px');
-            }
-            setHeaderOffsetVar();
-            window.addEventListener('resize', setHeaderOffsetVar);
+            const nameInput = document.getElementById('name');
+            const phoneInput = document.getElementById('phone');
+            const emailInput = document.getElementById('email');
 
-            function scrollWithOffset(target) {
-                if (!target) return;
-                var y = target.getBoundingClientRect().top + window.pageYOffset - headerH();
-                window.scrollTo({ top: y, behavior: 'smooth' });
+            // Helper function to show validation hints
+            function showFieldHint(input, message, isValid) {
+                let hint = input.parentNode.querySelector('.field-hint');
+                if (!hint) {
+                    hint = document.createElement('p');
+                    hint.className = 'field-hint';
+                    hint.setAttribute('aria-live', 'polite');
+                    input.parentNode.appendChild(hint);
+                }
+
+                hint.textContent = message;
+                hint.style.color = isValid ? '#28a745' : '#dc3545';
+                input.classList.toggle('field-invalid', !isValid);
             }
-            document.querySelectorAll('a[href="#quoteForm"]').forEach(function(a){
-                a.addEventListener('click', function(ev){
-                    ev.preventDefault();
-                    scrollWithOffset(document.getElementById('quoteForm'));
+
+            // Name validation
+            nameInput.addEventListener('blur', function() {
+                if (this.value.trim().length < 2) {
+                    showFieldHint(this, 'Please enter your full name', false);
+                } else {
+                    showFieldHint(this, '✓ Looks good!', true);
+                }
+            });
+
+            // Phone validation
+            phoneInput.addEventListener('blur', function() {
+                const cleanPhone = this.value.replace(/\s/g, '');
+                const phoneRegex = /^[\+]?[1]?[-.\s]?\(?[0-9]{3}\)?[-.\s]?[0-9]{3}[-.\s]?[0-9]{4,6}$/;
+                if (!phoneRegex.test(cleanPhone)) {
+                    showFieldHint(this, 'Please use format: 410-300-6743 or (410) 300-6743', false);
+                } else {
+                    showFieldHint(this, '✓ Valid phone number!', true);
+                }
+            });
+
+            // Email validation
+            emailInput.addEventListener('blur', function() {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (this.value && !emailRegex.test(this.value)) {
+                    showFieldHint(this, 'Please enter a valid email address', false);
+                } else if (this.value) {
+                    showFieldHint(this, '✓ Valid email!', true);
+                } else {
+                    // Optional field - no hint needed if empty
+                    const hint = this.parentNode.querySelector('.field-hint');
+                    if (hint) hint.textContent = '';
+                }
+            });
+
+            // Clear hints on focus
+            [nameInput, phoneInput, emailInput].forEach(input => {
+                input.addEventListener('focus', function() {
+                    const hint = this.parentNode.querySelector('.field-hint');
+                    if (hint) hint.textContent = '';
+                    this.classList.remove('field-invalid');
                 });
             });
         });
@@ -943,7 +984,7 @@
                     
                     <div class="form-group">
                         <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="_phone" required autocomplete="tel" inputmode="tel" pattern="[\d\-\+\(\)\s]{10,}" enterkeyhint="next">
+                        <input type="tel" id="phone" name="_phone" required autocomplete="tel" inputmode="tel" pattern="[\d\-\+\(\)\s]{10,}" enterkeyhint="next" placeholder="410-300-6743 or (410) 300-6743">
                     </div>
                     
                     <div class="form-group">
@@ -1241,12 +1282,12 @@
                 return false;
             }
             
-            // Phone validation
-            // Handle both standard US format and international format with +1 or 1 prefix
-            const phoneRegex = /^(\+?1[-. ]?)?\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-            if (!phoneRegex.test(phone)) {
+            // Phone validation - Much more permissive now
+            // Accepts: 4103006743, 410-300-6743, (410) 300-6743, +14103006743, etc.
+            const phoneRegex = /^[\+]?[1]?[-.\s]?\(?[0-9]{3}\)?[-.\s]?[0-9]{3}[-.\s]?[0-9]{4,6}$/;
+            if (!phoneRegex.test(phone.replace(/\s/g, ''))) {
                 isValid = false;
-                alert('Please enter a valid phone number.');
+                alert('Please enter a valid phone number (e.g., 410-300-6743, (410) 300-6743, or just 4103006743).');
                 return false;
             }
             
@@ -1310,7 +1351,32 @@
                     console.error('Error:', error);
                     submitButton.innerHTML = originalText;
                     submitButton.disabled = false;
-                    alert('There was a problem submitting your form. Please try again.');
+
+                    // Better error messaging
+                    let errorMessage = 'There was a problem submitting your form. Please try again.';
+                    if (error.message.includes('Network')) {
+                        errorMessage = 'Network error. Please check your connection and try again.';
+                    } else if (error.message.includes('fetch')) {
+                        errorMessage = 'Service temporarily unavailable. Please call us at (410) 300-6743 instead.';
+                    }
+
+                    // Show error in a more user-friendly way
+                    const errorDiv = document.createElement('div');
+                    errorDiv.className = 'form-error';
+                    errorDiv.style.cssText = 'background:#f8d7da;border:1px solid #f5c6cb;color:#721c24;padding:1rem;border-radius:5px;margin-top:1rem;';
+                    errorDiv.innerHTML = `<i class="fas fa-exclamation-triangle"></i> ${errorMessage}`;
+
+                    // Remove any existing error messages
+                    const existingError = document.querySelector('.form-error');
+                    if (existingError) existingError.remove();
+
+                    // Add the error message above the submit button
+                    submitButton.parentNode.insertBefore(errorDiv, submitButton);
+
+                    // Auto-remove error after 10 seconds
+                    setTimeout(() => {
+                        if (errorDiv.parentNode) errorDiv.remove();
+                    }, 10000);
                 });
                 
                 return false;

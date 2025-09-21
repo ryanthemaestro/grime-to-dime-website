@@ -1479,6 +1479,26 @@
                 if (processStep1Desc) {
                     processStep1Desc.textContent = 'Select your preferred 2-hour appointment window using the calendar below.';
                 }
+                
+                const processStep2 = document.querySelector('.process-step:nth-child(2) .process-heading');
+                if (processStep2) {
+                    processStep2.textContent = '2. We\'ll Call on the Way';
+                }
+                
+                const processStep2Desc = document.querySelector('.process-step:nth-child(2) .process-description');
+                if (processStep2Desc) {
+                    processStep2Desc.textContent = '15 minutes before arrival to let you know we\'re on our way.';
+                }
+                
+                const processStep3 = document.querySelector('.process-step:nth-child(3) .process-heading');
+                if (processStep3) {
+                    processStep3.textContent = '3. Sit Back & Relax';
+                }
+                
+                const processStep3Desc = document.querySelector('.process-step:nth-child(3) .process-description');
+                if (processStep3Desc) {
+                    processStep3Desc.textContent = 'We handle everything and clean up. You won\'t lift a finger while we donate and recycle when possible.';
+                }
             }
         })();
     </script>

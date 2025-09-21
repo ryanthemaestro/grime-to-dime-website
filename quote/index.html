@@ -1391,18 +1391,17 @@
             // Store version globally for other scripts
             window.abTestVersion = testVersion;
             
-            // Debug info (remove this after testing)
-            if (window.location.search.includes('debug=true')) {
-                console.log('A/B Test Version:', testVersion);
-                document.body.style.position = 'relative';
-                const debugBar = document.createElement('div');
-                debugBar.innerHTML = `🧪 A/B Test: ${testVersion.toUpperCase()} version | localStorage: ${localStorage.getItem('abTestVersion')}`;
-                debugBar.style.cssText = 'position:fixed;top:0;left:0;right:0;background:#333;color:#fff;padding:5px;text-align:center;font-size:12px;z-index:9999;';
-                document.body.appendChild(debugBar);
-            }
-            
             // Show appropriate version when DOM loads
             document.addEventListener('DOMContentLoaded', function() {
+                // Debug info (move here so document.body exists)
+                if (window.location.search.includes('debug=true')) {
+                    console.log('A/B Test Version:', testVersion);
+                    const debugBar = document.createElement('div');
+                    debugBar.innerHTML = `🧪 A/B Test: ${testVersion.toUpperCase()} version | localStorage: ${localStorage.getItem('abTestVersion')}`;
+                    debugBar.style.cssText = 'position:fixed;top:0;left:0;right:0;background:#333;color:#fff;padding:5px;text-align:center;font-size:12px;z-index:9999;';
+                    document.body.appendChild(debugBar);
+                }
+                
                 console.log('DOM loaded, test version:', testVersion);
                 console.log('Form element exists:', !!document.getElementById('form-version'));
                 console.log('Calendar element exists:', !!document.getElementById('calendar-version'));

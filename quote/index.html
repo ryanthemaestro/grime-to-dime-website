@@ -1461,6 +1461,13 @@
                     smsLink.textContent = 'Prefer to call? (410) 300-6743 — Same great service';
                     smsLink.href = 'tel:+14103006743';
                 }
+                
+                // Update sticky button to link to calendar
+                const stickyBtn = document.querySelector('.sticky-bar .btn.quote');
+                if (stickyBtn) {
+                    stickyBtn.href = '#my-cal-inline-junk-removal-appointment';
+                    stickyBtn.setAttribute('aria-label', 'Schedule your appointment using the calendar below');
+                }
             }
         })();
     </script>
@@ -1678,7 +1685,7 @@
                         <div style="display: flex; align-items: flex-start; margin-bottom: 1.25rem; padding: 0.75rem; background: #f8f9fa; border-radius: 8px;">
                             <div style="background: #ff3333; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.9rem; margin-right: 1rem; flex-shrink: 0;">1</div>
                             <div>
-                                <h4 style="margin: 0 0 0.25rem 0; color: #2c3e50; font-size: 1rem; font-weight: 600;">Get an Appointment Time</h4>
+                                <h4 style="margin: 0 0 0.25rem 0; color: #2c3e50; font-size: 1rem; font-weight: 600;">Schedule Visit</h4>
                                 <p style="margin: 0; color: #666; font-size: 0.9rem;">Select your preferred 2-hour window</p>
                             </div>
                         </div>

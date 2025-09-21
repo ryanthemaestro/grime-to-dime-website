@@ -1445,20 +1445,14 @@
         })();
     </script>
 
-    <!-- Cal.com Integration Script -->
+    <!-- Cal.com Integration Script - Simplified Approach -->
     <script>
         // Initialize Cal.com when calendar version is shown
         function initCalendar() {
             if (window.abTestVersion === 'calendar') {
                 console.log('Initializing Cal.com embed...');
                 
-                // Clear the loading message first
-                const calEmbed = document.getElementById('cal-embed');
-                if (calEmbed) {
-                    calEmbed.innerHTML = '';
-                }
-                
-                // Cal.com inline embed - updated approach
+                // Load Cal.com script first
                 (function (C, A, L) { 
                     let p = function (a, ar) { 
                         a.q.push(ar); 
@@ -1474,96 +1468,47 @@
                     }; 
                     C.Cal.ns = {}; 
                     C.Cal.q = C.Cal.q || []; 
-                    
-                    // Load Cal.com script
-                    const script = d.createElement("script");
-                    script.src = A;
-                    script.onload = function() {
-                        console.log('Cal.com script loaded successfully');
-                        C.Cal.loaded = true;
-                        
-                        // Initialize after script loads
-                        setTimeout(() => {
-                            try {
-                                Cal("init", {origin:"https://app.cal.com"});
-                                
-                                console.log('Embedding calendar with link: grimetodime/junk-removal-appointment');
-                                
-                                // Configure the calendar
-                                Cal("inline", {
-                                    elementOrSelector: "#cal-embed",
-                                    calLink: "grimetodime/junk-removal-appointment",
-                                    layout: "month_view",
-                                    config: {
-                                        layout: "month_view",
-                                        theme: "light"
-                                    }
-                                });
-                                
-                                console.log('Cal.com embed initialized');
-                                
-                                // Track calendar interaction
-                                Cal("on", {
-                                    action: "bookingSuccessful",
-                                    callback: (e) => {
-                                        console.log('Calendar booking successful!', e);
-                                        
-                                        // Track conversion in Google Analytics
-                                        if (typeof gtag !== 'undefined') {
-                                            gtag('event', 'conversion', {
-                                                'send_to': 'AW-11553122519/JftTCI3O64QbENfR-oQr',
-                                                'value': 25.0,
-                                                'transaction_id': 'cal_' + new Date().getTime().toString(),
-                                                'event_category': 'Calendar Booking',
-                                                'event_label': 'calendar_version'
-                                            });
-
-                                            gtag('event', 'ab_test_conversion', {
-                                                'event_category': 'A/B Test',
-                                                'event_label': 'calendar',
-                                                'value': 1
-                                            });
-                                        }
-                                    }
-                                });
-                                
-                            } catch(error) {
-                                console.error('Cal.com initialization error:', error);
-                                showCalendarFallback();
-                            }
-                        }, 500);
-                    };
-                    
-                    script.onerror = function() {
-                        console.error('Failed to load Cal.com script');
-                        showCalendarFallback();
-                    };
-                    
-                    d.head.appendChild(script);
+                    d.head.appendChild(d.createElement("script")).src = A; 
+                    C.Cal.loaded = true; 
                 })(window, "https://app.cal.com/embed/embed.js");
-            }
-        }
-        
-        // Show fallback if Cal.com fails to load
-        function showCalendarFallback() {
-            const calEmbed = document.getElementById('cal-embed');
-            if (calEmbed) {
-                calEmbed.innerHTML = `
-                    <div style="text-align: center; padding: 3rem 1rem; color: #666;">
-                        <p style="margin-bottom: 1rem;">📅 Schedule Your Appointment</p>
-                        <p style="font-size: 0.9rem; margin-bottom: 2rem;">2-hour appointments available 8 AM - 6 PM daily</p>
-                        <a href="https://cal.com/grimetodime/junk-removal-appointment" target="_blank" 
-                           style="display: inline-block; background: #ff3333; color: white; padding: 1.25rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.1rem;">
-                            📅 Book Your Appointment
-                        </a>
-                    </div>
-                `;
+
+                // Simple initialization - following Cal.com docs exactly
+                Cal("init", {origin:"https://app.cal.com"});
+
+                // Embed inline - simplified
+                Cal("inline", {
+                    elementOrSelector: "#cal-embed",
+                    calLink: "grimetodime/junk-removal-appointment"
+                });
+
+                // Track successful bookings
+                Cal("on", {
+                    action: "bookingSuccessful", 
+                    callback: (e) => {
+                        console.log('Booking successful:', e);
+                        if (typeof gtag !== 'undefined') {
+                            gtag('event', 'conversion', {
+                                'send_to': 'AW-11553122519/JftTCI3O64QbENfR-oQr',
+                                'value': 25.0,
+                                'transaction_id': 'cal_' + new Date().getTime()
+                            });
+
+                            gtag('event', 'ab_test_conversion', {
+                                'event_category': 'A/B Test',
+                                'event_label': 'calendar',
+                                'value': 1
+                            });
+                        }
+                    }
+                });
+
+                console.log('Cal.com setup completed');
             }
         }
 
         // Initialize calendar when DOM loads
         document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(initCalendar, 1000); // Delay to ensure A/B test runs first
+            setTimeout(initCalendar, 1500); // Give A/B test time to run
         });
     </script>
 </head>
@@ -1715,20 +1660,10 @@
                     </div>
 
                     <!-- Cal.com Embed -->
-                    <div id="cal-embed" style="min-height: 600px; background: #f8f9fa; border-radius: 12px; padding: 1rem;">
-                        <!-- Cal.com will be embedded here -->
-                        <div id="cal-loading" style="text-align: center; padding: 3rem 1rem; color: #666;">
-                            <p style="margin-bottom: 1rem;">📅 Loading available appointment times...</p>
-                            <p style="font-size: 0.9rem; margin-bottom: 2rem;">2-hour appointments available 8 AM - 6 PM daily</p>
-                            
-                            <!-- Fallback link if embed fails -->
-                            <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #ddd;">
-                                <p style="color: #333; margin-bottom: 1rem;"><strong>Calendar not loading?</strong></p>
-                                <a href="https://cal.com/grimetodime/junk-removal-appointment" target="_blank" 
-                                   style="display: inline-block; background: #ff3333; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600;">
-                                    📅 Open Calendar in New Window
-                                </a>
-                            </div>
+                    <div id="cal-embed" style="min-height: 600px; width: 100%; background: #ffffff; border-radius: 12px; padding: 1rem;">
+                        <!-- Calendar will load here -->
+                        <div style="text-align: center; padding: 2rem; color: #666;">
+                            <p>📅 Loading calendar...</p>
                         </div>
                     </div>
 

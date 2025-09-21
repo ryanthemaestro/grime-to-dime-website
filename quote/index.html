@@ -1703,7 +1703,28 @@
                     </div>
 
                     <!-- Cal.com Embed - Official Code -->
-                    <div id="my-cal-inline-junk-removal-appointment" style="width:100%;height:600px;overflow:scroll;background:#ffffff;border-radius:12px;"></div>
+                    <div id="my-cal-inline-junk-removal-appointment" style="width:100%;height:600px;overflow:scroll;background:#ffffff;border-radius:12px;min-height:500px;"></div>
+                    
+                    <!-- Mobile optimization for calendar -->
+                    <style>
+                        @media (max-width: 768px) {
+                            #my-cal-inline-junk-removal-appointment {
+                                height: 80vh !important;
+                                min-height: 400px !important;
+                                margin: 0 -1rem !important;
+                                border-radius: 0 !important;
+                                width: calc(100% + 2rem) !important;
+                            }
+                            
+                            .quote-form-container {
+                                padding: 0 !important;
+                            }
+                            
+                            .how-it-works {
+                                margin: 0 1rem 2rem 1rem !important;
+                            }
+                        }
+                    </style>
 
                     <!-- After booking form -->
                     <div id="booking-form" style="display: none; margin-top: 2rem;">

@@ -1370,9 +1370,9 @@
                 testVersion = localStorage.getItem('abTestVersion');
                 
                 if (!testVersion) {
-                    // New user - randomly assign version (weighted slightly toward calendar for testing)
+                    // New user - randomly assign version (50/50 split)
                     const randomValue = Math.random();
-                    testVersion = randomValue < 0.6 ? 'calendar' : 'form'; // 60% calendar, 40% form for testing
+                    testVersion = randomValue < 0.5 ? 'calendar' : 'form'; // 50% calendar, 50% form
                     console.log('New user assigned:', testVersion, 'random value:', randomValue);
                     localStorage.setItem('abTestVersion', testVersion);
                 } else {
@@ -1643,6 +1643,13 @@
             <div id="calendar-version" style="display: none;">
                 <div class="quote-form-container">
                     <h2>Schedule Your Free On-Site Appointment</h2>
+                    
+                    <!-- No obligation message -->
+                    <div style="text-align: center; margin-bottom: 1.5rem; padding: 1rem; background: rgba(255, 107, 53, 0.1); border-radius: 8px; border-left: 3px solid #ff6b35;">
+                        <p style="margin: 0; color: #2c3e50; font-weight: 600; font-size: 1rem;">
+                            📋 <strong>No Obligation Site Visit</strong> — Free quote with no commitment required
+                        </p>
+                    </div>
                     
                     <!-- How It Works Section -->
                     <div class="how-it-works" style="margin-bottom: 2rem;">

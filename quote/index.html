@@ -1445,92 +1445,79 @@
         })();
     </script>
 
-    <!-- Cal.com Integration Script - With Proper Loading Detection -->
+    <!-- Cal.com Integration Script - Official Embed Code -->
     <script>
         // Initialize Cal.com when calendar version is shown
         function initCalendar() {
             if (window.abTestVersion === 'calendar') {
-                console.log('Initializing Cal.com embed...');
+                console.log('Initializing official Cal.com embed...');
                 
-                // Load Cal.com script with proper callback
+                // Official Cal.com embed code
                 (function (C, A, L) { 
-                    let p = function (a, ar) { 
-                        a.q.push(ar); 
-                    }; 
+                    let p = function (a, ar) { a.q.push(ar); }; 
                     let d = C.document; 
                     C.Cal = C.Cal || function () { 
                         let cal = C.Cal; 
                         let ar = arguments; 
                         if (!cal.loaded) { 
+                            cal.ns = {}; 
                             cal.q = cal.q || []; 
-                            return p(cal, ar); 
+                            d.head.appendChild(d.createElement("script")).src = A; 
+                            cal.loaded = true; 
                         } 
+                        if (ar[0] === L) { 
+                            const api = function () { p(api, arguments); }; 
+                            const namespace = ar[1]; 
+                            api.q = api.q || []; 
+                            if(typeof namespace === "string"){
+                                cal.ns[namespace] = cal.ns[namespace] || api;
+                                p(cal.ns[namespace], ar);
+                                p(cal, ["initNamespace", namespace]);
+                            } else p(cal, ar); 
+                            return;
+                        } 
+                        p(cal, ar); 
                     }; 
-                    C.Cal.ns = {}; 
-                    C.Cal.q = C.Cal.q || []; 
-                    
-                    // Create script element with proper loading detection
-                    const script = d.createElement("script");
-                    script.src = A;
-                    script.async = true;
-                    
-                    script.onload = function() {
-                        console.log('Cal.com script fully loaded, initializing...');
-                        C.Cal.loaded = true;
-                        
-                        // Wait a bit more and then initialize
-                        setTimeout(() => {
-                            // Initialize Cal.com
-                            Cal("init", {origin:"https://app.cal.com"});
-                            console.log('Cal initialized');
-                            
-                            // Clear the loading message
-                            const calEmbed = document.getElementById('cal-embed');
-                            if (calEmbed) {
-                                calEmbed.innerHTML = '';
-                                console.log('Cleared cal-embed container');
-                            }
-                            
-                            // Embed the calendar
-                            console.log('About to embed calendar with link: grimetodime/junk-removal-appointment');
-                            Cal("inline", {
-                                elementOrSelector: "#cal-embed",
-                                calLink: "grimetodime/junk-removal-appointment"
-                            });
-                            console.log('Calendar embed command sent');
-                            
-                            // Set up event tracking
-                            Cal("on", {
-                                action: "bookingSuccessful", 
-                                callback: (e) => {
-                                    console.log('Booking successful:', e);
-                                    if (typeof gtag !== 'undefined') {
-                                        gtag('event', 'conversion', {
-                                            'send_to': 'AW-11553122519/JftTCI3O64QbENfR-oQr',
-                                            'value': 25.0,
-                                            'transaction_id': 'cal_' + new Date().getTime()
-                                        });
+                })(window, "https://app.cal.com/embed/embed.js", "init");
 
-                                        gtag('event', 'ab_test_conversion', {
-                                            'event_category': 'A/B Test',
-                                            'event_label': 'calendar',
-                                            'value': 1
-                                        });
-                                    }
-                                }
-                            });
-                            
-                        }, 1000); // Wait 1 second for Cal.com to fully initialize
-                    };
-                    
-                    script.onerror = function() {
-                        console.error('Failed to load Cal.com script');
-                    };
-                    
-                    d.head.appendChild(script);
-                })(window, "https://app.cal.com/embed/embed.js");
+                // Initialize with namespace
+                Cal("init", "junk-removal-appointment", {origin:"https://app.cal.com"});
 
-                console.log('Cal.com script loading initiated');
+                // Embed inline with namespace
+                Cal.ns["junk-removal-appointment"]("inline", {
+                    elementOrSelector:"#my-cal-inline-junk-removal-appointment",
+                    config: {"layout":"month_view"},
+                    calLink: "grimetodime/junk-removal-appointment",
+                });
+
+                // Configure UI
+                Cal.ns["junk-removal-appointment"]("ui", {
+                    "hideEventTypeDetails":false,
+                    "layout":"month_view"
+                });
+
+                // Track successful bookings
+                Cal.ns["junk-removal-appointment"]("on", {
+                    action: "bookingSuccessful", 
+                    callback: (e) => {
+                        console.log('Booking successful:', e);
+                        if (typeof gtag !== 'undefined') {
+                            gtag('event', 'conversion', {
+                                'send_to': 'AW-11553122519/JftTCI3O64QbENfR-oQr',
+                                'value': 25.0,
+                                'transaction_id': 'cal_' + new Date().getTime()
+                            });
+
+                            gtag('event', 'ab_test_conversion', {
+                                'event_category': 'A/B Test',
+                                'event_label': 'calendar',
+                                'value': 1
+                            });
+                        }
+                    }
+                });
+
+                console.log('Official Cal.com embed initialized');
             }
         }
 
@@ -1687,13 +1674,8 @@
                         </div>
                     </div>
 
-                    <!-- Cal.com Embed -->
-                    <div id="cal-embed" style="min-height: 600px; width: 100%; background: #ffffff; border-radius: 12px; padding: 1rem;">
-                        <!-- Calendar will load here -->
-                        <div style="text-align: center; padding: 2rem; color: #666;">
-                            <p>📅 Loading calendar...</p>
-                        </div>
-                    </div>
+                    <!-- Cal.com Embed - Official Code -->
+                    <div id="my-cal-inline-junk-removal-appointment" style="width:100%;height:600px;overflow:scroll;background:#ffffff;border-radius:12px;"></div>
 
                     <!-- After booking form -->
                     <div id="booking-form" style="display: none; margin-top: 2rem;">

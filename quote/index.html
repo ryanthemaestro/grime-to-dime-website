@@ -1447,6 +1447,20 @@
                 if (heroH1) {
                     heroH1.textContent = 'Schedule Your Free On-Site Junk Removal Appointment';
                 }
+                
+                // Update CTA button text for calendar version
+                const ctaButton = document.querySelector('.cta-button');
+                if (ctaButton) {
+                    ctaButton.textContent = 'Schedule Your Free Appointment — Select Time Below';
+                    ctaButton.href = '#my-cal-inline-junk-removal-appointment'; // Link to calendar
+                }
+                
+                // Update SMS link text for calendar version
+                const smsLink = document.querySelector('.sms-link a');
+                if (smsLink) {
+                    smsLink.textContent = 'Prefer to call? (410) 300-6743 — Same great service';
+                    smsLink.href = 'tel:+14103006743';
+                }
             }
         })();
     </script>

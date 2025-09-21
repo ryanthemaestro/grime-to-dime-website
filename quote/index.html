@@ -1468,6 +1468,17 @@
                     stickyBtn.href = '#my-cal-inline-junk-removal-appointment';
                     stickyBtn.setAttribute('aria-label', 'Schedule your appointment using the calendar below');
                 }
+                
+                // Update main "How It Works" process steps for calendar version
+                const processStep1 = document.querySelector('.process-step:nth-child(1) .process-heading');
+                if (processStep1) {
+                    processStep1.textContent = '1. Schedule Visit';
+                }
+                
+                const processStep1Desc = document.querySelector('.process-step:nth-child(1) .process-description');
+                if (processStep1Desc) {
+                    processStep1Desc.textContent = 'Select your preferred 2-hour appointment window using the calendar below.';
+                }
             }
         })();
     </script>

@@ -1365,6 +1365,7 @@
             if (forceVersion === 'form' || forceVersion === 'calendar') {
                 testVersion = forceVersion;
                 localStorage.setItem('abTestVersion', testVersion);
+                console.log('Forced version from URL:', testVersion);
             } else {
                 // Check if user already has assigned version
                 testVersion = localStorage.getItem('abTestVersion');
@@ -1372,13 +1373,17 @@
                 if (!testVersion) {
                     // New user - randomly assign version (50/50 split)
                     const randomValue = Math.random();
-                    testVersion = randomValue < 0.5 ? 'calendar' : 'form'; // 50% calendar, 50% form
+                    testVersion = randomValue < 0.5 ? 'form' : 'calendar'; // 50% form, 50% calendar
                     console.log('New user assigned:', testVersion, 'random value:', randomValue);
                     localStorage.setItem('abTestVersion', testVersion);
                 } else {
                     console.log('Existing user version:', testVersion);
                 }
             }
+            
+            // Debug helper - show localStorage info
+            console.log('Current localStorage abTestVersion:', localStorage.getItem('abTestVersion'));
+            console.log('Final test version:', testVersion);
             
             // Track version view in Google Analytics
             if (typeof gtag !== 'undefined') {

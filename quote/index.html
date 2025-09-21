@@ -1348,7 +1348,152 @@
                     if (hint) hint.textContent = '';
                     this.classList.remove('field-invalid');
                 });
+            }, 2000);
+        });
+    </script>
+
+    <!-- A/B Testing Framework - Quote Form vs Calendar Booking -->
+    <script>
+        (function() {
+            // Check for URL parameter to force version (for testing)
+            const urlParams = new URLSearchParams(window.location.search);
+            const forceVersion = urlParams.get('version'); // ?version=form or ?version=calendar
+            
+            let testVersion;
+            
+            if (forceVersion === 'form' || forceVersion === 'calendar') {
+                testVersion = forceVersion;
+                localStorage.setItem('abTestVersion', testVersion);
+            } else {
+                // Check if user already has assigned version
+                testVersion = localStorage.getItem('abTestVersion');
+                
+                if (!testVersion) {
+                    // New user - randomly assign version
+                    testVersion = Math.random() < 0.5 ? 'form' : 'calendar';
+                    localStorage.setItem('abTestVersion', testVersion);
+                }
+            }
+            
+            // Track version view in Google Analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'ab_test_view', {
+                    'event_category': 'A/B Test',
+                    'event_label': testVersion,
+                    'custom_parameter_1': testVersion
+                });
+            }
+            
+            // Store version globally for other scripts
+            window.abTestVersion = testVersion;
+            
+            // Show appropriate version when DOM loads
+            document.addEventListener('DOMContentLoaded', function() {
+                if (testVersion === 'calendar') {
+                    showCalendarVersion();
+                } else {
+                    showFormVersion();
+                }
             });
+            
+            function showFormVersion() {
+                // Show current form (default)
+                const formVersion = document.getElementById('form-version');
+                const calendarVersion = document.getElementById('calendar-version');
+                if (formVersion) formVersion.style.display = 'block';
+                if (calendarVersion) calendarVersion.style.display = 'none';
+                
+                // Update page title for tracking
+                document.title = 'Get Free Junk Removal Quote - Form Version | Grime To Dime';
+            }
+            
+            function showCalendarVersion() {
+                // Hide form, show calendar
+                const formVersion = document.getElementById('form-version');
+                const calendarVersion = document.getElementById('calendar-version');
+                if (formVersion) formVersion.style.display = 'none';
+                if (calendarVersion) calendarVersion.style.display = 'block';
+                
+                // Update page title for tracking
+                document.title = 'Schedule Free Junk Removal Appointment | Grime To Dime';
+                
+                // Update hero text for calendar version
+                const heroH1 = document.querySelector('.hero-content h1');
+                if (heroH1) {
+                    heroH1.textContent = 'Schedule Your Free On-Site Junk Removal Appointment';
+                }
+            }
+        })();
+    </script>
+
+    <!-- Cal.com Integration Script -->
+    <script>
+        // Initialize Cal.com when calendar version is shown
+        function initCalendar() {
+            if (window.abTestVersion === 'calendar') {
+                // Cal.com inline embed
+                (function (C, A, L) { 
+                    let p = function (a, ar) { 
+                        a.q.push(ar); 
+                    }; 
+                    let d = C.document; 
+                    C.Cal = C.Cal || function () { 
+                        let cal = C.Cal; 
+                        let ar = arguments; 
+                        if (!cal.loaded) { 
+                            cal.q = cal.q || []; 
+                            return p(cal, ar); 
+                        } 
+                    }; 
+                    C.Cal.ns = {}; 
+                    C.Cal.q = C.Cal.q || []; 
+                    d.head.appendChild(d.createElement("script")).src = A; 
+                    C.Cal.loaded = true; 
+                })(window, "https://app.cal.com/embed/embed.js");
+
+                Cal("init", {origin:"https://app.cal.com"});
+
+                // Configure the calendar - you'll need to replace 'grimetodime' with your actual Cal.com username
+                Cal("inline", {
+                    elementOrSelector: "#cal-embed",
+                    calLink: "grimetodime/appointment", // Replace with your Cal.com link
+                    layout: "month_view",
+                    config: {
+                        layout: "month_view",
+                        theme: "light"
+                    }
+                });
+
+                // Track calendar interaction
+                Cal("on", {
+                    action: "bookingSuccessful",
+                    callback: (e) => {
+                        // Track conversion in Google Analytics
+                        if (typeof gtag !== 'undefined') {
+                            gtag('event', 'conversion', {
+                                'send_to': 'AW-11553122519/JftTCI3O64QbENfR-oQr',
+                                'value': 25.0,
+                                'transaction_id': 'cal_' + new Date().getTime().toString(),
+                                'event_category': 'Calendar Booking',
+                                'event_label': 'calendar_version'
+                            });
+
+                            gtag('event', 'ab_test_conversion', {
+                                'event_category': 'A/B Test',
+                                'event_label': 'calendar',
+                                'value': 1
+                            });
+                        }
+                        
+                        console.log('Calendar booking successful!', e);
+                    }
+                });
+            }
+        }
+
+        // Initialize calendar when DOM loads
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(initCalendar, 1000); // Delay to ensure A/B test runs first
         });
     </script>
 </head>
@@ -1412,9 +1557,11 @@
                 </ul>
             </div>
 
-            <div class="quote-form-container">
-                <h2>Get Your Free Junk Removal Quote</h2>
-                <form class="quote-form" id="quoteForm" action="https://formspree.io/f/meoovajl" method="POST" onsubmit="return handleFormSubmit(event)">
+            <!-- A/B Test Version A: Original Form -->
+            <div id="form-version">
+                <div class="quote-form-container">
+                    <h2>Get Your Free Junk Removal Quote</h2>
+                    <form class="quote-form" id="quoteForm" action="https://formspree.io/f/meoovajl" method="POST" onsubmit="return handleFormSubmit(event)">
                     <input type="hidden" name="_subject" value="New Quote Request from Grime To Dime Website">
                     <input type="hidden" name="_next" value="https://grimetodime.com/thank-you.html">
                     <input type="text" name="_gotcha" style="display:none" aria-hidden="true" tabindex="-1">
@@ -1469,6 +1616,58 @@
                         <li class="feature-item"><span class="feature-icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></span><span class="feature-text">Fully Bonded & Insured ($1M+ Coverage)</span></li>
                         <li class="feature-item"><span class="feature-icon"><i class="fas fa-leaf" aria-hidden="true"></i></span><span class="feature-text">EPA-Compliant Waste Disposal & Recycling</span></li>
                     </ul>
+                </div>
+            </div>
+            </div>
+
+            <!-- A/B Test Version B: Calendar Booking -->
+            <div id="calendar-version" style="display: none;">
+                <div class="quote-form-container">
+                    <h2>Schedule Your Free On-Site Appointment</h2>
+                    
+                    <!-- How It Works Section -->
+                    <div class="how-it-works" style="margin-bottom: 2rem;">
+                        <h3 style="color: #2c3e50; font-size: 1.2rem; margin-bottom: 1rem; text-align: center;">How It Works</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; text-align: center;">
+                            <div style="padding: 1rem;">
+                                <div style="background: #ff3333; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.5rem; font-weight: bold;">1</div>
+                                <h4 style="margin: 0.5rem 0; color: #2c3e50; font-size: 0.9rem;">Get an Appointment Time</h4>
+                            </div>
+                            <div style="padding: 1rem;">
+                                <div style="background: #ff3333; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.5rem; font-weight: bold;">2</div>
+                                <h4 style="margin: 0.5rem 0; color: #2c3e50; font-size: 0.9rem;">We'll Call on the Way</h4>
+                            </div>
+                            <div style="padding: 1rem;">
+                                <div style="background: #ff3333; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.5rem; font-weight: bold;">3</div>
+                                <h4 style="margin: 0.5rem 0; color: #2c3e50; font-size: 0.9rem;">Sit Back & Relax</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cal.com Embed -->
+                    <div id="cal-embed" style="min-height: 600px; background: #f8f9fa; border-radius: 12px; padding: 1rem;">
+                        <!-- Cal.com will be embedded here -->
+                        <div style="text-align: center; padding: 3rem 1rem; color: #666;">
+                            <p style="margin-bottom: 1rem;">📅 Loading available appointment times...</p>
+                            <p style="font-size: 0.9rem;">2-hour appointments available 8 AM - 6 PM daily</p>
+                        </div>
+                    </div>
+
+                    <!-- After booking form -->
+                    <div id="booking-form" style="display: none; margin-top: 2rem;">
+                        <h3 style="color: #2c3e50; margin-bottom: 1rem;">Complete Your Appointment</h3>
+                        <form id="appointmentForm">
+                            <div class="form-group">
+                                <label for="cal-name">Full Name</label>
+                                <input type="text" id="cal-name" required autocomplete="name" style="width: 100%; padding: 1rem 1.25rem; border: 2px solid #e8ecf0; border-radius: 12px; font-size: 1rem;">
+                            </div>
+                            <div class="form-group">
+                                <label for="cal-phone">Phone Number</label>
+                                <input type="tel" id="cal-phone" required autocomplete="tel" placeholder="Your phone number" style="width: 100%; padding: 1rem 1.25rem; border: 2px solid #e8ecf0; border-radius: 12px; font-size: 1rem;">
+                            </div>
+                            <button type="submit" class="submit-button" style="margin-top: 1rem;">Confirm Appointment</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1830,6 +2029,13 @@
                                 'send_to': 'AW-11553122519/0KjoCPG_6oQbENfR-oQr',
                                 'value': 1.0,
                                 'transaction_id': 'lead_' + new Date().getTime().toString()
+                            });
+
+                            // A/B Test conversion tracking
+                            gtag('event', 'ab_test_conversion', {
+                                'event_category': 'A/B Test',
+                                'event_label': 'form',
+                                'value': 1
                             });
                         }
                         

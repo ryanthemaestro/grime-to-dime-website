@@ -1450,7 +1450,15 @@
         // Initialize Cal.com when calendar version is shown
         function initCalendar() {
             if (window.abTestVersion === 'calendar') {
-                // Cal.com inline embed
+                console.log('Initializing Cal.com embed...');
+                
+                // Clear the loading message first
+                const calEmbed = document.getElementById('cal-embed');
+                if (calEmbed) {
+                    calEmbed.innerHTML = '';
+                }
+                
+                // Cal.com inline embed - updated approach
                 (function (C, A, L) { 
                     let p = function (a, ar) { 
                         a.q.push(ar); 
@@ -1466,47 +1474,90 @@
                     }; 
                     C.Cal.ns = {}; 
                     C.Cal.q = C.Cal.q || []; 
-                    d.head.appendChild(d.createElement("script")).src = A; 
-                    C.Cal.loaded = true; 
-                })(window, "https://app.cal.com/embed/embed.js");
-
-                Cal("init", {origin:"https://app.cal.com"});
-
-                // Configure the calendar - using your actual Cal.com link
-                Cal("inline", {
-                    elementOrSelector: "#cal-embed",
-                    calLink: "grimetodime/junk-removal-appointment", // Your actual Cal.com link
-                    layout: "month_view",
-                    config: {
-                        layout: "month_view",
-                        theme: "light"
-                    }
-                });
-
-                // Track calendar interaction
-                Cal("on", {
-                    action: "bookingSuccessful",
-                    callback: (e) => {
-                        // Track conversion in Google Analytics
-                        if (typeof gtag !== 'undefined') {
-                            gtag('event', 'conversion', {
-                                'send_to': 'AW-11553122519/JftTCI3O64QbENfR-oQr',
-                                'value': 25.0,
-                                'transaction_id': 'cal_' + new Date().getTime().toString(),
-                                'event_category': 'Calendar Booking',
-                                'event_label': 'calendar_version'
-                            });
-
-                            gtag('event', 'ab_test_conversion', {
-                                'event_category': 'A/B Test',
-                                'event_label': 'calendar',
-                                'value': 1
-                            });
-                        }
+                    
+                    // Load Cal.com script
+                    const script = d.createElement("script");
+                    script.src = A;
+                    script.onload = function() {
+                        console.log('Cal.com script loaded successfully');
+                        C.Cal.loaded = true;
                         
-                        console.log('Calendar booking successful!', e);
-                    }
-                });
+                        // Initialize after script loads
+                        setTimeout(() => {
+                            try {
+                                Cal("init", {origin:"https://app.cal.com"});
+                                
+                                console.log('Embedding calendar with link: grimetodime/junk-removal-appointment');
+                                
+                                // Configure the calendar
+                                Cal("inline", {
+                                    elementOrSelector: "#cal-embed",
+                                    calLink: "grimetodime/junk-removal-appointment",
+                                    layout: "month_view",
+                                    config: {
+                                        layout: "month_view",
+                                        theme: "light"
+                                    }
+                                });
+                                
+                                console.log('Cal.com embed initialized');
+                                
+                                // Track calendar interaction
+                                Cal("on", {
+                                    action: "bookingSuccessful",
+                                    callback: (e) => {
+                                        console.log('Calendar booking successful!', e);
+                                        
+                                        // Track conversion in Google Analytics
+                                        if (typeof gtag !== 'undefined') {
+                                            gtag('event', 'conversion', {
+                                                'send_to': 'AW-11553122519/JftTCI3O64QbENfR-oQr',
+                                                'value': 25.0,
+                                                'transaction_id': 'cal_' + new Date().getTime().toString(),
+                                                'event_category': 'Calendar Booking',
+                                                'event_label': 'calendar_version'
+                                            });
+
+                                            gtag('event', 'ab_test_conversion', {
+                                                'event_category': 'A/B Test',
+                                                'event_label': 'calendar',
+                                                'value': 1
+                                            });
+                                        }
+                                    }
+                                });
+                                
+                            } catch(error) {
+                                console.error('Cal.com initialization error:', error);
+                                showCalendarFallback();
+                            }
+                        }, 500);
+                    };
+                    
+                    script.onerror = function() {
+                        console.error('Failed to load Cal.com script');
+                        showCalendarFallback();
+                    };
+                    
+                    d.head.appendChild(script);
+                })(window, "https://app.cal.com/embed/embed.js");
+            }
+        }
+        
+        // Show fallback if Cal.com fails to load
+        function showCalendarFallback() {
+            const calEmbed = document.getElementById('cal-embed');
+            if (calEmbed) {
+                calEmbed.innerHTML = `
+                    <div style="text-align: center; padding: 3rem 1rem; color: #666;">
+                        <p style="margin-bottom: 1rem;">📅 Schedule Your Appointment</p>
+                        <p style="font-size: 0.9rem; margin-bottom: 2rem;">2-hour appointments available 8 AM - 6 PM daily</p>
+                        <a href="https://cal.com/grimetodime/junk-removal-appointment" target="_blank" 
+                           style="display: inline-block; background: #ff3333; color: white; padding: 1.25rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.1rem;">
+                            📅 Book Your Appointment
+                        </a>
+                    </div>
+                `;
             }
         }
 

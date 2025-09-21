@@ -1369,9 +1369,13 @@
                 testVersion = localStorage.getItem('abTestVersion');
                 
                 if (!testVersion) {
-                    // New user - randomly assign version
-                    testVersion = Math.random() < 0.5 ? 'form' : 'calendar';
+                    // New user - randomly assign version (weighted slightly toward calendar for testing)
+                    const randomValue = Math.random();
+                    testVersion = randomValue < 0.6 ? 'calendar' : 'form'; // 60% calendar, 40% form for testing
+                    console.log('New user assigned:', testVersion, 'random value:', randomValue);
                     localStorage.setItem('abTestVersion', testVersion);
+                } else {
+                    console.log('Existing user version:', testVersion);
                 }
             }
             
@@ -1399,9 +1403,15 @@
             
             // Show appropriate version when DOM loads
             document.addEventListener('DOMContentLoaded', function() {
+                console.log('DOM loaded, test version:', testVersion);
+                console.log('Form element exists:', !!document.getElementById('form-version'));
+                console.log('Calendar element exists:', !!document.getElementById('calendar-version'));
+                
                 if (testVersion === 'calendar') {
+                    console.log('Showing calendar version');
                     showCalendarVersion();
                 } else {
+                    console.log('Showing form version');
                     showFormVersion();
                 }
             });

@@ -1,215 +1,724 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Homepage -->
+
+  <!-- Core Pages -->
   <url>
     <loc>https://grimetodime.com/</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
-  <!-- Blog Main Page -->
   <url>
     <loc>https://grimetodime.com/blog/</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/partners/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/privacy-policy.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/quote/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/terms.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/thank-you.html</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 
   <!-- Blog Articles -->
   <url>
-    <loc>https://grimetodime.com/blog/end-of-summer-deep-clean/</loc>
-    <lastmod>2025-01-15</lastmod>
+    <loc>https://grimetodime.com/blog/10-items-you-didnt-know-could-be-recycled/</loc>
+    <lastmod>2025-09-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://grimetodime.com/blog/10-items-you-didnt-know-could-be-recycled/</loc>
-    <lastmod>2025-01-15</lastmod>
+    <loc>https://grimetodime.com/blog/end-of-summer-deep-clean/</loc>
+    <lastmod>2025-09-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://grimetodime.com/blog/upcycling-guide/</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-09-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://grimetodime.com/blog/winter-organization-tips/</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-09-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- Landing Pages -->
-  <url>
-    <loc>https://grimetodime.com/landing/local/</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://grimetodime.com/landing/exact/</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://grimetodime.com/landing/hot-tub/</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- New Service Landing Pages -->
-  <url>
-    <loc>https://grimetodime.com/landing/mattress-disposal/</loc>
-    <lastmod>2025-09-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://grimetodime.com/landing/sofa-removal/</loc>
-    <lastmod>2025-09-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+  <!-- Static Landing Pages -->
   <url>
     <loc>https://grimetodime.com/landing/appliance-removal/</loc>
-    <lastmod>2025-09-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://grimetodime.com/landing/tv-disposal/</loc>
-    <lastmod>2025-09-14</lastmod>
+    <lastmod>2025-09-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://grimetodime.com/landing/basement-cleanout/</loc>
-    <lastmod>2025-09-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://grimetodime.com/landing/garage-cleanout/</loc>
-    <lastmod>2025-09-14</lastmod>
+    <lastmod>2025-09-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://grimetodime.com/landing/construction-debris-removal/</loc>
-    <lastmod>2025-09-14</lastmod>
+    <lastmod>2025-09-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://grimetodime.com/landing/estate-cleanout/</loc>
-    <lastmod>2025-09-14</lastmod>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/exact/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/garage-cleanout/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/hot-tub/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/local/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/mattress-disposal/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/sofa-removal/</loc>
+    <lastmod>2025-09-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://grimetodime.com/landing/storage-unit-cleanout/</loc>
-    <lastmod>2025-09-14</lastmod>
+    <lastmod>2025-09-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://grimetodime.com/landing/treadmill-removal/</loc>
-    <lastmod>2025-09-14</lastmod>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/tv-disposal/</loc>
+    <lastmod>2025-09-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- Quote Page -->
+  <!-- Generated Landing Pages -->
   <url>
-    <loc>https://grimetodime.com/quote/</loc>
-    <lastmod>2025-01-15</lastmod>
+    <loc>https://grimetodime.com/landing/appliance-removal-and-haul-away/</loc>
+    <lastmod>2025-09-25</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.7</priority>
   </url>
-
-  <!-- Partners Page -->
   <url>
-    <loc>https://grimetodime.com/partners/</loc>
-    <lastmod>2025-09-11</lastmod>
+    <loc>https://grimetodime.com/landing/furniture-removal-and-disposal/</loc>
+    <lastmod>2025-09-25</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
-
+  <url>
+    <loc>https://grimetodime.com/landing/junk-removal-services-in-howard-county-md-columbia-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/junk-removal-services-in-howard-county-md-elkridge-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/junk-removal-services-in-howard-county-md-ellicott-city-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/junk-removal-services-in-howard-county-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 
   <!-- Service Areas -->
   <url>
-    <loc>https://grimetodime.com/locations/ellicott-city-md/</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://grimetodime.com/locations/columbia-md/</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://grimetodime.com/locations/elkridge-md/</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://grimetodime.com/locations/laurel-md/</loc>
-    <lastmod>2025-01-15</lastmod>
+    <loc>https://grimetodime.com/locations/annapolis-junction-md/</loc>
+    <lastmod>2025-09-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://grimetodime.com/locations/catonsville-md/</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-09-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://grimetodime.com/locations/clarksville-md/</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/locations/columbia-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/locations/elkridge-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/locations/ellicott-city-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/locations/laurel-md/</loc>
+    <lastmod>2025-09-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://grimetodime.com/locations/savage-md/</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://grimetodime.com/locations/annapolis-junction-md/</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-09-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- Thank You Page -->
+  <!-- Generated Landing Pages -->
   <url>
-    <loc>https://grimetodime.com/thank-you.html</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://grimetodime.com/landing/scrap-metal-and-tire-removal-elkridge-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/yard-waste-and-debris-removal-catonsville-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/mattress-disposal-and-removal-catonsville-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/yard-waste-and-debris-removal-columbia-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/construction-debris-and-trash-removal-catonsville-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/junk-removal-services-in-howard-county-md-savage-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/scrap-metal-and-tire-removal-ellicott-city-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/mattress-disposal-and-removal-columbia-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/furniture-removal-and-disposal-elkridge-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/eco-friendly-junk-removal-and-recycling-savage-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/electronics-and-e-waste-disposal-laurel-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/appliance-removal-and-haul-away-columbia-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/eco-friendly-junk-removal-and-recycling-ellicott-city-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/junk-removal-cost-and-pricing-ellicott-city-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/eco-friendly-junk-removal-and-recycling-laurel-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/electronics-and-e-waste-disposal-savage-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/eco-friendly-junk-removal-and-recycling-elkridge-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/scrap-metal-and-tire-removal-laurel-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/mattress-disposal-and-removal-laurel-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/junk-removal-cost-and-pricing-laurel-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/mattress-disposal-and-removal-savage-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/mattress-disposal-and-removal-clarksville-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/large-item-and-specialty-removal-catonsville-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/appliance-removal-and-haul-away-laurel-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/large-item-and-specialty-removal-clarksville-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/mattress-disposal-and-removal-elkridge-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/large-item-and-specialty-removal-savage-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/electronics-and-e-waste-disposal-elkridge-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/junk-removal-cost-and-pricing-clarksville-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/construction-debris-and-trash-removal-clarksville-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/large-item-and-specialty-removal-ellicott-city-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/appliance-removal-and-haul-away-savage-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/junk-removal-cost-and-pricing-columbia-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/large-item-and-specialty-removal-columbia-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/furniture-removal-and-disposal-clarksville-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/junk-removal-services-in-howard-county-md-catonsville-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/yard-waste-and-debris-removal-savage-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/eco-friendly-junk-removal-and-recycling-catonsville-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/appliance-removal-and-haul-away-elkridge-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/property-cleanout-services-columbia-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/yard-waste-and-debris-removal-laurel-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/electronics-and-e-waste-disposal-columbia-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/mattress-disposal-and-removal-ellicott-city-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/construction-debris-and-trash-removal-elkridge-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/property-cleanout-services-catonsville-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/junk-removal-cost-and-pricing-elkridge-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/furniture-removal-and-disposal-ellicott-city-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/scrap-metal-and-tire-removal-savage-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/furniture-removal-and-disposal-savage-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/property-cleanout-services-laurel-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/appliance-removal-and-haul-away-clarksville-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/electronics-and-e-waste-disposal-ellicott-city-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/appliance-removal-and-haul-away-catonsville-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/large-item-and-specialty-removal-elkridge-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/property-cleanout-services-ellicott-city-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/scrap-metal-and-tire-removal-catonsville-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/yard-waste-and-debris-removal-clarksville-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/property-cleanout-services-savage-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/eco-friendly-junk-removal-and-recycling-clarksville-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/junk-removal-cost-and-pricing-savage-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/eco-friendly-junk-removal-and-recycling-columbia-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/electronics-and-e-waste-disposal-catonsville-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/construction-debris-and-trash-removal-ellicott-city-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/furniture-removal-and-disposal-columbia-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/junk-removal-services-in-howard-county-md-clarksville-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/yard-waste-and-debris-removal-ellicott-city-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/furniture-removal-and-disposal-laurel-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/furniture-removal-and-disposal-catonsville-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/construction-debris-and-trash-removal-laurel-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/property-cleanout-services-clarksville-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/electronics-and-e-waste-disposal-clarksville-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/scrap-metal-and-tire-removal-clarksville-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/construction-debris-and-trash-removal-columbia-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/large-item-and-specialty-removal-laurel-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/scrap-metal-and-tire-removal-columbia-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/property-cleanout-services-elkridge-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/construction-debris-and-trash-removal-savage-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/junk-removal-cost-and-pricing-catonsville-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/yard-waste-and-debris-removal-elkridge-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grimetodime.com/landing/appliance-removal-and-haul-away-ellicott-city-md/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
-  <!-- Legal Pages -->
-  <url>
-    <loc>https://grimetodime.com/privacy-policy.html</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://grimetodime.com/terms.html</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
 </urlset>

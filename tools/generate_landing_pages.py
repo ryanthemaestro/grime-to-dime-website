@@ -178,7 +178,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         <div class=\"hero-content\">
             <h1>{hero_heading}</h1>
             <p class=\"sub\">{hero_subheading}</p>
-            <div class=\"google-rating-badge\" aria-label=\"5.0 on Google\"><span class=\"google-icon\"><i class=\"fab fa-google\"></i></span><span class=\"rating-score\">5.0</span><span class=\"stars\">★★★★★</span><span class=\"badge-text\">on Google</span></div>
+            <div class=\"google-rating-badge\" aria-label=\"5.0 based on 16 reviews\"><span class=\"google-icon\"><i class=\"fab fa-google\"></i></span><span class=\"rating-score\">5.0</span><span class=\"stars\">★★★★★</span><span class=\"badge-text\">16 reviews</span></div>
             <ul class=\"hero-bullets\">{hero_bullets}</ul>
             <a href=\"tel:+14103006743\" class=\"cta-button gfn\">{cta_button_label}</a>
         </div>

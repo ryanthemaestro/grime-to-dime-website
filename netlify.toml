@@ -73,6 +73,12 @@ edge_functions = "netlify/edge-functions"
   status = 301
   force = true
 
+# Landing page trailing slash redirects
+[[redirects]]
+  from = "/landing/:slug"
+  to = "/landing/:slug/"
+  status = 301
+
 # Catch blog tag querystrings to canonical URL
 [[redirects]]
   from = "/blog?tag=*"

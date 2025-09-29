@@ -39,16 +39,24 @@ def get_existing_urls(sitemap_path: Path) -> Set[str]:
         return existing_urls
 
 
-def scan_generated_landing_pages(generated_dir: Path) -> List[dict]:
-    """Scan landing/generated directory for new pages."""
+def scan_generated_landing_pages(landing_dir: Path) -> List[dict]:
+    """Scan landing directory for SEO landing pages (exclude static pages)."""
     landing_pages = []
     
-    if not generated_dir.exists():
-        print(f"⚠️  Generated directory not found: {generated_dir}")
+    if not landing_dir.exists():
+        print(f"⚠️  Landing directory not found: {landing_dir}")
         return landing_pages
     
-    for page_dir in generated_dir.iterdir():
-        if page_dir.is_dir():
+    # Static pages to exclude (manually created)
+    static_pages = {
+        'appliance-removal', 'basement-cleanout', 'construction-debris-removal',
+        'estate-cleanout', 'exact', 'garage-cleanout', 'hot-tub', 'local',
+        'mattress-disposal', 'sofa-removal', 'storage-unit-cleanout',
+        'treadmill-removal', 'tv-disposal'
+    }
+    
+    for page_dir in landing_dir.iterdir():
+        if page_dir.is_dir() and page_dir.name not in static_pages:
             index_file = page_dir / "index.html"
             if index_file.exists():
                 # Create URL from directory name
@@ -79,14 +87,14 @@ def create_sitemap_entry(url: str, lastmod: str, changefreq: str, priority: str)
   </url>"""
 
 
-def update_sitemap(sitemap_path: Path, generated_dir: Path):
+def update_sitemap(sitemap_path: Path, landing_dir: Path):
     """Update sitemap.xml with new generated landing pages."""
     print("🚀 Updating sitemap.xml with generated landing pages")
     print("=" * 60)
     
     # Get existing URLs and new pages
     existing_urls = get_existing_urls(sitemap_path)
-    new_pages = scan_generated_landing_pages(generated_dir)
+    new_pages = scan_generated_landing_pages(landing_dir)
     
     # Filter out pages that already exist
     new_urls = [page for page in new_pages if page['url'] not in existing_urls]
@@ -145,10 +153,10 @@ def main():
     # Paths
     project_root = Path(__file__).parent.parent
     sitemap_path = project_root / "sitemap.xml"
-    generated_dir = project_root / "landing" / "generated"
+    landing_dir = project_root / "landing"
     
     # Update sitemap
-    update_sitemap(sitemap_path, generated_dir)
+    update_sitemap(sitemap_path, landing_dir)
     
     print("\n🎯 Sitemap automation complete!")
     print("💡 Tip: Run this after generating new landing pages")

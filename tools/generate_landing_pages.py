@@ -397,7 +397,7 @@ def ensure_output_directory(path: Path) -> None:
 def main() -> None:
     project_root = Path(__file__).resolve().parents[1]
     default_groups = project_root / "keyword_groups_for_landing_pages.json"
-    default_output = project_root / "landing" / "generated"
+    default_output = project_root / "landing"
 
     parser = argparse.ArgumentParser(description="Generate landing pages from keyword groups using Grok-4-fast")
     parser.add_argument("--groups", type=Path, default=default_groups, help="Path to grouped keyword JSON")

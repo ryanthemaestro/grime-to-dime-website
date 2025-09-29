@@ -2,6 +2,9 @@
   publish = "."
   command = ""  # No build command needed for static HTML 
 
+# Normalize URLs: always include trailing slash to avoid redirect loops
+trailingSlash = "always"
+
 edge_functions = "netlify/edge-functions"
 
 
@@ -73,11 +76,7 @@ edge_functions = "netlify/edge-functions"
   status = 301
   force = true
 
-# Landing page trailing slash redirects
-[[redirects]]
-  from = "/landing/:slug"
-  to = "/landing/:slug/"
-  status = 301
+ 
 
 # Catch blog tag querystrings to canonical URL
 [[redirects]]

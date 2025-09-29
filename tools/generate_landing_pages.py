@@ -39,6 +39,7 @@ CONTENT_PROMPT_TEMPLATE = textwrap.dedent(
     - Highlight same-day or next-day availability when appropriate, upfront pricing, and responsible disposal.
     - Emphasize local expertise in Howard County and surrounding cities (Ellicott City, Columbia, Elkridge, Laurel, Clarksville, Savage, Catonsville).
     - Include strong calls to action that encourage calling or requesting a quote.
+    - Button labels should be action-focused (e.g., "Call Now for Fast Pickup", "Get My Quote Now", "Schedule Today") - never include phone numbers or placeholders like XXX in button text.
     - Keep language unique to this service; do not copy wording verbatim between sections.
     - Avoid making guarantees you cannot back up (no "free" unless in the keywords context).
 

@@ -1823,6 +1823,399 @@
         }
     </style>
 
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works-section">
+        <div class="how-it-works-container">
+            <h2>How It Works — Simple & Stress-Free</h2>
+            <p class="how-it-works-subtitle">From quote to clean space in 4 easy steps. We handle everything.</p>
+            
+            <div class="steps-grid">
+                <!-- Step 1 -->
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>Get Your Quote</h3>
+                    <ul class="step-features">
+                        <li>Call, text, or fill out our form</li>
+                        <li>10-minute response time</li>
+                        <li>Free estimate, no obligation</li>
+                        <li>Ask questions anytime</li>
+                    </ul>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>Schedule Pickup</h3>
+                    <ul class="step-features">
+                        <li>Same-day or next-day available</li>
+                        <li>2-hour arrival window</li>
+                        <li>Confirmation text sent</li>
+                        <li>Flexible rescheduling</li>
+                    </ul>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step-card step-card-highlight">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>We Haul It Away</h3>
+                    <ul class="step-features">
+                        <li>Show up on time, ready to work</li>
+                        <li>Load everything ourselves</li>
+                        <li>You point, we haul — no lifting</li>
+                        <li>Professional & courteous team</li>
+                    </ul>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Enjoy Clean Space</h3>
+                    <ul class="step-features">
+                        <li>Leave your space spotless</li>
+                        <li>Donate & recycle what we can</li>
+                        <li>Pay only when satisfied</li>
+                        <li>Job done in hours, not days</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="how-it-works-cta">
+                <p class="cta-text-large">Ready to get started?</p>
+                <a href="/quote/" class="cta-button" onclick="gtagSendEvent('/quote/')">
+                    Get Your Free Quote Now
+                </a>
+                <p class="cta-subtext">Or call/text: <a href="tel:4103006743" class="gfn">(410) 300-6743</a> — We respond in 10 minutes</p>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .how-it-works-section {
+            padding: 5rem 1rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .how-it-works-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ff3333, #e62e2e, #ff3333);
+            background-size: 200% 100%;
+        }
+
+        .how-it-works-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .how-it-works-section h2 {
+            text-align: center;
+            font-size: clamp(2rem, 1.5rem + 2vw, 2.8rem);
+            font-weight: 800;
+            color: #222;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .how-it-works-subtitle {
+            text-align: center;
+            font-size: clamp(1rem, 0.95rem + 0.3vw, 1.15rem);
+            color: #666;
+            margin-bottom: 3.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .step-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 2px solid #eee;
+            transition: all 0.3s ease;
+        }
+
+        .step-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+            border-color: rgba(255, 51, 51, 0.3);
+        }
+
+        .step-card-highlight {
+            border-color: #ff3333;
+            background: linear-gradient(135deg, #fff 0%, #fff8f8 100%);
+        }
+
+        .step-number {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #ff3333 0%, #e62e2e 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            font-family: 'Roboto', sans-serif;
+            box-shadow: 0 4px 15px rgba(255, 51, 51, 0.4);
+            border: 3px solid white;
+        }
+
+        .step-icon {
+            width: 90px;
+            height: 90px;
+            margin: 1.5rem auto 1.5rem;
+            background: linear-gradient(135deg, rgba(255, 51, 51, 0.1) 0%, rgba(255, 51, 51, 0.05) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid rgba(255, 51, 51, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .step-card:hover .step-icon {
+            background: #ff3333;
+            border-color: #ff3333;
+            transform: scale(1.1);
+        }
+
+        .step-icon i {
+            font-size: 2.5rem;
+            color: #ff3333;
+            transition: color 0.3s ease;
+        }
+
+        .step-card:hover .step-icon i {
+            color: white;
+        }
+
+        .step-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .step-features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+        }
+
+        .step-features li {
+            padding: 0.6rem 0;
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            position: relative;
+            padding-left: 1.75rem;
+        }
+
+        .step-features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .how-it-works-cta {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+            border: 2px solid rgba(255, 51, 51, 0.1);
+        }
+
+        .cta-text-large {
+            font-size: clamp(1.3rem, 1.1rem + 0.5vw, 1.6rem);
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 1.5rem;
+        }
+
+        .how-it-works-cta .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #ff3333 0%, #e62e2e 100%);
+            color: white;
+            padding: 18px 40px;
+            min-height: 56px;
+            border-radius: 12px;
+            font-size: 1.15rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(255, 51, 51, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .how-it-works-cta .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 51, 51, 0.4);
+        }
+
+        .cta-subtext {
+            margin-top: 1.25rem;
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .cta-subtext a {
+            color: #ff3333;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .cta-subtext a:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            .how-it-works-section {
+                padding: 3rem 1rem;
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .step-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .step-icon {
+                width: 80px;
+                height: 80px;
+            }
+
+            .step-icon i {
+                font-size: 2rem;
+            }
+
+            .step-number {
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
+                top: -18px;
+            }
+
+            .how-it-works-cta {
+                padding: 2rem 1.5rem;
+            }
+
+            .how-it-works-cta .cta-button {
+                width: 100%;
+                max-width: 400px;
+                padding: 16px 24px;
+                font-size: 1.05rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .how-it-works-section h2 {
+                font-size: 1.75rem;
+            }
+
+            .how-it-works-subtitle {
+                font-size: 0.95rem;
+                margin-bottom: 2.5rem;
+            }
+
+            .step-card {
+                padding: 1.75rem 1.25rem;
+            }
+
+            .step-icon {
+                width: 70px;
+                height: 70px;
+                margin: 1.25rem auto 1.25rem;
+            }
+
+            .step-icon i {
+                font-size: 1.75rem;
+            }
+
+            .step-card h3 {
+                font-size: 1.3rem;
+                margin-bottom: 1.25rem;
+            }
+
+            .step-features li {
+                font-size: 0.9rem;
+                padding: 0.5rem 0;
+            }
+
+            .how-it-works-cta {
+                padding: 1.75rem 1.25rem;
+            }
+
+            .cta-text-large {
+                font-size: 1.2rem;
+                margin-bottom: 1.25rem;
+            }
+        }
+
+        /* Desktop 4-column layout */
+        @media (min-width: 1200px) {
+            .steps-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1.5rem;
+            }
+        }
+
+        /* Tablet 2-column layout */
+        @media (min-width: 769px) and (max-width: 1199px) {
+            .steps-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+    </style>
+
     <script>
     // Capture attribution (GCLID + UTM + referrer) and populate hidden fields on the contact form
     (function(){

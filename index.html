@@ -1026,26 +1026,33 @@
                 display: none; /* Hide by default on mobile */
                 position: absolute;
                 top: 60px;
+                left: 0;
                 right: 0;
                 background-color: #111;
                 width: 100%;
                 flex-direction: column;
-                padding: 1rem 0;
+                padding: 0;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
                 z-index: 998;
             }
             nav ul.nav-links.nav-active { display: flex; }
-            nav ul.nav-links li { width: 100%; }
+            nav ul.nav-links li { 
+                width: 100%;
+                margin: 0;
+            }
             nav ul.nav-links li a {
                 display: block;
-                padding: 1rem;
-                color: white;
+                padding: 1rem 1.5rem;
+                color: white !important;
                 text-align: left;
                 border-bottom: 1px solid #333;
                 transition: background 0.2s ease;
+                font-weight: 500;
+                letter-spacing: 0.5px;
             }
             nav ul.nav-links li a:hover {
-                background: rgba(255, 51, 51, 0.1);
+                background: rgba(255, 51, 51, 0.15);
+                padding-left: 2rem;
             }
             .mobile-nav-toggle { display: block; z-index: 1000; }
         }

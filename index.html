@@ -2558,7 +2558,26 @@
         <div class="about-container">
             <h2>Howard County Junk Removal Service Areas</h2>
             <p class="about-main-text">Serving homeowners and businesses throughout Howard County, MD with professional junk removal services. Same-day availability in most areas.</p>
+
+            <!-- Interactive Service Area Map -->
+            <div class="service-area-map">
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d196683.65247130394!2d-76.89461843124999!3d39.29089805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7e1e2f8b6f4e3%3A0x3b3f6c9a6f6c1f5a!2sHoward%20County%2C%20MD!5e0!3m2!1sen!2sus!4v1727699640000!5m2!1sen!2sus" 
+                        width="100%" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Grime To Dime Service Area - Howard County, MD including Catonsville">
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- City Links Below Map -->
             <div class="service-areas-chips">
+                <h3 class="areas-links-heading">Explore Service Areas — Click for Details:</h3>
                 <div class="city-chips-grid">
                     <a href="/locations/ellicott-city-md/" class="city-chip">
                         <i class="fas fa-map-marker-alt"></i>
@@ -2594,12 +2613,337 @@
                     </a>
                 </div>
             </div>
-            <div class="local-seo-content" style="text-align: center; margin-top: 3rem; padding: 2rem; background: #f8f9fa; border-radius: 10px;">
-                <h3 style="color: #222; margin-bottom: 1rem;">Why Choose Us</h3>
-                <p style="font-size: 1.1rem; color: #444; margin-bottom: 0;">Same‑day or next‑day availability. Upfront prices — no surprise fees. Licensed & insured.</p>
+
+            <!-- Owner Story Section -->
+            <div class="owner-story-section">
+                <div class="owner-story-content">
+                    <div class="owner-photo">
+                        <img src="images/sawyerpickuppro.jpg" alt="Sawyer - Owner of Grime To Dime Junk Removal, Elkridge MD" width="150" height="150" loading="lazy">
+                    </div>
+                    <h3>Meet Sawyer — Your Local Junk Removal Expert</h3>
+                    <p class="owner-intro">Not a corporation. Not a franchise. Just a 23-year-old Elkridge native who turned a childhood passion into Howard County's most trusted junk removal service.</p>
+                    
+                    <div class="story-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-home"></i>
+                            <div>
+                                <strong>Born & Raised in Elkridge</strong>
+                                <p>Started hauling scrap metal at age 7 with family. Graduated from Howard High School. This is my home.</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-heart"></i>
+                            <div>
+                                <strong>Personal Service, Every Job</strong>
+                                <p>I personally show up to every job. You're not getting a random crew — you're getting someone who cares about this community.</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-leaf"></i>
+                            <div>
+                                <strong>Passionate About Our Environment</strong>
+                                <p>I love nature and want to keep Howard County beautiful. We donate items in good condition and recycle everything we can.</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-handshake"></i>
+                            <div>
+                                <strong>Your Neighbor, Not a Salesman</strong>
+                                <p>Started Grime To Dime in March 2024 to help clean up the county I love — without the corporate pricing and red tape.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="owner-cta">
+                        <p class="cta-message">When you call Grime To Dime, you're supporting a local Howard County business — not a national chain.</p>
+                        <a href="/quote/" class="cta-button" onclick="gtagSendEvent('/quote/')">
+                            Work With a Local Business — Get Quote
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
+    <style>
+        .service-area-map {
+            margin-top: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .areas-links-heading {
+            text-align: center;
+            font-size: clamp(1.2rem, 1.1rem + 0.3vw, 1.5rem);
+            font-weight: 700;
+            color: #222;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .map-container {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            border: 3px solid rgba(255, 51, 51, 0.2);
+            background: white;
+        }
+
+        .map-container iframe {
+            display: block;
+            width: 100%;
+            height: 450px;
+            border: none;
+        }
+
+        .map-cities {
+            text-align: center;
+            margin-top: 1.5rem;
+            padding: 1.25rem;
+            background: white;
+            border-radius: 12px;
+            border: 2px solid #eee;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .map-cities p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .map-cities strong {
+            color: #ff3333;
+            font-weight: 700;
+        }
+
+        /* Owner Story Section */
+        .owner-story-section {
+            margin-top: 4rem;
+            padding: 0;
+        }
+
+        .owner-story-content {
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+            padding: 3rem 2.5rem;
+            border-radius: 20px;
+            border: 3px solid rgba(255, 51, 51, 0.15);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+        }
+
+        .owner-photo {
+            width: 280px;
+            height: 200px;
+            margin: 0 auto 1.5rem;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 5px solid #ff3333;
+            box-shadow: 0 8px 25px rgba(255, 51, 51, 0.3);
+            background: white;
+        }
+
+        .owner-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            display: block;
+        }
+
+        .owner-story-content h3 {
+            font-size: clamp(1.5rem, 1.3rem + 0.5vw, 2rem);
+            font-weight: 800;
+            color: #222;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .owner-intro {
+            font-size: clamp(1.05rem, 1rem + 0.2vw, 1.15rem);
+            color: #444;
+            line-height: 1.7;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            font-weight: 500;
+        }
+
+        .story-highlights {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+            text-align: left;
+        }
+
+        /* Single column on mobile for better readability */
+        @media (max-width: 767px) {
+            .story-highlights {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .highlight-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 2px solid #eee;
+            transition: all 0.3s ease;
+        }
+
+        .highlight-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            border-color: rgba(255, 51, 51, 0.3);
+        }
+
+        .highlight-item > i {
+            font-size: 1.8rem;
+            color: #ff3333;
+            flex-shrink: 0;
+            margin-top: 0.25rem;
+        }
+
+        .highlight-item strong {
+            display: block;
+            font-size: 1.1rem;
+            color: #222;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .highlight-item p {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .owner-cta {
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 2px solid rgba(255, 51, 51, 0.1);
+        }
+
+        .cta-message {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .owner-cta .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #ff3333 0%, #e62e2e 100%);
+            color: white;
+            padding: 18px 36px;
+            min-height: 56px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(255, 51, 51, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .owner-cta .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 51, 51, 0.4);
+        }
+
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            .service-area-map {
+                margin-top: 3rem;
+            }
+
+            .map-container iframe {
+                height: 350px;
+            }
+
+            .map-cities {
+                padding: 1rem;
+            }
+
+            .map-cities p {
+                font-size: 0.9rem;
+            }
+
+            .owner-story-content {
+                padding: 2rem 1.5rem;
+            }
+
+            .owner-photo {
+                width: 240px;
+                height: 180px;
+            }
+
+            .highlight-item {
+                padding: 1.25rem;
+            }
+
+            .owner-cta .cta-button {
+                width: 100%;
+                max-width: 400px;
+                padding: 16px 24px;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .map-container iframe {
+                height: 300px;
+            }
+
+            .service-area-map h3 {
+                font-size: 1.4rem;
+            }
+
+            .map-description {
+                font-size: 0.95rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .owner-story-section {
+                margin-top: 3rem;
+            }
+
+            .owner-story-content {
+                padding: 1.75rem 1.25rem;
+            }
+
+            .highlight-item {
+                padding: 1rem;
+            }
+
+            .highlight-item > i {
+                font-size: 1.5rem;
+            }
+
+            .highlight-item strong {
+                font-size: 1rem;
+            }
+
+            .highlight-item p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 
     <section id="transformations" class="transformations">
         <h2>Howard County Junk Removal Transformations</h2>
@@ -3321,16 +3665,7 @@
     <section id="faq" class="about">
         <div class="about-container">
             <h2>Howard County Junk Removal FAQ</h2>
-            <div class="faq-controls">
-                <div class="faq-controls-row">
-                    <input id="faq-search" class="faq-search" type="search" placeholder="Search questions" aria-label="Search FAQs">
-                    <div class="faq-actions">
-                        <button class="faq-toggle" data-action="expand" type="button">Expand all</button>
-                        <button class="faq-toggle" data-action="collapse" type="button">Collapse all</button>
-                    </div>
-                </div>
-            </div>
-
+            
             <ul class="faq-list">
                 <li class="faq-item"><details><summary>Where do you serve?</summary><p>We serve Howard County, including Elkridge, Columbia, Laurel, Catonsville, and nearby. Same‑day or next‑day available.</p></details></li>
                 <li class="faq-item"><details><summary>Same‑day service?</summary><p>Often yes — call by noon for the best chance. Otherwise next‑day.</p></details></li>

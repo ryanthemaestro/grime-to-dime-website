@@ -17,6 +17,867 @@
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:wght@800&family=Open+Sans:wght@600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@800&family=Open+Sans:wght@600&display=swap"></noscript>
     <link rel="preload" as="image" href="/images/optimized/warehouse-after-junk-removal-hero-q60.webp" fetchpriority="high">
+
+    <style>
+        /* Enhanced location page styles */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, rgba(15,15,35,0.95) 0%, rgba(26,26,46,0.9) 100%), 
+                        url('/images/optimized/warehouse-after-junk-removal-hero-q60.webp') center/cover;
+            min-height: 60vh;
+        }
+        
+        .location-hero {
+            text-align: center;
+            padding: 4rem 1rem;
+        }
+        
+        .location-hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .location-hero h2 {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            margin-bottom: 2rem;
+            color: #f0f0f0;
+            font-weight: 400;
+        }
+        
+        .stats-bar {
+            background: linear-gradient(135deg, #ff3333 0%, #cc0000 100%);
+            padding: 1.5rem 1rem;
+            margin: 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        
+        .stat-item {
+            color: white;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.95;
+        }
+        
+        .testimonial-section {
+            background: #f8f9fa;
+            padding: 3rem 1rem;
+            margin: 3rem 0;
+        }
+        
+        .testimonial-card {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 6rem;
+            color: #ff3333;
+            opacity: 0.2;
+            font-family: Georgia, serif;
+        }
+        
+        .testimonial-text {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #ff3333 0%, #cc0000 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .author-info {
+            text-align: left;
+        }
+        
+        .author-name {
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 0.25rem;
+        }
+        
+        .author-location {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+
+    <style>
+        /* Enhanced aesthetic improvements */
+        
+        /* Beautiful ZIP & Cities section */
+        .about-container {
+            position: relative;
+        }
+        
+        .about-container h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #333 0%, #666 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 36px rgba(0,0,0,0.12);
+            border-color: rgba(255, 51, 51, 0.2);
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .zip-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        
+        .zip-chip {
+            background: linear-gradient(135deg, #ff3333 0%, #cc0000 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 12px rgba(255, 51, 51, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .zip-chip:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 16px rgba(255, 51, 51, 0.4);
+        }
+        
+        .nearby-links {
+            font-size: 1.1rem;
+            line-height: 2;
+        }
+        
+        .nearby-links a {
+            color: #ff3333;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .nearby-links a:hover {
+            background: rgba(255, 51, 51, 0.1);
+            transform: translateX(4px);
+        }
+        
+        /* Beautiful service cards */
+        .services {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 4rem 1rem;
+        }
+        
+        .services h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+        
+        .service-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid transparent;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 12px 32px rgba(255, 51, 51, 0.2);
+            border-color: #ff3333;
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #ff3333 0%, #cc0000 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+            box-shadow: 0 8px 16px rgba(255, 51, 51, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: rotate(360deg) scale(1.1);
+        }
+        
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+            text-align: center;
+        }
+        
+        .service-content p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        /* Beautiful process section */
+        .process-section {
+            background: white;
+            padding: 4rem 1rem;
+        }
+        
+        .process-container h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+        
+        .process-steps {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            position: relative;
+        }
+        
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+        
+        .process-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2.5rem;
+            color: #ff3333;
+            box-shadow: 0 8px 24px rgba(15, 15, 35, 0.3);
+            transition: all 0.3s ease;
+            border: 4px solid #ff3333;
+        }
+        
+        .process-step:hover .process-icon {
+            transform: scale(1.15);
+            box-shadow: 0 12px 32px rgba(255, 51, 51, 0.4);
+        }
+        
+        .process-step h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .process-step p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* Beautiful FAQ section */
+        .about details {
+            background: white;
+            margin-bottom: 1rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            overflow: hidden;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .about details:hover {
+            border-color: rgba(255, 51, 51, 0.3);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+        }
+        
+        .about details summary {
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: #333;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+        }
+        
+        .about details summary::-webkit-details-marker {
+            display: none;
+        }
+        
+        .about details summary::after {
+            content: '+';
+            font-size: 2rem;
+            color: #ff3333;
+            transition: transform 0.3s ease;
+        }
+        
+        .about details[open] summary::after {
+            transform: rotate(45deg);
+        }
+        
+        .about details summary:hover {
+            background: rgba(255, 51, 51, 0.05);
+            color: #ff3333;
+        }
+        
+        .about details p {
+            padding: 0 2rem 1.5rem 2rem;
+            color: #666;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+        
+        /* Beautiful CTA buttons */
+        .cta-button {
+            background: linear-gradient(135deg, #ff3333 0%, #cc0000 100%);
+            color: white;
+            padding: 1.25rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 24px rgba(255, 51, 51, 0.4);
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 32px rgba(255, 51, 51, 0.5);
+        }
+        
+        .cta-button:active {
+            transform: translateY(-1px);
+        }
+        
+        /* Beautiful benefit cards */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .benefit-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-8px);
+            border-color: #ff3333;
+            box-shadow: 0 12px 32px rgba(255, 51, 51, 0.15);
+        }
+        
+        .benefit-card i {
+            font-size: 3rem;
+            color: #ff3333;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .benefit-card h4 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .benefit-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* Add subtle animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .service-card,
+        .benefit-card,
+        .feature-card,
+        .process-step {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        .service-card:nth-child(1) { animation-delay: 0.1s; }
+        .service-card:nth-child(2) { animation-delay: 0.2s; }
+        .service-card:nth-child(3) { animation-delay: 0.3s; }
+        .service-card:nth-child(4) { animation-delay: 0.4s; }
+        .service-card:nth-child(5) { animation-delay: 0.5s; }
+        .service-card:nth-child(6) { animation-delay: 0.6s; }
+
+    <style>
+        /* FIX: Center icons perfectly in circles */
+        .benefit-card i {
+            font-size: 3rem;
+            color: #ff3333;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 80px;
+        }
+        
+        .service-icon i {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .process-icon i {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+        
+        /* MOBILE RESPONSIVE STYLES */
+        @media (max-width: 768px) {
+            /* Hero section mobile */
+            .location-hero {
+                padding: 3rem 1rem;
+            }
+            
+            .location-hero h1 {
+                font-size: 2rem;
+                line-height: 1.2;
+            }
+            
+            .location-hero h2 {
+                font-size: 1.2rem;
+            }
+            
+            /* Stats bar mobile */
+            .stats-bar {
+                padding: 1.5rem 0.5rem;
+            }
+            
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .stat-label {
+                font-size: 0.9rem;
+            }
+            
+            /* Service cards mobile */
+            .service-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                padding: 0 1rem;
+            }
+            
+            .service-card {
+                padding: 1.5rem;
+            }
+            
+            .service-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 1.8rem;
+            }
+            
+            /* Benefits mobile */
+            .benefits-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .benefit-card {
+                padding: 1.5rem;
+            }
+            
+            /* Feature cards mobile */
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .feature-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            /* Process mobile */
+            .process-steps {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .process-icon {
+                width: 80px;
+                height: 80px;
+                font-size: 2rem;
+            }
+            
+            /* Testimonial mobile */
+            .testimonial-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .testimonial-text {
+                font-size: 1.1rem;
+            }
+            
+            .author-avatar {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+            
+            /* FAQ mobile */
+            .about details summary {
+                padding: 1.25rem 1.5rem;
+                font-size: 1.1rem;
+            }
+            
+            .about details p {
+                padding: 0 1.5rem 1.25rem 1.5rem;
+                font-size: 1rem;
+            }
+            
+            /* Typography mobile */
+            .about-container h2,
+            .services h2,
+            .process-container h2 {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+            
+            /* CTA buttons mobile */
+            .cta-button {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+            
+            /* ZIP chips mobile */
+            .zip-chips {
+                justify-content: center;
+            }
+            
+            .zip-chip {
+                padding: 0.6rem 1.2rem;
+                font-size: 1rem;
+            }
+            
+            /* Nearby links mobile */
+            .nearby-links {
+                text-align: center;
+                font-size: 1rem;
+            }
+            
+            /* Header mobile adjustments */
+            .header-content-wrapper {
+                padding: 0 1rem;
+            }
+            
+            /* Section padding mobile */
+            .services,
+            .process-section,
+            .testimonial-section {
+                padding: 3rem 1rem;
+            }
+            
+            /* Google rating badge mobile */
+            .google-rating-badge {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            /* Reduce animations on mobile for performance */
+            @media (prefers-reduced-motion: reduce) {
+                * {
+                    animation: none !important;
+                    transition: none !important;
+                }
+            }
+        }
+        
+        /* Tablet landscape */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        /* Small mobile */
+        @media (max-width: 480px) {
+            .stats-container {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .stat-item {
+                padding: 0.5rem;
+            }
+            
+            .location-hero h1 {
+                font-size: 1.75rem;
+            }
+            
+            .location-hero h2 {
+                font-size: 1.1rem;
+            }
+            
+            .feature-card h3,
+            .benefit-card h4,
+            .service-content h3 {
+                font-size: 1.3rem;
+            }
+            
+            .testimonial-card::before {
+                font-size: 4rem;
+                left: 10px;
+            }
+        }
+        
+        /* Landscape mobile */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .location-hero {
+                padding: 2rem 1rem;
+            }
+            
+            .stats-bar {
+                padding: 1rem 0.5rem;
+            }
+        }
+    </style>
+
+    </style>
+
+        .stars-display {
+            color: #ffc107;
+            margin-bottom: 1rem;
+        }
+    </style>
+
+    <style>
+        /* CRITICAL FIX: Vertically center icons in circles */
+        .benefit-card i {
+            font-size: 3rem !important;
+            color: #ff3333 !important;
+            margin-bottom: 1rem !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 80px !important;
+            height: 80px !important;
+            line-height: 1 !important;
+            vertical-align: middle !important;
+        }
+        
+        /* Ensure Font Awesome icons are centered */
+        .benefit-card i::before,
+        .service-icon i::before,
+        .process-icon i::before {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 100% !important;
+            height: 100% !important;
+        }
+        
+        /* Service icons fix */
+        .service-icon {
+            width: 80px !important;
+            height: 80px !important;
+            background: linear-gradient(135deg, #ff3333 0%, #cc0000 100%) !important;
+            border-radius: 50% !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            margin: 0 auto 1.5rem !important;
+            font-size: 2rem !important;
+            color: white !important;
+            box-shadow: 0 8px 16px rgba(255, 51, 51, 0.3) !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .service-icon i {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 100% !important;
+            height: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            line-height: 1 !important;
+        }
+        
+        /* Process icons fix */
+        .process-icon {
+            width: 100px !important;
+            height: 100px !important;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%) !important;
+            border-radius: 50% !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            margin: 0 auto 1.5rem !important;
+            font-size: 2.5rem !important;
+            color: #ff3333 !important;
+            box-shadow: 0 8px 24px rgba(15, 15, 35, 0.3) !important;
+            transition: all 0.3s ease !important;
+            border: 4px solid #ff3333 !important;
+        }
+        
+        .process-icon i {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 100% !important;
+            height: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            line-height: 1 !important;
+        }
+        
+        /* Make sure Font Awesome loads properly */
+        .fas, .fab, .far {
+            font-family: "Font Awesome 6 Free" !important;
+            font-weight: 900 !important;
+            font-style: normal !important;
+            font-variant: normal !important;
+            text-rendering: auto !important;
+            -webkit-font-smoothing: antialiased !important;
+        }
+    </style>
+
 </head>
 <body class="page-location location-elkridge">
     <header>
@@ -27,7 +888,7 @@
             <nav>
                 <ul class="nav-links">
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About</a></li>
+                    <li><a href="#testimonial">Reviews</a></li>
                     <li><a href="#faq">FAQ</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -41,7 +902,7 @@
     </header>
 
     <section id="hero" class="hero">
-        <div class="hero-content">
+        <div class="hero-content location-hero">
             <h1>Junk Removal in Elkridge, MD</h1>
             <h2>Fast, eco‑friendly hauling. Same‑day service.</h2>
             <div class="trust-signals">
@@ -59,6 +920,27 @@
                 </a>
             </div>
             <a href="https://grimetodime.com/quote" class="cta-button">Get Free Quote</a>
+        </div>
+    </section>
+
+    <section class="stats-bar">
+        <div class="stats-container">
+            <div class="stat-item">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Satisfaction Guaranteed</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">Same Day</span>
+                <span class="stat-label">Service Available</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">16+</span>
+                <span class="stat-label">5-Star Reviews</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">Licensed</span>
+                <span class="stat-label">& Fully Insured</span>
+            </div>
         </div>
     </section>
 
@@ -165,6 +1047,27 @@
     </section>
 
     
+
+
+    <section id="testimonial" class="testimonial-section">
+        <div class="testimonial-card">
+            <div class="stars-display">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-text">"Local team that knows Elkridge well. Fast response and fair pricing. Will use them again!"</p>
+            <div class="testimonial-author">
+                <div class="author-avatar">M</div>
+                <div class="author-info">
+                    <div class="author-name">Michael R.</div>
+                    <div class="author-location">Elkridge, MD</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section id="faq" class="about">
         <div class="about-container">

@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous"></noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:wght@800&family=Open+Sans:wght@600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
@@ -86,7 +86,7 @@
             position: relative;
             background: linear-gradient(135deg, rgba(15,15,35,0.95) 0%, rgba(26,26,46,0.9) 100%), 
                         url('/images/optimized/warehouse-after-junk-removal-hero-q60.webp') center/cover;
-            min-height: 60vh;
+            min-height: 100vh;
         }
         
         .location-hero {
@@ -612,6 +612,10 @@
         /* MOBILE RESPONSIVE STYLES */
         @media (max-width: 768px) {
             /* Hero section mobile */
+            .hero {
+                min-height: 100vh !important;
+            }
+            
             .location-hero {
                 padding: 3rem 1rem;
             }
@@ -922,7 +926,19 @@
         }
         
         /* Make sure Font Awesome loads properly */
-        .fas, .fab, .far {
+        @font-face {
+            font-family: 'Font Awesome 6 Brands';
+            src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-brands-400.woff2') format('woff2');
+            font-weight: 400;
+            font-display: block;
+        }
+        
+        .fab {
+            font-family: "Font Awesome 6 Brands" !important;
+            font-weight: 400 !important;
+        }
+        
+        .fas, .far {
             font-family: "Font Awesome 6 Free" !important;
             font-weight: 900 !important;
             font-style: normal !important;

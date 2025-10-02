@@ -1460,6 +1460,7 @@
                 if (smsLink) {
                     smsLink.textContent = 'Prefer to call? (410) 300-6743 — Same great service';
                     smsLink.href = 'tel:+14103006743';
+                    smsLink.classList.add('gfn'); // Add Google forwarding number class for call tracking
                 }
                 
                 // Update sticky button to link to calendar
@@ -2249,6 +2250,7 @@
             
             if (isMobile) {
                 btn.setAttribute('href','tel:+14103006743');
+                btn.classList.add('gfn'); // Add Google forwarding number class for call tracking
                 btn.addEventListener('click', () => {
                     trackCallEvent('Mobile CTA');
                 });

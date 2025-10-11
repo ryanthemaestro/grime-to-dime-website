@@ -4750,41 +4750,52 @@
                     C.Cal.ns = {}; 
                     l(); 
                 } 
-                p(cal, ar); 
+                p(C.Cal, A); 
             })(window, "https://app.cal.com/embed/embed.js", "init");
 
-            // Initialize with namespace
-            Cal("init", "junk-removal-appointment", {origin:"https://app.cal.com"});
+            // Wait for Cal to be available, then initialize
+            function initCal() {
+                if (typeof Cal !== 'undefined' && Cal.ns) {
+                    // Initialize with namespace
+                    Cal("init", "junk-removal-appointment", {origin:"https://app.cal.com"});
 
-            // Embed inline with namespace
-            Cal.ns["junk-removal-appointment"]("inline", {
-                elementOrSelector:"#my-cal-inline-junk-removal-appointment",
-                config: {"layout":"month_view"},
-                calLink: "grimetodime/junk-removal-appointment",
-            });
+                    // Embed inline with namespace
+                    Cal.ns["junk-removal-appointment"]("inline", {
+                        elementOrSelector:"#my-cal-inline-junk-removal-appointment",
+                        config: {"layout":"month_view"},
+                        calLink: "grimetodime/junk-removal-appointment",
+                    });
 
-            // Track successful bookings
-            Cal.ns["junk-removal-appointment"]("on", {
-                action: "bookingSuccessful", 
-                callback: (e) => {
-                    console.log('Booking successful:', e);
-                    
-                    // Track conversion in Google Analytics
-                    if (typeof gtag !== 'undefined') {
-                        gtag('event', 'conversion', {
-                            'send_to': 'AW-11553122519/JftTCI3O64QbENfR-oQr',
-                            'value': 1,
-                            'currency': 'USD'
-                        });
+                    // Track successful bookings
+                    Cal.ns["junk-removal-appointment"]("on", {
+                        action: "bookingSuccessful", 
+                        callback: (e) => {
+                            console.log('Booking successful:', e);
+                            
+                            // Track conversion in Google Analytics
+                            if (typeof gtag !== 'undefined') {
+                                gtag('event', 'conversion', {
+                                    'send_to': 'AW-11553122519/JftTCI3O64QbENfR-oQr',
+                                    'value': 1,
+                                    'currency': 'USD'
+                                });
 
-                        gtag('event', 'booking_completed', {
-                            'event_category': 'Booking',
-                            'event_label': 'cal.com',
-                            'value': 1
-                        });
-                    }
+                                gtag('event', 'booking_completed', {
+                                    'event_category': 'Booking',
+                                    'event_label': 'cal.com',
+                                    'value': 1
+                                });
+                            }
+                        }
+                    });
+                } else {
+                    // Retry after a short delay
+                    setTimeout(initCal, 100);
                 }
-            });
+            }
+            
+            // Start initialization
+            initCal();
         });
     </script>
 

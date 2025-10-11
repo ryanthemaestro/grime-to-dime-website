@@ -4727,75 +4727,83 @@
         }
     </script>
 
-    <!-- Cal.com Integration Script -->
+    <!-- Cal.com Integration Script - Exact copy from quote page -->
     <script>
         // Initialize Cal.com when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('Initializing Cal.com embed...');
+        function initCalendar() {
+            console.log('Initializing official Cal.com embed...');
             
-            // Official Cal.com embed code (same as quote page)
+            // Official Cal.com embed code
             (function (C, A, L) { 
                 let p = function (a, ar) { a.q.push(ar); }; 
                 let d = C.document; 
                 C.Cal = C.Cal || function () { 
-                    (C.Cal.q = C.Cal.q || []).push(arguments); 
+                    let cal = C.Cal; 
+                    let ar = arguments; 
+                    if (!cal.loaded) { 
+                        cal.ns = {}; 
+                        cal.q = cal.q || []; 
+                        d.head.appendChild(d.createElement("script")).src = A; 
+                        cal.loaded = true; 
+                    } 
+                    if (ar[0] === L) { 
+                        const api = function () { p(api, arguments); }; 
+                        const namespace = ar[1]; 
+                        api.q = api.q || []; 
+                        if(typeof namespace === "string"){
+                            cal.ns[namespace] = cal.ns[namespace] || api;
+                            p(cal.ns[namespace], ar);
+                            p(cal, ["initNamespace", namespace]);
+                        } else p(cal, ar); 
+                        return;
+                    } 
+                    p(cal, ar); 
                 }; 
-                let l = function () { 
-                    let script = d.createElement('script'); 
-                    script.src = A; 
-                    script.async = true; 
-                    d.head.appendChild(script); 
-                }; 
-                if (!C.Cal.ns) { 
-                    C.Cal.ns = {}; 
-                    l(); 
-                } 
-                p(C.Cal, A); 
             })(window, "https://app.cal.com/embed/embed.js", "init");
 
-            // Wait for Cal to be available, then initialize
-            function initCal() {
-                if (typeof Cal !== 'undefined' && Cal.ns) {
-                    // Initialize with namespace
-                    Cal("init", "junk-removal-appointment", {origin:"https://app.cal.com"});
+            // Initialize with namespace
+            Cal("init", "junk-removal-appointment", {origin:"https://app.cal.com"});
 
-                    // Embed inline with namespace
-                    Cal.ns["junk-removal-appointment"]("inline", {
-                        elementOrSelector:"#my-cal-inline-junk-removal-appointment",
-                        config: {"layout":"month_view"},
-                        calLink: "grimetodime/junk-removal-appointment",
-                    });
+            // Embed inline with namespace
+            Cal.ns["junk-removal-appointment"]("inline", {
+                elementOrSelector:"#my-cal-inline-junk-removal-appointment",
+                config: {"layout":"month_view"},
+                calLink: "grimetodime/junk-removal-appointment",
+            });
 
-                    // Track successful bookings
-                    Cal.ns["junk-removal-appointment"]("on", {
-                        action: "bookingSuccessful", 
-                        callback: (e) => {
-                            console.log('Booking successful:', e);
-                            
-                            // Track conversion in Google Analytics
-                            if (typeof gtag !== 'undefined') {
-                                gtag('event', 'conversion', {
-                                    'send_to': 'AW-11553122519/JftTCI3O64QbENfR-oQr',
-                                    'value': 1,
-                                    'currency': 'USD'
-                                });
+            // Configure UI
+            Cal.ns["junk-removal-appointment"]("ui", {
+                "hideEventTypeDetails":false,
+                "layout":"month_view"
+            });
 
-                                gtag('event', 'booking_completed', {
-                                    'event_category': 'Booking',
-                                    'event_label': 'cal.com',
-                                    'value': 1
-                                });
-                            }
-                        }
-                    });
-                } else {
-                    // Retry after a short delay
-                    setTimeout(initCal, 100);
+            // Track successful bookings
+            Cal.ns["junk-removal-appointment"]("on", {
+                action: "bookingSuccessful", 
+                callback: (e) => {
+                    console.log('Booking successful:', e);
+                    
+                    // Track conversion in Google Analytics
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'conversion', {
+                            'send_to': 'AW-11553122519/JftTCI3O64QbENfR-oQr',
+                            'value': 1,
+                            'currency': 'USD'
+                        });
+
+                        gtag('event', 'booking_completed', {
+                            'event_category': 'Booking',
+                            'event_label': 'cal.com',
+                            'value': 1
+                        });
+                    }
                 }
-            }
-            
-            // Start initialization
-            initCal();
+            });
+        }
+
+        // Initialize calendar when DOM loads
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(initCalendar, 1500); // Give page time to load
         });
     </script>
 

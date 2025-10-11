@@ -1245,6 +1245,7 @@
                     <li><a href="#services">Services</a></li>
                     <li><a href="#pricing">Pricing</a></li>
                     <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#book">Book</a></li>
                     <li><a href="#service-areas">Service Areas</a></li>
                     <li><a href="#testimonials">Reviews</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -4175,6 +4176,170 @@
 
     <!-- Contact Section - Option 1: Clean & Conversion-Focused -->
     <style>
+        /* Booking Section Styles */
+        .booking-section {
+            padding: 5rem 1rem;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            position: relative;
+        }
+
+        .booking-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ff3333, #e62e2e, #ff3333);
+            background-size: 200% 100%;
+        }
+
+        .booking-section h2 {
+            text-align: center;
+            font-size: clamp(2rem, 1.5rem + 2vw, 2.8rem);
+            font-weight: 800;
+            color: #222;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .booking-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .booking-info h3 {
+            font-size: 1.8rem;
+            color: #222;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .booking-benefits {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .benefit-item i {
+            font-size: 1.5rem;
+            color: #ff3333;
+            margin-top: 0.25rem;
+            flex-shrink: 0;
+        }
+
+        .benefit-item h4 {
+            font-size: 1.1rem;
+            color: #222;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .benefit-item p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .booking-calendar {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .booking-footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(255, 107, 53, 0.1);
+            border-radius: 12px;
+            border-left: 4px solid #ff6b35;
+        }
+
+        .booking-footer p {
+            color: #333;
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        .booking-footer a {
+            color: #ff3333;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .booking-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .booking-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .booking-section {
+                padding: 3rem 1rem;
+            }
+
+            .booking-section h2 {
+                font-size: 2rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+            }
+
+            .booking-info h3 {
+                font-size: 1.5rem;
+            }
+
+            .benefit-item {
+                padding: 1rem;
+            }
+
+            .booking-calendar {
+                padding: 1rem;
+            }
+
+            #my-cal-inline-junk-removal-appointment {
+                height: 80vh !important;
+                min-height: 400px !important;
+            }
+        }
+
         .contact {
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             padding: 4rem 1rem;
@@ -4450,6 +4615,51 @@
         }
     </style>
     
+    <!-- Booking Section -->
+    <section id="book" class="booking-section">
+        <div class="container">
+            <h2>Schedule Your Free On-Site Appointment</h2>
+            <p class="section-subtitle">Choose your preferred time slot and we'll handle the rest</p>
+            
+            <div class="booking-container">
+                <div class="booking-info">
+                    <h3>Why Book Online?</h3>
+                    <div class="booking-benefits">
+                        <div class="benefit-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Same-Day Available</h4>
+                                <p>Most appointments can be scheduled for today or tomorrow</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-dollar-sign"></i>
+                            <div>
+                                <h4>Free Estimates</h4>
+                                <p>No obligation quotes - only pay if you're satisfied</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-calendar-check"></i>
+                            <div>
+                                <h4>Flexible Scheduling</h4>
+                                <p>Choose from 2-hour appointment windows that work for you</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="booking-calendar">
+                    <div id="my-cal-inline-junk-removal-appointment" style="width:100%;height:600px;overflow:scroll;background:#ffffff;border-radius:12px;min-height:500px;"></div>
+                </div>
+            </div>
+            
+            <div class="booking-footer">
+                <p><i class="fas fa-phone"></i> Prefer to call? <a href="tel:+14103006743" class="gfn">(410) 300-6743</a> - Same great service</p>
+            </div>
+        </div>
+    </section>
+    
     <section id="contact" class="contact">
         <h2>Ready to Get Started?</h2>
         <div class="contact-container">
@@ -4606,6 +4816,64 @@
         } else {
             initMobileNav();
         }
+    </script>
+
+    <!-- Cal.com Integration Script -->
+    <script>
+        // Initialize Cal.com when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Initializing Cal.com embed...');
+            
+            // Official Cal.com embed code
+            (function (C, A, L) { 
+                let p = function (a, ar) { a.q.push(ar); }; 
+                let d = C.document; 
+                C.Cal = C.Cal || function () { 
+                    (C.Cal.q = C.Cal.q || []).push(arguments); 
+                }; 
+                let l = function () { 
+                    let script = d.createElement('script'); 
+                    script.src = A; 
+                    script.async = true; 
+                    d.head.appendChild(script); 
+                }; 
+                if (!C.Cal.ns) { 
+                    C.Cal.ns = {}; 
+                    l(); 
+                } 
+                C.Cal('init', { 
+                    origin: 'https://cal.com', 
+                    id: 'junk-removal-appointment' 
+                }); 
+                C.Cal('inline', { 
+                    elementOrSelector: '#my-cal-inline-junk-removal-appointment', 
+                    calLink: 'junk-removal-appointment' 
+                }); 
+            })(window, 'https://cal.com/embed.js', 'cal');
+
+            // Track successful bookings
+            Cal.ns["junk-removal-appointment"]("on", {
+                action: "bookingSuccessful", 
+                callback: (e) => {
+                    console.log('Booking successful:', e);
+                    
+                    // Track conversion in Google Analytics
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'conversion', {
+                            'send_to': 'AW-11553122519/JftTCI3O64QbENfR-oQr',
+                            'value': 1,
+                            'currency': 'USD'
+                        });
+
+                        gtag('event', 'booking_completed', {
+                            'event_category': 'Booking',
+                            'event_label': 'cal.com',
+                            'value': 1
+                        });
+                    }
+                }
+            });
+        });
     </script>
 
 </body>

@@ -4214,61 +4214,9 @@
         }
 
         .booking-container {
-            max-width: 1200px;
+            max-width: 100%;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: start;
-        }
-
-        .booking-info h3 {
-            font-size: 1.8rem;
-            color: #222;
-            margin-bottom: 2rem;
-            font-weight: 700;
-        }
-
-        .booking-benefits {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .benefit-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .benefit-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .benefit-item i {
-            font-size: 1.5rem;
-            color: #ff3333;
-            margin-top: 0.25rem;
-            flex-shrink: 0;
-        }
-
-        .benefit-item h4 {
-            font-size: 1.1rem;
-            color: #222;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .benefit-item p {
-            color: #666;
-            font-size: 0.95rem;
-            line-height: 1.5;
+            width: 100%;
         }
 
         .booking-calendar {
@@ -4276,6 +4224,7 @@
             border-radius: 15px;
             padding: 1.5rem;
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
         }
 
         .booking-footer {
@@ -4305,13 +4254,8 @@
 
         /* Mobile Responsive */
         @media (max-width: 768px) {
-            .booking-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
             .booking-section {
-                padding: 3rem 1rem;
+                padding: 2rem 1rem;
             }
 
             .booking-section h2 {
@@ -4320,14 +4264,6 @@
 
             .section-subtitle {
                 font-size: 1rem;
-            }
-
-            .booking-info h3 {
-                font-size: 1.5rem;
-            }
-
-            .benefit-item {
-                padding: 1rem;
             }
 
             .booking-calendar {
@@ -4622,33 +4558,6 @@
             <p class="section-subtitle">Choose your preferred time slot and we'll handle the rest</p>
             
             <div class="booking-container">
-                <div class="booking-info">
-                    <h3>Why Book Online?</h3>
-                    <div class="booking-benefits">
-                        <div class="benefit-item">
-                            <i class="fas fa-clock"></i>
-                            <div>
-                                <h4>Same-Day Available</h4>
-                                <p>Most appointments can be scheduled for today or tomorrow</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-dollar-sign"></i>
-                            <div>
-                                <h4>Free Estimates</h4>
-                                <p>No obligation quotes - only pay if you're satisfied</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-calendar-check"></i>
-                            <div>
-                                <h4>Flexible Scheduling</h4>
-                                <p>Choose from 2-hour appointment windows that work for you</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
                 <div class="booking-calendar">
                     <div id="my-cal-inline-junk-removal-appointment" style="width:100%;height:600px;overflow:scroll;background:#ffffff;border-radius:12px;min-height:500px;"></div>
                 </div>

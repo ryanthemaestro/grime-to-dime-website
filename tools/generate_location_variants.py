@@ -8,15 +8,31 @@ import os
 import shutil
 from pathlib import Path
 
-# Howard County cities
+# Howard County cities and communities
 CITIES = [
+    "annapolis-junction-md",
     "catonsville-md",
-    "clarksville-md", 
+    "clarksville-md",
     "columbia-md",
+    "cooksville-md",
+    "daniels-md",
+    "dayton-md",
+    "dorsey-md",
     "elkridge-md",
     "ellicott-city-md",
+    "fulton-md",
+    "glenelg-md",
+    "glenwood-md",
+    "hanover-md",
+    "highland-md",
+    "ilchester-md",
+    "jessup-md",
     "laurel-md",
-    "savage-md"
+    "lisbon-md",
+    "marriottsville-md",
+    "savage-md",
+    "scaggsville-md",
+    "west-friendship-md"
 ]
 
 def get_base_services():
